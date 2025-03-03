@@ -29,14 +29,15 @@
     "zod": "^3.24.1"
   },
   "scripts": {
-    "init": "npx drizzle-kit migrate",
+    "generate": "npx drizzle-kit generate",
     "download": "npx tsx --env-file=.env scripts/download.ts",
     "embeddings": "npx tsx --env-file=.env scripts/embeddings.ts",
     "search": "npx tsx --env-file=.env scripts/search.ts",
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run migrate && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "migrate": "npx drizzle-kit migrate"
   },
   "devDependencies": {
     "@types/node": "^22.10.10",
