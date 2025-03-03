@@ -2,47 +2,56 @@ import fetch from 'node-fetch';
 import * as schema from '../db/schema';
 import { eq, inArray, sql } from 'drizzle-orm';
 import { db, close } from '../db';
-import QUERIES from '../queries';
-import { User, Entity, Report, Incident } from '../../gatsby-site/server/generated/graphql';
+import QUERIES from '../graphql/queries';
+import { User, Entity, Report, Incident } from '../graphql/generated/graphql';
+import { DocumentNode } from 'graphql';
+import { ApolloClient, InMemoryCache, HttpLink, QueryOptions, OperationVariables } from '@apollo/client';
 
 const BATCH_SIZE = 100;
 const API_URL = 'https://incidentdatabase.ai/api/graphql';
 
-type PaginatedResponse<T> = {
-  data: {
-    [key: string]: T[];
-  };
-};
-
 type CollectionConfig = {
   queryName: string;
-  query: string;
+  query: DocumentNode;
   sortField: string;
   processItem: (item: any) => Promise<void>;
 };
 
-async function fetchGraphQL<T>(query: string, variables: any = {}): Promise<PaginatedResponse<T>> {
+export const getApolloClient = () => {
+  const client = new ApolloClient({
+    link: new HttpLink({
+      uri: API_URL,
+      fetch: fetch as any,
+    }),
+    cache: new InMemoryCache({
+      addTypename: false,
+    }),
+  });
+
+  return client;
+};
+
+const client = getApolloClient();
+
+export function queryGraphQL(options: QueryOptions<OperationVariables, any>, headers = {}) {
+  const { query, variables } = options;
+
+  return client.query({ 
+    query, 
+    variables, 
+    fetchPolicy: 'no-cache', 
+    context: { headers } 
+  });
+}
+
+async function queryGraphQLWithRetry<T>(options: QueryOptions<OperationVariables, any>, headers = {}): Promise<{ data: { [key: string]: T[] } }> {
   const maxRetries = 3;
   const backoffMs = 1000;
 
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
-      const response = await fetch(API_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          query,
-          variables,
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error(`GraphQL request failed: ${response.statusText}`);
-      }
-
-      return response.json() as Promise<PaginatedResponse<T>>;
+      const response = await queryGraphQL(options, headers);
+      return response;
     } catch (error) {
       if (attempt === maxRetries) throw error;
       await new Promise(resolve => setTimeout(resolve, backoffMs * attempt));
@@ -244,9 +253,12 @@ async function fetchAndProcessCollection<T>(config: CollectionConfig): Promise<v
   let skip = 0;
 
   while (hasMore) {
-    const response = await fetchGraphQL<T>(config.query, {
-      limit: BATCH_SIZE,
-      skip,
+    const response = await queryGraphQLWithRetry<T>({
+      query: config.query,
+      variables: {
+        limit: BATCH_SIZE,
+        skip,
+      }
     });
 
     const items = response.data[config.queryName];
