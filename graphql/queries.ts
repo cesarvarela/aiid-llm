@@ -1,5 +1,7 @@
- const QUERIES: { [key: string]: string } = {
-    incidents: `
+import { gql } from 'graphql-tag';
+
+const QUERIES = {
+    incidents: gql`
       query FetchIncidents($limit: Int!, $skip: Int!) {
         incidents(pagination: { limit: $limit, skip: $skip }, sort: { incident_id: ASC }) {
           incident_id
@@ -38,7 +40,7 @@
         }
       }
     `,
-    reports: `
+    reports: gql`
       query FetchReports($limit: Int!, $skip: Int!) {
         reports(pagination: { limit: $limit, skip: $skip }, sort: { report_number: ASC }) {
           report_number
@@ -73,7 +75,7 @@
         }
       }
     `,
-    entities: `
+    entities: gql`
       query FetchEntities($limit: Int!, $skip: Int!) {
         entities(pagination: { limit: $limit, skip: $skip }, sort: { entity_id: ASC }) {
           entity_id
@@ -83,7 +85,7 @@
         }
       }
     `,
-    users: `
+    users: gql`
       query FetchUsers($limit: Int!, $skip: Int!) {
         users(pagination: { limit: $limit, skip: $skip }, sort: { userId: ASC }) {
           userId
@@ -93,7 +95,7 @@
         }
       }
     `,
-    classifications: `
+    classifications: gql`
       query FetchClassifications($limit: Int!, $skip: Int!) {
         classifications(pagination: { limit: $limit, skip: $skip }) {
           namespace
