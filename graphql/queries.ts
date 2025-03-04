@@ -9,7 +9,6 @@ const QUERIES = {
           description
           date
           editor_notes
-          epoch_date_modified
           editor_similar_incidents
           editor_dissimilar_incidents
           AllegedDeployerOfAISystem {
@@ -57,10 +56,6 @@ const QUERIES = {
           date_modified
           date_published
           date_submitted
-          epoch_date_downloaded
-          epoch_date_modified
-          epoch_date_published
-          epoch_date_submitted
           authors
           submitters
           tags

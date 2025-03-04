@@ -36,11 +36,6 @@ export const reports = pgTable('reports', {
     datePublished: timestamp('datePublished').notNull(),
     dateSubmitted: timestamp('dateSubmitted').notNull(),
 
-    epochDateDownloaded: integer('epochDateDownloaded').notNull(),
-    epochDateModified: integer('epochDateModified').notNull(),
-    epochDatePublished: integer('epochDatePublished').notNull(),
-    epochDateSubmitted: integer('epochDateSubmitted').notNull(),
-
     authors: text('authors').array(),
     submitters: text('submitters').array(),
     tags: text('tags').array(),
@@ -62,7 +57,6 @@ export const incidents = pgTable('incidents', {
     description: text('description'),
     date: timestamp('date').notNull(),
     editorNotes: text('editorNotes'),
-    epochDateModified: integer('epochDateModified'),
     editorSimilarIncidents: integer('editorSimilarIncidents').array(),
     editorDissimilarIncidents: integer('editorDissimilarIncidents').array(),
     tsneX: real('tsneX'),
