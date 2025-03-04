@@ -1,5 +1,5 @@
 {
-  "id": "aeb88edd-2e7c-4582-9b95-8f82344ba79d",
+  "id": "63ab317d-6a4c-4881-a9a7-7653437134ff",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -633,12 +633,6 @@
           "primaryKey": false,
           "notNull": false
         },
-        "epochDateModified": {
-          "name": "epochDateModified",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": false
-        },
         "editorSimilarIncidents": {
           "name": "editorSimilarIncidents",
           "type": "integer[]",
@@ -773,30 +767,6 @@
         "dateSubmitted": {
           "name": "dateSubmitted",
           "type": "timestamp",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "epochDateDownloaded": {
-          "name": "epochDateDownloaded",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "epochDateModified": {
-          "name": "epochDateModified",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "epochDatePublished": {
-          "name": "epochDatePublished",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "epochDateSubmitted": {
-          "name": "epochDateSubmitted",
-          "type": "integer",
           "primaryKey": false,
           "notNull": true
         },

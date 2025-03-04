@@ -39,7 +39,10 @@
     "build": "npm run migrate && next build",
     "start": "next start",
     "lint": "next lint",
-    "migrate": "npx drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:migrate": "drizzle-kit migrate",
+    "db:generate": "drizzle-kit generate",
+    "db:studio": "drizzle-kit studio",
     "codegen": "graphql-codegen --config codegen.ts"
   },
   "devDependencies": {

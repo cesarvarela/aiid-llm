@@ -1,7 +1,12 @@
--- Add the pgvector extension to enable vector operations in PostgreSQL
-CREATE EXTENSION IF NOT EXISTS vector;
+CREATE EXTENSION IF NOT EXISTS vector;--> statement-breakpoint
 
-CREATE TYPE "public"."source_type" AS ENUM('incident', 'report');--> statement-breakpoint
+DO $$ 
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'source_type') THEN
+        CREATE TYPE "public"."source_type" AS ENUM('incident', 'report');
+    END IF;
+END $$;--> statement-breakpoint
+
 CREATE TABLE "embeddings" (
 	"id" serial PRIMARY KEY NOT NULL,
 	"sourceType" "source_type" NOT NULL,
@@ -57,7 +62,6 @@ CREATE TABLE "incidents" (
 	"description" text,
 	"date" timestamp NOT NULL,
 	"editorNotes" text,
-	"epochDateModified" integer,
 	"editorSimilarIncidents" integer[],
 	"editorDissimilarIncidents" integer[],
 	"tsneX" real,
@@ -79,10 +83,6 @@ CREATE TABLE "reports" (
 	"dateModified" timestamp NOT NULL,
 	"datePublished" timestamp NOT NULL,
 	"dateSubmitted" timestamp NOT NULL,
-	"epochDateDownloaded" integer NOT NULL,
-	"epochDateModified" integer NOT NULL,
-	"epochDatePublished" integer NOT NULL,
-	"epochDateSubmitted" integer NOT NULL,
 	"authors" text[],
 	"submitters" text[],
 	"tags" text[],
