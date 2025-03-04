@@ -5,7 +5,8 @@ import { db, close } from '../db';
 import QUERIES from '../graphql/queries';
 import { User, Entity, Report, Incident } from '../graphql/generated/graphql';
 import { DocumentNode } from 'graphql';
-import { ApolloClient, InMemoryCache, HttpLink, QueryOptions, OperationVariables } from '@apollo/client';
+import { ApolloClient, InMemoryCache, HttpLink, QueryOptions, OperationVariables, from } from '@apollo/client';
+import { RetryLink } from '@apollo/client/link/retry';
 
 const BATCH_SIZE = 100;
 const API_URL = 'https://incidentdatabase.ai/api/graphql';
@@ -18,11 +19,25 @@ type CollectionConfig = {
 };
 
 export const getApolloClient = () => {
+  const httpLink = new HttpLink({
+    uri: API_URL,
+    fetch: fetch as any,
+  });
+
+  const retryLink = new RetryLink({
+    delay: {
+      initial: 1000,
+      max: 5000,
+      jitter: true
+    },
+    attempts: {
+      max: 3,
+      retryIf: (error) => !!error
+    }
+  });
+
   const client = new ApolloClient({
-    link: new HttpLink({
-      uri: API_URL,
-      fetch: fetch as any,
-    }),
+    link: from([retryLink, httpLink]),
     cache: new InMemoryCache({
       addTypename: false,
     }),
@@ -32,34 +47,6 @@ export const getApolloClient = () => {
 };
 
 const client = getApolloClient();
-
-export function queryGraphQL(options: QueryOptions<OperationVariables, any>, headers = {}) {
-  const { query, variables } = options;
-
-  return client.query({ 
-    query, 
-    variables, 
-    fetchPolicy: 'no-cache', 
-    context: { headers } 
-  });
-}
-
-async function queryGraphQLWithRetry<T>(options: QueryOptions<OperationVariables, any>, headers = {}): Promise<{ data: { [key: string]: T[] } }> {
-  const maxRetries = 3;
-  const backoffMs = 1000;
-
-  for (let attempt = 1; attempt <= maxRetries; attempt++) {
-    try {
-      const response = await queryGraphQL(options, headers);
-      return response;
-    } catch (error) {
-      if (attempt === maxRetries) throw error;
-      await new Promise(resolve => setTimeout(resolve, backoffMs * attempt));
-    }
-  }
-
-  throw new Error('API failed after max retries');
-}
 
 const handleManyToManyRelation = async <T extends { entity_id?: string, userId?: string, report_number?: number }>({
   sourceId,
@@ -253,12 +240,13 @@ async function fetchAndProcessCollection<T>(config: CollectionConfig): Promise<v
   let skip = 0;
 
   while (hasMore) {
-    const response = await queryGraphQLWithRetry<T>({
+    const response = await client.query({
       query: config.query,
       variables: {
         limit: BATCH_SIZE,
         skip,
-      }
+      },
+      fetchPolicy: 'no-cache'
     });
 
     const items = response.data[config.queryName];
@@ -267,11 +255,13 @@ async function fetchAndProcessCollection<T>(config: CollectionConfig): Promise<v
       continue;
     }
 
-    for (const item of items) {
-      if (item) {
-        await config.processItem(item);
-      }
-    }
+    await Promise.all(
+      items.map(async (item) => {
+        if (item) {
+          await config.processItem(item);
+        }
+      })
+    );
 
     skip += BATCH_SIZE;
     console.log(`Processed ${skip} ${config.queryName}`);
