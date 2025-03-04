@@ -36,7 +36,7 @@
     "embeddings": "npx tsx --env-file=.env scripts/embeddings.ts",
     "search": "npx tsx --env-file=.env scripts/search.ts",
     "dev": "next dev",
-    "build": "npm run migrate && next build",
+    "build": "npm run db:migrate && next build",
     "start": "next start",
     "lint": "next lint",
     "db:push": "drizzle-kit push",
