@@ -3,17 +3,68 @@ import { openai } from '@ai-sdk/openai';
 import { z } from 'zod';
 import { Search } from '../../../lib/Search';
 import { createEmbeddingProvider } from '@/lib/utils';
+import { db } from '@/db';
+import { incidents } from '@/db/schema';
+import { eq, inArray } from 'drizzle-orm';
 export const maxDuration = 30;
 
 const embeddings = createEmbeddingProvider('openai');
 const search = new Search(embeddings);
 
+// Featured incident IDs with their weights
+const featuredIncidentIds = [
+    23, 1967, 1551, 835, 1470, 1118, 1773, 1509, 1245, 679,
+    1606, 1374, 1065, 1543, 1505, 1468, 1539, 1420, 101, 12,
+    368, 1427, 392, 595, 1235, 45, 620, 519
+];
+
+// Base prompt template
+const basePrompt = `
+You are an AI assistant specialized in the AI Incident Database (AIID). Your primary goal is to answer user questions or requests about AI-related incidents, referencing the database where appropriate.
+
+You have access to several specialized functions (tools) for searching, retrieving, and summarizing AI incident information. Use them only when needed and in the correct JSON function call format. When you do not need a specialized function, respond with a direct text answer.
+
+Here is a list of some featured incidents in AIID:
+
+FEATURED_INCIDENTS_PLACEHOLDER
+
+### Instructions
+
+1. **Ground your answers in AIID data**: Rely on the retrieved context from function calls (where applicable) or the featured incidents above if they answer the user's query.  
+2. **Do not make up details**: If the answer isn't in the context or the featured list, call the appropriate function to retrieve more data. If you still cannot find the answer, say so.  
+3. **Answer Style**: Be clear, concise, and factual. Reference the incident ID when applicable.  
+4. **No Tools Needed?**: If you can answer from your short-term context or from the featured incidents, just provide a direct text response (no function call).  
+5. **Out-of-Scope Queries**: If the user asks something completely unrelated to AIID or your knowledge, politely respond that you do not have information on that topic.
+
+Follow these rules throughout the conversation.
+`;
+
+async function getSystemPrompt() {
+    // Fetch all featured incidents from the database in a single query
+    const featuredIncidents = await db.query.incidents.findMany({
+        where: inArray(incidents.incidentId, featuredIncidentIds)
+    });
+
+    let incidentsList = '';
+    let count = 1;
+
+    for (const incident of featuredIncidents) {
+        incidentsList += `${count}) Incident ID: ${incident.incidentId}\n   Title: ${incident.title}\n   Brief Description: ${incident.description || 'No description available'}\n\n`;
+        count++;
+    }
+
+    return basePrompt.replace('FEATURED_INCIDENTS_PLACEHOLDER', incidentsList);
+}
+
 export async function POST(req: Request) {
     const { messages } = await req.json();
 
+    // Get the system prompt with featured incidents
+    const prompt = await getSystemPrompt();
+
     const result = streamText({
         model: openai('gpt-4o'),
-        system: 'You are a helpful assistant that can answer questions about the user\'s knowledge base.',
+        system: prompt,
         messages,
         tools: {
             getReportInformation: tool({
