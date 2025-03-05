@@ -6,12 +6,15 @@ import { hideBin } from 'yargs/helpers';
 import yargs from 'yargs';
 import { EmbeddingProvider } from '../types';
 import { createEmbeddingProvider } from '@/lib/utils';
+import pLimit from 'p-limit';
 
 // Reducing chunk size to avoid token limit errors
 // OpenAI's text-embedding-3-small has a limit of 8192 tokens
 // Setting a conservative limit to ensure we stay under the token limit
 const CHUNK_SIZE = 500;
 const CHUNK_OVERLAP = 100;
+// Limit concurrent API calls to avoid rate limits
+const CONCURRENCY_LIMIT = 5;
 
 function chunkText(text: string): string[] {
     const words = text.split(' ');
@@ -36,46 +39,17 @@ function chunkText(text: string): string[] {
     return chunks;
 }
 
-async function safeGetEmbedding(text: string, provider: EmbeddingProvider): Promise<{ embedding: number[], model: string }> {
-    try {
-        return await provider.getEmbedding(text);
-    } catch (error) {
-        // Check if the error is related to token limit
-        if (error.message && error.message.includes('maximum context length')) {
-            console.warn('Text too long for embedding, splitting further...');
-
-            // Split the text in half and try again with the first half
-            const halfLength = Math.floor(text.length / 2);
-            const firstHalf = text.substring(0, halfLength);
-
-            console.log(`Original length: ${text.length}, using first ${firstHalf.length} characters`);
-            return await provider.getEmbedding(firstHalf);
-        }
-
-        // If it's not a token limit error, re-throw
-        throw error;
-    }
-}
-
 async function processReport(reportNumber: number, provider: EmbeddingProvider) {
-
     console.log(`Processing report ${reportNumber}`);
-
-    if (await db.query.embeddings.findFirst({
-        where: and(
-            eq(schema.embeddings.sourceType, 'report'),
-            eq(schema.embeddings.sourceId, reportNumber.toString())
-        )
-    })) {
-        console.log(`Report ${reportNumber} already processed`);
-        return;
-    }
 
     const report = await db.query.reports.findFirst({
         where: eq(schema.reports.reportNumber, reportNumber),
     });
 
-    if (!report) return;
+    if (!report) {
+        console.error(`Report ${reportNumber} not found`);
+        return;
+    }
 
     const metadataChunk = [
         `Title: ${report.title}`,
@@ -92,7 +66,7 @@ async function processReport(reportNumber: number, provider: EmbeddingProvider) 
         const allEmbeddings: typeof schema.embeddings.$inferInsert[] = [];
 
         // Process metadata chunk
-        const { embedding: metadataEmbedding } = await safeGetEmbedding(metadataChunk, provider);
+        const { embedding: metadataEmbedding, model } = await provider.getEmbedding(metadataChunk);
 
         // Add metadata embedding to the collection
         allEmbeddings.push({
@@ -101,7 +75,7 @@ async function processReport(reportNumber: number, provider: EmbeddingProvider) 
             chunkIndex: 0,
             chunkText: metadataChunk,
             embedding: metadataEmbedding,
-            model: provider.getModel(),
+            model: model,
             metadata: {
                 reportNumber: reportNumber,
                 title: report.title,
@@ -114,14 +88,14 @@ async function processReport(reportNumber: number, provider: EmbeddingProvider) 
         // Process all chunks and collect their embeddings
         const chunkEmbeddings = await Promise.all(
             chunks.map(async (chunk, i) => {
-                const { embedding } = await safeGetEmbedding(chunk, provider);
+                const { embedding, model } = await provider.getEmbedding(chunk);
                 return {
                     sourceType: 'report',
                     sourceId: reportNumber.toString(),
                     chunkIndex: i + 1,
                     chunkText: chunk,
                     embedding: embedding,
-                    model: provider.getModel(),
+                    model: model,
                     metadata: {
                         reportNumber: reportNumber,
                         title: report.title,
@@ -147,24 +121,16 @@ async function processReport(reportNumber: number, provider: EmbeddingProvider) 
 }
 
 async function processIncident(incidentId: number, provider: EmbeddingProvider) {
-
     console.log(`Processing incident ${incidentId}`);
-
-    if (await db.query.embeddings.findFirst({
-        where: and(
-            eq(schema.embeddings.sourceType, 'incident'),
-            eq(schema.embeddings.sourceId, incidentId.toString())
-        )
-    })) {
-        console.log(`Incident ${incidentId} already processed`);
-        return;
-    }
 
     const incident = await db.query.incidents.findFirst({
         where: eq(schema.incidents.incidentId, incidentId),
     });
 
-    if (!incident) return;
+    if (!incident) {
+        console.error(`Incident ${incidentId} not found`);
+        return;
+    }
 
     const metadataChunk = [
         `Title: ${incident.title}`,
@@ -177,7 +143,7 @@ async function processIncident(incidentId: number, provider: EmbeddingProvider) 
         const allEmbeddings: typeof schema.embeddings.$inferInsert[] = [];
 
         // Process metadata chunk
-        const { embedding: metadataEmbedding } = await safeGetEmbedding(metadataChunk, provider);
+        const { embedding: metadataEmbedding, model } = await provider.getEmbedding(metadataChunk);
 
         // Add metadata embedding to the collection
         allEmbeddings.push({
@@ -186,7 +152,7 @@ async function processIncident(incidentId: number, provider: EmbeddingProvider) 
             chunkIndex: 0,
             chunkText: metadataChunk,
             embedding: metadataEmbedding,
-            model: provider.getModel(),
+            model: model,
             metadata: {
                 incidentId: incidentId,
                 title: incident.title,
@@ -199,14 +165,14 @@ async function processIncident(incidentId: number, provider: EmbeddingProvider) 
         // Process all chunks and collect their embeddings
         const chunkEmbeddings = await Promise.all(
             chunks.map(async (chunk, i) => {
-                const { embedding } = await safeGetEmbedding(chunk, provider);
+                const { embedding, model } = await provider.getEmbedding(chunk);
                 return {
                     sourceType: 'incident',
                     sourceId: incidentId.toString(),
                     chunkIndex: i + 1,
                     chunkText: chunk,
                     embedding: embedding,
-                    model: provider.getModel(),
+                    model: model,
                     metadata: {
                         incidentId: incidentId,
                         title: incident.title,
@@ -231,6 +197,62 @@ async function processIncident(incidentId: number, provider: EmbeddingProvider) 
     }
 }
 
+async function processClassification(classificationId: string, provider: EmbeddingProvider) {
+    console.log(`Processing classification ${classificationId}`);
+
+    const classification = await db.query.classifications.findFirst({
+        where: eq(schema.classifications.classificationId, classificationId),
+    });
+
+    if (!classification) {
+        console.error(`Classification ${classificationId} not found`);
+        return;
+    }
+
+    // Create metadata chunk from classification data
+    const attributesText = classification.attributes 
+        ? (classification.attributes as Array<{short_name: string, value_json: string}>).map(attr => `${attr.short_name}: ${attr.value_json}`).join('\n')
+        : '';
+
+    const metadataChunk = [
+        `Namespace: ${classification.namespace}`,
+        `Notes: ${classification.notes || ''}`,
+        `Attributes: ${attributesText}`
+    ].join('\n');
+
+    try {
+        // Create an array to collect all embeddings
+        const allEmbeddings: typeof schema.embeddings.$inferInsert[] = [];
+
+        // Process metadata chunk
+        const { embedding: metadataEmbedding, model } = await provider.getEmbedding(metadataChunk);
+
+        // Add metadata embedding to the collection
+        allEmbeddings.push({
+            sourceType: 'classification',
+            sourceId: classificationId,
+            chunkIndex: 0,
+            chunkText: metadataChunk,
+            embedding: metadataEmbedding,
+            model: model,
+            metadata: {
+                classificationId: classificationId,
+                namespace: classification.namespace
+            }
+        } as typeof schema.embeddings.$inferInsert);
+
+        // Insert all embeddings in a single operation
+        if (allEmbeddings.length > 0) {
+            await db.insert(schema.embeddings).values(allEmbeddings);
+        }
+
+        console.log(`Processed classification ${classificationId}`);
+    } catch (error) {
+        console.error(`Error processing classification ${classificationId}:`, error);
+        throw error; // Re-throw to allow caller to handle
+    }
+}
+
 async function confirm(message: string): Promise<boolean> {
     const rl = readline.createInterface({
         input: process.stdin,
@@ -245,120 +267,112 @@ async function confirm(message: string): Promise<boolean> {
     });
 }
 
-async function parseNumberList(input: string): Promise<number[]> {
-    if (input.toLowerCase() === 'all') return [];
-
-    return input.split(',').flatMap(segment => {
-        segment = segment.trim();
-        const rangeMatch = segment.match(/^(\d+)\.\.(\d+)$/);
-
-        if (rangeMatch) {
-            const start = parseInt(rangeMatch[1]);
-            const end = parseInt(rangeMatch[2]);
-            if (isNaN(start) || isNaN(end)) return [];
-            return Array.from({ length: end - start + 1 }, (_, i) => start + i);
-        }
-
-        const num = parseInt(segment);
-        return isNaN(num) ? [] : [num];
-    });
-}
-
 interface ProcessOptions {
-    reportNumbers?: number[] | 'all';
-    incidentIds?: number[] | 'all';
     provider: EmbeddingProvider;
 }
 
 async function parseAndValidateArgs(): Promise<ProcessOptions | null> {
     const argv = await yargs(hideBin(process.argv))
-        .option('incidentId', {
-            type: 'string',
-            description: 'Incident ID(s) to process (comma-separated) or "all"'
-        })
-        .option('reportNumber', {
-            type: 'string',
-            description: 'Report number(s) to process (comma-separated) or "all"'
-        })
         .option('provider', {
             type: 'string',
             description: 'Embedding provider to use (openai or voyageai)',
             default: 'openai'
         })
-        .check((argv) => {
-            if (!argv.incidentId && !argv.reportNumber) {
-                throw new Error('At least one of --incidentId or --reportNumber must be provided');
-            }
-            return true;
-        })
         .argv;
 
     const provider = createEmbeddingProvider(argv.provider);
 
-    // Check if processing all items and confirm with user
-    if (argv.incidentId?.toLowerCase() === 'all' || argv.reportNumber?.toLowerCase() === 'all') {
-        const confirmed = await confirm('You\'ve selected to process ALL items. This may take a long time. Continue?');
-        if (!confirmed) {
-            console.log('Operation cancelled');
-            return null;
-        }
-    }
-
-    // Convert command line arguments to the appropriate format
-    const reportNumbers = argv.reportNumber ?
-        (argv.reportNumber.toLowerCase() === 'all' ? 'all' : await parseNumberList(argv.reportNumber)) :
-        undefined;
-
-    const incidentIds = argv.incidentId ?
-        (argv.incidentId.toLowerCase() === 'all' ? 'all' : await parseNumberList(argv.incidentId)) :
-        undefined;
-
-    // Additional validation for empty arrays
-    if (reportNumbers !== 'all' && Array.isArray(reportNumbers) && reportNumbers.length === 0 &&
-        incidentIds !== 'all' && Array.isArray(incidentIds) && incidentIds.length === 0) {
-        console.error('Error: No valid report numbers or incident IDs provided');
+    const confirmed = await confirm('This will process ALL reports, incidents, and classifications. This may take a long time. Continue?');
+    if (!confirmed) {
+        console.log('Operation cancelled');
         return null;
     }
 
     return {
-        reportNumbers,
-        incidentIds,
         provider
     };
 }
 
 async function processItems(options: {
-    reportNumbers?: number[] | 'all';
-    incidentIds?: number[] | 'all';
     provider: EmbeddingProvider;
 }) {
-    const { reportNumbers, incidentIds, provider } = options;
+    const { provider } = options;
 
-    if (reportNumbers) {
-        if (reportNumbers === 'all') {
-            const allReports = await db.select().from(schema.reports);
-            for (const report of allReports) {
-                await processReport(report.reportNumber, provider);
-            }
-        } else if (reportNumbers.length > 0) {
-            for (const reportNum of reportNumbers) {
-                await processReport(reportNum, provider);
-            }
-        }
+    // Create a concurrency limiter
+    const limit = pLimit(CONCURRENCY_LIMIT);
+
+    // Fetch all data first
+    const [allReports, allIncidents, allClassifications] = await Promise.all([
+        db.select().from(schema.reports),
+        db.select().from(schema.incidents),
+        db.select().from(schema.classifications)
+    ]);
+
+    console.log(`Found ${allReports.length} reports, ${allIncidents.length} incidents, and ${allClassifications.length} classifications in database`);
+
+    // Get all existing embeddings in a single query
+    const existingEmbeddings = await db.select({
+        sourceType: schema.embeddings.sourceType,
+        sourceId: schema.embeddings.sourceId
+    })
+    .from(schema.embeddings)
+    .groupBy(schema.embeddings.sourceType, schema.embeddings.sourceId);
+
+    // Create sets of existing embeddings for faster lookups
+    const existingReportEmbeddings = new Set(
+        existingEmbeddings
+            .filter(e => e.sourceType === 'report')
+            .map(e => e.sourceId)
+    );
+    
+    const existingIncidentEmbeddings = new Set(
+        existingEmbeddings
+            .filter(e => e.sourceType === 'incident')
+            .map(e => e.sourceId)
+    );
+    
+    const existingClassificationEmbeddings = new Set(
+        existingEmbeddings
+            .filter(e => e.sourceType === 'classification')
+            .map(e => e.sourceId)
+    );
+
+    // Filter out items that already have embeddings
+    const reportsToProcess = allReports.filter(report => 
+        !existingReportEmbeddings.has(report.reportNumber.toString())
+    );
+    
+    const incidentsToProcess = allIncidents.filter(incident => 
+        !existingIncidentEmbeddings.has(incident.incidentId.toString())
+    );
+    
+    const classificationsToProcess = allClassifications.filter(classification => 
+        !existingClassificationEmbeddings.has(classification.classificationId)
+    );
+
+    console.log(`Need to process ${reportsToProcess.length} reports, ${incidentsToProcess.length} incidents, and ${classificationsToProcess.length} classifications`);
+
+    // Create processing tasks only for items that need processing
+    const allProcessingTasks = [
+        ...reportsToProcess.map(report => 
+            limit(() => processReport(report.reportNumber, provider))
+        ),
+        ...incidentsToProcess.map(incident => 
+            limit(() => processIncident(incident.incidentId, provider))
+        ),
+        ...classificationsToProcess.map(classification => 
+            limit(() => processClassification(classification.classificationId, provider))
+        )
+    ];
+
+    if (allProcessingTasks.length === 0) {
+        console.log('No items to process. All embeddings are up to date.');
+        return;
     }
 
-    if (incidentIds) {
-        if (incidentIds === 'all') {
-            const allIncidents = await db.select().from(schema.incidents);
-            for (const incident of allIncidents) {
-                await processIncident(incident.incidentId, provider);
-            }
-        } else if (incidentIds.length > 0) {
-            for (const incidentId of incidentIds) {
-                await processIncident(incidentId, provider);
-            }
-        }
-    }
+    await Promise.all(allProcessingTasks);
+
+    console.log('All processing completed');
 }
 
 async function main() {
