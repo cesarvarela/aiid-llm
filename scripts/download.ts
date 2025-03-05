@@ -3,10 +3,12 @@ import * as schema from '../db/schema';
 import { eq, inArray, sql } from 'drizzle-orm';
 import { db, close } from '../db';
 import QUERIES from '../graphql/queries';
-import { User, Entity, Report, Incident } from '../graphql/generated/graphql';
+import { User, Entity, Report, Incident, Classification, Attribute } from '../graphql/generated/graphql';
 import { DocumentNode } from 'graphql';
-import { ApolloClient, InMemoryCache, HttpLink, QueryOptions, OperationVariables, from } from '@apollo/client';
+import { ApolloClient, InMemoryCache, HttpLink, from } from '@apollo/client';
 import { RetryLink } from '@apollo/client/link/retry';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 
 const BATCH_SIZE = 100;
 const API_URL = 'https://incidentdatabase.ai/api/graphql';
@@ -208,6 +210,30 @@ const processIncident = async (incident: Incident) => {
   });
 };
 
+const processClassification = async (classification: Classification) => {
+
+  const attributes = classification.attributes?.map(attr => ({
+    short_name: attr?.short_name || '',
+    value_json: attr?.value_json || ''
+  })) || [];
+
+  const incidentIds = classification.incidents?.map(incident => incident?.incident_id).filter(Boolean) as number[] || [];
+  const reportNumbers = classification.reports?.map(report => report?.report_number).filter(Boolean) as number[] || [];
+
+  await db.insert(schema.classifications)
+    .values({
+      classificationId: classification._id,
+      namespace: classification.namespace,
+      notes: classification.notes || null,
+      publish: classification.publish || false,
+      attributes,
+      incidents: incidentIds,
+      reports: reportNumbers,
+      createdAt: new Date(),
+      dateModified: new Date(),
+    } as typeof schema.classifications.$inferInsert);
+};
+
 const COLLECTIONS: CollectionConfig[] = [
   {
     queryName: 'users',
@@ -233,19 +259,63 @@ const COLLECTIONS: CollectionConfig[] = [
     sortField: 'incident_id',
     processItem: processIncident,
   },
+  {
+    queryName: 'classifications',
+    query: QUERIES.classifications,
+    sortField: 'namespace',
+    processItem: processClassification,
+  },
 ]
 
 async function fetchAndProcessCollection<T>(config: CollectionConfig): Promise<void> {
   let hasMore = true;
   let skip = 0;
+  
+  // Get the IDs of all existing items to skip them
+  const existingIds = await getExistingIds(config.queryName);
+  console.log(`Found ${existingIds.length} existing ${config.queryName} to skip`);
 
   while (hasMore) {
+    // Prepare variables for the query
+    const variables: any = {
+      limit: BATCH_SIZE,
+      skip,
+    };
+
+    // Add filter to skip existing items
+    // Add filter based on the collection type
+    switch (config.queryName) {
+      case 'users':
+        variables.filter = {
+          userId: { NOT: { IN: existingIds } }
+        };
+        break;
+      case 'entities':
+        variables.filter = {
+          entity_id: { NOT: { IN: existingIds } }
+        };
+        break;
+      case 'reports':
+        variables.filter = {
+          report_number: { NOT: { IN: existingIds } }
+        };
+        break;
+      case 'incidents':
+        variables.filter = {
+          incident_id: { NOT: { IN: existingIds } }
+        };
+        break;
+      case 'classifications':
+        variables.filter = {
+          _id: { NOT: { IN: existingIds } }
+        };
+        break;
+    }
+
+    // Execute the query with the filter
     const response = await client.query({
       query: config.query,
-      variables: {
-        limit: BATCH_SIZE,
-        skip,
-      },
+      variables,
       fetchPolicy: 'no-cache'
     });
 
@@ -268,19 +338,52 @@ async function fetchAndProcessCollection<T>(config: CollectionConfig): Promise<v
   }
 }
 
-async function truncate() {
+async function getExistingIds(collectionName: string): Promise<(string | number)[]> {
+  switch (collectionName) {
+    case 'users':
+      const users = await db.select({ id: schema.users.userId }).from(schema.users);
+      return users.map(u => u.id);
+    case 'entities':
+      const entities = await db.select({ id: schema.entities.entityId }).from(schema.entities);
+      return entities.map(e => e.id);
+    case 'reports':
+      const reports = await db.select({ id: schema.reports.reportNumber }).from(schema.reports);
+      return reports.map(r => r.id);
+    case 'incidents':
+      const incidents = await db.select({ id: schema.incidents.incidentId }).from(schema.incidents);
+      return incidents.map(i => i.id);
+    case 'classifications':
+      const classifications = await db.select({ id: schema.classifications.classificationId }).from(schema.classifications);
+      return classifications.map(c => c.id);
+    default:
+      return [];
+  }
+}
 
+async function truncateDatabase() {
   await db.execute(sql`TRUNCATE TABLE ${schema.incidents} CASCADE`);
   await db.execute(sql`TRUNCATE TABLE ${schema.reports} CASCADE`);
   await db.execute(sql`TRUNCATE TABLE ${schema.entities} CASCADE`);
   await db.execute(sql`TRUNCATE TABLE ${schema.users} CASCADE`);
+  await db.execute(sql`TRUNCATE TABLE ${schema.classifications} CASCADE`);
 }
 
-async function main() {
+async function main(options: {
+  truncate?: boolean;
+} = {}) {
+  const { 
+    truncate = false
+  } = options;
+  
   try {
     console.log('Downloading data from the AIID API...');
 
-    await truncate();
+    if(truncate) {
+      console.log('Truncating existing data...');
+      await truncateDatabase();
+    } else {
+      console.log('Skipping truncation, will only add new items...');
+    }
 
     for (const collection of COLLECTIONS) {
       console.log(`Downloading ${collection.queryName}...`);
@@ -295,5 +398,19 @@ async function main() {
 }
 
 if (require.main === module) {
-  main()
+  // Parse command line arguments using yargs
+  const argv = yargs(hideBin(process.argv))
+    .option('truncate', {
+      alias: 't',
+      type: 'boolean',
+      description: 'Truncate existing data before downloading',
+      default: false
+    })
+    .help()
+    .alias('help', 'h')
+    .parseSync();
+  
+  main({ 
+    truncate: argv.truncate
+  });
 }
