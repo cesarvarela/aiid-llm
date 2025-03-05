@@ -2,8 +2,8 @@ import { gql } from 'graphql-tag';
 
 const QUERIES = {
     incidents: gql`
-      query FetchIncidents($limit: Int!, $skip: Int!) {
-        incidents(pagination: { limit: $limit, skip: $skip }, sort: { incident_id: ASC }) {
+      query FetchIncidents($limit: Int!, $skip: Int!, $filter: IncidentFilterType) {
+        incidents(pagination: { limit: $limit, skip: $skip }, sort: { incident_id: ASC }, filter: $filter) {
           incident_id
           title
           description
@@ -40,8 +40,8 @@ const QUERIES = {
       }
     `,
     reports: gql`
-      query FetchReports($limit: Int!, $skip: Int!) {
-        reports(pagination: { limit: $limit, skip: $skip }, sort: { report_number: ASC }) {
+      query FetchReports($limit: Int!, $skip: Int!, $filter: ReportFilterType) {
+        reports(pagination: { limit: $limit, skip: $skip }, sort: { report_number: ASC }, filter: $filter) {
           report_number
           title
           text
@@ -71,8 +71,8 @@ const QUERIES = {
       }
     `,
     entities: gql`
-      query FetchEntities($limit: Int!, $skip: Int!) {
-        entities(pagination: { limit: $limit, skip: $skip }, sort: { entity_id: ASC }) {
+      query FetchEntities($limit: Int!, $skip: Int!, $filter: EntityFilterType) {
+        entities(pagination: { limit: $limit, skip: $skip }, sort: { entity_id: ASC }, filter: $filter) {
           entity_id
           name
           created_at
@@ -81,8 +81,8 @@ const QUERIES = {
       }
     `,
     users: gql`
-      query FetchUsers($limit: Int!, $skip: Int!) {
-        users(pagination: { limit: $limit, skip: $skip }, sort: { userId: ASC }) {
+      query FetchUsers($limit: Int!, $skip: Int!, $filter: UserFilterType) {
+        users(pagination: { limit: $limit, skip: $skip }, sort: { userId: ASC }, filter: $filter) {
           userId
           first_name
           last_name
@@ -91,8 +91,9 @@ const QUERIES = {
       }
     `,
     classifications: gql`
-      query FetchClassifications($limit: Int!, $skip: Int!) {
-        classifications(pagination: { limit: $limit, skip: $skip }) {
+      query FetchClassifications($limit: Int!, $skip: Int!, $filter: ClassificationFilterType) {
+        classifications(pagination: { limit: $limit, skip: $skip }, filter: $filter) {
+          _id
           namespace
           notes
           publish

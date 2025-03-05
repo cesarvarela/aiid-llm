@@ -6,6 +6,7 @@
     "@apollo/client": "^3.13.1",
     "@radix-ui/react-slot": "^1.1.2",
     "@tailwindcss/postcss": "^4.0.9",
+    "@types/yargs": "^17.0.33",
     "ai": "^4.1.46",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

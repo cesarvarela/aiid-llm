@@ -139,8 +139,7 @@ export const incidentRelations = relations(incidents, ({ many }) => ({
     implicatedSystems: many(implicatedSystems),
 }));
 
-
-export const sourceTypes = ["incident", "report"] as const;
+export const sourceTypes = ["incident", "report", "classification"] as const;
 export type SourceType = typeof sourceTypes[number];
 export const sourceTypeEnum = pgEnum('source_type', sourceTypes);
 
@@ -158,4 +157,16 @@ export const embeddings = pgTable('embeddings', {
     return {
         sourceIdx: uniqueIndex('sourceIdx').on(table.sourceType, table.sourceId, table.chunkIndex)
     };
+});
+
+export const classifications = pgTable('classifications', {
+    classificationId: text('classificationId').primaryKey(),
+    namespace: text('namespace').notNull(),
+    notes: text('notes'),
+    publish: boolean('publish'),
+    attributes: jsonb('attributes').notNull().default('[]'),
+    incidents: integer('incidents').array(),
+    reports: integer('reports').array(),
+    createdAt: timestamp('createdAt').defaultNow().notNull(),
+    dateModified: timestamp('dateModified'),
 });
