@@ -253,20 +253,6 @@ async function processClassification(classificationId: string, provider: Embeddi
     }
 }
 
-async function confirm(message: string): Promise<boolean> {
-    const rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout
-    });
-
-    return new Promise(resolve => {
-        rl.question(`${message} (y/N) `, answer => {
-            rl.close();
-            resolve(answer.toLowerCase() === 'y');
-        });
-    });
-}
-
 interface ProcessOptions {
     provider: EmbeddingProvider;
 }
@@ -281,12 +267,6 @@ async function parseAndValidateArgs(): Promise<ProcessOptions | null> {
         .argv;
 
     const provider = createEmbeddingProvider(argv.provider);
-
-    const confirmed = await confirm('This will process ALL reports, incidents, and classifications. This may take a long time. Continue?');
-    if (!confirmed) {
-        console.log('Operation cancelled');
-        return null;
-    }
 
     return {
         provider

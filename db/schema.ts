@@ -164,7 +164,7 @@ export const classifications = pgTable('classifications', {
     namespace: text('namespace').notNull(),
     notes: text('notes'),
     publish: boolean('publish'),
-    attributes: jsonb('attributes').notNull().default('[]'),
+    attributes: jsonb('attributes').notNull().default('[]'), //should be normalized but not necessary for now
     incidents: integer('incidents').array(),
     reports: integer('reports').array(),
     createdAt: timestamp('createdAt').defaultNow().notNull(),
