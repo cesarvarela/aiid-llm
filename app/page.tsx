@@ -7,44 +7,17 @@ import { Button } from "../components/ui/button"
 import { Input } from "../components/ui/input"
 import { MarkdownRenderer } from "../components/ui/markdown-renderer"
 import AuthStatus from "../components/auth-status"
-import { useSession } from "next-auth/react"
-import { useRouter } from "next/navigation"
 
 export default function ChatInterface() {
-  const { status } = useSession()
-  const router = useRouter()
+
   const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat()
   const messagesEndRef = useRef<HTMLDivElement>(null)
-
-  // Redirect to sign-in page if not authenticated
-  useEffect(() => {
-    if (status === "unauthenticated") {
-      router.push("/auth/signin")
-    }
-  }, [status, router])
 
   useEffect(() => {
     if (messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({ behavior: "smooth" })
     }
-  }, [messages])
-
-  // If still loading the session, show a loading state
-  if (status === "loading") {
-    return (
-      <div className="flex h-screen items-center justify-center bg-[#0D1117] text-white">
-        <div className="space-y-4 text-center">
-          <div className="h-12 w-12 animate-spin rounded-full border-4 border-t-blue-500 mx-auto"></div>
-          <p>Loading session...</p>
-        </div>
-      </div>
-    )
-  }
-
-  // If not authenticated, don't render the chat interface
-  if (status === "unauthenticated") {
-    return null
-  }
+  }, [messages]);
 
   return (
     <div className="flex flex-col h-screen bg-[#0D1117] text-white">

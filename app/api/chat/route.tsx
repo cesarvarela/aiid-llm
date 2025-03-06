@@ -59,61 +59,80 @@ async function getSystemPrompt() {
 export async function POST(req: Request) {
     const { messages } = await req.json();
 
-    // Get the system prompt with featured incidents
     const prompt = await getSystemPrompt();
+
+    const search = new Search(createEmbeddingProvider('openai'));
 
     const result = streamText({
         model: openai('gpt-4o'),
         system: prompt,
         messages,
         tools: {
-            getReportInformation: tool({
-                description: `get information about a specific report`,
+            getIncidentById: tool({
+                description: `Get an incident by ID`,
                 parameters: z.object({
-                    reportNumber: z.number().describe('the report number'),
+                    incidentId: z.number().describe('the incident ID to fetch'),
+                    includeClassifications: z.boolean().describe('whether to include classifications'),
                 }),
-                execute: async ({ reportNumber }) => {
+                execute: async ({ incidentId, includeClassifications = false }) => {
+                    try {
+                        const incident = await search.getIncidents([incidentId], includeClassifications);
 
-                    const report = await search.findReportByNumber(reportNumber);
-
-                    if (!report) {
-                        return { error: 'Report not found' };
+                        return incident;
+                    } catch (error) {
+                        console.error(error);
+                        return { error: 'Error fetching incident' };
                     }
-
-                    return report;
-                },
-            }),
-            getIncidentInformation: tool({
-                description: `get information about a specific incident`,
-                parameters: z.object({
-                    incidentId: z.number().describe('the incident id'),
-                }),
-                execute: async ({ incidentId }) => {
-                    const incident = await search.findIncidentById(incidentId);
-
-                    return incident;
                 },
             }),
             getSimilarIncidentsByIncidentId: tool({
-                description: `Get similar incidents to an incident by incident id`,
+                description: `Get similar incidents by incident ID`,
                 parameters: z.object({
-                    incidentId: z.number().describe('the incident id'),
+                    incidentId: z.number().describe('the incident ID to find similar incidents for'),
+                    includeClassifications: z.boolean().describe('whether to include classifications'),
                 }),
-                execute: async ({ incidentId }) => {
-                    const results = await search.findSimilarIncidentsByIncidentId(incidentId);
+                execute: async ({ incidentId, includeClassifications = false }) => {
+                    try {
+                        const results = await search.findSimilarIncidentsByIncidentId(incidentId, includeClassifications);
 
-                    return results;
+                        return results;
+                    } catch (error) {
+                        console.error(error);
+                        return { error: 'Error fetching similar incidents' };
+                    }
                 },
             }),
             getSimilarIncidentsByText: tool({
                 description: `Get similar incidents by text`,
                 parameters: z.object({
                     text: z.string().describe('the text to search for'),
+                    includeClassifications: z.boolean().describe('whether to include classifications'),
                 }),
-                execute: async ({ text }) => {
-                    const results = await search.findSimilarIncidentsByText(text);
+                execute: async ({ text, includeClassifications = false }) => {
+                    try {
+                        const results = await search.findSimilarIncidentsByText(text, includeClassifications);
 
-                    return results;
+                        return results;
+                    } catch (error) {
+                        console.error(error);
+                        return { error: 'Error fetching similar incidents by text' };
+                    }
+                },
+            }),
+            getIncidentsByReportIds: tool({
+                description: `Get incidents related to specific report IDs`,
+                parameters: z.object({
+                    reportIds: z.array(z.number()).describe('array of report IDs to find related incidents for'),
+                    includeClassifications: z.boolean().describe('whether to include classifications'),
+                }),
+                execute: async ({ reportIds, includeClassifications = false }) => {
+                    try {
+                        const results = await search.findIncidentsByReportIds(reportIds, includeClassifications);
+                        return results;
+                    } catch (error) {
+                        console.error(error);
+                        return { error: 'Error fetching incidents by report IDs' };
+                    }
                 },
             }),
             getInformation: tool({

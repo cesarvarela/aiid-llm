@@ -23,7 +23,7 @@ export default function AuthStatus() {
           Signed in as <strong>{session.user?.email}</strong>
         </span>
         <button
-          onClick={() => signOut({ callbackUrl: '/auth/signin' })}
+          onClick={() => signOut({ callbackUrl: '/api/auth/signin' })}
           className="rounded-md bg-red-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
         >
           Sign out
@@ -36,7 +36,7 @@ export default function AuthStatus() {
     <div className="flex items-center space-x-4">
       <span className="text-sm text-gray-700">Not signed in</span>
       <Link
-        href="/auth/signin"
+        href="/api/auth/signin"
         className="rounded-md bg-blue-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
       >
         Sign in
