@@ -27,3 +27,15 @@ export type IncidentWithClassifications = InferSelectModel<typeof schema.inciden
 export interface TaxonomyMap {
   [key: string]: Taxa;
 }
+
+/**
+ * Type for similar incidents result
+ */
+export interface SimilarIncidentsResult {
+  incidents: IncidentWithClassifications[];
+  taxonomyData: {
+    namespace: string;
+    classificationCount: number;
+    message?: string;
+  };
+}

@@ -4,7 +4,7 @@ import { createEmbeddingProvider } from '@/lib/utils';
 import { generateText } from "ai"
 import { openai } from "@ai-sdk/openai"
 import { gql } from 'graphql-tag';
-import { SearchResult, IncidentWithClassifications } from '@/lib/types';
+import { SearchResult, IncidentWithClassifications, SimilarIncidentsResult } from '@/lib/types';
 import { Taxa } from '@/graphql/generated/graphql';
 import { getApolloClient } from '@/lib/apolloClient';
 
