@@ -34,7 +34,6 @@
   },
   "scripts": {
     "generate": "npx drizzle-kit generate",
-    "download": "npx tsx --env-file=.env scripts/download.ts",
     "embeddings": "npx tsx --env-file=.env scripts/embeddings.ts",
     "search": "npx tsx --env-file=.env scripts/search.ts",
     "dev": "next dev",

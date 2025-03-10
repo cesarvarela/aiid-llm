@@ -1,12 +1,13 @@
 import { db } from '../db';
 import * as schema from '../db/schema';
-import { eq, and } from 'drizzle-orm';
-import readline from 'readline';
 import { hideBin } from 'yargs/helpers';
 import yargs from 'yargs';
 import { EmbeddingProvider } from '../types';
 import { createEmbeddingProvider } from '@/lib/utils';
 import pLimit from 'p-limit';
+import { getApolloClient } from '@/lib/apolloClient';
+import QUERIES from '@/graphql/queries';
+import { gql } from '@apollo/client';
 
 // Reducing chunk size to avoid token limit errors
 // OpenAI's text-embedding-3-small has a limit of 8192 tokens
@@ -42,9 +43,19 @@ function chunkText(text: string): string[] {
 async function processReport(reportNumber: number, provider: EmbeddingProvider) {
     console.log(`Processing report ${reportNumber}`);
 
-    const report = await db.query.reports.findFirst({
-        where: eq(schema.reports.reportNumber, reportNumber),
+    const client = getApolloClient();
+    const { data } = await client.query({
+        query: QUERIES.reports,
+        variables: {
+            limit: 1,
+            skip: 0,
+            filter: {
+                report_number: { EQ: reportNumber }
+            }
+        }
     });
+
+    const report = data.reports?.[0];
 
     if (!report) {
         console.error(`Report ${reportNumber} not found`);
@@ -55,10 +66,10 @@ async function processReport(reportNumber: number, provider: EmbeddingProvider) 
         `Title: ${report.title}`,
         `URL: ${report.url}`,
         `Language: ${report.language}`,
-        `Source: ${report.sourceDomain}`,
+        `Source: ${report.source_domain}`,
         `Authors: ${report.authors?.join(', ') || ''}`,
         `Tags: ${report.tags?.join(', ') || ''}`,
-        `Date Published: ${report.datePublished?.toISOString() || ''}`
+        `Date Published: ${report.date_published || ''}`
     ].join('\n');
 
     try {
@@ -83,7 +94,7 @@ async function processReport(reportNumber: number, provider: EmbeddingProvider) 
             }
         } as typeof schema.embeddings.$inferInsert);
 
-        const chunks = report.plainText ? chunkText(report.plainText) : [];
+        const chunks = report.plain_text ? chunkText(report.plain_text) : [];
 
         // Process all chunks and collect their embeddings
         const chunkEmbeddings = await Promise.all(
@@ -123,9 +134,19 @@ async function processReport(reportNumber: number, provider: EmbeddingProvider) 
 async function processIncident(incidentId: number, provider: EmbeddingProvider) {
     console.log(`Processing incident ${incidentId}`);
 
-    const incident = await db.query.incidents.findFirst({
-        where: eq(schema.incidents.incidentId, incidentId),
+    const client = getApolloClient();
+    const { data } = await client.query({
+        query: QUERIES.incidents,
+        variables: {
+            limit: 1,
+            skip: 0,
+            filter: {
+                incident_id: { EQ: incidentId }
+            }
+        }
     });
+
+    const incident = data.incidents?.[0];
 
     if (!incident) {
         console.error(`Incident ${incidentId} not found`);
@@ -134,8 +155,8 @@ async function processIncident(incidentId: number, provider: EmbeddingProvider) 
 
     const metadataChunk = [
         `Title: ${incident.title}`,
-        `Editor Notes: ${incident.editorNotes || ''}`,
-        `Date: ${incident.date?.toISOString() || ''}`
+        `Editor Notes: ${incident.editor_notes || ''}`,
+        `Date: ${incident.date || ''}`
     ].join('\n');
 
     try {
@@ -156,7 +177,7 @@ async function processIncident(incidentId: number, provider: EmbeddingProvider) 
             metadata: {
                 incidentId: incidentId,
                 title: incident.title,
-                date: incident.date?.toISOString()
+                date: incident.date
             }
         } as typeof schema.embeddings.$inferInsert);
 
@@ -176,7 +197,7 @@ async function processIncident(incidentId: number, provider: EmbeddingProvider) 
                     metadata: {
                         incidentId: incidentId,
                         title: incident.title,
-                        date: incident.date?.toISOString()
+                        date: incident.date
                     }
                 } as typeof schema.embeddings.$inferInsert;
             })
@@ -200,9 +221,19 @@ async function processIncident(incidentId: number, provider: EmbeddingProvider) 
 async function processClassification(classificationId: string, provider: EmbeddingProvider) {
     console.log(`Processing classification ${classificationId}`);
 
-    const classification = await db.query.classifications.findFirst({
-        where: eq(schema.classifications.classificationId, classificationId),
+    const client = getApolloClient();
+    const { data } = await client.query({
+        query: QUERIES.classifications,
+        variables: {
+            limit: 1,
+            skip: 0,
+            filter: {
+                _id: { EQ: classificationId }
+            }
+        }
     });
+
+    const classification = data.classifications?.[0];
 
     if (!classification) {
         console.error(`Classification ${classificationId} not found`);
@@ -211,7 +242,7 @@ async function processClassification(classificationId: string, provider: Embeddi
 
     // Create metadata chunk from classification data
     const attributesText = classification.attributes 
-        ? (classification.attributes as Array<{short_name: string, value_json: string}>).map(attr => `${attr.short_name}: ${attr.value_json}`).join('\n')
+        ? classification.attributes.map(attr => `${attr.short_name}: ${attr.value_json}`).join('\n')
         : '';
 
     const metadataChunk = [
@@ -281,15 +312,6 @@ async function processItems(options: {
     // Create a concurrency limiter
     const limit = pLimit(CONCURRENCY_LIMIT);
 
-    // Fetch all data first
-    const [allReports, allIncidents, allClassifications] = await Promise.all([
-        db.select().from(schema.reports),
-        db.select().from(schema.incidents),
-        db.select().from(schema.classifications)
-    ]);
-
-    console.log(`Found ${allReports.length} reports, ${allIncidents.length} incidents, and ${allClassifications.length} classifications in database`);
-
     // Get all existing embeddings in a single query
     const existingEmbeddings = await db.select({
         sourceType: schema.embeddings.sourceType,
@@ -317,31 +339,127 @@ async function processItems(options: {
             .map(e => e.sourceId)
     );
 
+    // Fetch data in smaller batches with only necessary fields
+    const client = getApolloClient();
+    
+    // Custom GraphQL queries with minimal fields
+    const reportsMinimalQuery = gql`
+      query FetchReportsMinimal($limit: Int!, $skip: Int!) {
+        reports(pagination: { limit: $limit, skip: $skip }, sort: { report_number: ASC }) {
+          report_number
+        }
+      }
+    `;
+    
+    const incidentsMinimalQuery = gql`
+      query FetchIncidentsMinimal($limit: Int!, $skip: Int!) {
+        incidents(pagination: { limit: $limit, skip: $skip }, sort: { incident_id: ASC }) {
+          incident_id
+        }
+      }
+    `;
+    
+    const classificationsMinimalQuery = gql`
+      query FetchClassificationsMinimal($limit: Int!, $skip: Int!) {
+        classifications(pagination: { limit: $limit, skip: $skip }) {
+          _id
+        }
+      }
+    `;
+
+    // Fetch IDs only first
+    const batchSize = 500;
+    let allReportIds: number[] = [];
+    let allIncidentIds: number[] = [];
+    let allClassificationIds: string[] = [];
+    
+    // Fetch report IDs
+    let hasMoreReports = true;
+    let reportSkip = 0;
+    
+    while (hasMoreReports) {
+        const { data } = await client.query({
+            query: reportsMinimalQuery,
+            variables: {
+                limit: batchSize,
+                skip: reportSkip
+            }
+        });
+        
+        const batchReports = data.reports || [];
+        allReportIds = [...allReportIds, ...batchReports.map(r => r.report_number)];
+        
+        reportSkip += batchSize;
+        hasMoreReports = batchReports.length === batchSize;
+    }
+    
+    // Fetch incident IDs
+    let hasMoreIncidents = true;
+    let incidentSkip = 0;
+    
+    while (hasMoreIncidents) {
+        const { data } = await client.query({
+            query: incidentsMinimalQuery,
+            variables: {
+                limit: batchSize,
+                skip: incidentSkip
+            }
+        });
+        
+        const batchIncidents = data.incidents || [];
+        allIncidentIds = [...allIncidentIds, ...batchIncidents.map(i => i.incident_id)];
+        
+        incidentSkip += batchSize;
+        hasMoreIncidents = batchIncidents.length === batchSize;
+    }
+    
+    // Fetch classification IDs
+    let hasMoreClassifications = true;
+    let classificationSkip = 0;
+    
+    while (hasMoreClassifications) {
+        const { data } = await client.query({
+            query: classificationsMinimalQuery,
+            variables: {
+                limit: batchSize,
+                skip: classificationSkip
+            }
+        });
+        
+        const batchClassifications = data.classifications || [];
+        allClassificationIds = [...allClassificationIds, ...batchClassifications.map(c => c._id)];
+        
+        classificationSkip += batchSize;
+        hasMoreClassifications = batchClassifications.length === batchSize;
+    }
+    
+    console.log(`Found ${allReportIds.length} reports, ${allIncidentIds.length} incidents, and ${allClassificationIds.length} classifications in database`);
+
     // Filter out items that already have embeddings
-    const reportsToProcess = allReports.filter(report => 
-        !existingReportEmbeddings.has(report.reportNumber.toString())
+    const reportIdsToProcess = allReportIds.filter(id => 
+        !existingReportEmbeddings.has(id.toString())
     );
     
-    const incidentsToProcess = allIncidents.filter(incident => 
-        !existingIncidentEmbeddings.has(incident.incidentId.toString())
+    const incidentIdsToProcess = allIncidentIds.filter(id => 
+        !existingIncidentEmbeddings.has(id.toString())
     );
     
-    const classificationsToProcess = allClassifications.filter(classification => 
-        !existingClassificationEmbeddings.has(classification.classificationId)
+    const classificationIdsToProcess = allClassificationIds.filter(id => 
+        !existingClassificationEmbeddings.has(id)
     );
 
-    console.log(`Need to process ${reportsToProcess.length} reports, ${incidentsToProcess.length} incidents, and ${classificationsToProcess.length} classifications`);
+    console.log(`Need to process ${reportIdsToProcess.length} reports, ${incidentIdsToProcess.length} incidents, and ${classificationIdsToProcess.length} classifications`);
 
     // Create processing tasks only for items that need processing
     const allProcessingTasks = [
-        ...reportsToProcess.map(report => 
-            limit(() => processReport(report.reportNumber, provider))
+        ...reportIdsToProcess.map(reportId => 
+            limit(() => processReport(reportId, provider))
         ),
-        ...incidentsToProcess.map(incident => 
-            limit(() => processIncident(incident.incidentId, provider))
+        ...incidentIdsToProcess.map(incidentId => 
+            limit(() => processIncident(incidentId, provider))
         ),
-        ...classificationsToProcess.map(classification => 
-            limit(() => processClassification(classification.classificationId, provider))
+        ...classificationIdsToProcess.map(classificationId => 
+            limit(() => processClassification(classificationId, provider))
         )
     ];
 

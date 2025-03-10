@@ -4,7 +4,7 @@ import { createEmbeddingProvider } from '@/lib/utils';
 import { generateText } from "ai"
 import { openai } from "@ai-sdk/openai"
 import { gql } from 'graphql-tag';
-import { SearchResult, IncidentWithClassifications, SimilarIncidentsResult } from '@/lib/types';
+import { SearchResult } from '@/lib/types';
 import { Taxa } from '@/graphql/generated/graphql';
 import { getApolloClient } from '@/lib/apolloClient';
 
@@ -42,7 +42,7 @@ async function fetchTaxonomyDetails(namespace: string): Promise<Taxa | null> {
   }
 }
 
-async function getSimilarIncidentsClassifications(text: string, taxonomy: string): Promise<SimilarIncidentsResult> {
+async function getSimilarIncidentsClassifications(text: string, taxonomy: string) {
 
   const results = await search.vectorSearch(text) as SearchResult[];
 
@@ -61,7 +61,7 @@ async function getSimilarIncidentsClassifications(text: string, taxonomy: string
     .filter(result => result.sourceType === 'incident')
     .map(result => parseInt(result.sourceId, 10));
 
-  const incidents = await search.getIncidents(incidentIds, true) as IncidentWithClassifications[];
+  const incidents = await search.getIncidents(incidentIds, true);
 
   const incidentsWithClassifications = incidents
     .filter(incident => incident.classifications && incident.classifications.length > 0)
