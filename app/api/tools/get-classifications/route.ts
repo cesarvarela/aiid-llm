@@ -178,8 +178,12 @@ Return your response as a JSON object with the following structure:
     "attribute2": "value2",
     ...
   },
-  "explanation": "A detailed explanation of your classification choices."
-}`;
+  "explanation": "A detailed explanation of your classification choices.",
+  "confidence": "A confidence score between 0"
+}
+  
+DO NOT include any other text in your response, nor any other characters.
+`;
 
   return prompt;
 }

@@ -1,7 +1,9 @@
 import { EmbeddingProvider } from "../types";
 import { db } from "../db";
 import * as schema from "../db/schema";
-import { cosineDistance, desc, eq, gt, inArray, and, sql } from "drizzle-orm";
+import { cosineDistance, desc, gt } from "drizzle-orm";
+import { getApolloClient } from "./apolloClient";
+import QUERIES from "../graphql/queries";
 
 
 export class Search {
@@ -28,11 +30,19 @@ export class Search {
     }
 
     async findReportByNumber(reportNumber: number) {
-        const report = await db.query.reports.findFirst({
-            where: eq(schema.reports.reportNumber, reportNumber),
+        const client = getApolloClient();
+        const { data } = await client.query({
+            query: QUERIES.reports,
+            variables: {
+                limit: 1,
+                skip: 0,
+                filter: {
+                    report_number: { EQ: reportNumber }
+                }
+            }
         });
 
-        return report;
+        return data.reports?.[0] || null;
     }
 
     /**
@@ -46,25 +56,43 @@ export class Search {
             return [];
         }
 
-        // Get the incidents
-        const incidents = await db.query.incidents.findMany({
-            where: inArray(schema.incidents.incidentId, incidentIds),
+        const client = getApolloClient();
+        const { data } = await client.query({
+            query: QUERIES.incidents,
+            variables: {
+                limit: incidentIds.length,
+                skip: 0,
+                filter: {
+                    incident_id: { IN: incidentIds }
+                }
+            }
         });
+
+        const incidents = data.incidents || [];
 
         if (!includeClassifications) {
             return incidents;
         }
 
         // Get classifications related to these incidents
-        const classifications = await db.query.classifications.findMany({
-            where: sql`${schema.classifications.incidents} && ARRAY[${sql.join(incidentIds.map(id => sql`${id}`), sql`, `)}]::integer[]`,
+        const { data: classificationData } = await client.query({
+            query: QUERIES.classifications,
+            variables: {
+                limit: 100,
+                skip: 0,
+                filter: {
+                    incidents: { IN: incidentIds }
+                }
+            }
         });
+
+        const classifications = classificationData.classifications || [];
 
         // Combine incidents with their classifications
         const incidentsWithClassifications = incidents.map(incident => {
             const relatedClassifications = classifications.filter(
                 classification => classification.incidents &&
-                    classification.incidents.includes(incident.incidentId)
+                    classification.incidents.some(inc => inc.incident_id === incident.incident_id)
             );
 
             return {
@@ -77,37 +105,66 @@ export class Search {
     }
 
     async findSimilarIncidentsByIncidentId(incidentId: number, includeClassifications = false) {
-        const incident = await await db.query.incidents.findFirst({
-            where: eq(schema.incidents.incidentId, incidentId),
+        const client = getApolloClient();
+        const { data } = await client.query({
+            query: QUERIES.incidents,
+            variables: {
+                limit: 1,
+                skip: 0,
+                filter: {
+                    incident_id: { EQ: incidentId }
+                }
+            }
         });
 
+        const incident = data.incidents?.[0];
         if (!incident) {
             return [];
         }
 
         const results = await this.vectorSearch(incident.title, 0.3);
-        
+
         const similarIncidentIds = results
             .filter(result => result.sourceType === 'incident')
             .map(result => parseInt(result.sourceId));
-            
+
         return this.getIncidents(similarIncidentIds, includeClassifications);
     }
 
     async findSimilarIncidentsByText(text: string, includeClassifications = false) {
         const results = await this.vectorSearch(text, 0.3);
 
-        const incidentResults = results.filter(result => result.sourceType === 'incident');        
+        const incidentResults = results.filter(result => result.sourceType === 'incident');
         const searchIncidentIds: number[] = incidentResults.map((result) => parseInt(result.sourceId));
-        
+
         const reportResults = results.filter(result => result.sourceType === 'report');
         const searchReportIds: number[] = reportResults.map((result) => parseInt(result.sourceId));
-        
-        const incidentReports = await db.query.incidentReports.findMany({
-            where: inArray(schema.incidentReports.reportNumber, searchReportIds),
+
+        // Get incidents related to these reports using GraphQL
+        const client = getApolloClient();
+        const { data } = await client.query({
+            query: QUERIES.reports,
+            variables: {
+                limit: searchReportIds.length,
+                skip: 0,
+                filter: {
+                    report_number: { IN: searchReportIds }
+                }
+            }
         });
-        
-        const relatedIncidentIds = incidentReports.map(ir => ir.incidentId).filter(Boolean) as number[];
+
+        const reports = data.reports || [];
+
+        // Get all incident IDs from the reports
+        const relatedIncidentIds: number[] = [];
+        for (const report of reports) {
+            if (report.incidents) {
+                for (const incident of report.incidents) {
+                    relatedIncidentIds.push(incident.incident_id);
+                }
+            }
+        }
+
         const allIncidentIds = [...new Set([...searchIncidentIds, ...relatedIncidentIds])];
 
         return this.getIncidents(allIncidentIds, includeClassifications);
@@ -118,15 +175,33 @@ export class Search {
             return [];
         }
 
-        const incidentReports = await db.query.incidentReports.findMany({
-            where: inArray(schema.incidentReports.reportNumber, reportIds),
+        const client = getApolloClient();
+        const { data } = await client.query({
+            query: QUERIES.reports,
+            variables: {
+                limit: reportIds.length,
+                skip: 0,
+                filter: {
+                    report_number: { IN: reportIds }
+                }
+            }
         });
 
-        if (!incidentReports.length) {
-            return [];
+        const reports = data.reports || [];
+
+        // Get all incident IDs from the reports
+        const incidentIds: number[] = [];
+        for (const report of reports) {
+            if (report.incidents) {
+                for (const incident of report.incidents) {
+                    incidentIds.push(incident.incident_id);
+                }
+            }
         }
 
-        const incidentIds = incidentReports.map(ir => ir.incidentId).filter(Boolean) as number[];
+        if (!incidentIds.length) {
+            return [];
+        }
 
         return this.getIncidents(incidentIds, includeClassifications);
     }

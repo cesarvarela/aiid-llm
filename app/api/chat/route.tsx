@@ -3,9 +3,8 @@ import { openai } from '@ai-sdk/openai';
 import { z } from 'zod';
 import { Search } from '../../../lib/Search';
 import { createEmbeddingProvider } from '@/lib/utils';
-import { db } from '@/db';
-import { incidents } from '@/db/schema';
-import { eq, inArray } from 'drizzle-orm';
+import { getApolloClient } from '@/lib/apolloClient';
+import QUERIES from '@/graphql/queries';
 export const maxDuration = 30;
 
 const embeddings = createEmbeddingProvider('openai');
@@ -40,16 +39,26 @@ Follow these rules throughout the conversation.
 `;
 
 async function getSystemPrompt() {
-    // Fetch all featured incidents from the database in a single query
-    const featuredIncidents = await db.query.incidents.findMany({
-        where: inArray(incidents.incidentId, featuredIncidentIds)
+    // Fetch all featured incidents from the database using GraphQL
+    const client = getApolloClient();
+    const { data } = await client.query({
+        query: QUERIES.incidents,
+        variables: {
+            limit: featuredIncidentIds.length,
+            skip: 0,
+            filter: {
+                incident_id: { IN: featuredIncidentIds }
+            }
+        }
     });
+
+    const featuredIncidents = data.incidents || [];
 
     let incidentsList = '';
     let count = 1;
 
     for (const incident of featuredIncidents) {
-        incidentsList += `${count}) Incident ID: ${incident.incidentId}\n   Title: ${incident.title}\n   Brief Description: ${incident.description || 'No description available'}\n\n`;
+        incidentsList += `${count}) Incident ID: ${incident.incident_id}\n   Title: ${incident.title}\n   Brief Description: ${incident.description || 'No description available'}\n\n`;
         count++;
     }
 
@@ -60,8 +69,6 @@ export async function POST(req: Request) {
     const { messages } = await req.json();
 
     const prompt = await getSystemPrompt();
-
-    const search = new Search(createEmbeddingProvider('openai'));
 
     const result = streamText({
         model: openai('gpt-4o'),
