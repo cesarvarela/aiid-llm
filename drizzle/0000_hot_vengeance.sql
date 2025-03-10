@@ -1,5 +1,11 @@
-CREATE TYPE "public"."source_type" AS ENUM('incident', 'report', 'classification');--> statement-breakpoint
-CREATE TABLE "embeddings" (
+CREATE EXTENSION IF NOT EXISTS vector;--> statement-breakpoint
+DO $$ 
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'source_type') THEN
+        CREATE TYPE "public"."source_type" AS ENUM('incident', 'report', 'classification');
+    END IF;
+END $$;--> statement-breakpoint
+CREATE TABLE IF NOT EXISTS "embeddings" (
 	"id" serial PRIMARY KEY NOT NULL,
 	"sourceType" "source_type" NOT NULL,
 	"sourceId" text NOT NULL,
@@ -11,4 +17,9 @@ CREATE TABLE "embeddings" (
 	"metadata" jsonb NOT NULL
 );
 --> statement-breakpoint
-CREATE UNIQUE INDEX "sourceIdx" ON "embeddings" USING btree ("sourceType","sourceId","chunkIndex");
+DO $$
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM pg_indexes WHERE indexname = 'sourceIdx') THEN
+        CREATE UNIQUE INDEX "sourceIdx" ON "embeddings" USING btree ("sourceType","sourceId","chunkIndex");
+    END IF;
+END $$;
