@@ -7,6 +7,7 @@ import { Button } from "../components/ui/button"
 import { Input } from "../components/ui/input"
 import { MarkdownRenderer } from "../components/ui/markdown-renderer"
 import AuthStatus from "../components/auth-status"
+import Link from "next/link"
 
 export default function ChatInterface() {
 
@@ -23,7 +24,12 @@ export default function ChatInterface() {
     <div className="flex flex-col h-screen bg-[#0D1117] text-white">
       <header className="border-b border-gray-700 p-4">
         <div className="flex items-center justify-between">
-          <h1 className="text-xl font-bold">Chat App</h1>
+          <div className="flex items-center space-x-4">
+            <h1 className="text-xl font-bold">Chat App</h1>
+            <Link href="/tools" className="text-blue-400 hover:text-blue-300 text-sm">
+              Tools
+            </Link>
+          </div>
           <AuthStatus />
         </div>
       </header>

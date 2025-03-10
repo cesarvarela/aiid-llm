@@ -9,7 +9,7 @@ export class Search {
     constructor(private provider: EmbeddingProvider) {
     }
 
-    async vectorSearch(query: string, minScore = 0.2, limit = 100) {
+    async vectorSearch(query: string, minScore = 0.2, limit = 1000) {
         const { embedding } = await this.provider.getEmbedding(query);
 
         const results = await db.select({

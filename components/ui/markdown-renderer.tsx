@@ -9,7 +9,7 @@ interface MarkdownRendererProps {
 
 export function MarkdownRenderer({ content }: MarkdownRendererProps) {
     return (
-        <div className="prose dark:prose-invert max-w-none">
+        <div className="prose dark:prose-invert max-w-none overflow-x-auto">
             <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 components={{
