@@ -22,6 +22,7 @@ async function fetchTaxonomyDetails(namespace: string): Promise<Taxa | null> {
         field_list {
           short_name
           short_description
+          permitted_values
         }
       }
     }
