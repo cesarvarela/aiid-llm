@@ -62,7 +62,7 @@ async function getSimilarIncidentsClassifications(text: string, taxonomy: string
     .filter(result => result.sourceType === 'incident')
     .map(result => parseInt(result.sourceId, 10));
 
-  const incidents = await search.getIncidents(incidentIds, true);
+  const incidents = await search.findIncidentsByIds(incidentIds, true);
 
   const incidentsWithClassifications = incidents
     .filter(incident => incident.classifications && incident.classifications.length > 0)

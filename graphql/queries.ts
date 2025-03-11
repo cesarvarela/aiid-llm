@@ -24,17 +24,11 @@ const QUERIES = {
             name
           }
           editors {
-            userId
             first_name
             last_name
-            roles
           }
           reports {
             report_number
-          }
-          tsne {
-            x
-            y
           }
         }
       }
@@ -45,12 +39,10 @@ const QUERIES = {
           report_number
           title
           text
-          plain_text
           description
           url
           source_domain
           image_url
-          cloudinary_id
           language
           date_downloaded
           date_modified
@@ -59,13 +51,12 @@ const QUERIES = {
           authors
           submitters
           tags
-          inputs_outputs
           flag
           is_incident_report
           editor_notes
-          quiet
           user {
-            userId
+            first_name
+            last_name
           }
         }
       }
@@ -77,16 +68,6 @@ const QUERIES = {
           name
           created_at
           date_modified
-        }
-      }
-    `,
-    users: gql`
-      query FetchUsers($limit: Int!, $skip: Int!, $filter: UserFilterType) {
-        users(pagination: { limit: $limit, skip: $skip }, sort: { userId: ASC }, filter: $filter) {
-          userId
-          first_name
-          last_name
-          roles
         }
       }
     `,

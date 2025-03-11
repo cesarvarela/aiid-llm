@@ -83,7 +83,7 @@ export async function POST(req: Request) {
                 }),
                 execute: async ({ incidentId, includeClassifications = false }) => {
                     try {
-                        const incident = await search.getIncidents([incidentId], includeClassifications);
+                        const incident = await search.findIncidentsByIds([incidentId], includeClassifications);
 
                         return incident;
                     } catch (error) {

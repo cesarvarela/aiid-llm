@@ -2,7 +2,9 @@ import { ApolloClient, InMemoryCache, HttpLink, ApolloLink } from '@apollo/clien
 import { RetryLink } from '@apollo/client/link/retry';
 
 // API URL for the GraphQL endpoint
-export const API_URL = 'https://incidentdatabase.ai/api/graphql';
+// export const API_URL = 'https://incidentdatabase.ai/api/graphql';
+// export const API_URL = 'http://localhost:8000/api/graphql';
+export const API_URL = 'https://pr-3447--staging-aiid.netlify.app/api/graphql';
 
 // Function to get Apollo client for GraphQL queries
 export const getApolloClient = () => {
