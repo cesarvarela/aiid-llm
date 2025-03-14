@@ -23,6 +23,7 @@ async function fetchTaxonomyDetails(namespace: string): Promise<Taxa | null> {
           short_name
           short_description
           permitted_values
+          mongo_type
         }
       }
     }
@@ -112,7 +113,7 @@ function printSimilarIncidentsClassifications(result: Awaited<ReturnType<typeof 
   let output = '';
 
   incidents.forEach(incident => {
-    output += `Id: ${incident.incidentId}
+    output += `Id: ${incident.incident_id}
 title: ${incident.title}
 description: ${incident.description || 'No description available'}
 
@@ -174,11 +175,7 @@ Based on the incident text and the taxonomy, provide a classification for this i
 Return your response as a JSON object with the following structure:
 
 {
-  "classification": {
-    "attribute1": "value1",
-    "attribute2": "value2",
-    ...
-  },
+  "classification": { /* exact same format as the examples provided */ }
   "explanation": "A detailed explanation of your classification choices.",
   "confidence": "A confidence score between 0"
 }
@@ -210,10 +207,18 @@ export async function POST(req: Request) {
 
     const prompt = await getPrompt(text, taxonomy);
 
+    console.log('Prompt:');
+    console.log(prompt);
+    console.log('--------------------------------');
+
     const result = await generateText({
       model: openai("gpt-4o", { structuredOutputs: true }),
       prompt: prompt,
     })
+
+    console.log('Result:');
+    console.log(result.text);
+    console.log('--------------------------------');
 
     return NextResponse.json(result.text);
   }
