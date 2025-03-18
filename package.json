@@ -1,4 +1,7 @@
 {
+  "name": "aiid-llm",
+  "version": "1.0.0",
+  "description": "AI Incident Database LLM validation tools",
   "dependencies": {
     "@ai-sdk/anthropic": "^1.1.2",
     "@ai-sdk/openai": "^1.1.15",
@@ -35,6 +38,9 @@
   "scripts": {
     "embeddings": "npx tsx --env-file=.env scripts/embeddings.ts",
     "search": "npx tsx --env-file=.env scripts/search.ts",
+    "push-embeddings-subset": "npx tsx --env-file=.env scripts/push-embeddings-subset.ts",
+    "generate-classifications": "npx tsx --env-file=.env scripts/generate-classifications.ts",
+    "compare-classification-stats": "npx tsx --env-file=.env scripts/compare-classification-stats.ts",
     "dev": "next dev",
     "build": "npm run db:migrate && next build",
     "start": "next start",
@@ -43,7 +49,9 @@
     "db:migrate": "drizzle-kit migrate",
     "db:generate": "drizzle-kit generate",
     "db:studio": "drizzle-kit studio",
-    "codegen": "graphql-codegen --config codegen.ts"
+    "codegen": "graphql-codegen --config codegen.ts",
+    "create-training-set": "ts-node scripts/create-training-set.ts",
+    "test": "vitest"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^5.0.5",
@@ -52,6 +60,7 @@
     "@types/react": "19.0.8",
     "drizzle-kit": "^0.30.1",
     "graphql": "^16.10.0",
-    "typescript": "5.7.3"
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.9"
   }
 }

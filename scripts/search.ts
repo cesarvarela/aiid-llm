@@ -1,6 +1,6 @@
 import { hideBin } from 'yargs/helpers';
 import yargs from 'yargs';
-import { Search } from '../lib/Search';
+import { Search } from '../lib/DataAccess';
 import { createEmbeddingProvider } from '@/lib/utils';
 
 async function main() {

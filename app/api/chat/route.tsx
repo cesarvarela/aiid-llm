@@ -1,14 +1,14 @@
 import { streamText, tool } from 'ai';
 import { openai } from '@ai-sdk/openai';
 import { z } from 'zod';
-import { Search } from '../../../lib/Search';
+import { DataAccess } from '../../../lib/DataAccess';
 import { createEmbeddingProvider } from '@/lib/utils';
 import { getApolloClient } from '@/lib/apolloClient';
 import QUERIES from '@/graphql/queries';
 export const maxDuration = 30;
 
 const embeddings = createEmbeddingProvider('openai');
-const search = new Search(embeddings);
+const search = new DataAccess(embeddings);
 
 // Featured incident IDs with their weights
 const featuredIncidentIds = [
