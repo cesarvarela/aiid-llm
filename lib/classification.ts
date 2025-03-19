@@ -112,7 +112,7 @@ DO NOT start your response with \`\`\`json or \`\`\`
     return prompt;
 }
 
-export async function generateClassification(text: string, taxonomy: string, embeddingsTable: EmbeddingsTable = schema.embeddings) {
+export async function generateClassification(text: string, taxonomy: string, embeddingsTable: EmbeddingsTable = schema.embeddings): Promise<string> {
     if (!text) throw new Error('Please provide a valid text');
     if (!taxonomy) throw new Error('Please provide a valid taxonomy namespace');
 
@@ -127,8 +127,14 @@ export async function generateClassification(text: string, taxonomy: string, emb
         prompt: prompt,
     });
 
-    console.log('Result:');
-    console.log(result.text);
+    let resultText = result.text;
 
-    return result.text;
+    console.log('Result:');
+    console.log(resultText);
+
+    if (resultText.startsWith('```json')) {
+        resultText = resultText.replace(/^```json\n|\n```$/g, '');
+    }
+
+    return resultText;
 } 
