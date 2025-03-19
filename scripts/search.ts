@@ -1,6 +1,6 @@
 import { hideBin } from 'yargs/helpers';
 import yargs from 'yargs';
-import { Search } from '../lib/DataAccess';
+import { DataAccess } from '../lib/DataAccess';
 import { createEmbeddingProvider } from '@/lib/utils';
 
 async function main() {
@@ -30,7 +30,7 @@ async function main() {
             default: 'openai'
         }).argv;
 
-    const search = new Search(createEmbeddingProvider(argv.provider));
+    const search = new DataAccess(createEmbeddingProvider(argv.provider));
 
     const results = await search.vectorSearch(argv.query, argv.minScore, argv.limit);
 
