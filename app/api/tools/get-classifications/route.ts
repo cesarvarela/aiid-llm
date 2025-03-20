@@ -1,19 +1,27 @@
 import { NextResponse } from 'next/server';
 import { generateClassification } from '@/lib/classification';
 
+// Add explicit OPTIONS handler for CORS preflight requests
+export async function OPTIONS(req: Request) {
+  const headers = {
+    'Access-Control-Allow-Origin': req.headers.get('origin') || '*',
+    'Access-Control-Allow-Methods': 'GET,OPTIONS,PATCH,DELETE,POST,PUT',
+    'Access-Control-Allow-Headers': 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization',
+    'Access-Control-Allow-Credentials': 'true',
+  };
+  
+  return new NextResponse(null, { headers, status: 204 });
+}
+
 export async function POST(req: Request) {
   try {
-    // Set CORS headers to allow requests from staging environment
+    // Set CORS headers to allow requests from both staging and production environments
     const headers = {
-      'Access-Control-Allow-Origin': 'https://pr-3447--staging-aiid.netlify.app',
-      'Access-Control-Allow-Methods': 'POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Allow-Origin': req.headers.get('origin') || '*',
+      'Access-Control-Allow-Methods': 'GET,OPTIONS,PATCH,DELETE,POST,PUT',
+      'Access-Control-Allow-Headers': 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization',
+      'Access-Control-Allow-Credentials': 'true',
     };
-
-    // Handle preflight OPTIONS request
-    if (req.method === 'OPTIONS') {
-      return new NextResponse(null, { headers, status: 204 });
-    }
 
     const { text, taxonomy } = await req.json();
 
@@ -39,9 +47,10 @@ export async function POST(req: Request) {
   }
   catch (error) {
     const headers = {
-      'Access-Control-Allow-Origin': 'https://pr-3447--staging-aiid.netlify.app',
-      'Access-Control-Allow-Methods': 'POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Allow-Origin': req.headers.get('origin') || '*',
+      'Access-Control-Allow-Methods': 'GET,OPTIONS,PATCH,DELETE,POST,PUT',
+      'Access-Control-Allow-Headers': 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization',
+      'Access-Control-Allow-Credentials': 'true',
     };
     
     console.error('Error in get-information API:', error);
