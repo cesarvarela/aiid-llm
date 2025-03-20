@@ -77,6 +77,9 @@ export async function getPrompt(text: string, taxonomy: string, embeddingsTable:
     const similar = await dataAccess.getSimilarIncidentsClassifications(text, taxonomy, 10);
     const similarOutput = printSimilarIncidentsClassifications(similar);
 
+    // Extract all field_list short_names to use in the prompt
+    const requiredFields = taxonomyData.field_list?.map(field => field?.short_name).filter(Boolean) || [];
+    
     const prompt = `You are an AI assistant that helps classify AI incidents according to a taxonomy.
 
 Your task is to analyze the provided incident text and classify it according to the specified taxonomy.
@@ -97,16 +100,33 @@ ${similarOutput}
 
 Based on the incident text and the taxonomy, provide a classification for this incident.
 
+IMPORTANT: Your classification MUST include ALL of the following taxonomy attributes:
+${requiredFields.join(', ')}
+
+For maximum accuracy and completeness:
+1. Include EVERY single required field listed above in your response
+2. Do not omit any attributes from the taxonomy field_list
+3. Use the permitted_values from the taxonomy when provided
+4. Review similar incidents to understand how each field is typically used
+
 Return your response as a JSON object with the following structure:
 
 {
-  "classification": { /* exact same format as the examples provided */ }
+  "classification": {
+    "namespace": "${taxonomy}",
+    "attributes": [
+      {"short_name": "attribute1", "value_json": "\"value1\""},
+      {"short_name": "attribute2", "value_json": "\"value2\""},
+      // Include ALL attributes from the field_list above
+    ]
+  },
   "explanation": "A detailed explanation of your classification choices.",
-  "confidence": "A confidence score between 0"
+  "confidence": "A confidence score between 0 and 1"
 }
   
 DO NOT include any other text in your response, nor any other characters. 
 DO NOT start your response with \`\`\`json or \`\`\`
+Ensure that each attribute in the field_list is included in your classification, even if you need to use a default or "unknown" value.
 `;
 
     return prompt;
