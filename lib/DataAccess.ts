@@ -3,12 +3,12 @@ import { db } from "../db";
 import * as schema from "../db/schema";
 import { cosineDistance, desc, gt } from "drizzle-orm";
 import { getApolloClient } from "./apolloClient";
-import { gql } from "@apollo/client";
 import { Taxa } from "@/graphql/generated/graphql";
+import { gql } from "@/graphql/generated";
 
 const client = getApolloClient();
 
-const REPORTS_LIMITED_QUERY = gql`
+const REPORTS_LIMITED_QUERY = gql(`
     query FetchReportsLimited($limit: Int!, $skip: Int!, $filter: ReportFilterType) {
         reports(pagination: { limit: $limit, skip: $skip }, sort: { report_number: ASC }, filter: $filter) {
             report_number
@@ -17,9 +17,9 @@ const REPORTS_LIMITED_QUERY = gql`
             }
         }
     }
-`;
+`);
 
-const FETCH_REPORT = gql`
+const FETCH_REPORT = gql(`
   query FetchReport($report_number: Int!) {
     report(filter: { report_number: { EQ: $report_number } }) {
       report_number
@@ -27,9 +27,9 @@ const FETCH_REPORT = gql`
       text
     }
   }
-`;
+`);
 
-const FETCH_TAXONOMY_DETAILS = gql`
+const FETCH_TAXONOMY_DETAILS = gql(`
   query FetchTaxonomyDetails($namespace: String!) {
     taxa(filter: { namespace: { EQ: $namespace } }) {
       namespace
@@ -38,14 +38,15 @@ const FETCH_TAXONOMY_DETAILS = gql`
       field_list {
         short_name
         short_description
+        long_description
         permitted_values
         mongo_type
       }
     }
   }
-`;
+`);
 
-const FETCH_INCIDENT = gql`
+const FETCH_INCIDENT = gql(`
   query FetchIncident($incident_id: Int!) {
     incident(filter: { incident_id: { EQ: $incident_id } }) {
         incident_id
@@ -76,9 +77,9 @@ const FETCH_INCIDENT = gql`
         }
     }
   }
-`;
+`);
 
-const FETCH_INCIDENT_WITH_CLASSIFICATIONS = gql`
+const FETCH_INCIDENT_WITH_CLASSIFICATIONS = gql(`
   query FetchIncidentWithClassifications($incident_id: Int!) {
     incident(filter: { incident_id: { EQ: $incident_id } }) {
       incident_id
@@ -117,9 +118,9 @@ const FETCH_INCIDENT_WITH_CLASSIFICATIONS = gql`
       }
     }
   }
-`;
+`);
 
-const FETCH_CLASSIFICATION = gql`
+const FETCH_CLASSIFICATION = gql(`
   query FetchClassification($incident_id: Int!, $namespace: String!) {
     classification(
       filter: { 
@@ -140,7 +141,7 @@ const FETCH_CLASSIFICATION = gql`
       }
     }
   }
-`;
+`);
 
 export type EmbeddingsTable = typeof schema.embeddings | typeof schema.embeddingsSubset;
 
@@ -392,10 +393,10 @@ export class DataAccess {
         // Extract report IDs and get their associated incident IDs
         const reportResults = results.filter(result => result.sourceType === 'report');
         const reportIds = reportResults.map(result => parseInt(result.sourceId, 10));
-        
+
         // Get incident IDs from reports using the existing method
         const reportIncidentIds = await this.getIncidentIdsFromReports(reportIds);
-        
+
         // Combine and deduplicate incident IDs, then limit
         const allIncidentIds = [...new Set([...incidentIds, ...reportIncidentIds])].slice(0, incidentsLimit);
 

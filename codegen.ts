@@ -2,8 +2,8 @@ import type { CodegenConfig } from '@graphql-codegen/cli';
 
 const config: CodegenConfig = {
   overwrite: true,
-  schema: "https://incidentdatabase.ai/api/graphql",
-  documents: 'graphql/**/!(*.d).{ts,tsx,js}',
+  schema: "https://pr-3447--staging-aiid.netlify.app/api/graphql",
+  documents: ['./**/!(*.d).{ts,tsx,js}', '!**/node_modules/**'],
   pluckConfig: {
     globalIdentifier: 'gql',
   },
@@ -17,4 +17,4 @@ const config: CodegenConfig = {
   }
 };
 
-export default config; 
+export default config;

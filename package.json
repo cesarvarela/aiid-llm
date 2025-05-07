@@ -41,6 +41,7 @@
     "search": "npx tsx --env-file=.env scripts/search.ts",
     "push-embeddings-subset": "npx tsx --env-file=.env scripts/push-embeddings-subset.ts",
     "generate-classifications": "npx tsx --env-file=.env scripts/generate-classifications.ts",
+    "generate-classifications-attributes": "npx tsx --env-file=.env scripts/generate-classifications-attributes.ts",
     "compare-classification-stats": "npx tsx --env-file=.env scripts/compare-classification-stats.ts",
     "dev": "next dev",
     "build": "npm run db:migrate && next build",
@@ -52,7 +53,7 @@
     "db:studio": "drizzle-kit studio",
     "codegen": "graphql-codegen --config codegen.ts",
     "create-training-set": "ts-node scripts/create-training-set.ts",
-    "test": "vitest"
+    "test": "vitest run"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^5.0.5",

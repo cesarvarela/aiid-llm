@@ -41,9 +41,7 @@ export async function POST(req: Request) {
 
     const result = await generateClassification(text, taxonomy);
 
-    const parsedResult = JSON.parse(result);
-
-    return NextResponse.json(parsedResult, { headers });
+    return NextResponse.json(result, { headers });
   }
   catch (error) {
     const headers = {
