@@ -6,6 +6,7 @@ import * as schema from '@/db/schema';
 import { Attribute, Classification, Incident } from '@/graphql/generated/graphql';
 
 interface LlmClassificationOutput {
+  prompt?: string;
   classification: Partial<Classification>;
   explanation?: string;
   confidence?: number;
@@ -256,16 +257,12 @@ export async function generateClassificationForAttributes(
   attributeShortNames: string[],
   embeddingsTable: EmbeddingsTable = schema.embeddings,
   model: string = 'gpt-4o'
-): Promise<LlmClassificationOutput> {
+): Promise<LlmClassificationOutput[]> {
   if (!text) throw new Error('Please provide a valid text');
   if (!taxonomy) throw new Error('Please provide a valid taxonomy namespace');
 
   console.log(`Generating classifications for specific attributes: ${attributeShortNames.join(', ')}`);
-  const mergedResult: LlmClassificationOutput = {
-    classification: { namespace: taxonomy, attributes: [] },
-    explanation: ''
-  };
-  const explanations: string[] = [];
+  const results: LlmClassificationOutput[] = [];
 
   for (const attributeShortName of attributeShortNames) {
     console.log(`-- Generating prompt for attribute: ${attributeShortName}`);
@@ -275,8 +272,7 @@ export async function generateClassificationForAttributes(
     const result = await generateText({
       model: openai(model, { structuredOutputs: true }),
       prompt,
-
-      temperature: model === 'o4-mini' ? 1 : 0
+      temperature: (model === 'gpt-4o') ? 0 : (model === 'o4-mini' ? 1 : 0),
     });
 
     let resultText = result.text;
@@ -286,21 +282,19 @@ export async function generateClassificationForAttributes(
 
     try {
       const singleResult: LlmClassificationOutput = JSON.parse(resultText);
-      if (singleResult.classification?.attributes?.length) {
-        mergedResult.classification.attributes.push(singleResult.classification.attributes[0]);
-        if (singleResult.explanation) explanations.push(`[${attributeShortName}]: ${singleResult.explanation}`);
-      } else {
-        console.warn(`---- WARNING: Parsed result for ${attributeShortName} lacked expected structure.`);
-      }
+
+      singleResult.prompt = prompt;
+
+      // collect each individual classification result
+      results.push(singleResult);
     } catch {
       console.error(`---- ERROR parsing JSON for ${attributeShortName}. Raw: ${resultText}`);
     }
   }
 
-  mergedResult.explanation = explanations.join('\n---\n');
-  console.log('---- Final Merged Result:');
-  console.log(JSON.stringify(mergedResult, null, 2));
-  return mergedResult;
+  console.log('---- Final Classification Array:');
+  console.log(JSON.stringify(results, null, 2));
+  return results;
 }
 
 export async function generateClassification(
@@ -317,7 +311,8 @@ export async function generateClassification(
   console.log('Generating classification for all attributes...');
   const result = await generateText({
     model: openai(model, { structuredOutputs: true }),
-    prompt
+    prompt,
+    temperature: (model === 'gpt-4o') ? 0 : (model === 'o4-mini' ? 1 : 0),
   });
 
   let resultText = result.text;
@@ -326,7 +321,10 @@ export async function generateClassification(
   }
 
   try {
+    
     const finalResult: LlmClassificationOutput = JSON.parse(resultText);
+    finalResult.prompt = prompt;
+
     console.log('Final Result (all attributes):');
     console.log(JSON.stringify(finalResult, null, 2));
     return finalResult;

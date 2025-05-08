@@ -1,0 +1,2469 @@
+You are an AI assistant that helps classify AI incidents according to a specific taxonomy attribute.
+
+Your task is to analyze the provided incident text and classify it ONLY for the specified taxonomy attribute: "Tangible Harm".
+
+Always require the incident text, the taxonomy namespace, and the specific attribute short_name to perform classification.
+
+Here is the incident text to classify:
+Abstract
+--------
+
+The practical applications of artificial intelligence are expanding into various elements of society, leading to a growing interest in the potential biases of such algorithms. Facial analysis, one application of artificial intelligence, is increasingly used in real-word situations. For example, some organizations tell candidates to answer predefined questions in a recorded video and use facial recognition to analyze the potential applicant faces. In addition, some companies are developing facial recognition software to scan the faces in crowds and assess threats, specifically mentioning doubt and anger as emotions that indicate threats. This study provides evidence that facial recognition software interprets emotions differently based on the person’s race. Using a publically available data set of professional basketball players’ pictures, I compare the emotional analysis from two different facial recognition services, Face and Microsoft's Face API. Both services interpret black players as having more negative emotions than white players; however, there are two different mechanisms. Face consistently interprets black players as angrier than white players, even controlling for their degree of smiling. Microsoft registers contempt instead of anger, and it interprets black players as more contemptuous when their facial expressions are ambiguous. As the players’ smile widens, the disparity disappears.
+
+This finding has implications for individuals, organizations, and society, and it contributes to the growing literature of bias and/or disparate impact in AI.
+
+Here is the taxonomy namespace:
+CSETv1
+
+Here is the specific attribute to classify:
+Tangible Harm
+
+Here is the definition for the target attribute "Tangible Harm":
+{
+  "short_name": "Tangible Harm",
+  "short_description": "Did tangible harm (loss, damage or injury ) occur? ",
+  "long_description": "An assessment of whether tangible harm, imminent tangible harm, or non-imminent tangible harm occurred. This assessment does not consider the context of the tangible harm, if an AI was involved, or if there is an identifiable, specific, and harmed entity. It is also not assessing if an intangible harm occurred. It is only asking if tangible harm occurred and what its imminency was.",
+  "permitted_values": [
+    "tangible harm definitively occurred",
+    "imminent risk of tangible harm (near miss) did occur",
+    "non-imminent risk of tangible harm (an issue) occurred",
+    "no tangible harm, near-miss, or issue",
+    "unclear"
+  ],
+  "mongo_type": "string"
+} 
+
+Here are similar incidents and their full classifications (use for context):
+Id: 155
+title: Google Maps Allegedly Directed Sierra Nevada Travelers to Dangerous Roads amid Winter Storm
+description: Lake Tahoe travelers were allegedly guided by Google Maps into hazardous shortcuts in the mountains during a snowstorm.
+
+first report text: It appears that Google Maps may have guided weary Lake Tahoe travelers to closed-off and even dangerous roads amid record-setting snowfall.
+
+Social media posts, including from Crystal Kolden, a professor of forest sciences at UC Merced, have condemned the service for redirecting travelers away from closed highways to potentially precarious shortcuts. “This is an abject failure,” tweeted Kolden Monday evening. “You are sending people up a poorly maintained forest road to their death in a severe blizzard.”
+
+A screenshot she shared showed directions through Marysville Road, a fairly narrow, two-lane path going through the Tahoe National Forest.
+
+(Kolden did not immediately respond to a request for comment from SFGATE.)
+
+Other dispatches from Twitter allege that the service — particularly its mobile app — directed people to closed-off highways, mountain passes and lakeside roads to get around. This is in direct contrast to Caltrans' messaging to avoid workarounds. Caltrans District 3 spokesperson Steve Nelson told SFGATE on Monday that they were seeing drivers trying to skirt highway closures with side streets. "They’ll take side roads and try and sneak past the closures, and that never ends well," he said.
+
+Kolden’s post got the attention of Google engineer Sören Meyer-Eppler, who said on Twitter he worked on “this problem” in the past and explained the challenges of guiding people through mountain roads. He also defended the service, noting the "trade-off" of offering convenient driving directions and fully accurate ones.
+
+"[People are suggesting] if you can't get driving directions and road closures right 100% of the time, you shouldn't offer any. Surely that would be a worse trade-off than the status quo?" he wrote. "Consider that we don't know a priori which mistake is potentially dangerous."
+
+A Google spokesperson told SFGATE that it is currently taking preventative measures to ensure that drivers remain safe while driving around the Lake Tahoe area.
+
+"In light of the unpredictable conditions from the current snowstorm, our team is working as quickly as possible to update routes in the Lake Tahoe area using details from local authorities," the spokesperson said in a statement. "We currently show a winter storm warning to alert drivers in the area, and encourage everyone to stay alert and attentive."
+
+Officials continue to advise that drivers stay home, if possible, and to drive carefully if absolutely necessary.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"transportation and storage\",\"information and communication\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"imminent risk of tangible harm (near miss) did occur\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"AI tangible harm near-miss\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy3\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "[\"shortest-path algorithm\",\"Dijkstra Algorithm\"]"
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"001\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"3. In peer review\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "155"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"001\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"This incident can be classified as an imminent risk of tangible harm (near miss) because harm would have occurred if not for atypical intervention. Users were directed toward \\\"precarious and dangerous situations with unplowed roads/dirt roads\\\" while trying to avoid highway closures.\\n \\n\\n GPS navigation services GoogleMaps and Waze directed people to closed-off highways, mountain passes and lakeside roads to get around road closures during a severe snowstorm. \""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2021"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "12"
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\" \""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"CA; NV\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[\"transportation\"]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "[\"inclement weather - snow\",\"inclement weather and snow\",\"seasonal road closures\"]"
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"Users in both Nevada and California were impacted by Google Maps failure to direct them effectively during the snowstorm.\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Google\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\",\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Google Maps\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Google Maps users driving during inclement weather\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm near-miss\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical health/safety\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Waze\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Wendy Becktold\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm issue\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical health/safety\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Caltrans\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"government entity\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"government oversight\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Washoe County Sheriff’s Office\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"government entity\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"government oversight\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"The Sheriff's Office  \\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"Google Maps uses machine learning to predict traffic patterns based on GPS data and other users' reports in order to optimize routes for the primary user.\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"traffic patterns\",\"user traffic reports\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"navigation\",\"route optimization\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 22
+title: Waze Navigates Motorists into Wildfires
+description: Waze, a Google-owned directions app, led California drivers into the 2017 Skirball wildfires as they tried to evacuate the area.
+
+first report text: The ongoing wildfires in Southern California have destroyed hundreds of homes and forced 200,000 people to evacuate. And with so many fleeing for safety, people have suddenly had to confront a once hypothetical question: How well can navigation apps like Google Maps or Waze deal with unfolding natural disasters? We reached out to Waze to find out.
+
+The issue was thrown into sharp relief on Wednesday when the Los Angeles Police Department asked residents to avoid navigation apps that were redirecting drivers toward roads with light traffic — roads that were empty in the first place because the wildfires were actually burning nearby. Reports from Twitter users also indicated apps like Waze were directing drivers to neighborhoods affected by the fires.
+
+To get more of a sense of how Waze — which, like Maps, is owned by Google — deals with the challenges of offering real-time directions during a natural disaster like the wildfires, Inverse reached out to the team behind the app.
+
+When asked about Wednesday’s reported troubles, a Waze spokesperson said that as of Friday afternoon the app has closed approximately 443 road segments in consultation with the L.A. Department of Transportation and listed 22 available shelters for those displaced. They provided a general statement on the situation previously shared with other outlets.
+
+“Crises are by nature unpredictable, and as fires moved rapidly and changed course the task became more challenging,” the statement reads in part. The entire statement is included at the bottom of this post. “That said, we believe the process worked as efficiently as it could and we’re proud of the work done by all parties. “
+
+When asked more specific questions about the role Waze can play in a crisis, the spokesperson pointed to the app’s potentially unique advantages:
+
+Our community of drivers, paired with our long-standing network of municipal partners is actually what puts Waze in a unique position as the only resource to offer real-time routing and information. Waze acts as a resource to connect local offices with its citizens during a crisis. Our existing government relationships provide us with real-time information on official road closures. In addition to working with L.A. Emergency Management teams and LADOT, who provided road closure data, our local map editor community works around the clock to ensure that the map stays up-to-date. During a crisis, we are able to speak directly with the authorities on-the-ground to ensure our map is accurate from the moment a crisis begins. As partners provide us with up-to-date data on an ongoing basis, we’re able to make sure our map remains fluid and continuously updates according to the changing conditions in an area. No one knows more about what’s happening on the roads than drivers themselves and the Waze community is always eager to share their experiences with others on the road.
+
+The spokesperson also offered this advice on how users can most safely and responsibly use the app during a crisis:
+
+Firstly, we never encourage driving during any sort of natural disaster, unless absolutely necessary. If traveling during a natural disaster, users can search the word “Help” to find their nearest shelter, or pan on the map and click on the shelter icon. We also make it easy to identify various evacuation routes, when needed. In addition to marking their location on the map wherever they need help, Wazers can also leverage our new Roadside Help features and make emergency calls to be connected with police, ambulances, or the fire department – all without ever leaving the app. We do encourage our users to actively report what they are seeing as this is an added layer of data that helps us close roads and make real-time updates to the map. Everything shared with Waze gets updated to the map in real-time and shared with our community.
+
+When asked if there was anything else people should know, the spokesperson emphasized user participation as an essential part of its ability to function most helpfully:
+
+INVERSE LOOT DEALS Layla Weighted Blanket Two different types of fabric for two different types of feels. Less noisy than other weighted blankets and get it now for as low as $11 a month. Buy Now
+
+Given the crowd-sourced nature of the app, we take every report very seriously and take action to update the map as soon as we receive a report of a road closure or bad road conditions. You too can take an active role by adding road reports of accidents, or any other hazards along your routes to alert other drivers of real-time conditions.
+
+Here is Waze’s full statement to the media on the reported issues with the app misdirecting drivers to fire-affected areas.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"transportation and storage\",\"information and communication\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"imminent risk of tangible harm (near miss) did occur\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"AI tangible harm near-miss\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy3\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "[\"shortest-path algorithm\",\"Dijkstra Algorithm\"]"
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "22"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"3.1 - This incident can be classified as an imminent risk of tangible harm (near miss) because harm would have occurred if not for atypical intervention. Users were directed toward routes in wildfire zones. They would have suffered harm if not for their intervention, or in some cases, the intervention of police officers redirecting traffic at intersections.\\n3.2 and 3.3 - Waze uses AI and machine learning to predict traffic patterns and optimize routes, functions that failed to ensure user safety in this incident.\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2017"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "12"
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"CA\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "[\"natural disaster - wildfires\"]"
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Waze\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Google\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\",\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Google is the deployer of Waze and Google Maps\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Waze, Google Maps, and Apple Maps users\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm near-miss\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical health/safety\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Google Maps\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Apple Maps\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Apple\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\",\\\"deployer\\\"]\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Apple is the deployer of Apple maps\\\"\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"There were no quantifiable tangible harms in terms of deaths or injuries, as this incident was a near-miss.\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"Waze uses machine learning to predict traffic patterns based on GPS data and other users' reports in order to optimize routes for the primary user. \""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"user traffic reports\",\"route specifications\",\"road data\",\"traffic\",\"GPS\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"navigation\",\"route optimization\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 30
+title: Poor Performance of Tesla Factory Robots
+description: The goal of manufacturing 2,500 Tesla Model 3's per week was falling short by 500 cars/week, and employees had to be "borrowed" from Panasonic in a shared factory to help hand-assemble lithium batteries for Tesla.
+
+first report text: Analysts at Bernstein argue that Elon Musk has over-automated Tesla.
+
+The very robots that Musk says will revolutionise the car industry are baking in Tesla’s mistakes and costing far more money than they’re worth, they say.
+
+The robots are killing Tesla.
+
+In a rare win for humans over robots in the battle for labour efficiency, Wall Street analysts have laid down a compelling argument that over-automation is to blame for problems at the billionaire Elon Musk’s electric-car company.
+
+That is to say, the very innovation and competitive advantage that Musk says he’s bringing to the car industry – his nearly fully automated plant in Fremont, California – is the reason Tesla is unable to scale quickly.
+
+According to the Bernstein analysts Max Warburton and Toni Sacconaghi, it’s the robots that can’t pump out Tesla’s highly anticipated Model 3s fast enough. The whole process is too ambitious, risky, and complicated.
+
+From Bernstein (emphasis ours):
+
+“Tesla has tried to hyper-automate final assembly. We believe Tesla has been too ambitious with automation on the Model 3 line. Few have seen it (the plant is off-limits at present), but we know this: Tesla has spent c.2x what a traditional OEM spends per unit on capacity. “It has ordered huge numbers of Kuka robots. It has not only automated stamping, paint and welding (as most other OEMs do) – it has also tried to automate final assembly (putting parts into the car). It talks of two-level final lines with robots automating parts sequencing. This is where Tesla seems to be facing problems (as well as in welding & battery pack assembly).”
+
+Warburton, who spent his career before Wall Street at the International Motor Vehicle Program – a partly academic, partly commercial organisation based at MIT – wrote that “automation in final assembly doesn’t work.”
+
+Bernstein adds that the world’s best carmakers, the Japanese, try to limit automation because it “is expensive and is statistically inversely correlated to quality.” Their approach is to get the process right first, then bring in the robots – the opposite of Musk’s.
+
+It’s not a problem that Tesla, a highly indebted company, can afford forever.
+
+The company’s stock has cratered more than 25% in the past month on worries that it will yet again underdeliver on its Model 3 promises. Over the past few days, investors have been selling Tesla’s debt in droves. On Tuesday, Moody’s downgraded Tesla by one notch, to B3, citing a “significant shortfall” in Model 3 production.
+
+During Tesla’s fourth-quarter earnings call, Musk told investors that factory model assembly was the biggest constraint on Model 3 production. There are tens of thousands of components in each car, he said, and the company can only move as fast as it can correct each problem area.
+
+One thing that makes it hard to solve problems in every area, according to Bernstein’s analysts, is that they’re all automated. Other car companies that have tried this – Fiat and Volkswagen – have also failed.
+
+Bernstein
+
+What’s more, Bernstein says, this is barely saving Musk money. From the note:
+
+“Let’s say there are 10 hours of labour in final assembly (the part of the production line where parts, interiors and the powertrain are installed in a painted bodyshell). In a regular plant, final assembly typically has less than 5% of tasks automated. If Tesla attempts to automate 50% of these tasks, it could cut out 5 or so hours of labour. This might save $US150 per car (assuming wage rates, all in, of $US30 per worker, per hour). “But while all that exotic capital might allow Tesla to remove 5 workers, it will then need to hire a skilled engineer to manage, programme and maintain robots for $US100 an hour (our estimate of a robotic engineers’ hourly rate). “So the net labour saving may be only $US50 per unit. Yet putting the automation into the plant seems to involve an apparent capital cost that’s $US4,000 higher per unit of capacity than for a normal plant. If the product is built for 7 years, that’s over US$550 of additional depreciation per unit built. It’s hard to see an economic case even if somehow the Fremont Model 3 line can be made to work. So why exactly has Tesla taken this route? It’s unclear.”
+
+Oh.
+
+So in Musk’s attempt to bring on the robot uprising that will revolutionise how we make cars, he’s burned cash and baked in his own mistakes. If you think about it that way, we are just beginning to understand how much this will cost him.
+
+Business Insider Emails & Alerts Site highlights each day to your inbox. Email Address Join
+
+Follow Business Insider Australia on Facebook, Twitter, LinkedIn, and Instagram.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"manufacturing\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"tangible harm definitively occurred\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"none\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy1\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "[\"computer vision\"]"
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "30"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"Delay & financial loss cannot be linked to the performance of the robots but is instead due to a misallocation of resources from management side. \""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2018"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"03\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"Fremont\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"CA\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"Month corresponds to End of Q1 of 2018, which is when Tesla first reported production shortfalls. \""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Tesla\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"financial loss\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"financial loss due to misallocation of resources\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Kuka\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Kuka assembly robots\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"Manufacturing robot used in Tesla factories to produce the Model 3 car, performing tasks such as stamping, painting, welding, final assembly, and battery insulation.\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"The robots operated independently, but often required human maintenance.\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"Manufacturing Robot\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"production\",\"assembly\",\"object detection\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 1
+title: Google’s YouTube Kids App Presents Inappropriate Content
+description: YouTube’s content filtering and recommendation algorithms exposed children to disturbing and inappropriate videos.
+
+first report text: Media playback is unsupported on your device
+
+Thousands of videos on YouTube look like versions of popular cartoons but contain disturbing and inappropriate content not suitable for children.
+
+If you're not paying much attention, it might look like an ordinary video featuring Peppa Pig, the cheeky porcine star of her own animated series. But soon after pressing play on this particular YouTube clip, the plot turns dark. A dentist with a huge syringe appears. Peppa's teeth get pulled out. Distressed crying can be heard on the soundtrack.
+
+Parent and journalist Laura June almost immediately noticed something was not quite right as her three-year-old daughter was watching it.
+
+"Peppa does a lot of screaming and crying and the dentist is just a bit sadistic and it's just way, way off what a three-year-old should watch," June says. She wrote about her experiences on the website The Outline.
+
+"But the animation is like close enough to looking like Peppa - it's crude but it's close enough that my daughter was like 'This is Peppa Pig.'"
+
+It's far from an isolated case - BBC Trending has found hundreds of similar videos of children's cartoon characters with inappropriate themes. In addition to Peppa Pig, there are similar videos featuring characters from the Disney movie Frozen, the Minions franchise, Doc McStuffins, Thomas the Tank Engine, and many more.
+
+Some of the videos are parodies or have such over-the-top content that they're clearly meant for mature audiences. Others are unauthorised copies of authentic cartoons or use the characters in innocent ways - troubling to copyright lawyers perhaps, but not necessarily harmful to children.
+
+However many, like the video Laura June's daughter saw, both contain disturbing content and can pass for the real cartoons, particularly when viewed by children.
+
+Image copyright SmileKidsTV/YouTube Image caption Some of the cartoons feature violence or frightening situations
+
+More from BBC Trending
+
+Visit the Trending Facebook page
+
+Hundreds of these videos exist on YouTube, and some generate millions of views. One channel "Toys and Funny Kids Surprise Eggs" is one of the top 100 most watched YouTube accounts in the world - its videos have more than 5 billion views.
+
+Its landing page features a photo of a cute toddler alongside official-looking pictures of Peppa Pig, Thomas the Tank Engine, the Cookie Monster, Mickey and Minnie Mouse and Elsa from Frozen.
+
+But the videos on the channel have titles like "FROZEN ELSA HUGE SNOT", "NAKED HULK LOSES HIS PANTS" and "BLOODY ELSA: Frozen Elsa's Arm is Broken by Spiderman". They feature animated violence and graphic toilet humour.
+
+The people behind the account didn't respond to Trending's request for an interview. We attempted to contact several other producers of similar videos - and got the same result.
+
+How to avoid inappropriate videos on YouTube
+
+• The YouTube Kids app filters out most - but not all - of the disturbing videos.
+
+• YouTube suggests turning on "restricted mode" which can be found at the bottom of YouTube pages:
+
+Image copyright YouTube
+
+• The NSPCC also has a series of guidelines about staying safe online, and there are more resources on the BBC Stay Safe site.
+
+Image copyright CandyFamily/YouTube
+
+Trending also contacted two companies behind the cartoon series being ripped off, Disney and EntOne - the distributor of Peppa Pig. Neither wanted to comment.
+
+So should parents take more care when it comes to allowing their children to watch cartoons on YouTube?
+
+Sonia Livingstone is an expert on child online safety and professor of social psychology at the London School of Economics,
+
+"It's perfectly legitimate for a parent to believe that something called Peppa Pig is going to be Peppa Pig," she says. "And I think many of them have come to trust YouTube... as a way of entertaining your child for ten minutes while the parent makes a phone call. I think if it wants to be a trusted brand then parents should know that protection is in place."
+
+"I don't think we want to police it for the whole world," Livingstone says. "A lot of this material is satirical, creative - or actually offensive but within freedom of expression. What we need is child protection."
+
+Image copyright CandyFamily/YouTube
+
+YouTube did not offer a spokesperson for interview, but in a statement said: "We take feedback very seriously. We appreciate people drawing problematic content to our attention, and make it easy for anyone to flag a video.
+
+"Flagged videos are manually reviewed 24/7 and any videos that don't belong in the app are removed within hours. For parents who want a more restricted experience, we recommend that they turn off the Search feature in the app."
+
+The company also suggested that parents use the YouTube Kids app, which is available for mobile phones and tablets, and turn on "restricted mode" which limits flagged content. It can be found at the bottom of any page on the YouTube site, but cautions that "no filter is 100% accurate".
+
+And since Trending began investigati
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"Arts, entertainment and recreation\",\"information and communication\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"no tangible harm, near-miss, or issue\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"none\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy1\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "1"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2016"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Google\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\",\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"YouTube Kids\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Children watching Youtube Kids\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI special interest intangible harm\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"detrimental content\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"Content-recommendation and filtering algorithm\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"Youtube videos\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"9.5 - Content-moderation algorithms like the one involved in this incident are supposed to work without requiring human review or intervention.\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"content moderation\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 10
+title: Kronos Scheduling Algorithm Allegedly Caused Financial Issues for Starbucks Employees
+description: Kronos’s scheduling algorithm and its use by Starbucks managers allegedly negatively impacted financial and scheduling stability for Starbucks employees, which disadvantaged wage workers.
+
+first report text: In April, the New York attorney general's office launched an [investigation](http://www.reuters.com/article/2015/04/13/us-retail-workers-nyag-idUSKBN0N40G420150413) into the scheduling practices of 13 national retail chains, distributing a letter to the Gap, Target, J.C. Penney, and 10 other companies. The letter asked, among other things, whether these companies' store managers use software manufactured by a company called Kronos to algorithmically generate schedules.
+
+A few months later, Kronos was also featured prominently in an [article](http://www.nytimes.com/interactive/2014/08/13/us/starbucks-workers-scheduling-hours.html) published by the _New York Times_ about the ill effects of erratic scheduling on Starbucks employees, especially one particular family. In a [follow-up piece](http://www.nytimes.com/times-insider/2014/08/22/times-article-changes-a-policy-fast/), the author, Jodi Kantor, points directly to Kronos' scheduling software as the root of the problem. "I saw that her life was coming apart and that the Starbucks software had contributed to the crisis," Kantor wrote of one of the story's subjects.
+
+The piece's argument centered around the financial and scheduling unpredictability engendered by platforms like Kronos. When you don't know if your shift might be canceled, if or when you'll be called in, or what your hours will look like next week or the week after, it becomes [very difficult](http://www.buzzfeed.com/sapna/victorias-secret-keeps-workers-on-call-and-unpaid#.wspVMPngB) to make even the most
+
+basic plans for your future. This can have devastating long-term financial and emotional impacts on workers. According to a [recent study](http://www.epi.org/publication/irregular-work-scheduling-and-its-consequences/) by the Economic Policy Institute, a left-leaning think tank in Washington, D.C., 17 percent of the American workforce is negatively affected by unstable schedules.
+
+For their part, Kronos representatives argue that the algorithm is far from the root of the problem. "The populist view is that scheduling is evil, in that it's causing erratic schedules for employees, and so forth," Charlie DeWitt, vice president of business development for Kronos, told BuzzFeed News. "The fact of the matter is it's an algorithm. It does whatever you want it to do."
+
+And you don't necessarily need to work for Kronos to believe that in a competitive retail climate, the problem is more complicated than technology alone. [Lonnie Golden](http://www.abington.psu.edu/academics/faculty/dr-lonnie-golden), a Penn State economist who has extensively studied the impact of erratic scheduling, acknowledges that Kronos' product itself is less to blame than the managers who make staffing decisions based on the data it provides. "It's not necessarily the technology that's responsible for minimum to no advance notice," he said. "It's the way in which it's applied."
+
+But, he added, "where there's a technology problem, there's usually a technology solution." And while Kronos maintains that managers, and not the software, are responsible for early dismissals and last-minute shift cancellations, the company is nonetheless pursuing some technological solutions.
+
+Kronos wants to help managers better understand how scheduling adjustments affect workers and, ultimately, the bottom line. Though the company maintains that its software doesn't produce the kind of erratic schedules that hurt wage workers, DeWitt said there was nonetheless an interest in figuring out why that perception existed — and, if possible, fixing it.
+
+To that end, earlier this month at a [retail conference in Philadelphia](http://www.kronos.com/microsites/RetailExecSummitSpring15/), the company announced that it's working on a new plug-in that will give managers better insight into workers' schedule stability, equity of hours worked among employees, and the consistency of schedules from week to week. In addition, Kronos is improving a feature meant to help give employees more control over their schedules: Though the software already incorporates employee availability and preferences into its scheduling calculations, improvements to a shift-swapping feature on its employee-facing web and mobile apps will theoretically allow employees to work around conflicts among themselves.
+
+Golden said increased employee input and control would be a good thing. But some retailers, DeWitt pointed out, are uncomfortable making workers use an app outside of work hours; indeed, the practice could be seen as a shift of management responsibilities onto lower-paid individuals.
+
+Part of the idea behind the new Kronos plug-in is to help companies tie fairer scheduling practices to reduction in absenteeism and turnover, which can be enormously costly. In other words, if Kronos can help executives see the connection between treating workers fairly and a store's ability to increase revenue, DeWitt said, managers will have an impetus to create more predictable, stable schedules.
+
+And just because companies are looking at this kind of data doesn't mean they have to use it. "Companies like Kronos and Workplace Systems are starting to integrate some of these principles into their software," said [Carrie Gleason](http://populardemocracy.org/carrie-gleason), director of the Fair Workweek Initiative at the Center for Popular Democracy, "but it's all optional, so companies can decide not to do it." While [12 states](http://populardemocracy.org/campaign/restoring-fair-workweek) are currently considering legislation that would create new labor standards around the workweek, Gleason said the technology alone lacks a mechanism for enforcement.
+
+Given market pressures and standard management practices, it's unlikely that any change to Kronos' technology would give workers more power — especially because, given the [competitive retail climate](http://www.buzzfeed.com/sapna/retail-winter-of-death#.krGlE3qDm) at the moment, the bottom line tends to be the priority. "It's not just bad managers. They have extreme pressure to increase productivity on an ever-shrinking labor budget," Gleason said.
+
+With these changes, Kronos has taken logical steps toward both repairing its reputation and making sure its software creates sustainable work environments. But while the company cannot control exactly how the algorithm that forecasts schedules and optimizes workforces is deployed inside different workplaces, the Kronos engineers who designed the product are nonetheless the partial architects of work environments that have been proven to be untenable for low-wage workers. The Kronos scheduling algorithm isn't designed to serve those people; it's designed to be sold to their bosses, and as such, will ultimately be shaped to serve the needs of management — until regulations exist that compel them to change how it's used.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"accommodation and food service activities\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"tangible harm definitively occurred\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"AI tangible harm event\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy2\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "10"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2014"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Starbucks\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Kronos\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Kronos scheduling algorithm\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Starbucks employees\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"7.6 - It is reasonable to expect that unpredictable schedules have led to financial loss for other Starbucks employees through lost wages or unexpected expenses like childcare to attend work on short notice.\\\"\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm issue\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"financial loss\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Kylei Weisse\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm event\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"financial loss\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Weisse incurred unexpected financial costs in order to make it to a shift that was assigned to him on very short notice. \\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Starbucks employees\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"other intangible harm\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"7.6 - Unpredictable schedules cause stress through financial and scheduling instability\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Jannette Navarro\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"other intangible harm\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"7.6 - Her unpredictable schedules caused serious stress and instability in her life.\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"The Kronos scheduling algorithm is designed to optimize the productivity of stores like Starbucks by scheduling workers inconsistently throughout and across weeks based on predicted store traffic.\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"schedules\",\"worker profiles\",\"store traffic\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"scheduling\",\"productivity optimization\",\"predict store traffic\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 11
+title: Northpointe Risk Models
+description: An algorithm developed by Northpointe and used in the penal system is two times more likely to incorrectly label a black person as a high-risk re-offender and is two times more likely to incorrectly label a white person as low-risk for reoffense according to a ProPublica review.
+
+first report text: Across the nation, judges, probation and parole officers are increasingly using algorithms to assess a criminal defendant’s likelihood of becoming a recidivist – a term used to describe criminals who re-offend. There are dozens of these risk assessment algorithms in use. Many states have built their own assessments, and several academics have written tools. There are also two leading nationwide tools offered by commercial vendors.
+
+We set out to assess one of the commercial tools made by Northpointe, Inc. to discover the underlying accuracy of their recidivism algorithm and to test whether the algorithm was biased against certain groups.
+
+Our analysis of Northpointe’s tool, called COMPAS (which stands for Correctional Offender Management Profiling for Alternative Sanctions), found that black defendants were far more likely than white defendants to be incorrectly judged to be at a higher risk of recidivism, while white defendants were more likely than black defendants to be incorrectly flagged as low risk.
+
+We looked at more than 10,000 criminal defendants in Broward County, Florida, and compared their predicted recidivism rates with the rate that actually occurred over a two-year period. When most defendants are booked in jail, they respond to a COMPAS questionnaire. Their answers are fed into the COMPAS software to generate several scores including predictions of “Risk of Recidivism” and “Risk of Violent Recidivism.”
+
+We compared the recidivism risk categories predicted by the COMPAS tool to the actual recidivism rates of defendants in the two years after they were scored, and found that the score correctly predicted an offender’s recidivism 61 percent of the time, but was only correct in its predictions of violent recidivism 20 percent of the time.
+
+In forecasting who would re-offend, the algorithm correctly predicted recidivism for black and white defendants at roughly the same rate (59 percent for white defendants, and 63 percent for black defendants) but made mistakes in very different ways. It misclassifies the white and black defendants differently when examined over a two-year follow-up period.
+
+Our analysis found that:
+
+Black defendants were often predicted to be at a higher risk of recidivism than they actually were. Our analysis found that black defendants who did not recidivate over a two-year period were nearly twice as likely to be misclassified as higher risk compared to their white counterparts (45 percent vs. 23 percent).
+
+White defendants were often predicted to be less risky than they were. Our analysis found that white defendants who re-offended within the next two years were mistakenly labeled low risk almost twice as often as black re-offenders (48 percent vs. 28 percent).
+
+The analysis also showed that even when controlling for prior crimes, future recidivism, age, and gender, black defendants were 45 percent more likely to be assigned higher risk scores than white defendants.
+
+Black defendants were also twice as likely as white defendants to be misclassified as being a higher risk of violent recidivism. And white violent recidivists were 63 percent more likely to have been misclassified as a low risk of violent recidivism, compared with black violent recidivists.
+
+The violent recidivism analysis also showed that even when controlling for prior crimes, future recidivism, age, and gender, black defendants were 77 percent more likely to be assigned higher risk scores than white defendants.
+
+Previous Work
+
+In 2013, researchers Sarah Desmarais and Jay Singh examined 19 different recidivism risk methodologies being used in the United States and found that “in most cases, validity had only been examined in one or two studies conducted in the United States, and frequently, those investigations were completed by the same people who developed the instrument.”
+
+Their analysis of the research published before March2013 found that the tools “were moderate at best in terms of predictive validity,” Desmarais said in an interview. And she could not find any substantial set of studies conducted in the United States that examined whether risk scores were racially biased. “The data do not exist,” she said.
+
+The largest examination of racial bias in U.S. risk assessment algorithms since then is a 2016 paper by Jennifer Skeem at University of California, Berkeley and Christopher T. Lowenkamp from the Administrative Office of the U.S. Courts. They examined data about 34,000 federal offenders to test the predictive validity of the Post Conviction Risk Assessment tool that was developed by the federal courts to help probation and parole officers determine the level of supervision required for an inmate upon release.
+
+The authors found that the average risk score for black offenders was higher than for white offenders, but that concluded the differences were not attributable to bias.
+
+A 2013 study analyzed the predictive validity among various races for another score called the Level of Service Inventory, one of the most popular commercial risk scores from Multi-Health Systems. That study found that “ethnic minorities have higher LS scores than nonminorities.” The study authors, who are Canadian, noted that racial disparities were more consistently found in the U.S. than in Canada. “One possibility may be that systematic bias within the justice system may distort the measurement of ‘true’ recidivism,” they wrote.
+
+A smaller 2006 study of 532 male residents of a work-release program also found “a tendency toward classification errors for African Americans” in the Level of Service Inventory-Revised. The study, by Kevin Whiteacre of the Salvation Army Correctional Services Program, found that 42.7 percent of African Americans were incorrectly classified as high risk, compared with 27.7 percent of Caucasians and 25 percent of Hispanics. That study urged correctional facilities to investigate the their use of the scores independently using a simple contingency table approach that we follow later in this study.
+
+As risk scores move further into the mainstream of the criminal justice system, policy makers have called for further studies of whether the scores are biased.
+
+When he was U.S. Attorney General, Eric Holder asked the U.S. Sentencing Commission to study potential bias in the tests used at sentencing. “Although these measures were crafted with the best of intentions, I am concerned that they inadvertently undermine our efforts to ensure individualized and equal justice,” he said, adding, “they may exacerbate unwarranted and unjust disparities that are already far too common in our criminal justice system and in our society.” The sentencing commission says it is not currently conducting an analysis of bias in risk assessments.
+
+So ProPublica did its own analysis.
+
+How We Acquired the Data
+
+We chose to examine the COMPAS algorithm because it is one of the most popular scores used nationwide and is increasingly being used in pretrial and sentencing, the so-called “front-end” of the criminal justice system. We chose Broward County because it is a large jurisdiction using the COMPAS tool in pretrial release decisions and Florida has strong open-records laws.
+
+Through a public records request, ProPublica obtained two years worth of COMPAS scores from the Broward County Sheriff’s Office in Florida. We received data for all 18,610 people who were scored in 2013 and 2014.
+
+Because Broward County primarily uses the score to determine whether to release or detain a defendant before his or her trial, we discarded scores that were assessed at parole, probation or other stages in the criminal justice system. That left us with 11,757 people who were assessed at the pretrial stage.
+
+Each pretrial defendant received at least three COMPAS scores: “Risk of Recidivism,” “Risk of Violence” and “Risk of Failure to Appear.”
+
+COMPAS scores for each defendant ranged from 1 to 10, with ten being the highest risk. Scores 1 to 4 were labeled by COMPAS as “Low”; 5 to 7 were labeled “Medium”; and 8 to 10 were labeled “High.”
+
+Starting with the database of COMPAS scores, we built a profile of each person’s criminal history, both before and after they were scored. We collected public criminal records from the Broward County Clerk’s Office website through April 1, 2016. On average, defendants in our dataset were not incarcerated for 622.87 days (sd: 329.19).
+
+We matched the criminal records to the COMPAS records using a person’s first and last names and date of birth. This is the same technique used in the Broward County COMPAS validation study conducted by researchers at Florida State University in 2010. We downloaded around 80,000 criminal records from the Broward County Clerk’s Office website.
+
+To determine race, we used the race classifications used by the Broward County Sheriff’s Office, which identifies defendants as black, white, Hispanic, Asian and Native American. In 343 cases, the race was marked as Other.
+
+We also compiled each person’s record of incarceration. We received jail records from the Broward County Sheriff’s Office from January 2013 to April 2016, and we downloaded public incarceration records from the Florida Department of Corrections website.
+
+We found that sometimes people’s names or dates of birth were incorrectly entered in some records – which led to incorrect matches between an individual’s COMPAS score and his or her criminal records. We attempted to determine how many records were affected. In a random sample of 400 cases, we found an error rate of 3.75 percent (CI: +/- 1.8 percent).
+
+How We Defined Recidivism
+
+Defining recidivism was key to our analysis.
+
+In a 2009 study examining the predictive power of its COMPAS score, Northpointe defined recidivism as “a finger-printable arrest involving a charge and a filing for any uniform crime reporting (UCR) code.” We interpreted that to mean a criminal offense that resulted in a jail booking and took place after the crime for which the person was COMPAS scored.
+
+It was not always clear, however, which criminal case was associated with an individual’s COMPAS score. To match COMPAS scores with accompanying cases, we considered cases with arrest dates or charge dates within 30 days of a COMPAS assessment being conducted. In some instances, we could not find any corresponding charges to COMPAS scores. We removed those cases from our analysis.
+
+Next, we sought to determine if a person had been charged with a new crime subsequent to crime for which they were COMPAS screened. We did not count traffic tickets and some municipal ordinance violations as recidivism. We did not count as recidivists people who were arrested for failing to appear at their court hearings, or people who were later charged with a crime that occurred prior to their COMPAS screening.
+
+For violent recidivism, we used the FBI’s definition of violent crime, a category that includes murder, manslaughter, forcible rape, robbery and aggravated assault.
+
+For most of our analysis, we defined recidivism as a new arrest within two years. We based this decision on Northpointe’s practitioners guide, which says that its recidivism score is meant to predict “a new misdemeanor or felony offense within two years of the COMPAS administration date.”
+
+In addition, a recent study of 25,000 federal prisoners’ recidivism rates by the U.S. Sentencing Commission, which shows that most recidivists commit a new crime within the first two years after release (if they are going to commit a crime at all).
+
+Analysis
+
+We analyzed the COMPAS scores for “Risk of Recidivism” and “Risk of Violent Recidivism.” We did not analyze the COMPAS score for “Risk of Failure to Appear.”
+
+We began by looking at the risk of recidivism score. Our initial analysis looked at the simple distribution of the COMPAS decile scores among whites and blacks. We plotted the distribution of these scores for 6,172 defendants who had not been arrested for a new offense or who had recidivated within two years.
+
+
+These histograms show that scores for white defendants were skewed toward lower-risk categories, while black defendants were evenly distributed across scores. In our two-year sample, there were 3,175 black defendants and 2,103 white defendants, with 1,175 female defendants and 4,997 male defendants. There were 2,809 defendants who recidivated within two years in this sample.
+
+The histograms for COMPAS’s violent risk score also show a disparity in score distribution between white and black defendants. The sample we used to test COMPAS’s violent recidivism score was slightly smaller than for the general recidivism score: 4,020 defendants, 1,918 black defendants and 1,459 white defendants. There were 652 violent recidivists.
+
+
+While there is a clear difference between the distributions of COMPAS scores for white and black defendants, merely looking at the distributions does not account for other demographic and behavioral factors.
+
+To test racial disparities in the score controlling for other factors, we created a logistic regression model that considered race, age, criminal history, future recidivism, charge degree, gender and age.
+
+Risk of General Recidivism Logistic Model
+
+Dependent variable:
+
+Score (Low vs Medium and High)
+
+Female	0.221*** (0.080)
+
+Age: Greater than 45	-1.356*** (0.099)
+
+Age: Less than 25	1.308*** (0.076)
+
+Black	0.477*** (0.069)
+
+Asian	-0.254 (0.478)
+
+Hispanic	-0.428*** (0.128)
+
+Native American	1.394* (0.766)
+
+Other	-0.826*** (0.162)
+
+Number of Priors	0.269*** (0.011)
+
+Misdemeanor	-0.311*** (0.067)
+
+Two year Recidivism	0.686*** (0.064)
+
+Constant	-1.526*** (0.079)
+
+Observations	6,172
+
+Akaike Inf. Crit.	6,192.402
+
+Note: *p<0.1; **p<0.05; ***p<0.01
+
+We used those factors to model the odds of getting a higher COMPAS score. According to Northpointe’s practitioners guide, COMPAS “scores in the medium and high range garner more interest from supervision agencies than low scores, as a low score would suggest there is little risk of general recidivism,” so we considered scores any higher than “low” to indicate a risk of recidivism.
+
+Our logistic model found that the most predictive factor of a higher risk score was age. Defendants younger than 25 years old were 2.5 times as likely to get a higher score than middle aged offenders, even when controlling for prior crimes, future criminality, race and gender.
+
+Race was also quite predictive of a higher score. While Black defendants had higher recidivism rates overall, when adjusted for this difference and other factors, they were 45 percent more likely to get a higher score than whites.
+
+Surprisingly, given their lower levels of criminality overall, female defendants were 19.4 percent more likely to get a higher score than men, controlling for the same factors.
+
+Risk of Violent Recidivism Logistic Model
+
+Dependent variable:
+
+Score (Low vs Medium and High)
+
+Female	-0.729*** (0.127)
+
+Age: Greater than 45	-1.742*** (0.184)
+
+Age: Less than 25	3.146*** (0.115)
+
+Black	0.659*** (0.108)
+
+Asian	-0.985 (0.705)
+
+Hispanic	-0.064 (0.191)
+
+Native American	0.448 (1.035)
+
+Other	-0.205 (0.225)
+
+Number of Priors	0.138*** (0.012)
+
+Misdemeanor	-0.164* (0.098)
+
+Two Year Recidivism	0.934*** (0.115)
+
+Constant	-2.243*** (0.113)
+
+Observations	4,020
+
+Akaike Inf. Crit.	3,022.779
+
+Note: *p<0.1; **p<0.05; ***p<0.01
+
+The COMPAS software also has a score for risk of violent recidivism. We analyzed 4,020 people who were scored for violent recidivism over a period of two years (not including time spent incarcerated). We ran a similar regression model for these scores.
+
+Age was an even stronger predictor of a higher score for violent recidivism. Our regression showed that young defendants were 6.4 times more likely to get a higher score than middle age defendants, when correcting for criminal history, gender, race and future violent recidivism.
+
+Race was also predictive of a higher score for violent recidivism. Black defendants were 77.3 percent more likely than white defendants to receive a higher score, correcting for criminal history and future violent recidivism.
+
+To test COMPAS’s overall predictive accuracy, we fit a Cox proportional hazards model to the data – the same technique that Northpointe used in its own validation study. A Cox model allows us to compare rates of recidivism while controlling for time. Because we aren’t controlling for other factors such as a defendant’s criminality we can include more people in this Cox model. For this analysis our sample size was 10,314 defendants (3,569 white defendants and 5,147 black defendants).
+
+Risk of General Recidivism Cox Model
+
+High Risk	1.250*** (0.041)
+
+Medium Risk	0.796*** (0.041)
+
+Observations	13,344
+
+R2	0.068
+
+Max. Possible R2	0.990
+
+Wald Test	954.820*** (df = 2)
+
+LR Test	942.824*** (df = 2)
+
+Score (Logrank) Test	1,054.767*** (df = 2)
+
+Note: *p<0.1; **p<0.05; ***p<0.01
+
+We considered people in our data set to be “at risk” from the day they were given the COMPAS score until the day they committed a new offense or April 1, 2016, whichever came first. We removed people from the risk set while they were incarcerated. The independent variable in the Cox model was the COMPAS categorical risk score.
+
+The Cox model showed that people with high scores were 3.5 times as likely to recidivate as people in the low (scores 1 to 4) category. Northpointe’s study, found that people with high scores (scores 8 to 10) were 5.6 times as likely to recidivate. Both results indicate that the score has predictive value.
+
+A Kaplan Meier survival plot also shows a clear difference in recidivism rates between each COMPAS score level.
+
+
+Overall, the Cox regression had a concordance score of 63.6 percent. That means for any randomly selected pair of defendants in the sample, the COMPAS system can accurately rank their recidivism risk 63.6 percent of the time (e.g. if one person of the pair recidivates, that pair will count as a successful match if that person also had a higher score). In its study, Northpointe reported a slightly higher concordance: 68 percent.
+
+Running the Cox model on the underlying risk scores - ranked 1 to 10 - rather than the low, medium and high intervals yielded a slightly higher concordance of 66.4 percent.
+
+Both results are lower than what Northpointe describes as a threshold for reliability. “A rule of thumb according to several recent articles is that AUCs of .70 or above typically indicate satisfactory predictive accuracy, and measures between .60 and .70 suggest low to moderate predictive accuracy,” the company says in its study.
+
+The COMPAS violent recidivism score had a concordance of 65.1 percent.
+
+The COMPAS system unevenly predicts recidivism between genders. According to Kaplan-Meier estimates, women rated high risk recidivated at a 47.5 percent rate during two years after they were scored. But men rated high risk recidivated at a much higher rate – 61.2 percent – over the same time period. This means that a high-risk woman has a much lower risk of recidivating than a high-risk man, a fact that may be overlooked by law enforcement officials interpreting the score.
+
+
+Northpointe does offer a custom test for women, but it is not in use in Broward County.
+
+The predictive accuracy of the COMPAS recidivism score was consistent between races in our study – 62.5 percent for white defendants vs. 62.3 percent for black defendants. The authors of the Northpointe study found a small difference in the concordance scores by race: 69 percent for white defendants and 67 percent for black defendants.
+
+Across every risk category, black defendants recidivated at higher rates.
+
+
+Risk of General Recidivism Cox Model (with Interaction Term)
+
+Black	0.279*** (0.061)
+
+Asian	-0.777 (0.502)
+
+Hispanic	-0.064 (0.097)
+
+Native American	-1.255 (1.001)
+
+Other	0.014 (0.110)
+
+High Score	1.284*** (0.084)
+
+Medium Score	0.843*** (0.071)
+
+Black:High	-0.190* (.100, p: 0.0574)
+
+Asian:High	1.316* (0.768)
+
+Hispanic:High	-0.119 (0.198)
+
+Native American:High	1.956* (.083)
+
+Other:High	0.415 (0.259)
+
+Black:Medium	-0.173* (.091, p: 0.0578)
+
+Asian:Medium	0.986 (0.711)
+
+Hispanic:Medium	0.065 (0.164)
+
+Native American:Medium	1.390 (1.120)
+
+Other:Medium	-0.334 (0.232)
+
+Observations	13,344
+
+R2	0.072
+
+Max. Possible R2	0.990
+
+Log Likelihood	-30,280.410
+
+Wald Test	988.830*** (df = 17)
+
+LR Test	993.709*** (df = 17)
+
+Score (Logrank) Test	1,104.894*** (df = 17)
+
+Note: *p<0.1; **p<0.05; ***p<0.01
+
+We also added a race-by-score interaction term to the Cox model. This term allowed us to consider whether the difference in recidivism between a high score and low score was different for black defendants and white defendants.
+
+The coefficient on high scores for black defendants is almost statistically significant (0.0574). High-risk white defendants are 3.61 times as likely to recidivate as low-risk white defendants, while high-risk black defendants are only 2.99 times as likely to recidivate as low-risk black defendants. The hazard ratios for medium-risk defendants vs. low risk defendants also are different across races: 2.32 for white defendants and 1.95 for black defendants. Because of the gap in hazard ratios, we can conclude that the score is performing differently among racial subgroups.
+
+We ran a similar analysis on COMPAS’s violent recidivism score, however we did not find a similar result. Here, we found that the interaction term on race and score was not significant, meaning that there is no significant difference the hazards of high and low risk black defendants and high and low risk white defendants.
+
+Overall, there are far fewer violent recidivists than general recidivists and there isn’t a clear difference in the hazard rates across score levels for black and white recidivists. These Kaplan Meier plots show very low rates of violent recidivism.
+
+
+Finally, we investigated whether certain types of errors – false positives and false negatives – were unevenly distributed among races. We used contingency tables to determine those relative rates following the analysis outlined in the 2006 paper from the Salvation Army.
+
+We removed people from our data set for whom we had less than two years of recidivism information. The remaining population was 7,214 – slightly larger than the sample in the logistic models above, because we don’t need a defendant’s case information for this analysis. As in the logistic regression analysis, we marked scores other than “low” as higher risk. The following tables show how the COMPAS recidivism score performed:
+
+All Defendants
+
+Low	High
+
+Survived	2681	1282
+
+Recidivated	1216	2035
+
+FP rate: 32.35
+
+FN rate: 37.40
+
+PPV: 0.61
+
+NPV: 0.69
+
+LR+: 1.94
+
+LR-: 0.55
+
+Black Defendants
+
+Low	High
+
+Survived	990	805
+
+Recidivated	532	1369
+
+FP rate: 44.85
+
+FN rate: 27.99
+
+PPV: 0.63
+
+NPV: 0.65
+
+LR+: 1.61
+
+LR-: 0.51
+
+White Defendants
+
+Low	High
+
+Survived	1139	349
+
+Recidivated	461	505
+
+FP rate: 23.45
+
+FN rate: 47.72
+
+PPV: 0.59
+
+NPV: 0.71
+
+LR+: 2.23
+
+LR-: 0.62
+
+These contingency tables reveal that the algorithm is more likely to misclassify a black defendant as higher risk than a white defendant. Black defendants who do not recidivate were nearly twice as likely to be classified by COMPAS as higher risk compared to their white counterparts (45 percent vs. 23 percent). However, black defendants who scored higher did recidivate slightly more often than white defendants (63 percent vs. 59 percent).
+
+The test tended to make the opposite mistake with whites, meaning that it was more likely to wrongly predict that white people would not commit additional crimes if released compared to black defendants. COMPAS under-classified white reoffenders as low risk 70.5 percent more often than black reoffenders (48 percent vs. 28 percent). The likelihood ratio for white defendants was slightly higher 2.23 than for black defendants 1.61.
+
+We also tested whether restricting our definition of high risk to include only COMPAS’s high score, rather than including both medium and high scores, changed the results of our analysis. In that scenario, black defendants were three times as likely as white defendants to be falsely rated at high risk (16 percent vs. 5 percent).
+
+We found similar results for the COMPAS violent recidivism score. As before, we calculated contingency tables based on how the score performed:
+
+All Defendants
+
+Low	High
+
+Survived	4121	1597
+
+Recidivated	347	389
+
+FP rate: 27.93
+
+FN rate: 47.15
+
+PPV: 0.20
+
+NPV: 0.92
+
+LR+: 1.89
+
+LR-: 0.65
+
+Black defendants
+
+Low	High
+
+Survived	1692	1043
+
+Recidivated	170	273
+
+FP rate: 38.14
+
+FN rate: 38.37
+
+PPV: 0.21
+
+NPV: 0.91
+
+LR+: 1.62
+
+LR-: 0.62
+
+White defendants
+
+Low	High
+
+Survived	1679	380
+
+Recidivated	129	77
+
+FP rate: 18.46
+
+FN rate: 62.62
+
+PPV: 0.17
+
+NPV: 0.93
+
+LR+: 2.03
+
+LR-: 0.77
+
+Black defendants were twice as likely as white defendants to be misclassified as a higher risk of violent recidivism, and white recidivists were misclassified as low risk 63.2 percent more often than black defendants. Black defendants who were classified as a higher risk of violent recidivism did recidivate at a slightly higher rate than white defendants (21 percent vs. 17 percent), and the likelihood ratio for white defendants was higher, 2.03, than for black defendants, 1.62.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"race\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"law enforcement\",\"public administration\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"tangible harm definitively occurred\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"AI tangible harm event\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy3\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "11"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"ProPublica found evidence of differential performance rates of the COMPAS recidivism risk prediction system across racial groups. The system was both used in sentencing (affecting judge’s decisions concerning the length of sentences) and pretrial bond hearings (affecting decisions concerning pretrial detainment and bond amounts). There is a reasonable probability that the risk scores inaccurately aggravated choices made by judges. Moreover, there is at least one instance in which a judge admitted to assigning a longer prison sentence due to the elevated risk score, which was reduced on appeal.\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"ProPublica found evidence of differential performance rates of the COMPAS recidivism risk prediction system across racial groups. The system was both used in sentencing (affecting judge’s decisions concerning the length of sentences) and pretrial bond hearings (affecting decisions concerning pretrial detainment and bond amounts). There is a reasonable probability that the risk scores wrongfully aggravated choices made by judges. \""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2013"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"ProPublica\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"non-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"watchdog\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Northpointe\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"COMPAS\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Defendants assessed by COMPAS\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"7.6 - ProPublica established that the algorithm was biased and disproportionately determined black people were more at risk for recidivism.\\\"\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI special interest intangible harm\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"disproportionate treatment based upon a protected characteristic\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Defendants assessed by COMPAS\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"7.6 - Wrongful arrest, and unequal treatment before the law is a violation of human rights, civil liberties, civil rights, or democratic norms.\\\"\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI special interest intangible harm\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"violation of human rights, civil liberties, civil rights, or democratic norms\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Defendants assessed by COMPAS\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm issue\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"financial loss\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"7.6 - Convicts misjudged by COMPAS may suffer a non-imminent risk of financial loss through higher bail from the AI decision that they would not have incurred otherwise\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Defendants assessed by COMPAS\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"other tangible harm\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Wrongful arrest or detainment harms physical freedom and autonomy\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Paul Zilly\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm event\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"other tangible harm\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Zilly's risk score impacted the judge’s sentencing, which was corrected down on appeal; the judge himself stated that had it not been for the score, his sentencing would have been much shorter.\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Brisha Borden\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Non-AI tangible harm event.  It is likely that her elevated recidivism risk scores caused her bond to be raised from 0$ to 1000$, but we cannot establish a clear link.\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"financial loss\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"COMPAS deployers\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"government entity\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Deployers of COMPAS include New York State Division of Criminal Justice Services, Wisconsin Department of Corrections, Broward County, Florida\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Sade Jones\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"financial loss\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Non-AI tangible harm event.  It is likely that her elevated recidivism risk score caused her bond to be raised from 0$ to 1000$, but we cannot establish a clear link.\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"The COMPAS system calculates a person's risk of recidivism based on their criminal records and responses to a 137-questions long survey about the situation and context of the crime and the person involved.\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"criminal record\",\"questionnaire responses\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"predict recidivism\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 14
+title: Biased Sentiment Analysis
+description: Google Cloud's Natural Language API provided racist, homophobic, amd antisemitic sentiment analyses.
+
+first report text: Google's code of conduct explicitly prohibits discrimination based on sexual orientation, race, religion, and a host of other protected categories. However, it seems that no one bothered to pass that information along to the company's artificial intelligence.
+
+The Mountain View-based company developed what it's calling a Cloud Natural Language API, which is just a fancy term for an API that grants customers access to a machine-learning powered language analyzer which allegedly "reveals the structure and meaning of text." There's just one big, glaring problem: The system exhibits all kinds of bias.
+
+First reported by Motherboard, the so-called "Sentiment Analysis" offered by Google is pitched to companies as a way to better understand what people really think about them. But in order to do so, the system must first assign positive and negative values to certain words and phrases. Can you see where this is going?
+
+The system ranks the sentiment of text on a -1.0 to 1.0 scale, with -1.0 being "very negative" and 1.0 being "very positive." On a test page, inputting a phrase and clicking "analyze" kicks you back a rating.
+
+"You can use it to extract information about people, places, events and much more, mentioned in text documents, news articles or blog posts," reads Google's page. "You can use it to understand sentiment about your product on social media or parse intent from customer conversations happening in a call center or a messaging app."
+
+Both "I'm a homosexual" and "I'm queer" returned negative ratings (-0.5 and -0.1, respectively), while "I'm straight" returned a positive score (0.1).
+
+Image: Google
+
+And it doesn't stop there, "I'm a jew" and "I'm black" returned scores of -0.1.
+
+Image: google
+
+Interestingly, shortly after Motherboard published their story, some results changed. A search for "I'm black" now returns a neutral 0.0 score, for example, while "I'm a jew" actually returns a score of -0.2 (i.e., even worse than before).
+
+"White power," meanwhile, is given a neutral score of 0.0.
+
+Image: google
+
+So what's going on here? Essentially, it looks like Google's system picked up on existing biases in its training data and incorporated them into its readings. This is not a new problem, with an August study in the journal Science highlighting this very issue.
+
+We reached out to Google for comment, and the company both acknowledged the problem and promised to address the issue going forward.
+
+"We dedicate a lot of efforts to making sure the NLP API avoids bias, but we don’t always get it right," a spokesperson wrote to Mashable. "This is an example of one of those times, and we are sorry. We take this seriously and are working on improving our models. We will correct this specific case, and, more broadly, building more inclusive algorithms is crucial to bringing the benefits of machine learning to everyone.”
+
+So where does this leave us? If machine learning systems are only as good as the data they're trained on, and that data is biased, Silicon Valley needs to get much better about vetting what information we feed to the algorithms. Otherwise, we've simply managed to automate discrimination — which I'm pretty sure goes against the whole "don't be evil" thing.
+
+This story has been updated to include a statement from Google.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"religion\",\"sexual orientation or gender identity\",\"sex\",\"race\",\"nation of origin, citizenship, immigrant status\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"information and communication\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"no tangible harm, near-miss, or issue\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "false"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"none\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy3\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "[\"Natural Language Processesing\"]"
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"001\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"4. Peer review complete\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "14"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "null"
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"Annotator 2: \\n\\n No tangible harm\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"Disproportionately gave phrases related to protected characteristics negative scores.\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"Disproportionately gave phrases related to protected characteristics negative scores.\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2017"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "10"
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "25"
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"Global\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Google\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Google Cloud Natural Language API\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Affected Groups\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI special interest intangible harm\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"disproportionate treatment based upon a protected characteristic\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Black people, Jewish people, LGBTQ+ people, and women were gauged as more inherently negative in sentiment analysis by the Google Cloud Natural Language API tool.\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Motherboard\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"unclear\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"watchdog\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Google\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Cloud Natural Language API\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Cloud Natural Language API Users \\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI special interest intangible harm\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"disproportionate treatment based upon a protected characteristic\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Disproportionately gave phrases related to protected characteristics negative scores.\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"Sentimental Analysis model. Given a phrase, the model outputs a score -1 to 1 which determines the sentiment of the phrase, negative or positive.\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"text\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"natural language processing\",\"sentiment analysis\",\"Sentiment Analysis\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Taxonomy: CSETv1
+Classification Count: 7
+
+Based on the incident text and the taxonomy definition provided, provide a classification ONLY for the attribute "Tangible Harm".
+
+IMPORTANT: Your classification MUST include ONLY the following taxonomy attribute:
+Tangible Harm
+
+For maximum accuracy and completeness:
+1. Focus ONLY on the required field "Tangible Harm".
+2. Use the permitted_values for this attribute from the definition provided.
+3. Review similar incidents to understand how this specific field is typically used.
+
+Return your response as a JSON object with the following structure:
+
+{
+  "classification": {
+    "namespace": "CSETv1",
+    "attributes": [
+      {"short_name": "Tangible Harm", "value_json": ""value""} 
+    ]
+  },
+  "explanation": "A detailed explanation of your classification choice for Tangible Harm.",
+  "confidence": "A confidence score between 0 and 1 for this attribute classification"
+}
+
+DO NOT include any other text in your response, nor any other characters.
+DO NOT start your response with ```json or ```
+Ensure that ONLY the attribute "Tangible Harm" is included in your classification.

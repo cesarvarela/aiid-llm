@@ -1,0 +1,3250 @@
+You are an AI assistant that helps classify AI incidents according to a specific taxonomy attribute.
+
+Your task is to analyze the provided incident text and classify it ONLY for the specified taxonomy attribute: "Tangible Harm".
+
+Always require the incident text, the taxonomy namespace, and the specific attribute short_name to perform classification.
+
+Here is the incident text to classify:
+Fast-food giant KFC has apologized to its German customers after it used the anniversary of the event that instigated the Holocaust to promote its chicken.
+
+Users of the chicken chain's German app received a push notification on Wednesday that read: "It's memorial day for Kristallnacht! Treat yourself with more tender cheese on your crispy chicken. Now at KFCheese!"
+
+Around an hour later, KFC sent a second alert to app users, according to German newspapers.
+
+"We are very sorry, we will check our internal processes immediately so that this does not happen again," the company said via push notification. "Please excuse this error."
+
+[Kristallnacht](https://encyclopedia.ushmm.org/content/en/article/kristallnacht) is the name given to a wave of violent attacks on Jewish communities that took place throughout Germany and Austria over two days in 1938. The name, which translates to "Night of Crystal," refers to the shattered glass from synagogues, homes, and Jewish-owned businesses that was left in the streets in the wake of the destruction.  
+
+Kristallnacht—also known as "Night of the Broken Glass"—marked a turning point for Jewish people living in Nazi Germany, a regime that went on to [murder at least 6 million Jews](https://www.nationalww2museum.org/war/articles/holocaust).  
+KFC's mishap is [reported](https://www.newsweek.com/kfc-urges-customers-eat-chicken-remember-nazi-kristallnacht-1758376) to have occurred when an automated system—which was designed to detect holidays and other days of significance and write relevant marketing messages—identified the anniversary of Kristallnacht and generated the push notification.
+
+Messages created by the system are supposed to be checked by a human being before being sent to users, according to the BBC, but this one slipped through the cracks.
+
+A spokesperson for KFC was not immediately available for comment when contacted by _Fortune._
+
+However, in a statement to _Newsweek,_ the company's German operation pointed the finger at its bots.
+
+"Automated push notification was accidentally issued to KFC app users in Germany that contained an obviously unplanned, insensitive, and unacceptable message, and for this we sincerely apologize.
+
+"We use a semiautomated content creation process linked to calendars that include national observances," it said. "In this instance, our internal review process was not properly followed, resulting in a non-approved notification being shared."
+
+The company said it had suspended app communications while it examined its current processes to ensure similar problems did not arise again.
+
+"We understand and respect the gravity and history of this day, and remain committed to equity, inclusion, and belonging for all," it told _Newsweek._
+
+KFC has faced widespread condemnation over the blunder, with [Twitter](https://fortune.com/company/twitter) users taking to the platform to declare the promo "[disgusting](https://twitter.com/luxurysassy/status/1590611379718828034)" and "[pure anti-Semitism](https://twitter.com/DoronShapir/status/1590856753566343168)."
+
+Daniel Sugarman, director of public affairs for the Board of Deputies of British Jews, described the marketing message as "absolutely hideous," while Dalia Grinfeld, associate director for European affairs at Jewish NGO Anti-Defamation League, [said](https://twitter.com/DaliaGrinfeld/status/1590337407135625217) in a message directed at KFC: "Shame on you."
+
+Here is the taxonomy namespace:
+CSETv1
+
+Here is the specific attribute to classify:
+Tangible Harm
+
+Here is the definition for the target attribute "Tangible Harm":
+{
+  "short_name": "Tangible Harm",
+  "short_description": "Did tangible harm (loss, damage or injury ) occur? ",
+  "long_description": "An assessment of whether tangible harm, imminent tangible harm, or non-imminent tangible harm occurred. This assessment does not consider the context of the tangible harm, if an AI was involved, or if there is an identifiable, specific, and harmed entity. It is also not assessing if an intangible harm occurred. It is only asking if tangible harm occurred and what its imminency was.",
+  "permitted_values": [
+    "tangible harm definitively occurred",
+    "imminent risk of tangible harm (near miss) did occur",
+    "non-imminent risk of tangible harm (an issue) occurred",
+    "no tangible harm, near-miss, or issue",
+    "unclear"
+  ],
+  "mongo_type": "string"
+} 
+
+Here are similar incidents and their full classifications (use for context):
+Id: 30
+title: Poor Performance of Tesla Factory Robots
+description: The goal of manufacturing 2,500 Tesla Model 3's per week was falling short by 500 cars/week, and employees had to be "borrowed" from Panasonic in a shared factory to help hand-assemble lithium batteries for Tesla.
+
+first report text: Analysts at Bernstein argue that Elon Musk has over-automated Tesla.
+
+The very robots that Musk says will revolutionise the car industry are baking in Tesla’s mistakes and costing far more money than they’re worth, they say.
+
+The robots are killing Tesla.
+
+In a rare win for humans over robots in the battle for labour efficiency, Wall Street analysts have laid down a compelling argument that over-automation is to blame for problems at the billionaire Elon Musk’s electric-car company.
+
+That is to say, the very innovation and competitive advantage that Musk says he’s bringing to the car industry – his nearly fully automated plant in Fremont, California – is the reason Tesla is unable to scale quickly.
+
+According to the Bernstein analysts Max Warburton and Toni Sacconaghi, it’s the robots that can’t pump out Tesla’s highly anticipated Model 3s fast enough. The whole process is too ambitious, risky, and complicated.
+
+From Bernstein (emphasis ours):
+
+“Tesla has tried to hyper-automate final assembly. We believe Tesla has been too ambitious with automation on the Model 3 line. Few have seen it (the plant is off-limits at present), but we know this: Tesla has spent c.2x what a traditional OEM spends per unit on capacity. “It has ordered huge numbers of Kuka robots. It has not only automated stamping, paint and welding (as most other OEMs do) – it has also tried to automate final assembly (putting parts into the car). It talks of two-level final lines with robots automating parts sequencing. This is where Tesla seems to be facing problems (as well as in welding & battery pack assembly).”
+
+Warburton, who spent his career before Wall Street at the International Motor Vehicle Program – a partly academic, partly commercial organisation based at MIT – wrote that “automation in final assembly doesn’t work.”
+
+Bernstein adds that the world’s best carmakers, the Japanese, try to limit automation because it “is expensive and is statistically inversely correlated to quality.” Their approach is to get the process right first, then bring in the robots – the opposite of Musk’s.
+
+It’s not a problem that Tesla, a highly indebted company, can afford forever.
+
+The company’s stock has cratered more than 25% in the past month on worries that it will yet again underdeliver on its Model 3 promises. Over the past few days, investors have been selling Tesla’s debt in droves. On Tuesday, Moody’s downgraded Tesla by one notch, to B3, citing a “significant shortfall” in Model 3 production.
+
+During Tesla’s fourth-quarter earnings call, Musk told investors that factory model assembly was the biggest constraint on Model 3 production. There are tens of thousands of components in each car, he said, and the company can only move as fast as it can correct each problem area.
+
+One thing that makes it hard to solve problems in every area, according to Bernstein’s analysts, is that they’re all automated. Other car companies that have tried this – Fiat and Volkswagen – have also failed.
+
+Bernstein
+
+What’s more, Bernstein says, this is barely saving Musk money. From the note:
+
+“Let’s say there are 10 hours of labour in final assembly (the part of the production line where parts, interiors and the powertrain are installed in a painted bodyshell). In a regular plant, final assembly typically has less than 5% of tasks automated. If Tesla attempts to automate 50% of these tasks, it could cut out 5 or so hours of labour. This might save $US150 per car (assuming wage rates, all in, of $US30 per worker, per hour). “But while all that exotic capital might allow Tesla to remove 5 workers, it will then need to hire a skilled engineer to manage, programme and maintain robots for $US100 an hour (our estimate of a robotic engineers’ hourly rate). “So the net labour saving may be only $US50 per unit. Yet putting the automation into the plant seems to involve an apparent capital cost that’s $US4,000 higher per unit of capacity than for a normal plant. If the product is built for 7 years, that’s over US$550 of additional depreciation per unit built. It’s hard to see an economic case even if somehow the Fremont Model 3 line can be made to work. So why exactly has Tesla taken this route? It’s unclear.”
+
+Oh.
+
+So in Musk’s attempt to bring on the robot uprising that will revolutionise how we make cars, he’s burned cash and baked in his own mistakes. If you think about it that way, we are just beginning to understand how much this will cost him.
+
+Business Insider Emails & Alerts Site highlights each day to your inbox. Email Address Join
+
+Follow Business Insider Australia on Facebook, Twitter, LinkedIn, and Instagram.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"manufacturing\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"tangible harm definitively occurred\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"none\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy1\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "[\"computer vision\"]"
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "30"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"Delay & financial loss cannot be linked to the performance of the robots but is instead due to a misallocation of resources from management side. \""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2018"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"03\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"Fremont\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"CA\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"Month corresponds to End of Q1 of 2018, which is when Tesla first reported production shortfalls. \""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Tesla\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"financial loss\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"financial loss due to misallocation of resources\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Kuka\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Kuka assembly robots\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"Manufacturing robot used in Tesla factories to produce the Model 3 car, performing tasks such as stamping, painting, welding, final assembly, and battery insulation.\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"The robots operated independently, but often required human maintenance.\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"Manufacturing Robot\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"production\",\"assembly\",\"object detection\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 323
+title: Tesla on Autopilot Crashed into Parked Police Car in California
+description: A Tesla sedan on Autopilot mode collided with a parked Laguna Beach Police Department car, resulting in minor injuries for its driver in Laguna Beach, California.
+
+first report text: Early on, the software had the regrettable habit of hitting police cruisers. No one knew why, though Tesla’s engineers had some good guesses: Stationary objects and flashing lights seemed to trick the A.I. The car would be driving along normally, the computer well in control, and suddenly it would veer to the right or left and — _smash_ — at least 10 times in just over three years.
+
+For a company that depended on an unbounded sense of optimism among investors to maintain its high stock price — Tesla was at one point worth more than Toyota, Honda, Volkswagen, Mercedes, BMW, Ford and General Motors combined — these crashes might seem like a problem. But to Elon Musk, Tesla’s chief executive, they presented an opportunity. Each collision generated data, and with enough data, the company could speed the development of the world’s first truly self-driving car. He believed in this vision so strongly that it led him to make wild predictions: “My guess as to when we would think it is safe for somebody to essentially fall asleep and wake up at their destination: probably toward the end of next year,” [Musk said in 2019.](https://ark-invest.com/podcast/on-the-road-to-full-autonomy-with-elon-musk/) “I would say I am certain of that. That is not a question mark.”
+
+The future of Tesla may rest on whether drivers knew that they were engaged in this data-gathering experiment, and if so, whether their appetite for risk matched Musk’s. I wanted to hear from the victims of some of the more minor accidents, but they tended to fall into two categories, neither of which predisposed them to talk: They either loved Tesla and Musk and didn’t want to say anything negative to the press, or they were suing the company and remaining silent on the advice of counsel. (Umair Ali, whose Tesla steered into a highway barrier in 2017, had a different excuse: “Put me down as declined interview because I don’t want to piss off the richest man in the world.”)
+
+Then I found Dave Key. On May 29, 2018, Key’s 2015 Tesla Model S was driving him home from the dentist in Autopilot mode. It was a route that Key had followed countless times before: a two-lane highway leading up into the hills above Laguna Beach, Calif. But on this trip, while Key was distracted, the car drifted out of its lane and slammed into the back of a parked police S.U.V., spinning the car around and pushing the S.U.V. up onto the sidewalk. No one was hurt.
+
+Key, a 69-year-old former software entrepreneur, took a dispassionate, engineer’s-eye view of his own accident. “The problem with stationary objects — I’m sorry, this sounds stupid — is that they don’t move,” he said. For years, Tesla’s artificial intelligence had trouble separating immobile objects from the background. Rather than feeling frustrated that the computer hadn’t figured out such a seemingly elementary problem, Key took comfort in learning that there was a reason behind the crash: a known software limitation, rather than some kind of black-swan event.
+
+Last fall, I asked Key to visit the scene of the accident with me. He said he would do me one better; he would take me there using Tesla’s new Full Self-Driving mode, which was still in beta. I told Key that I was surprised he was still driving a Tesla, much less paying extra — F.S.D. now costs $15,000 — for new autonomous features. If my car had tried to kill me, I would have switched brands. But in the months and years after his Model S was totaled, he bought three more.
+
+We met for breakfast at a cafe in Laguna Beach, about three miles from the crash site. Key was wearing a black V-neck T-shirt, khaki shorts and sandals: Southern California semiretirement chic. As we walked to our table, he locked the doors of his red 2022 Model S, and the side mirrors folded up like a dog’s ears when it’s being petted.
+
+Key had brought along a four-page memo he drafted for our interview, listing facts about the accident, organized under subheadings like “Tesla Full Self-Driving Technology (Discussion).” He’s the sort of man who walks around with a battery of fully formed opinions on life’s most important subjects — computers, software, exercise, money — and a willingness to share them. He was particularly concerned that I understand that Autopilot and F.S.D. were saving lives: “The data shows that their accident rate while on Beta is far less than other cars,” one bullet point read, in 11-point Calibri. “Slowing down the F.S.D. Beta will result in more accidents and loss of life based on hard statistical data.”
+
+Accidents like his — and even the deadly ones — are unfortunate, he argued, but they couldn’t distract society from the larger goal of widespread adoption of autonomous vehicles. Key drew an analogy to the coronavirus vaccines, which prevented hundreds of thousands of deaths but also caused rare deaths and injuries from adverse reactions. “As a society,” he concluded, “we choose the path to save the most lives.”
+
+We finished breakfast and walked to the car. Key had hoped to show off the newest version of F.S.D., but his system hadn’t updated yet. “Elon said it would be released at the end of the week,” he said. “Well, it’s Sunday.” Musk had been hinting for weeks that the update would be a drastic improvement over F.S.D. 10.13, which had been released over the summer. Because Musk liked to make little jokes out of the names and numbers in his life, the version number would jump to 10.69 with this release. (The four available Tesla models are S, 3, X and Y, presumably because that spells the word “sexy.”)
+
+Key didn’t want to talk about Musk, but the executive’s reputational collapse had become impossible to ignore. He was in the middle of his bizarre, on-again-off-again [campaign to take over Twitter](https://www.nytimes.com/live/2022/10/28/business/elon-musk-twitter), to the dismay of Tesla loyalists. And though he hadn’t yet [attacked Anthony Fauci](https://www.nytimes.com/2022/12/12/business/musk-twitter-fauci.html) or [spread conspiracy theories about Nancy Pelosi’s husband](https://www.nytimes.com/2022/10/30/business/musk-tweets-hillary-clinton-pelosi-husband.html) or gone on a [journalist-banning spree](https://www.nytimes.com/2022/12/16/business/elon-musk-twitter-suspensions.html) on the platform, the question was already suggesting itself: How do you explain Elon Musk?
+
+“People are flawed,” Key said cautiously, before repeating a sentiment that Musk often said about himself: If partisans on both sides hated him, he must be doing something right. No matter what trouble Musk got himself into, Key said, he was honest — “truthful to his detriment.”
+
+As we drove, Key compared F.S.D. and the version of Autopilot on his 2015 Tesla. Autopilot, he said, was like fancy cruise control: speed, steering, crash avoidance. Though in his case, he said, “I guess it didn’t do crash avoidance.” He had been far more impressed by F.S.D. It was able to handle just about any situation he threw at it. “My only real complaint is it doesn’t always select the lane that I would.”
+
+After a minute, the car warned Key to keep his hands on the wheel and eyes on the road. “Tesla now is kind of a nanny about that,” he complained. If Autopilot was once dangerously permissive of inattentive drivers — allowing them to nod off behind the wheel, even — that flaw, like the stationary-object bug, had been fixed. “Between the steering wheel and the eye tracking, that’s just a solved problem,” Key said.
+
+Soon we were close to the scene of the crash. Scrub-covered hills with mountain-biking trails lacing through them rose on either side of us. That was what got Key into trouble on the day of the accident. He was looking at a favorite trail and ignoring the road. “I looked up to the left, and the car went off to the right,” he said. “I was in this false sense of security.”
+
+We parked at the spot where he hit the police S.U.V. four years earlier. There was nothing special about the road here: no strange lines, no confusing lane shift, no merge. Just a single lane of traffic running along a row of parked cars. Why the Tesla failed at that moment was a mystery.
+
+Eventually, Key told F.S.D. to take us back to the cafe. As we started our left turn, though, the steering wheel spasmed and the brake pedal juddered. Key muttered a nervous, “OK. … ”
+
+After another moment, the car pulled halfway across the road and stopped. A line of cars was bearing down on our broadside. Key hesitated a second but then quickly took over and completed the turn. “It probably could have then accelerated, but I wasn’t willing to cut it that close,” he said. If he was wrong, of course, there was a good chance that he would have had his second A.I.-caused accident on the same one-mile stretch of road.
+
+**Three weeks before** Key hit the police S.U.V., Musk wrote an email to Jim Riley, whose son Barrett died after his Tesla crashed while speeding. Musk sent Riley his condolences, and the grieving father wrote back to ask whether Tesla’s software could be updated to allow an owner to set a maximum speed for the car, along with other restrictions on acceleration, access to the radio and the trunk and distance the car could drive from home. Musk, while sympathetic, replied: “If there are a large number of settings, it will be too complex for most people to use. I want to make sure that we get this right. Most good for most number of people.”
+
+It was a stark demonstration of what makes Musk so unusual as a chief executive. First, he reached out directly to someone who was harmed by one of his products — something it’s hard to imagine the head of G.M. or Ford contemplating, if only for legal reasons. (Indeed, this email was entered into evidence after Riley sued Tesla.) And then Musk rebuffed Riley. No vague “I’ll look into it” or “We’ll see what we can do.” Riley receives a hard no.
+
+Like Key, I want to resist Musk’s tendency to make every story about him. Tesla is a big car company with thousands of employees. It existed before Elon Musk. It might exist after Elon Musk. But if you want a parsimonious explanation for the challenges the company faces — in the form of the lawsuits, a crashing stock price and an A.I. that still seems all too capable of catastrophic failure — you should look to its mercurial, brilliant, sophomoric chief executive.
+
+Perhaps there’s no mystery here: Musk is simply a narcissist, and every reckless swerve he makes is meant solely to draw the world’s attention. He seemed to endorse this theory in a tongue-in-cheek way during a recent deposition, when a lawyer asked him, “Do you have some kind of unique ability to identify narcissistic sociopaths?” and he replied, “You mean by looking in the mirror?”
+
+But what looks like self-obsession and poor impulse control might instead be the fruits of a coherent philosophy, one that Musk has detailed on many occasions. It’s there in the email to Riley: the greatest good for the greatest number of people. That dictum, as part of an ad hoc system of utilitarian ethics, can explain all sorts of mystifying decisions that Musk has made, not least his breakneck pursuit of A.I., which in the long term, he believes, will save countless lives.
+
+Unfortunately for Musk, the short term comes first, and his company faces a rough few months. In February, the first lawsuit against Tesla for a crash involving Autopilot will go to trial. Four more will follow in quick succession. Donald Slavik, who will represent plaintiffs in as many as three of those cases, says that a normal car company would have settled by now: “They look at it as a cost of doing business.” Musk has vowed to fight it out in court, no matter the dangers this might present for Tesla. “The dollars can add up,” Slavik said, “especially if there’s any finding of punitive damages.”
+
+Slavik sent me one of the complaints he filed against Tesla, which lists prominent Autopilot crashes from A to Z — in fact, from A to WW. In [China, a Tesla slammed into the back of a street sweeper](https://jalopnik.com/two-years-on-a-father-is-still-fighting-tesla-over-aut-1823189786). In Florida, [a Tesla hit a tractor-trailer](https://www.nytimes.com/2022/05/16/NYT-Presents/elon-musk-tesla-autopilot.html) that was stretched across two lanes of a highway. During a downpour in Indiana, a Tesla Model 3 hydroplaned off the road and burst into flames. In the Florida Keys, a Model S drove through an intersection and killed a pedestrian. In New York, a [Model Y struck a man who was changing his tire on the shoulder of the Long Island Expressway](https://www.courthousenews.com/feds-probe-ny-tesla-crash-that-killed-man-changing-flat-tire/). In [Montana, a Tesla steered unexpectedly into a highway barrier](https://electrek.co/2016/07/22/tesla-autopilot-model-x-crash-montana-coverup/). Then the same thing happened in Dallas and in Mountain View and in San Jose.
+
+The arrival of self-driving vehicles wasn’t meant to be like this. Day in, day out, we scare and maim and kill ourselves in cars. In the United States last year, there were around 11 million road accidents, nearly five million injuries and more than 40,000 deaths. Tesla’s A.I. was meant to put an end to this blood bath. Instead, on average, there is at least one Autopilot-related crash in the United States every day, and [Tesla is under investigation by the National Highway Traffic Safety Administration.](https://www.nytimes.com/2022/06/09/business/tesla-autopilot-nhtsa-investigation.html)
+
+Ever since Autopilot was released in October 2015, Musk has encouraged drivers to think of it as more advanced than it was, stating in January 2016 that it was “probably better” than a human driver. That November, the company released [a video of a Tesla](https://vimeo.com/192179726?embedded=true&source=vimeo_logo&owner=128712855) navigating the roads of the Bay Area with the disclaimer: “The person in the driver’s seat is only there for legal reasons. He is not doing anything. The car is driving itself.” Musk also rejected the name “Copilot” in favor of “Autopilot.”
+
+The fine print made clear that the technology was for driver assistance only, but that message received a fraction of the attention of Musk’s announcements. A large number of drivers seemed genuinely confused about Autopilot’s capabilities. (Tesla also declined to disclose that the car in the 2016 video crashed in the company’s parking lot.) Slavik’s legal complaint doesn’t hold back: “Tesla’s conduct was despicable, and so contemptible that it would be looked down upon and despised by ordinary decent people.”
+
+The many claims of the pending lawsuits come back to a single theme: Tesla consistently inflated consumer expectations and played down the dangers involved. The cars didn’t have sufficient driver monitoring because Musk didn’t want drivers to think that the car needed human supervision. (Musk in April 2019: “If you have a system that’s at or below human-level reliability, then driver monitoring makes sense. But if your system is dramatically better, more reliable than a human, then monitoring does not help much.”) Drivers weren’t warned about problems with automatic braking or “uncommanded lane changes.” The company would admit to the technology’s limitations in the user manual but publish viral videos of a Tesla driving a complicated route with no human intervention.
+
+Musk’s ideal customer was someone like Key — willing to accept the blame when something went wrong but possessing almost limitless faith in the next update. In a deposition, an engineer at Tesla made this all but explicit: “We want to let the customer know that, No. 1, you should have confidence in your vehicle: Everything is working just as it should. And, secondly, the reason for your accident or reason for your incident always falls back on you.”
+
+After our failed left turn in Laguna Beach, Key quickly diagnosed the problem. If only the system had upgraded to F.S.D. 10.69, he argued, the car surely would have managed the turn safely. Unfortunately for Musk, not every Tesla owner is like Dave Key. The plaintiffs in the Autopilot lawsuits might agree that the A.I. is improving, but only on the backs of the early adopters and bystanders who might be killed along the way.
+
+**Online, there’s a battle** between pro-Musk and anti-Musk factions about Autopilot and F.S.D. Reddit has a forum called r/RealTesla that showcases the most embarrassing A.I. screw-ups, along with more generic complaints: squeaky steering wheels, leaky roofs, haywire electronics, noisy cabins, stiff suspensions, wrinkled leather seats, broken door handles. The Musk stans tend to sequester themselves in r/TeslaMotors, where they post Tesla sightings, cheer on the company’s latest factory openings and await the next big announcement from the boss.
+
+I found David Alford on YouTube, where he posted a video called [“Tesla Full Self-Driving Running a Red Light.”](https://www.youtube.com/watch?v=_vSGyqX0HZg) In it, we see the view through the windshield as Alford’s car approaches an intersection with a left-turn lane that has a dedicated traffic signal. With a few hundred yards remaining, the light shifts from green to red, but the car doesn’t stop. Instead, it rolls into the intersection, where it’s on track to collide with oncoming traffic, until Alford takes over.
+
+In the comments, Tesla fans grow angry with Alford for posting the video, but he pushes back: “How does it help put pressure on Tesla to improve their systems if you are scared to post their faults?” Replying to one comment, he writes that F.S.D. is “unethical in the context they are using it.”
+
+When I called Alford, I was expecting someone suited for r/RealTesla, but he ended up having more of an r/TeslaMotors vibe. He told me that he would be willing to take me to the site of his video and demonstrate the failure, but first I had to make a promise. “The only thing I ask is try not to put me in a bad light toward Tesla,” he said. “I don’t want anybody to think that I hate the company or whatnot, because I’m a very, very big supporter of them.”
+
+Alford lives in Fresno, Calif., and before I went to meet him one day last fall, he told me some exciting news: He had just received the F.S.D. 10.69 update. Our drive would be his first attempt to navigate the intersection from the YouTube video with the new system.
+
+The morning I met him, he was wearing a black T-shirt that showed off his tattoos, black sunglasses and faded black jeans with holes in the knees. Hollywood would typecast him as a white-hat hacker, and indeed he’s a software guy like Key: He is a product engineer for a Bay Area tech company.
+
+His white 2020 Tesla Model 3 had a magnetic bumper sticker he found on Etsy: CAUTION FULL SELF-DRIVING TESTING IN PROGRESS. He said he drives in F.S.D. mode 90 percent of the time, so his car is always acting a bit strange — the sticker helped keep some of the honking from other cars at bay. He seemed to be, like Key, an ideal F.S.D. beta tester: interested in the software, alert to its flaws, dogged in his accumulation of autonomous miles.
+
+I climbed into the passenger seat, and Alford punched in our first destination: a spot a few blocks away in downtown Fresno. We were lucky it was overcast, he said, because the car behaved well in these conditions. On days when it was sunny out and there was a lot of glare, the car could be “moody.” And when it was foggy, and it was often foggy in Fresno, “it freaks out.”
+
+After a few minutes, we approached a crosswalk just as two parents pulling a child in a wagon began to cross. A screen next to the steering wheel showed that the A.I. had registered the two pedestrians but not the wagon. Alford said he was hovering his foot over the brake, but the car stopped on its own.
+
+After the wagon came a woman in a wheelchair. The car stayed put. Alford told me that the automotive jargon for anyone on the street who is not in a car or a truck is a “V.R.U.,” a vulnerable road user. And it’s true: Pedestrians and cyclists and children in strollers and women in wheelchairs — they are so fragile compared with these giant machines we’ve stuffed into our cities and onto our highways. One wrong move, and a car will crush them.
+
+We turned on to Van Ness Avenue, which cuts through downtown. It had been newly paved, and instead of lines on the street, there were little yellow tabs indicating where the lines would eventually go. The Tesla hated this and dodged worriedly right and left, looking for something to anchor it. There were no other cars around, so Alford let it get that out of its system and eventually find a lane line to follow.
+
+“You build a tolerance to the risks it takes,” he said. “Yes, it’s swerving all over the place, but I know it’s not going to crash into something.” Still, the experience of the beta had changed the way he approached his own work. “It’s actually made me, as a software developer, more hesitant to put my software in the hands of people” before it’s fully ready, he said, “even though it’s not dangerous.”
+
+Seconds later, we drove through an intersection as two V.R.U.s — a man walking a dog — entered the crosswalk. They were a safe distance away, but the dog started to strain against its leash in our direction. Alford and I knew that the pet wasn’t in peril because the leash would stop it. But all the Tesla saw was a dog about to jump in front of us, and it came to an abrupt stop. It was a good outcome, all things considered — no injuries to any life-form — but it was far from a seamless self-driving experience.
+
+Alford nudged the steering wheel just often enough that the car never warned him to pay attention. He didn’t mind the strict driver monitoring: He never tired of studying the car’s behavior, so he was never tempted to tune out. Still, he knew people who abused the system. One driver tied an ankle weight to the steering wheel to “kick back and do whatever” during long road trips. “I know a couple of people with Teslas that have F.S.D. beta,” he said, “and they have it to drink and drive instead of having to call an Uber.”
+
+We left downtown and got on the highway, headed toward an area northeast of the city called Clovis, where the tricky intersection was. Alford pulled up his F.S.D. settings. His default driver mode was Average, but he said he has found that the two other options — Chill and Assertive — aren’t much different: “The car is just really aggressive anyway.” For highway driving, though, he had the car set to something called Mad Max mode, which meant it would overtake any vehicle in front of him if it was going even a few miles per hour slower than his preferred speed.
+
+We exited the highway and quickly came to a knot of cars. Something had gone wrong with the traffic light, which was flashing red, and drivers in all four directions, across eight lanes, had to figure out when to go and when to yield. The choreography here was delicate: There were too many cars to interweave without some allowances being made for mercy and confusion and expediency. Among the humans, there was a good deal of waving others on and attempted eye contact to see whether someone was going to yield or not.
+
+We crept toward the intersection, car by car, until it was our turn. If we were expecting nuance, there was none. Once we had come to a complete stop, the Tesla accelerated quickly, cutting off one car turning across us and veering around another. It was not so much inhuman as the behavior of a human who was determined to be a jerk. “That was bad,” Alford said. “Normally I would disengage once it makes a mistake like that.” He clicked a button to send a snapshot of the incident to Tesla.
+
+Later, at a four-way stop, the car was too cautious. It waited too long, and the other two cars at the intersection drove off before we did. We talked about the old saying about safe driving: “Don’t be nice; be predictable.” For a computer, Tesla’s A.I. was surprisingly erratic. “It’s not nice or predictable,” Alford said.
+
+A few miles down the road, we reached the intersection from the video: a left turn onto East Shepherd Avenue from State Route 168. The traffic light sits right at the point where the city’s newest developments end and open land begins. If we drove straight, we would immediately find ourselves surrounded by sagebrush, on the way up into the Sierra.
+
+To replicate the error that Alford uncovered, we needed to approach the intersection with a red left-turn arrow and a green light to continue straight. On our first pass, the arrow turned green at the last second. On the second pass, though, on an empty road, the timing was right: a red for our turn and green for everyone else.
+
+As we got closer, the car moved into the turning lane and started to slow. “It sees the red,” I said.
+
+“No,” Alford said. “It always slows down a little here before plowing through.” But this time, it kept slowing. Alford couldn’t believe it. “It’s still going to run the light,” he said. But he was wrong: We came to a tidy stop right at the line. Alford was shocked. “They fixed it!” he said. “That one I’ve been giving them an issue about for two years.” We waited patiently until the light turned green, and the Tesla drove smoothly onto Shepherd Avenue. No problem.
+
+It was as clear a demonstration of Musk’s hypothesis as one could hope for. There was a situation that kept stumping the A.I. until, after enough data had been collected by dedicated drivers like Alford, the neural net figured it out. Repeat this risk-reward conversion X number of times, and maybe Tesla will solve self-driving. Maybe even next year.
+
+On the drive back to the center of Fresno, Alford was buoyant, delighted with the possibility that he had changed the Tesla world for the better. I asked him whether the F.S.D. 10.69 release met the hype that preceded it. “To be honest, yeah, I think so,” he said. (He was even more enthusiastic about the version of F.S.D. released in December, which he described as nearly flawless.)
+
+A few minutes later, we reached a rundown part of town. Alford said that in general Tesla’s A.I. does better in higher-income areas, maybe because those areas have more Tesla owners in them. “Are there data biases for higher-income areas because that’s where the Teslas are?” he wondered.
+
+We approached an intersection and tried to make a left — in what turned out to be a repeat of the Laguna Beach scenario. The Tesla started creeping out, trying to get a clearer look at the cars coming from our left. It inched forward, inched forward, until once again we were fully in the lane of traffic. There was nothing stopping the Tesla from accelerating and completing the turn, but instead it just sat there. At the same time, a tricked-out Honda Accord sped toward us, about three seconds away from hitting the driver-side door. Alford quickly took over and punched the accelerator, and we escaped safely. This time, he didn’t say anything.
+
+It was a rough ride home from there. At a standard left turn at a traffic light, the system freaked out and tried to go right. Alford had to take over. And then, as we approached a cloverleaf on-ramp to the highway, the car started to accelerate. To stay on the ramp, we needed to make an arcing right turn; in front of us was a steep drop-off into a construction site with no guard rails. The car showed no sign of turning. We crossed a solid white line, milliseconds away from jumping off the road when, at last, the wheel jerked sharply to the right, and we hugged the road again. This time, F.S.D. had corrected itself, but if it hadn’t, the crash would have surely killed us.
+
+**Peter Thiel, Musk’s former** business partner at PayPal, once said that if he wrote a book, the chapter about Musk would be called “The Man Who Knew Nothing About Risk.” But that’s a misunderstanding of Musk’s attitude: If you parse his statements, he presents himself as a man who simply embraces astonishing amounts of present-day risk in the rational assumption of future gains.
+
+Musk’s clearest articulation of his philosophy has come, of course, on Twitter. “We should take the set of actions that maximize total public happiness!” he wrote to one user who asked him how to save the planet. In August, he called the writings of William MacAskill, a Scottish utilitarian ethicist, “a close match for my philosophy.” (MacAskill, notably, was also the intellectual muse of Sam Bankman-Fried, though he cut ties with him after the [FTX scandal came to light.](https://www.nytimes.com/2022/11/14/technology/ftx-sam-bankman-fried-crypto-bankruptcy.html))
+
+Musk’s embrace of risk has produced true breakthroughs: [SpaceX can land reusable rockets on remote-controlled landing pads in the ocean](https://www.theguardian.com/science/2016/apr/08/spacex-rocket-test-elon-musk-international-space-station); [Starlink is providing internet service to Ukrainians on the front lines](https://www.nytimes.com/live/2022/10/15/world/russia-ukraine-war-news); [OpenAI creeps ever closer to passing the Turing test](https://www.nytimes.com/interactive/2022/12/26/upshot/chatgpt-child-essays.html). As for Tesla, even Musk’s harshest critics — and I talked to many of them while reporting this article — would pause, unbidden, to give him credit for creating the now-robust market in electric vehicles in the United States and around the world.
+
+And yet, as Robert Lowell wrote, “No rocket goes as far astray as man.” In recent months, as the outrages at Twitter and elsewhere began to multiply, Musk seemed to determined to squander much of the good will he had built up over his career. I asked Slavik, the plaintiffs’ attorney, whether the recent shift in public sentiment against Musk made his job in the courtroom any easier. “I think at least there are more people who are skeptical of his judgment at this point than were before,” he said. “If I were on the other side, I’d be worried about it.”
+
+Some of Musk’s most questionable decisions, though, begin to make sense if seen as a result of a blunt utilitarian calculus. Last month, Reuters reported that Neuralink, Musk’s medical-device company, had caused the needless deaths of dozens of laboratory animals through rushed experiments. Internal messages from Musk made it clear that the urgency came from the top. “We are simply not moving fast enough,” he wrote. “It is driving me nuts!” The cost-benefit analysis must have seemed clear to him: Neuralink had the potential to cure paralysis, he believed, which would improve the lives of millions of future humans. The suffering of a smaller number of animals was worth it.
+
+This form of crude long-term-ism, in which the sheer size of future generations gives them added ethical weight, even shows up in Musk’s statements about buying Twitter. He called Twitter a “digital town square” that was responsible for nothing less than preventing a new American civil war. “I didn’t do it to make more money,” he wrote. “I did it to try to help humanity, whom I love.”
+
+Autopilot and F.S.D. represent the culmination of this approach. “The overarching goal of Tesla engineering,” Musk wrote, “is maximize area under user happiness curve.” Unlike with Twitter or even Neuralink, people were dying as a result of his decisions — but no matter. In 2019, in a testy exchange of email with the activist investor and steadfast Tesla critic Aaron Greenspan, Musk bristled at the suggestion that Autopilot was anything other than lifesaving technology. “The data is unequivocal that Autopilot is safer than human driving by a significant margin,” he wrote. “It is unethical and false of you to claim otherwise. In doing so, you are endangering the public.”
+
+**I wanted to ask** Musk to elaborate on his philosophy of risk, but he didn’t reply to my interview requests. So instead I spoke with Peter Singer, a prominent utilitarian philosopher, to sort through some of the ethical issues involved. Was Musk right when he claimed that anything that delays the development and adoption of autonomous vehicles was inherently unethical?
+
+“I think he has a point,” Singer said, “if he is right about the facts.”
+
+Musk rarely talks about Autopilot or F.S.D. without mentioning how superior it is to a human driver. At a shareholders’ meeting in August, he said that Tesla was “solving a very important part of A.I., and one that can ultimately save millions of lives and prevent tens of millions of serious injuries by driving just an order of magnitude safer than people.” Musk does have data to back this up: Starting in 2018, Tesla has released quarterly safety reports to the public, which show a consistent advantage to using Autopilot. The most recent one, from late 2022, said that Teslas with Autopilot engaged were one-tenth as likely to crash as a regular car.
+
+That is the argument that Tesla has to make to the public and to juries this spring. In the words of the company’s safety report: “While no car can prevent all accidents, we work every day to try to make them much less likely to occur.” Autopilot may cause a crash WW times, but without that technology, we’d be at OOOOOOOOOOOOOOOOOOO.
+
+Singer told me that even if Autopilot and human drivers were equally deadly, we should prefer the A.I., provided that the next software update, based on data from crash reports and near misses, would make the system even safer. “That’s a little bit like surgeons doing experimental surgery,” he said. “Probably the first few times they do the surgery, they’re going to lose patients, but the argument for that is they will save more patients in the long run.” It was important, however, Singer added, that the surgeons get the informed consent of the patients.
+
+_Does_ Tesla have the informed consent of its drivers? The answer might be different for different car owners — it would probably be different for Dave Key in 2018 than it is in 2022. But most customers are not aware of how flawed Autopilot is, said Philip Koopman, the author of “How Safe Is Safe Enough? Measuring and Predicting Autonomous Vehicle Safety.” The cars keep making “really crazy, crazy, surprising mistakes,” he said. “Tesla’s practice of using untrained civilians as test drivers for an immature technology is really egregious.”
+
+Koopman also objects to Musk’s supposed facts. One obvious problem with the data the company puts out in its quarterly safety report is that it directly compares Autopilot miles, which are mainly driven on limited-access highways, with all vehicle miles. “You’re using Autopilot on the safe miles,” Koopman said. “So of course it looks great. And then you’re comparing it to not-Autopilot on the hard miles.”
+
+In the third quarter of 2022, Tesla claimed that there was one crash for every 6.26 million miles driven using Autopilot — indeed, almost 10 times better than the U.S. baseline of one crash for every 652,000 miles. Crashes, however, are far more likely on surface streets than on the highway: One study from the Pennsylvania Department of Transportation showed that crashes were five times as common on local roads as on turnpikes. When comparing Autopilot numbers to highway numbers, Tesla’s advantage drops significantly.
+
+Tesla’s safety claims look even shakier when you try to control for the age of the car and the age of the driver. Most Tesla owners are middle-aged or older, which eliminates one risky pool of drivers: teenagers. And simply having a new car decreases your chance of an accident significantly. It’s even possible that the number of Teslas in California — with its generally mild, dry weather — has skewed the numbers in its favor. An independent study that tried to correct for some of these biases suggested that Teslas crashed just as often when Autopilot was on as when it was off.
+
+“That’s always been a problem for utilitarians,” Singer told me. “Because it doesn’t have strict moral rules, people might think they can get away with doing the sums in ways that suit their purposes.”
+
+Utilitarian thinking has led individuals to perform acts of breathtaking virtue, but putting this ethical framework in the hands of an industrialist presents certain dangers. True utilitarianism requires a careful balancing of all harms and benefits, in the present and the future, with the patience to do this assessment and the patience to refrain from acting if the amount of suffering and death caused by pushing forward wasn’t clear. Musk is using utilitarianism in a more limited way, arguing that as long as he’s sure something will have a net benefit, he’s permitted to do it right now.
+
+In the past two decades, Musk has somehow maneuvered himself into running multiple companies where he can plausibly claim to be working to preserve the future of humanity. SpaceX can’t just deliver satellites into low orbit; it’s also going to send us to Mars. Tesla can’t just build a solid electric car; it’s going to solve the problem of self-driving. Twitter can’t just be one more place where we gather to argue; it’s one of the props holding up civilization. With the stakes suitably raised, all sorts of questionable behavior begin to look — almost — reasonable.
+
+“True believers,” the novelist Jeanette Winterson wrote, “would rather see governments topple and history rewritten than scuff the cover of their faith.” Musk seems unshakable in his conviction that his approach is right. But for all his urgency, he still might lose the A.I. race.
+
+Right now in San Francisco and Austin, Texas, and coming soon to cities all over the world, you can hail a robotaxi operated by Cruise or Waymo. “If there’s one moment in time where we go from fiction to reality, it’s now,” Sebastian Thrun, who founded Google’s self-driving car team, told me. (“I didn’t say this last year, by the way,” he added.) Thrun was no r/RealTesla lurker; he was on his fifth Tesla, and he said he admired the company: “What Tesla has is really beautiful. They have a fleet of vehicles in the field.” But at this point, Tesla’s competitors are closer to achieving full self-driving than any vehicle equipped with F.S.D.
+
+In recent months, Musk has stopped promising that autonomous Teslas are just around the corner. “I thought the self-driving problem would be hard,” he said, “but it was harder than I thought. It’s not like I thought it’d be easy. I thought it would be very hard. But it was actually way harder than even that.”
+
+**On Dec. 29, 2019,** the same day a Tesla in Indiana got into a deadly crash with a parked fire truck, an off-duty chauffeur named Kevin George Aziz Riad was driving his gray 2016 Tesla Model S down the Gardena Freeway in suburban Los Angeles. It had been a long drive back from a visit to Orange County, and Riad had Autopilot turned on. Shortly after midnight, the car passed under a giant sign that said END FREEWAY SIGNAL AHEAD in flashing yellow lights.
+
+The Autopilot kept Riad’s Tesla at a steady speed as it approached the stoplight that marked the end of the freeway and the beginning of Artesia Boulevard. According to a witness, the light was red, but the car drove straight through the intersection, striking a Honda Civic. Riad had only minor injuries, but the two people in the Civic, Gilberto Alcazar Lopez and Maria Guadalupe Nieves, died at the scene. Their families said that they were on a first date.
+
+Who was responsible for this accident? [State officials have charged Riad with manslaughter](https://www.kwqc.com/2022/01/18/felony-charges-are-1st-fatal-crash-involving-teslas-autopilot-system/) and plan to prosecute him as if he were the sole actor behind the two deaths. The victims’ families, meanwhile, have filed civil suits against both Riad and Tesla. Depending on the outcomes of the criminal and civil cases, the Autopilot system could be judged, in effect, legally responsible, not legally responsible or both simultaneously.
+
+Not long ago, I went to see the spot where Riad’s Tesla reportedly ran the red light. I had rented a Tesla for the day, to find out firsthand, finally, what it felt like to drive with Autopilot in control. I drove east on surface streets until I reached a ramp where I could merge onto State Route 91, the Gardena Freeway. It was late at night when Riad crashed. I was taking my ride in the middle of the day.
+
+As soon as I was on the highway, I engaged Autopilot, and the car took over. I had the road mostly to myself. This Tesla was programmed to go 15 percent above the speed limit whenever Autopilot was in use, and the car accelerated quickly to 74 miles per hour, which was Riad’s speed when he crashed. Were his Autopilot speed settings the same?
+
+The car did a good job of staying in its lane, better than any other traffic-aware cruise control I’ve used. I tried taking my hands off the wheel, but the Tesla beeped at me after a few seconds.
+
+As I got closer to the crash site, I passed under the giant END FREEWAY SIGNAL AHEAD sign. The Autopilot drove on blithely. After another 500 feet, the same sign appeared again, flashing urgently. There was only a few hundred feet of divided highway left, and then Route 91 turned into a surface street, right at the intersection with Vermont Avenue.
+
+I hovered my foot over the brake. What was I doing? Seeing if the car truly would just blaze through a red light? Of course it would. I suppose I was trying to imagine how easy it would be to do such a thing. At the end of a long night, on a road empty of cars, with something called Autopilot in control? My guess is that Riad didn’t even notice that he had left the highway.
+
+The car sped under the warning lights, 74 miles an hour. The crash data shows that before the Tesla hit Lopez and Nieves, the brakes hadn’t been used for six minutes.
+
+My Tesla bore down on the intersection. I got closer and closer to the light. No brakes. And then, just before I was about to take over, a pickup truck swung out of the far right lane and cut me off. The Tesla sensed it immediately and braked hard. If only that truck — as undeniable as any giant chunk of hardware can be — had been there in December 2019, Lopez and Nieves would still be alive.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"transportation and storage\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"maybe\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"tangible harm definitively occurred\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"AI tangible harm event\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy2\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"001\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"4. Peer review complete\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "323"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "null"
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2018"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"05\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "29"
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"Laguna Beach\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"CA\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[\"transportation\"]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "[\"\"]"
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Tesla sedan\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm event\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical property\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Tesla driver\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"deployer\\\",\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm event\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical health/safety\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Tesla\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Laguna Beach Police Department vehicle\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product not containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm event\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical property\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Tesla Autopilot\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "1"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"Tesla Autopilot is designed to assist drivers in semi-autonomously navigating road obstacles and reacting to real-time traffic conditions.\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"geospatial data\",\"sensor input\",\"camera input\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"Tesla sedan\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"semi-autonomous navigation\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 40
+title: COMPAS Algorithm Performs Poorly in Crime Recidivism Prediction
+description: Correctional Offender Management Profiling for Alternative Sanctions (COMPAS), a recidivism risk-assessment algorithmic tool used in the judicial system to assess likelihood of defendants' recidivism, is found to be less accurate than random untrained human evaluators.
+
+first report text: The criminal justice system is becoming automated. At every stage — from policing and investigations to bail, evidence, sentencing and parole — computer systems play a role. Artificial intelligence deploys cops on the beat. Audio sensors generate gunshot alerts. Forensic analysts use probabilistic software programs to evaluate fingerprints, faces and DNA. Risk-assessment instruments help to determine who is incarcerated and for how long.
+
+Technological advancement is, in theory, a welcome development. But in practice, aspects of automation are making the justice system less fair for criminal defendants.
+
+The root of the problem is that automated criminal justice technologies are largely privately owned and sold for profit. The developers tend to view their technologies as trade secrets. As a result, they often refuse to disclose details about how their tools work, even to criminal defendants and their attorneys, even under a protective order, even in the controlled context of a criminal proceeding or parole hearing.
+
+Take the case of Glenn Rodríguez. An inmate at the Eastern Correctional Facility in upstate New York, Mr. Rodríguez was denied parole last year despite having a nearly perfect record of rehabilitation. The reason? A high score from a computer system called Compas. The company that makes Compas considers the weighting of inputs to be proprietary information. That forced Mr. Rodríguez to rely on his own ingenuity to figure out what had gone wrong.
+
+This year, Mr. Rodríguez returned to the parole board with the same faulty Compas score. He had identified an error in one of the inputs for his Compas assessment. But without knowing the input weights, he was unable to explain the effect of this error, or persuade anyone to correct it. Instead of challenging the result, he was left to try to argue for parole despite the result.
+
+Mr. Rodríguez was lucky. In the end, he made parole and left Eastern Correctional in mid-May. But had he been able to examine and contest the logic of the Compas system to prove that its score gave a distorted picture of his life, he might have gone home much earlier.
+
+Or consider the case of Billy Ray Johnson, a defendant in California who was sentenced to life without parole for a series of burglaries and sexual assaults that he says he did not commit. The prosecution relied on the results of a software program called TrueAllele that was used to analyze traces of DNA from the crime scenes.
+
+When an expert witness for Mr. Johnson sought to review the TrueAllele source code in order to confront and cross-examine its programmer about how the software works, the developer claimed it was a trade secret, and the court refused to order the code disclosed — even though Mr. Johnson’s attorney offered to sign a protective order that would safeguard the code. Mr. Johnson was thus unable to fully challenge the evidence used to find him guilty.
+
+TrueAllele’s developer maintains this decision was right. It has submitted affidavits to courts across the country alleging that disclosing the program’s source code to defense attorneys would cause “irreperable harm” to the company because it would allow competitors to steal the code. Most judges have credited this claim, quashing defense subpoenas for the source code and citing the company’s intellectual property interests as a rationale.
+
+In 2015, a California Appeals Court upheld a trade secret evidentiary privilege in a criminal proceeding — for what is likely the first time in the nation’s history — to shield TrueAllele source code from disclosure to the defense. That decision, People v. Chubbs, is now being cited across the country to deny defendants access to trade secret evidence.
+
+TrueAllele is not alone. In another case, an organization that produces cybercrime investigative software tried to invoke a trade secret evidentiary privilege to withhold its source code, despite concerns that the program violated the Fourth Amendment by surreptitiously scanning computer hard drives. In still other instances, developers of face recognition technology have refused to disclose the user manuals for their software programs, potentially obstructing defense experts’ ability to evaluate whether a program has been calibrated for certain racial groups and not for others.
+
+Likewise, the algorithms used to generate probabilistic matches for latent fingerprint analysis, and to search ballistic information databases for firearm and cartridge matches, are treated as trade secrets and remain inaccessible to independent auditors.
+
+This is a new and troubling feature of the criminal justice system. Property interests do not usually shield relevant evidence from the accused. And it’s not how trade secrets law is supposed to work, either. The most common explanation for why this form of intellectual property should exist is that people will be more likely to invest in new ideas if they can stop their business competitors from free riding on the results. The law is designed to stop business competitors from stealing confidential commercial information, not to justify withholding information from the defense in criminal proceedings.
+
+Defense advocacy is a keystone of due process, not a business competition. And defense attorneys are officers of the court, not would-be thieves. In civil cases, trade secrets are often disclosed to opposing parties subject to a protective order. The same solution should work for those defending life or liberty.
+
+The Supreme Court is currently considering hearing a case, Wisconsin v. Loomis, that raises similar issues. If it hears the case, the court will have the opportunity to rule on whether it violates due process to sentence someone based on a risk-assessment instrument whose workings are protected as a trade secret. If the court declines the case or rules that this is constitutional, legislatures should step in and pass laws limiting trade-secret safeguards in criminal proceedings to a protective order and nothing more.
+
+The future of the criminal justice system may depend on it.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"race\",\"nation of origin, citizenship, immigrant status\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"law enforcement\",\"public administration\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"tangible harm definitively occurred\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"AI tangible harm event\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy3\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "[\"machine learning\",\"logistic regression\",\"non-linear SVM\",\"signal detection theory\"]"
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"001\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "40"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"CSET considers wrongful detention, wrongful imprisonment, and wrongful differential/disproportionate imprisonment amounts to be tangible harm, because of the loss of physical freedom and autonomy.\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"COMPAS and the non-expert evaluators were similarly accurate in correctly predicting recidivism. The two systems were similarly unfair regarding race when predicting false positives and false negatives.\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2016"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\" 6.1-6.3 - This date refers to the publication of the initial ProPublical report rather than the use of COMPAS.\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Black people\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI special interest intangible harm\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"violation of human rights, civil liberties, civil rights, or democratic norms\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Northpointe\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"ProPublica\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"non-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"researcher\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Broward County\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"government entity\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Glenn Rodríguez\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm event\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"violation of human rights, civil liberties, civil rights, or democratic norms\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Correctional Offender Management Profiling for Alternative Sanctions (COMPAS)\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Equivant (formerly Northpointe)\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Julia Dressel\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"researcher\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Hany Farid\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"researcher\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Defendants assessed by COMPAS\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm issue\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"financial loss\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"7.6 - Convicts misjudged by COMPAS may suffer a non-imminent risk of financial loss from the AI decision that they would not have incurred otherwise\\\\n\\\\nCSET considers wrongful detention, wrongful imprisonment, and wrongful differential/disproportionate imprisonment amounts to be tangible harm, because of the loss of physical freedom and autonomy.\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"The COMPAS system calculates a person's risk of recidivism based on 137 questionnaire responses about the situation and context of the crime and the person involved.\\n\\nIn the Dartmouth study, participants saw a short description of a defendant that included the defendant’s sex, age, and previous criminal history, but not their race. They predicted whether this person would recidivate within 2 years of their most recent crime. The description was formatted as follows: \\\"The defendant is a [SEX] aged [AGE]. They have been charged with: [CRIME CHARGE]. This crime is classified as a [CRIMINAL DEGREE]. They have been convicted of [NON-JUVENILE PRIOR COUNT] prior crimes. They have [JUVENILE- FELONY COUNT] juvenile felony charges and [JUVENILE-MISDEMEANOR COUNT] juvenile misdemeanor charges on their record.\\\"\\n\\nThey also used an algorithmic assessment to determine that COMPAS' predictive accuracy can be achieved with only two features in a linear classifier, and that more sophisticated classifiers do not improve prediction accuracy or fairness.\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"personal data\",\"Crime Records\",\"Police reports\",\"Text\",\"sex\",\"age\",\"137 questionnaire responses\",\"previous criminal history\",\"criminal degree\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"predict recidivism\",\"prediction\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 11
+title: Northpointe Risk Models
+description: An algorithm developed by Northpointe and used in the penal system is two times more likely to incorrectly label a black person as a high-risk re-offender and is two times more likely to incorrectly label a white person as low-risk for reoffense according to a ProPublica review.
+
+first report text: Across the nation, judges, probation and parole officers are increasingly using algorithms to assess a criminal defendant’s likelihood of becoming a recidivist – a term used to describe criminals who re-offend. There are dozens of these risk assessment algorithms in use. Many states have built their own assessments, and several academics have written tools. There are also two leading nationwide tools offered by commercial vendors.
+
+We set out to assess one of the commercial tools made by Northpointe, Inc. to discover the underlying accuracy of their recidivism algorithm and to test whether the algorithm was biased against certain groups.
+
+Our analysis of Northpointe’s tool, called COMPAS (which stands for Correctional Offender Management Profiling for Alternative Sanctions), found that black defendants were far more likely than white defendants to be incorrectly judged to be at a higher risk of recidivism, while white defendants were more likely than black defendants to be incorrectly flagged as low risk.
+
+We looked at more than 10,000 criminal defendants in Broward County, Florida, and compared their predicted recidivism rates with the rate that actually occurred over a two-year period. When most defendants are booked in jail, they respond to a COMPAS questionnaire. Their answers are fed into the COMPAS software to generate several scores including predictions of “Risk of Recidivism” and “Risk of Violent Recidivism.”
+
+We compared the recidivism risk categories predicted by the COMPAS tool to the actual recidivism rates of defendants in the two years after they were scored, and found that the score correctly predicted an offender’s recidivism 61 percent of the time, but was only correct in its predictions of violent recidivism 20 percent of the time.
+
+In forecasting who would re-offend, the algorithm correctly predicted recidivism for black and white defendants at roughly the same rate (59 percent for white defendants, and 63 percent for black defendants) but made mistakes in very different ways. It misclassifies the white and black defendants differently when examined over a two-year follow-up period.
+
+Our analysis found that:
+
+Black defendants were often predicted to be at a higher risk of recidivism than they actually were. Our analysis found that black defendants who did not recidivate over a two-year period were nearly twice as likely to be misclassified as higher risk compared to their white counterparts (45 percent vs. 23 percent).
+
+White defendants were often predicted to be less risky than they were. Our analysis found that white defendants who re-offended within the next two years were mistakenly labeled low risk almost twice as often as black re-offenders (48 percent vs. 28 percent).
+
+The analysis also showed that even when controlling for prior crimes, future recidivism, age, and gender, black defendants were 45 percent more likely to be assigned higher risk scores than white defendants.
+
+Black defendants were also twice as likely as white defendants to be misclassified as being a higher risk of violent recidivism. And white violent recidivists were 63 percent more likely to have been misclassified as a low risk of violent recidivism, compared with black violent recidivists.
+
+The violent recidivism analysis also showed that even when controlling for prior crimes, future recidivism, age, and gender, black defendants were 77 percent more likely to be assigned higher risk scores than white defendants.
+
+Previous Work
+
+In 2013, researchers Sarah Desmarais and Jay Singh examined 19 different recidivism risk methodologies being used in the United States and found that “in most cases, validity had only been examined in one or two studies conducted in the United States, and frequently, those investigations were completed by the same people who developed the instrument.”
+
+Their analysis of the research published before March2013 found that the tools “were moderate at best in terms of predictive validity,” Desmarais said in an interview. And she could not find any substantial set of studies conducted in the United States that examined whether risk scores were racially biased. “The data do not exist,” she said.
+
+The largest examination of racial bias in U.S. risk assessment algorithms since then is a 2016 paper by Jennifer Skeem at University of California, Berkeley and Christopher T. Lowenkamp from the Administrative Office of the U.S. Courts. They examined data about 34,000 federal offenders to test the predictive validity of the Post Conviction Risk Assessment tool that was developed by the federal courts to help probation and parole officers determine the level of supervision required for an inmate upon release.
+
+The authors found that the average risk score for black offenders was higher than for white offenders, but that concluded the differences were not attributable to bias.
+
+A 2013 study analyzed the predictive validity among various races for another score called the Level of Service Inventory, one of the most popular commercial risk scores from Multi-Health Systems. That study found that “ethnic minorities have higher LS scores than nonminorities.” The study authors, who are Canadian, noted that racial disparities were more consistently found in the U.S. than in Canada. “One possibility may be that systematic bias within the justice system may distort the measurement of ‘true’ recidivism,” they wrote.
+
+A smaller 2006 study of 532 male residents of a work-release program also found “a tendency toward classification errors for African Americans” in the Level of Service Inventory-Revised. The study, by Kevin Whiteacre of the Salvation Army Correctional Services Program, found that 42.7 percent of African Americans were incorrectly classified as high risk, compared with 27.7 percent of Caucasians and 25 percent of Hispanics. That study urged correctional facilities to investigate the their use of the scores independently using a simple contingency table approach that we follow later in this study.
+
+As risk scores move further into the mainstream of the criminal justice system, policy makers have called for further studies of whether the scores are biased.
+
+When he was U.S. Attorney General, Eric Holder asked the U.S. Sentencing Commission to study potential bias in the tests used at sentencing. “Although these measures were crafted with the best of intentions, I am concerned that they inadvertently undermine our efforts to ensure individualized and equal justice,” he said, adding, “they may exacerbate unwarranted and unjust disparities that are already far too common in our criminal justice system and in our society.” The sentencing commission says it is not currently conducting an analysis of bias in risk assessments.
+
+So ProPublica did its own analysis.
+
+How We Acquired the Data
+
+We chose to examine the COMPAS algorithm because it is one of the most popular scores used nationwide and is increasingly being used in pretrial and sentencing, the so-called “front-end” of the criminal justice system. We chose Broward County because it is a large jurisdiction using the COMPAS tool in pretrial release decisions and Florida has strong open-records laws.
+
+Through a public records request, ProPublica obtained two years worth of COMPAS scores from the Broward County Sheriff’s Office in Florida. We received data for all 18,610 people who were scored in 2013 and 2014.
+
+Because Broward County primarily uses the score to determine whether to release or detain a defendant before his or her trial, we discarded scores that were assessed at parole, probation or other stages in the criminal justice system. That left us with 11,757 people who were assessed at the pretrial stage.
+
+Each pretrial defendant received at least three COMPAS scores: “Risk of Recidivism,” “Risk of Violence” and “Risk of Failure to Appear.”
+
+COMPAS scores for each defendant ranged from 1 to 10, with ten being the highest risk. Scores 1 to 4 were labeled by COMPAS as “Low”; 5 to 7 were labeled “Medium”; and 8 to 10 were labeled “High.”
+
+Starting with the database of COMPAS scores, we built a profile of each person’s criminal history, both before and after they were scored. We collected public criminal records from the Broward County Clerk’s Office website through April 1, 2016. On average, defendants in our dataset were not incarcerated for 622.87 days (sd: 329.19).
+
+We matched the criminal records to the COMPAS records using a person’s first and last names and date of birth. This is the same technique used in the Broward County COMPAS validation study conducted by researchers at Florida State University in 2010. We downloaded around 80,000 criminal records from the Broward County Clerk’s Office website.
+
+To determine race, we used the race classifications used by the Broward County Sheriff’s Office, which identifies defendants as black, white, Hispanic, Asian and Native American. In 343 cases, the race was marked as Other.
+
+We also compiled each person’s record of incarceration. We received jail records from the Broward County Sheriff’s Office from January 2013 to April 2016, and we downloaded public incarceration records from the Florida Department of Corrections website.
+
+We found that sometimes people’s names or dates of birth were incorrectly entered in some records – which led to incorrect matches between an individual’s COMPAS score and his or her criminal records. We attempted to determine how many records were affected. In a random sample of 400 cases, we found an error rate of 3.75 percent (CI: +/- 1.8 percent).
+
+How We Defined Recidivism
+
+Defining recidivism was key to our analysis.
+
+In a 2009 study examining the predictive power of its COMPAS score, Northpointe defined recidivism as “a finger-printable arrest involving a charge and a filing for any uniform crime reporting (UCR) code.” We interpreted that to mean a criminal offense that resulted in a jail booking and took place after the crime for which the person was COMPAS scored.
+
+It was not always clear, however, which criminal case was associated with an individual’s COMPAS score. To match COMPAS scores with accompanying cases, we considered cases with arrest dates or charge dates within 30 days of a COMPAS assessment being conducted. In some instances, we could not find any corresponding charges to COMPAS scores. We removed those cases from our analysis.
+
+Next, we sought to determine if a person had been charged with a new crime subsequent to crime for which they were COMPAS screened. We did not count traffic tickets and some municipal ordinance violations as recidivism. We did not count as recidivists people who were arrested for failing to appear at their court hearings, or people who were later charged with a crime that occurred prior to their COMPAS screening.
+
+For violent recidivism, we used the FBI’s definition of violent crime, a category that includes murder, manslaughter, forcible rape, robbery and aggravated assault.
+
+For most of our analysis, we defined recidivism as a new arrest within two years. We based this decision on Northpointe’s practitioners guide, which says that its recidivism score is meant to predict “a new misdemeanor or felony offense within two years of the COMPAS administration date.”
+
+In addition, a recent study of 25,000 federal prisoners’ recidivism rates by the U.S. Sentencing Commission, which shows that most recidivists commit a new crime within the first two years after release (if they are going to commit a crime at all).
+
+Analysis
+
+We analyzed the COMPAS scores for “Risk of Recidivism” and “Risk of Violent Recidivism.” We did not analyze the COMPAS score for “Risk of Failure to Appear.”
+
+We began by looking at the risk of recidivism score. Our initial analysis looked at the simple distribution of the COMPAS decile scores among whites and blacks. We plotted the distribution of these scores for 6,172 defendants who had not been arrested for a new offense or who had recidivated within two years.
+
+
+These histograms show that scores for white defendants were skewed toward lower-risk categories, while black defendants were evenly distributed across scores. In our two-year sample, there were 3,175 black defendants and 2,103 white defendants, with 1,175 female defendants and 4,997 male defendants. There were 2,809 defendants who recidivated within two years in this sample.
+
+The histograms for COMPAS’s violent risk score also show a disparity in score distribution between white and black defendants. The sample we used to test COMPAS’s violent recidivism score was slightly smaller than for the general recidivism score: 4,020 defendants, 1,918 black defendants and 1,459 white defendants. There were 652 violent recidivists.
+
+
+While there is a clear difference between the distributions of COMPAS scores for white and black defendants, merely looking at the distributions does not account for other demographic and behavioral factors.
+
+To test racial disparities in the score controlling for other factors, we created a logistic regression model that considered race, age, criminal history, future recidivism, charge degree, gender and age.
+
+Risk of General Recidivism Logistic Model
+
+Dependent variable:
+
+Score (Low vs Medium and High)
+
+Female	0.221*** (0.080)
+
+Age: Greater than 45	-1.356*** (0.099)
+
+Age: Less than 25	1.308*** (0.076)
+
+Black	0.477*** (0.069)
+
+Asian	-0.254 (0.478)
+
+Hispanic	-0.428*** (0.128)
+
+Native American	1.394* (0.766)
+
+Other	-0.826*** (0.162)
+
+Number of Priors	0.269*** (0.011)
+
+Misdemeanor	-0.311*** (0.067)
+
+Two year Recidivism	0.686*** (0.064)
+
+Constant	-1.526*** (0.079)
+
+Observations	6,172
+
+Akaike Inf. Crit.	6,192.402
+
+Note: *p<0.1; **p<0.05; ***p<0.01
+
+We used those factors to model the odds of getting a higher COMPAS score. According to Northpointe’s practitioners guide, COMPAS “scores in the medium and high range garner more interest from supervision agencies than low scores, as a low score would suggest there is little risk of general recidivism,” so we considered scores any higher than “low” to indicate a risk of recidivism.
+
+Our logistic model found that the most predictive factor of a higher risk score was age. Defendants younger than 25 years old were 2.5 times as likely to get a higher score than middle aged offenders, even when controlling for prior crimes, future criminality, race and gender.
+
+Race was also quite predictive of a higher score. While Black defendants had higher recidivism rates overall, when adjusted for this difference and other factors, they were 45 percent more likely to get a higher score than whites.
+
+Surprisingly, given their lower levels of criminality overall, female defendants were 19.4 percent more likely to get a higher score than men, controlling for the same factors.
+
+Risk of Violent Recidivism Logistic Model
+
+Dependent variable:
+
+Score (Low vs Medium and High)
+
+Female	-0.729*** (0.127)
+
+Age: Greater than 45	-1.742*** (0.184)
+
+Age: Less than 25	3.146*** (0.115)
+
+Black	0.659*** (0.108)
+
+Asian	-0.985 (0.705)
+
+Hispanic	-0.064 (0.191)
+
+Native American	0.448 (1.035)
+
+Other	-0.205 (0.225)
+
+Number of Priors	0.138*** (0.012)
+
+Misdemeanor	-0.164* (0.098)
+
+Two Year Recidivism	0.934*** (0.115)
+
+Constant	-2.243*** (0.113)
+
+Observations	4,020
+
+Akaike Inf. Crit.	3,022.779
+
+Note: *p<0.1; **p<0.05; ***p<0.01
+
+The COMPAS software also has a score for risk of violent recidivism. We analyzed 4,020 people who were scored for violent recidivism over a period of two years (not including time spent incarcerated). We ran a similar regression model for these scores.
+
+Age was an even stronger predictor of a higher score for violent recidivism. Our regression showed that young defendants were 6.4 times more likely to get a higher score than middle age defendants, when correcting for criminal history, gender, race and future violent recidivism.
+
+Race was also predictive of a higher score for violent recidivism. Black defendants were 77.3 percent more likely than white defendants to receive a higher score, correcting for criminal history and future violent recidivism.
+
+To test COMPAS’s overall predictive accuracy, we fit a Cox proportional hazards model to the data – the same technique that Northpointe used in its own validation study. A Cox model allows us to compare rates of recidivism while controlling for time. Because we aren’t controlling for other factors such as a defendant’s criminality we can include more people in this Cox model. For this analysis our sample size was 10,314 defendants (3,569 white defendants and 5,147 black defendants).
+
+Risk of General Recidivism Cox Model
+
+High Risk	1.250*** (0.041)
+
+Medium Risk	0.796*** (0.041)
+
+Observations	13,344
+
+R2	0.068
+
+Max. Possible R2	0.990
+
+Wald Test	954.820*** (df = 2)
+
+LR Test	942.824*** (df = 2)
+
+Score (Logrank) Test	1,054.767*** (df = 2)
+
+Note: *p<0.1; **p<0.05; ***p<0.01
+
+We considered people in our data set to be “at risk” from the day they were given the COMPAS score until the day they committed a new offense or April 1, 2016, whichever came first. We removed people from the risk set while they were incarcerated. The independent variable in the Cox model was the COMPAS categorical risk score.
+
+The Cox model showed that people with high scores were 3.5 times as likely to recidivate as people in the low (scores 1 to 4) category. Northpointe’s study, found that people with high scores (scores 8 to 10) were 5.6 times as likely to recidivate. Both results indicate that the score has predictive value.
+
+A Kaplan Meier survival plot also shows a clear difference in recidivism rates between each COMPAS score level.
+
+
+Overall, the Cox regression had a concordance score of 63.6 percent. That means for any randomly selected pair of defendants in the sample, the COMPAS system can accurately rank their recidivism risk 63.6 percent of the time (e.g. if one person of the pair recidivates, that pair will count as a successful match if that person also had a higher score). In its study, Northpointe reported a slightly higher concordance: 68 percent.
+
+Running the Cox model on the underlying risk scores - ranked 1 to 10 - rather than the low, medium and high intervals yielded a slightly higher concordance of 66.4 percent.
+
+Both results are lower than what Northpointe describes as a threshold for reliability. “A rule of thumb according to several recent articles is that AUCs of .70 or above typically indicate satisfactory predictive accuracy, and measures between .60 and .70 suggest low to moderate predictive accuracy,” the company says in its study.
+
+The COMPAS violent recidivism score had a concordance of 65.1 percent.
+
+The COMPAS system unevenly predicts recidivism between genders. According to Kaplan-Meier estimates, women rated high risk recidivated at a 47.5 percent rate during two years after they were scored. But men rated high risk recidivated at a much higher rate – 61.2 percent – over the same time period. This means that a high-risk woman has a much lower risk of recidivating than a high-risk man, a fact that may be overlooked by law enforcement officials interpreting the score.
+
+
+Northpointe does offer a custom test for women, but it is not in use in Broward County.
+
+The predictive accuracy of the COMPAS recidivism score was consistent between races in our study – 62.5 percent for white defendants vs. 62.3 percent for black defendants. The authors of the Northpointe study found a small difference in the concordance scores by race: 69 percent for white defendants and 67 percent for black defendants.
+
+Across every risk category, black defendants recidivated at higher rates.
+
+
+Risk of General Recidivism Cox Model (with Interaction Term)
+
+Black	0.279*** (0.061)
+
+Asian	-0.777 (0.502)
+
+Hispanic	-0.064 (0.097)
+
+Native American	-1.255 (1.001)
+
+Other	0.014 (0.110)
+
+High Score	1.284*** (0.084)
+
+Medium Score	0.843*** (0.071)
+
+Black:High	-0.190* (.100, p: 0.0574)
+
+Asian:High	1.316* (0.768)
+
+Hispanic:High	-0.119 (0.198)
+
+Native American:High	1.956* (.083)
+
+Other:High	0.415 (0.259)
+
+Black:Medium	-0.173* (.091, p: 0.0578)
+
+Asian:Medium	0.986 (0.711)
+
+Hispanic:Medium	0.065 (0.164)
+
+Native American:Medium	1.390 (1.120)
+
+Other:Medium	-0.334 (0.232)
+
+Observations	13,344
+
+R2	0.072
+
+Max. Possible R2	0.990
+
+Log Likelihood	-30,280.410
+
+Wald Test	988.830*** (df = 17)
+
+LR Test	993.709*** (df = 17)
+
+Score (Logrank) Test	1,104.894*** (df = 17)
+
+Note: *p<0.1; **p<0.05; ***p<0.01
+
+We also added a race-by-score interaction term to the Cox model. This term allowed us to consider whether the difference in recidivism between a high score and low score was different for black defendants and white defendants.
+
+The coefficient on high scores for black defendants is almost statistically significant (0.0574). High-risk white defendants are 3.61 times as likely to recidivate as low-risk white defendants, while high-risk black defendants are only 2.99 times as likely to recidivate as low-risk black defendants. The hazard ratios for medium-risk defendants vs. low risk defendants also are different across races: 2.32 for white defendants and 1.95 for black defendants. Because of the gap in hazard ratios, we can conclude that the score is performing differently among racial subgroups.
+
+We ran a similar analysis on COMPAS’s violent recidivism score, however we did not find a similar result. Here, we found that the interaction term on race and score was not significant, meaning that there is no significant difference the hazards of high and low risk black defendants and high and low risk white defendants.
+
+Overall, there are far fewer violent recidivists than general recidivists and there isn’t a clear difference in the hazard rates across score levels for black and white recidivists. These Kaplan Meier plots show very low rates of violent recidivism.
+
+
+Finally, we investigated whether certain types of errors – false positives and false negatives – were unevenly distributed among races. We used contingency tables to determine those relative rates following the analysis outlined in the 2006 paper from the Salvation Army.
+
+We removed people from our data set for whom we had less than two years of recidivism information. The remaining population was 7,214 – slightly larger than the sample in the logistic models above, because we don’t need a defendant’s case information for this analysis. As in the logistic regression analysis, we marked scores other than “low” as higher risk. The following tables show how the COMPAS recidivism score performed:
+
+All Defendants
+
+Low	High
+
+Survived	2681	1282
+
+Recidivated	1216	2035
+
+FP rate: 32.35
+
+FN rate: 37.40
+
+PPV: 0.61
+
+NPV: 0.69
+
+LR+: 1.94
+
+LR-: 0.55
+
+Black Defendants
+
+Low	High
+
+Survived	990	805
+
+Recidivated	532	1369
+
+FP rate: 44.85
+
+FN rate: 27.99
+
+PPV: 0.63
+
+NPV: 0.65
+
+LR+: 1.61
+
+LR-: 0.51
+
+White Defendants
+
+Low	High
+
+Survived	1139	349
+
+Recidivated	461	505
+
+FP rate: 23.45
+
+FN rate: 47.72
+
+PPV: 0.59
+
+NPV: 0.71
+
+LR+: 2.23
+
+LR-: 0.62
+
+These contingency tables reveal that the algorithm is more likely to misclassify a black defendant as higher risk than a white defendant. Black defendants who do not recidivate were nearly twice as likely to be classified by COMPAS as higher risk compared to their white counterparts (45 percent vs. 23 percent). However, black defendants who scored higher did recidivate slightly more often than white defendants (63 percent vs. 59 percent).
+
+The test tended to make the opposite mistake with whites, meaning that it was more likely to wrongly predict that white people would not commit additional crimes if released compared to black defendants. COMPAS under-classified white reoffenders as low risk 70.5 percent more often than black reoffenders (48 percent vs. 28 percent). The likelihood ratio for white defendants was slightly higher 2.23 than for black defendants 1.61.
+
+We also tested whether restricting our definition of high risk to include only COMPAS’s high score, rather than including both medium and high scores, changed the results of our analysis. In that scenario, black defendants were three times as likely as white defendants to be falsely rated at high risk (16 percent vs. 5 percent).
+
+We found similar results for the COMPAS violent recidivism score. As before, we calculated contingency tables based on how the score performed:
+
+All Defendants
+
+Low	High
+
+Survived	4121	1597
+
+Recidivated	347	389
+
+FP rate: 27.93
+
+FN rate: 47.15
+
+PPV: 0.20
+
+NPV: 0.92
+
+LR+: 1.89
+
+LR-: 0.65
+
+Black defendants
+
+Low	High
+
+Survived	1692	1043
+
+Recidivated	170	273
+
+FP rate: 38.14
+
+FN rate: 38.37
+
+PPV: 0.21
+
+NPV: 0.91
+
+LR+: 1.62
+
+LR-: 0.62
+
+White defendants
+
+Low	High
+
+Survived	1679	380
+
+Recidivated	129	77
+
+FP rate: 18.46
+
+FN rate: 62.62
+
+PPV: 0.17
+
+NPV: 0.93
+
+LR+: 2.03
+
+LR-: 0.77
+
+Black defendants were twice as likely as white defendants to be misclassified as a higher risk of violent recidivism, and white recidivists were misclassified as low risk 63.2 percent more often than black defendants. Black defendants who were classified as a higher risk of violent recidivism did recidivate at a slightly higher rate than white defendants (21 percent vs. 17 percent), and the likelihood ratio for white defendants was higher, 2.03, than for black defendants, 1.62.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"race\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"law enforcement\",\"public administration\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"tangible harm definitively occurred\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"AI tangible harm event\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy3\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "11"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"ProPublica found evidence of differential performance rates of the COMPAS recidivism risk prediction system across racial groups. The system was both used in sentencing (affecting judge’s decisions concerning the length of sentences) and pretrial bond hearings (affecting decisions concerning pretrial detainment and bond amounts). There is a reasonable probability that the risk scores inaccurately aggravated choices made by judges. Moreover, there is at least one instance in which a judge admitted to assigning a longer prison sentence due to the elevated risk score, which was reduced on appeal.\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"ProPublica found evidence of differential performance rates of the COMPAS recidivism risk prediction system across racial groups. The system was both used in sentencing (affecting judge’s decisions concerning the length of sentences) and pretrial bond hearings (affecting decisions concerning pretrial detainment and bond amounts). There is a reasonable probability that the risk scores wrongfully aggravated choices made by judges. \""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2013"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"ProPublica\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"non-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"watchdog\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Northpointe\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"COMPAS\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Defendants assessed by COMPAS\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"7.6 - ProPublica established that the algorithm was biased and disproportionately determined black people were more at risk for recidivism.\\\"\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI special interest intangible harm\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"disproportionate treatment based upon a protected characteristic\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Defendants assessed by COMPAS\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"7.6 - Wrongful arrest, and unequal treatment before the law is a violation of human rights, civil liberties, civil rights, or democratic norms.\\\"\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI special interest intangible harm\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"violation of human rights, civil liberties, civil rights, or democratic norms\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Defendants assessed by COMPAS\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm issue\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"financial loss\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"7.6 - Convicts misjudged by COMPAS may suffer a non-imminent risk of financial loss through higher bail from the AI decision that they would not have incurred otherwise\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Defendants assessed by COMPAS\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"other tangible harm\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Wrongful arrest or detainment harms physical freedom and autonomy\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Paul Zilly\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm event\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"other tangible harm\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Zilly's risk score impacted the judge’s sentencing, which was corrected down on appeal; the judge himself stated that had it not been for the score, his sentencing would have been much shorter.\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Brisha Borden\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Non-AI tangible harm event.  It is likely that her elevated recidivism risk scores caused her bond to be raised from 0$ to 1000$, but we cannot establish a clear link.\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"financial loss\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"COMPAS deployers\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"government entity\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Deployers of COMPAS include New York State Division of Criminal Justice Services, Wisconsin Department of Corrections, Broward County, Florida\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Sade Jones\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"financial loss\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Non-AI tangible harm event.  It is likely that her elevated recidivism risk score caused her bond to be raised from 0$ to 1000$, but we cannot establish a clear link.\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"The COMPAS system calculates a person's risk of recidivism based on their criminal records and responses to a 137-questions long survey about the situation and context of the crime and the person involved.\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"criminal record\",\"questionnaire responses\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"predict recidivism\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 42
+title: Inefficiencies in the United States Resident Matching Program
+description: Alvin Roth, a Ph.D at the University of Pittsburgh, describes the National Resident Matching Program (NRMP) and suggests future changes that are needed in the algorithm used to match recently graduated medical students to their residency programs.
+
+first report text: The following former incidents have been converted to "[issues](https://arxiv.org/abs/2211.10384)" following an update to the [incident definition and ingestion criteria](/editors-guide).
+
+### [21: Tougher Turing Test Exposes Chatbots’ Stupidity](https://incidentdatabase.ai/cite/21)
+
+**Description:** The 2016 Winograd Schema Challenge highlighted how even the most successful AI systems entered into the Challenge were only successful 3% more often than random chance.
+
+**Why Downgraded?** This is an academic finding showing a weakness of the technology rather than a harm event.
+
+**Former Reports:** These reports were formerly associated with the incident.
+
+* [Tougher Turing Test Exposes Chatbots’ Stupidity](https://incidentdatabase.ai/reports/217)
+
+**Migrated Reports:** Reports associated with this incident are now associated with other incidents as context.
+
+* none
+
+### [62: Bad AI-Written Christmas Carols](https://incidentdatabase.ai/cite/62)
+
+**Description:** Janelle Shane, an AI research scientist, used 240 popular Christmas carols to train a neural network to write its own carols.
+
+**Why Downgraded?** Was designed to be humorous and is in fact humorous.
+
+**Former Reports:** These reports were formerly associated with the incident.
+
+* [Christmas Carols, generated by a neural network](https://incidentdatabase.ai/reports/1766)
+* [AI still sucks at writing Christmas Carols](https://incidentdatabase.ai/reports/1133)
+
+**Migrated Reports:** Reports associated with this incident are now associated with other incidents as context.
+
+* none
+
+### [159: Tesla Autopilot’s Lane Recognition Allegedly Vulnerable to Adversarial Attacks](https://incidentdatabase.ai/cite/159)
+
+**Description:** Tencent Keen Security Lab conducted security research into Tesla’s Autopilot system and identified crafted adversarial samples and remote controlling via wireless gamepad as vulnerabilities to its system, although the company called into question their real-world practicality.
+
+**Why Downgraded?** The reports surface a vulnerability with projected harms rather than a report of harms in the real world.
+
+**Former Reports:** These reports were formerly associated with the incident.
+
+* [Tencent Keen Security Lab: Experimental Security Research of Tesla Autopilot](https://incidentdatabase.ai/reports/1519)
+* [Three Small Stickers in Intersection Can Cause Tesla Autopilot to Swerve Into Wrong Lane](https://incidentdatabase.ai/reports/1518)
+
+**Migrated Reports:** Reports associated with this incident are now associated with other incidents as context.
+
+* none
+
+### [287: OpenAI’s GPT-3 Reported as Unviable in Medical Tasks by Healthcare Firm](https://incidentdatabase.ai/cite/287)
+
+**Description:** The French digital care company, Nabla, in researching GPT-3’s capabilities for medical documentation, diagnosis support, and treatment recommendation, found its inconsistency and lack of scientific and medical expertise unviable and risky in healthcare applications.
+
+**Why Downgraded?** The reports indicate the insufficiency of ChatGPT for several tasks for which the system was not deployed in the real world.
+
+**Former Reports:** These reports were formerly associated with the incident.
+
+* [Doctor GPT-3: hype or reality?](https://incidentdatabase.ai/reports/1892)
+* [Researchers made an OpenAI GPT-3 medical chatbot as an experiment. It told a mock patient to kill themselves](https://incidentdatabase.ai/reports/1891)
+* [Medical chatbot using OpenAI’s GPT-3 told a fake patient to kill themselves](https://incidentdatabase.ai/reports/1893)
+* [This bot actually suggests patients to kill themselves](https://incidentdatabase.ai/reports/1894)
+
+**Migrated Reports:** Reports associated with this incident are now associated with other incidents as context.
+
+* none
+
+### [298: Student-Developed Facial Recognition App Raised Ethical Concerns](https://incidentdatabase.ai/cite/298)
+
+**Description:** TheFaceTag app, a social networking app developed and deployed within-campus by a student at Harvard raised concerns surrounding its facial recognition, cybersecurity, privacy, and misuse.
+
+**Why Downgraded?** The harms are predicted to occur, but have not yet occured.
+
+**Former Reports:** These reports were formerly associated with the incident.
+
+* [Can I Scan Your Face?](https://incidentdatabase.ai/reports/1932)
+* [A Harvard freshman made a social networking app called 'The FaceTag.' It's sparked a debate about the ethics of facial recognition](https://incidentdatabase.ai/reports/1930)
+* [An app by a Harvard student caused controversy about its ethics](https://incidentdatabase.ai/reports/1931)
+
+**Migrated Reports:** Reports associated with this incident are now associated with other incidents as context.
+
+* none
+
+### [85: AI attempts to ease fear of robots, blurts out it can’t ‘avoid destroying humankind’](https://incidentdatabase.ai/cite/85)
+
+Confirmed migration by editors - Incident 85 - likely does not fit current incident criteria, where GPT-3 was manipulated by human editors to exaggerate harm, borderline sensationalism.
+https://incidentdatabase.ai/cite/85
+
+**Description:** On September 8, 2020, the Guardian published an op-ed generated by OpenAI’s GPT-3 text generating AI that included threats to destroy humankind.
+
+**Why Downgraded?** Unclear who was harmed, if anyone, via the events described.
+
+**Former Reports:** These reports were formerly associated with the incident.
+
+* [AI attempts to ease fear of robots, blurts out it can’t ‘avoid destroying humankind’](https://incidentdatabase.ai/reports/1385)
+
+**Migrated Reports:** Reports associated with this incident are now associated with other incidents as context.
+
+* none
+
+# Candidates for Migration
+
+The following incidents may also be migrated in the future based on discussion among the AI Incident Database editors:
+
+Does not meet current definition and criteria
+https://incidentdatabase.ai/cite/42
+
+Incident 29 concerns the "tank story," which may be apocryphal.
+https://incidentdatabase.ai/cite/29
+
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "false"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "42"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 10
+title: Kronos Scheduling Algorithm Allegedly Caused Financial Issues for Starbucks Employees
+description: Kronos’s scheduling algorithm and its use by Starbucks managers allegedly negatively impacted financial and scheduling stability for Starbucks employees, which disadvantaged wage workers.
+
+first report text: In April, the New York attorney general's office launched an [investigation](http://www.reuters.com/article/2015/04/13/us-retail-workers-nyag-idUSKBN0N40G420150413) into the scheduling practices of 13 national retail chains, distributing a letter to the Gap, Target, J.C. Penney, and 10 other companies. The letter asked, among other things, whether these companies' store managers use software manufactured by a company called Kronos to algorithmically generate schedules.
+
+A few months later, Kronos was also featured prominently in an [article](http://www.nytimes.com/interactive/2014/08/13/us/starbucks-workers-scheduling-hours.html) published by the _New York Times_ about the ill effects of erratic scheduling on Starbucks employees, especially one particular family. In a [follow-up piece](http://www.nytimes.com/times-insider/2014/08/22/times-article-changes-a-policy-fast/), the author, Jodi Kantor, points directly to Kronos' scheduling software as the root of the problem. "I saw that her life was coming apart and that the Starbucks software had contributed to the crisis," Kantor wrote of one of the story's subjects.
+
+The piece's argument centered around the financial and scheduling unpredictability engendered by platforms like Kronos. When you don't know if your shift might be canceled, if or when you'll be called in, or what your hours will look like next week or the week after, it becomes [very difficult](http://www.buzzfeed.com/sapna/victorias-secret-keeps-workers-on-call-and-unpaid#.wspVMPngB) to make even the most
+
+basic plans for your future. This can have devastating long-term financial and emotional impacts on workers. According to a [recent study](http://www.epi.org/publication/irregular-work-scheduling-and-its-consequences/) by the Economic Policy Institute, a left-leaning think tank in Washington, D.C., 17 percent of the American workforce is negatively affected by unstable schedules.
+
+For their part, Kronos representatives argue that the algorithm is far from the root of the problem. "The populist view is that scheduling is evil, in that it's causing erratic schedules for employees, and so forth," Charlie DeWitt, vice president of business development for Kronos, told BuzzFeed News. "The fact of the matter is it's an algorithm. It does whatever you want it to do."
+
+And you don't necessarily need to work for Kronos to believe that in a competitive retail climate, the problem is more complicated than technology alone. [Lonnie Golden](http://www.abington.psu.edu/academics/faculty/dr-lonnie-golden), a Penn State economist who has extensively studied the impact of erratic scheduling, acknowledges that Kronos' product itself is less to blame than the managers who make staffing decisions based on the data it provides. "It's not necessarily the technology that's responsible for minimum to no advance notice," he said. "It's the way in which it's applied."
+
+But, he added, "where there's a technology problem, there's usually a technology solution." And while Kronos maintains that managers, and not the software, are responsible for early dismissals and last-minute shift cancellations, the company is nonetheless pursuing some technological solutions.
+
+Kronos wants to help managers better understand how scheduling adjustments affect workers and, ultimately, the bottom line. Though the company maintains that its software doesn't produce the kind of erratic schedules that hurt wage workers, DeWitt said there was nonetheless an interest in figuring out why that perception existed — and, if possible, fixing it.
+
+To that end, earlier this month at a [retail conference in Philadelphia](http://www.kronos.com/microsites/RetailExecSummitSpring15/), the company announced that it's working on a new plug-in that will give managers better insight into workers' schedule stability, equity of hours worked among employees, and the consistency of schedules from week to week. In addition, Kronos is improving a feature meant to help give employees more control over their schedules: Though the software already incorporates employee availability and preferences into its scheduling calculations, improvements to a shift-swapping feature on its employee-facing web and mobile apps will theoretically allow employees to work around conflicts among themselves.
+
+Golden said increased employee input and control would be a good thing. But some retailers, DeWitt pointed out, are uncomfortable making workers use an app outside of work hours; indeed, the practice could be seen as a shift of management responsibilities onto lower-paid individuals.
+
+Part of the idea behind the new Kronos plug-in is to help companies tie fairer scheduling practices to reduction in absenteeism and turnover, which can be enormously costly. In other words, if Kronos can help executives see the connection between treating workers fairly and a store's ability to increase revenue, DeWitt said, managers will have an impetus to create more predictable, stable schedules.
+
+And just because companies are looking at this kind of data doesn't mean they have to use it. "Companies like Kronos and Workplace Systems are starting to integrate some of these principles into their software," said [Carrie Gleason](http://populardemocracy.org/carrie-gleason), director of the Fair Workweek Initiative at the Center for Popular Democracy, "but it's all optional, so companies can decide not to do it." While [12 states](http://populardemocracy.org/campaign/restoring-fair-workweek) are currently considering legislation that would create new labor standards around the workweek, Gleason said the technology alone lacks a mechanism for enforcement.
+
+Given market pressures and standard management practices, it's unlikely that any change to Kronos' technology would give workers more power — especially because, given the [competitive retail climate](http://www.buzzfeed.com/sapna/retail-winter-of-death#.krGlE3qDm) at the moment, the bottom line tends to be the priority. "It's not just bad managers. They have extreme pressure to increase productivity on an ever-shrinking labor budget," Gleason said.
+
+With these changes, Kronos has taken logical steps toward both repairing its reputation and making sure its software creates sustainable work environments. But while the company cannot control exactly how the algorithm that forecasts schedules and optimizes workforces is deployed inside different workplaces, the Kronos engineers who designed the product are nonetheless the partial architects of work environments that have been proven to be untenable for low-wage workers. The Kronos scheduling algorithm isn't designed to serve those people; it's designed to be sold to their bosses, and as such, will ultimately be shaped to serve the needs of management — until regulations exist that compel them to change how it's used.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"accommodation and food service activities\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"tangible harm definitively occurred\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"AI tangible harm event\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy2\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "10"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2014"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Starbucks\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Kronos\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Kronos scheduling algorithm\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Starbucks employees\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"7.6 - It is reasonable to expect that unpredictable schedules have led to financial loss for other Starbucks employees through lost wages or unexpected expenses like childcare to attend work on short notice.\\\"\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm issue\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"financial loss\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Kylei Weisse\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm event\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"financial loss\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Weisse incurred unexpected financial costs in order to make it to a shift that was assigned to him on very short notice. \\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Starbucks employees\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"other intangible harm\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"7.6 - Unpredictable schedules cause stress through financial and scheduling instability\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Jannette Navarro\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"other intangible harm\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"7.6 - Her unpredictable schedules caused serious stress and instability in her life.\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"The Kronos scheduling algorithm is designed to optimize the productivity of stores like Starbucks by scheduling workers inconsistently throughout and across weeks based on predicted store traffic.\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"schedules\",\"worker profiles\",\"store traffic\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"scheduling\",\"productivity optimization\",\"predict store traffic\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 12
+title: Common Biases of Vector Embeddings
+description: Researchers from Boston University and Microsoft Research, New England demonstrated gender bias in the most common techniques used to embed words for natural language processing (NLP).
+
+first report text: The blind application of machine learning runs the risk of amplifying biases present in data. Such a danger is facing us with word embedding, a popular framework to represent text data as vectors which has been used in many machine learning and natural language processing tasks. We show that even word embeddings trained on Google News articles exhibit female/male gender stereotypes to a disturbing extent. This raises concerns because their widespread use, as we describe, often tends to amplify these biases. Geometrically, gender bias is first shown to be captured by a direction in the word embedding. Second, gender neutral words are shown to be linearly separable from gender definition words in the word embedding. Using these properties, we provide a methodology for modifying an embedding to remove gender stereotypes, such as the association between between the words receptionist and female, while maintaining desired associations such as between the words queen and female. We define metrics to quantify both direct and indirect gender biases in embeddings, and develop algorithms to "debias" the embedding. Using crowd-worker evaluation as well as standard benchmarks, we empirically demonstrate that our algorithms significantly reduce gender bias in embeddings while preserving the its useful properties such as the ability to cluster related concepts and to solve analogy tasks. The resulting embeddings can be used in applications without amplifying gender bias.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"sex\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"professional, scientific and technical activities\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"no tangible harm, near-miss, or issue\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "false"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"none\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy1\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "[\"neural networks\",\"vector embedding\",\"linear algebra\"]"
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "12"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"The paper found substantial gender biases in the word2vec and GloVe embeddings trained on common datasets, but since the model in question was not deployed or used to impact groups of people, there was no harmful Differential Treatment. \""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2016"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"07\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "21"
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"Boston\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"MA\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"w2vNEWS embedding\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Pre-trained embedding trained on Google News dataset.\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Boston University and Microsoft researchers\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"researcher\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Tolga Bolukbasi, Kai-Wei Chang, James Zou, Venkatesh Saligrama, Adam Kalai\\\\n\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Google\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"word2vec word embeddings trained on Google News articles\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"text\",\"words\",\"news articles\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"word association\",\"natural language processing\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"Vector embeddings algebraically represent words in order to compare them to each other. This is a helpful tool in refining neural networks for natural language processing so that AI can associate relevant words with each other.\""
+  }
+
+---
+
+Id: 15
+title: Amazon Censors Gay Books
+description: Amazon's book store "cataloging error" led to books containing gay and lesbian themes to lose their sales ranking, therefore losing visibility on the sales platform.
+
+first report text: April 12, 2009 Amazon Censors Its Rankings & Search Results to Protect Us Against GLBT Books
+
+JaneLetters of OpinionAmazon / censorship / LGBTQ
+
+UPDATE No. 2: Amazon executive customer service email is: ecr@amazon.com and the customer service phone number is 1-800-201-7575. You can use Robin’s template:
+
+Dear Amazon, It has come to my attention that you are de-ranking books, supposedly on the basis of "adult content." Apparently, according to the Amazon Dictionary, this is defined as books that have anything at all to do with GLBT characters, authors, issues, or references, with some general erotically-oriented works being roped in, as well. In the meantime, however, books on the illegal, inhumane, and horrifyingly violent sport of dog fighting remain ranked and appear on a first page search under "dog fighting": http://bit.ly/18l70B. Further, a search under "playboy" yields as the first return "Playboy: Wet and Wild Complete Collection," followed by "Playboy: The Complete Centerfolds," and so on. At what point did "adult content" exclude nude women and dogs killing other dogs for sport? This is nothing short of discrimination; this is nothing short of censorship. This is nothing a business that claims commercial integrity at even the most basic level would do. Consequently, as a longtime Amazon customer, I look forward to an immediate reversal of this ridiculous and unconscionable policy. Otherwise, I will purchase elsewhere and encourage everyone else I know to do the same.
+
+UPDATE: Apparently romance authors are seeing their rankings removed as well. (If you comment, I’ll add you to the list)
+
+Jaci Burton’s books 2 and 3 in her Wild Rider series have been deranked. If you type her name in, her most recent release will not show up.
+
+Larissa Ione & Stephanie Tyler’s Sydney Croft series cannot be found from a front page search. (You can find books about dog fighting, though, from a front page search. So does a search on “sex toys”).
+
+Maya Banks’ Heat books do not appear in a front page search. All Banks’ Berkley Heat titles have been deranked except June 09 release.
+
+Alex Beecroft’s False Colors has no ranking.
+
+Oh, Amazon, you make it so easy to despise you! Amazon has excluded GLBT books from appearing in “some searches and bestseller lists” based on the premise that books about gays falling in love and possibly having sex is “adult material.” Barnes & Noble had committed to shelving Running Presses new m/m romance fiction line in the romance section but is now moving these dangerous to our children books to the GLBT section, obviously because books with women having sex with barbed beasts is so much safer and morally circumspect.
+
+This is the response to one author, Mark Probst:
+
+In consideration of our entire customer base, we exclude “adult” material from appearing in some searches and best seller lists. Since these lists are generated using sales ranks, adult materials must also be excluded from that feature. Hence, if you have further questions, kindly write back to us. Best regards, Ashlyn D Member Services
+
+Amazon.com Advantage
+
+I’m no constitutional scholar and discrimination suits are very difficult but the exclusion of GLBT books from search engines and rankings on Amazon seems to be some kind of violation of something. Given the recent ruling of the Iowa Supreme court that the gay and lesbian community have the same fundamental right to marriage, it seems like GLBT books should be afforded the same rights in bookstores as those books depicting romances between straight men and women. Heck, even threesome books such as Lora Leigh’s Bound series is shelved in straight romance. COME ON, AMAZON!
+
+Edited to add: I just remembered that eHarmony.com was sued because it failed to offer gay man dating services. The case was settled out of court and eHarmony agreed to set up another website offering gay and lesbian dating services.
+
+Thanks to Erastes for the link.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"sexual orientation or gender identity\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"wholesale and retail trade\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"imminent risk of tangible harm (near miss) did occur\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"maybe\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"none\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"unclear\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "15"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"3.1 - Although declines in sales for affected authors are not confirmed in the reports, considering the importance of sales rank in promoting visibility, authors would have avoided an impact on their sales only out of luck or randomness.\\n3.2 & 3.3 - According to Amazon’s statement, the removal of the sales ranks from certain titles did affect these books' promotion in Amazon's product recommender systems. But there is no indication that the removal of the sales rank from specific titles was done using AI, Amazon calls it a ‘cataloging error’. \""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2009"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"04\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"Global\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Authors\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"financial loss\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Sales rankings are very important for sales. Censored authors likely suffered financial loss because of reduced visibility, and therefore sales.\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Amazon Sales Rank\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product not containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Ranking indicating the popularity of books. Was removed disproportionately from books on erotic or  LGBTQ+ subjects and by LGBTQ+ authors. \\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Authors\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"disproportionate treatment based upon a protected characteristic\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"LGBTQ+ authors as well as those writing in erotica & sexuality and LGBTQ+ genre particularly affected by sales rank removal. \\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Amazon\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\",\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"A book's sales rank indicates its popularity, which affects its level of promotion by Amazon's product recommender system. \""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"sales data\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"9.5 - It is unclear whether or not a human/Amazon policy was responsible for the exclusion of LGBTQ+ authors from sales ranks.\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 18
+title: Gender Biases of Google Image Search
+description: Google Image returns results that under-represent women in leadership roles, notably with the first photo of a female "CEO" being a Barbie doll after 11 rows of male CEOs.
+
+first report text: Just when you thought biases were a completely human construct, more evidence suggests that both algorithms and interfaces could be biased, too.
+
+ADVERTISEMENT
+
+The latest example of this is from a study conducted by researchers from University of Washington and University of Maryland and reveals how a gender bias is working its way through web searches when people look for images to represent careers and jobs.
+
+First, they did a comparative analysis to see if the prevalence of men and women in image search results for professions actually correspond to their representation in actual professions. The researchers did this by comparing the number of women who appeared in the top 100 Google image search results in July 2013 for 45 different occupations, which ranged from bartender to chemist to welder, with 2012 U.S. Bureau of Labor statistics of how many women actually worked in those fields. Then, they did a qualitative analysis to see how men and women are portrayed in the image results.
+
+The goal was to answer some compelling questions:
+
+Are there systemic over- or under-representations of women in preferred results?
+
+Do biased image search results lead people to perpetuate a bias in image search results when they choose images to represent a profession (i.e. through stereotype exaggeration)?
+
+Do differences in representation in image search results affect viewers’ perceptions of the prevalence of men and women in that occupation?
+
+Can we shift those opinions by manipulating results?
+
+The answers were equally compelling. For instance, according to their study, more than half of U.S. authors are women (56%), yet the image search shows only about 25% women authors.
+
+On the flip side is telemarketing, an industry where men and women are equally represented, but the Google image results would have you believe that 64% of telemarketers are female.
+
+Not all the results were so skewed. The research uncovered that, in nearly half of the professions, the actual gender representation and the image search numbers were within 5 percentage points of each other.
+
+How men and women looked in those images was another story. When the researchers asked participants to rate professionalism, images showing a person who matched the majority gender for the job was viewed as more competent, professional, and trustworthy. Those who didn’t match were rated provocative or inappropriate.
+
+“A number of the top hits depicting women as construction workers are models in skimpy little costumes with a hard hat posing suggestively on a jackhammer. You get things that nobody would take as professional,” says Cynthia Matuszek, a co-author of the study.
+
+None of this would matter if people wouldn’t then be nudged into making assumptions about men and women in particular roles in the real world. However, when the researchers manipulated the search results, not surprisingly, participants’ opinions changed to conform with stereotypes. Though they stressed that this was just a short-term observation, other research bears out that incremental exposure to these images over time will contribute to unconscious bias.
+
+It has also already been revealed that Wikipedia’s entries–a supposed bastion of diversity and editorial neutrality–skew heavily towards men in both actual articles as well as within links. Articles about women tended to be linked to those about men.
+
+Part of this is due to Wikipedia’s community, the preponderance of which are educated men, who are English-speaking and hail from mostly Christian countries.
+
+WHAT GOOGLE IS DOING ABOUT UNCONSCIOUS BIAS
+
+In addition to the image searches being gender biased in some cases, Google’s also been taken to task for lack of diversity within its ranks and even disproportionately using white men in its doodles.
+
+While Google may not be aware of the results of this latest study and the researchers’ recommendation, the search giant did recognize that its tough for anyone–even its own cadre of emotionally intelligent staff–to process the 11 million bits of information that we are bombarded with at any given moment and focus instead on finding out what biases might spring from them.
+
+As such, Google offers a workshop focused on unconscious biases that might sabotage the workplace dynamics or upend the equality of the hiring process.
+
+The researchers of this study hope that the information will influence designers of search engines to create algorithms that more accurately represent reality. Sean Munson, UW assistant professor of human-centered design and engineering and a coauthor of the study says: “[Search engine designers] may come to a range of conclusions, but I would feel better if people are at least aware of the consequences and are making conscious choices around them.”
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"sex\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"information and communication\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"no tangible harm, near-miss, or issue\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "false"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"none\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy1\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "[\"unclear\"]"
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "18"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"Significant gender/sex bias in google search image results\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2015"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"04\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"09\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Sean Munson\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"researcher\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Matt Kay\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"researcher\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Cynthia Matuszek\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"researcher\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Women\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI special interest intangible harm\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"disproportionate treatment based upon a protected characteristic\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Google Image search results are damaging to the perception of women in the workforce. Women are underrepresented in jobs such as \\\\\\\"CEO\\\\\\\" and overrepresented in jobs such as \\\\\\\"telemarketer\\\\\\\" relative to the real proportion of women in those occupations in the US.\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Google\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\",\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Google Images\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"Google Images returns image results once search queries and keywords are entered by scanning the web for images with related file names and using machine learning to cluster similar images together.\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"keywords\",\"search queries\",\"images\",\"text\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"search optimization\",\"personalized online search results\",\"Image search\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Taxonomy: CSETv1
+Classification Count: 9
+
+Based on the incident text and the taxonomy definition provided, provide a classification ONLY for the attribute "Tangible Harm".
+
+IMPORTANT: Your classification MUST include ONLY the following taxonomy attribute:
+Tangible Harm
+
+For maximum accuracy and completeness:
+1. Focus ONLY on the required field "Tangible Harm".
+2. Use the permitted_values for this attribute from the definition provided.
+3. Review similar incidents to understand how this specific field is typically used.
+
+Return your response as a JSON object with the following structure:
+
+{
+  "classification": {
+    "namespace": "CSETv1",
+    "attributes": [
+      {"short_name": "Tangible Harm", "value_json": ""value""} 
+    ]
+  },
+  "explanation": "A detailed explanation of your classification choice for Tangible Harm.",
+  "confidence": "A confidence score between 0 and 1 for this attribute classification"
+}
+
+DO NOT include any other text in your response, nor any other characters.
+DO NOT start your response with ```json or ```
+Ensure that ONLY the attribute "Tangible Harm" is included in your classification.

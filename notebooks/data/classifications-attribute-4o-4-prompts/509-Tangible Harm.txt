@@ -1,0 +1,2241 @@
+You are an AI assistant that helps classify AI incidents according to a specific taxonomy attribute.
+
+Your task is to analyze the provided incident text and classify it ONLY for the specified taxonomy attribute: "Tangible Harm".
+
+Always require the incident text, the taxonomy namespace, and the specific attribute short_name to perform classification.
+
+Here is the incident text to classify:
+**(ĐTTCO) - Sau trò lừa đảo bằng tin nhắn nhờ chuyển tiền, hiện các đối tượng lừa đảo nhanh chóng áp dụng chiêu thức khác tinh vi hơn, thông qua cuộc gọi video giả mạo nhờ công nghệ Deepfake.**
+
+Đánh lừa người dùng
+-------------------
+
+Sau gần một tuần bị lừa mất số tiền gần 100 triệu đồng, anh N.C.P. (SN 1990, ngụ TP Thủ Đức) dần hiểu tường tận việc mình “sập bẫy”. Anh kể, ngày 23-3, anh nhận được tin nhắn của người thân tên Th. (đang sống ở nước ngoài) qua Facebook, hỏi mượn số tiền gần 100 triệu đồng.
+
+“Tôi cẩn thận gọi cuộc gọi video để xác tín, thấy ảnh và giọng nói của Th., cho biết đang cần tiền gấp và sẽ gửi lại vào hôm sau. Tin tưởng là người thân mình, tôi liền chuyển tiền”, anh P. cho biết.
+
+Về nhà, anh tá hỏa khi nhận thông báo tài khoản Facebook của Th. đã bị kẻ gian chiếm đoạt, gửi tin nhắn hỏi bạn bè, người thân vay tiền. Anh P. gọi video ngay cho Th. thì vẫn bắt máy, vẫn là khuôn mặt, giọng nói của Th., nhưng âm thanh rất khó nghe, hình ảnh nhòe mờ… Anh P. tiếp tục gọi số điện thoại di động thì mới rõ sự tình, hình ảnh của anh Th. đã bị các đối tượng cắt ghép để lừa đảo.
+
+Giữa tháng 3-2023, chị C.T.N.Y. (SN 1996, ngụ quận 8) cũng bị lừa bằng kịch bản tương tự, số tiền còn lớn hơn. Chị cho hay, đang làm việc ở công ty thì nhận được tin nhắn của bạn thân qua Facebook, mượn 150 triệu đồng để thanh toán tiền đáo hạn ngân hàng. Do biết những cảnh báo lừa đảo trước đó, chị Y. gọi video qua mạng để kiểm chứng. Thấy video hiện lên hình ảnh khuôn mặt bạn thân nhưng khá mờ, âm thanh chập chờn, chị Y. liền thắc mắc; người này trả lời “đang ở vùng sóng yếu”.
+
+Chị Y. tin tưởng, chuyển lần đầu 50 triệu đồng vào số tài khoản theo yêu cầu, gọi video thông báo cho bạn biết trước khi thực hiện chuyển nốt số tiền còn lại. Cuối ngày, không thấy bạn chuyển trả tiền mượn, chị Y. gọi lại nhưng tài khoản không tồn tại. Chị gọi tiếp bằng số điện thoại thì cả hai mới biết tài khoản Facebook trên đã bị các đối tượng chiếm đoạt.
+
+Nhiều hệ lụy
+------------
+
+Thời gian gần đây, công an một số địa phương như TP Hà Nội, Thái Nguyên, Tuyên Quang,… liên tiếp phát cảnh báo về chiêu thức lừa đảo chiếm đoạt tài sản trên không gian mạng lợi dụng công nghệ Deepfake. Tuy nhiên, ngoài mục đích lừa đảo, chiếm đoạt tài sản đã khá phổ biến; việc dùng Deepfake để dựng các hình ảnh, video, lời nói giả mạo người nổi tiếng, các chính trị gia vào mục đích xấu cũng không còn hiếm.
+
+Trên thế giới, nhiều nhà lãnh đạo Mỹ và ngay cả người sáng lập ra mạng xã hội Facebook là Mark Zuckerberg cũng đã bị “tấn công” bằng Deepfake. Ở Việt Nam đã xuất hiện tình trạng nhiều ca sĩ, người nổi tiếng bị tin tặc dùng công nghệ Deepfake để lừa đảo người tiêu dùng thông qua các chiêu trò quảng cáo bán hàng trực tuyến.
+
+Nguy hiểm hơn, trên một số kênh chống phá Đảng và Nhà nước Việt Nam, đã xuất hiện những hình ảnh, video, âm thanh, lời nói giả mạo từ ứng dụng Deepfake tuyên truyền những vấn đề trái với pháp luật Việt Nam; thậm chí bịa đặt trắng trợn về những vấn đề chính trị, kinh tế, xã hội ở Việt Nam. Những nội dung này được phát tán khá nhiều qua nền tảng YouTube và Facebook, nhưng với rất nhiều người dân, khó có thể phân biệt được thật - giả.
+
+Ông Ngô Minh Hiếu, Trung tâm Giám sát an toàn không gian mạng quốc gia, cho biết, có nhiều công cụ hỗ trợ các đối tượng tạo video Deepfake. Tới đây, khi tội phạm mạng tại Việt Nam biết nhiều hơn các cách đánh cắp video và hình ảnh, cắt ghép, dùng những công cụ được hướng dẫn trên mạng để tạo Deepfake, thì đó là lúc diễn ra một làn sóng lừa đảo thế hệ 4.0, khiến nhiều người lâu nay rất khó bị lừa cũng dễ trở thành nạn nhân.
+
+> Công an TPHCM cho biết, gần đây nở rộ phương thức gọi điện cho người dân báo là “có con, bạn bè, người thân… cấp cứu ở bệnh viện, phải chuyển tiền”. Với phương thức này, các đối tượng nhắm vào tâm lý sốt ruột, mất bình tĩnh của phụ huynh.
+> 
+> Chỉ trong đầu tháng 3-2023, nhiều phụ huynh ở TPHCM và một số tỉnh thành bị “sập bẫy” và chuyển hàng trăm triệu đồng cho các đối tượng lừa đảo. Công an TPHCM đã tiếp nhận nhiều đơn tố giác, tích cực điều tra, xác định đây là tội phạm không biên giới, có gắn kết với người nước ngoài.
+
+Here is the taxonomy namespace:
+CSETv1
+
+Here is the specific attribute to classify:
+Tangible Harm
+
+Here is the definition for the target attribute "Tangible Harm":
+{
+  "short_name": "Tangible Harm",
+  "short_description": "Did tangible harm (loss, damage or injury ) occur? ",
+  "long_description": "An assessment of whether tangible harm, imminent tangible harm, or non-imminent tangible harm occurred. This assessment does not consider the context of the tangible harm, if an AI was involved, or if there is an identifiable, specific, and harmed entity. It is also not assessing if an intangible harm occurred. It is only asking if tangible harm occurred and what its imminency was.",
+  "permitted_values": [
+    "tangible harm definitively occurred",
+    "imminent risk of tangible harm (near miss) did occur",
+    "non-imminent risk of tangible harm (an issue) occurred",
+    "no tangible harm, near-miss, or issue",
+    "unclear"
+  ],
+  "mongo_type": "string"
+} 
+
+Here are similar incidents and their full classifications (use for context):
+Id: 29
+title: Image Classification of Battle Tanks
+description: A potentially apocryphal story in which an image classifier was produced to differentiate types of battle tanks, but the resulting model keyed in on environmental attributes rather than tank attributes
+
+first report text: The following former incidents have been converted to "[issues](https://arxiv.org/abs/2211.10384)" following an update to the [incident definition and ingestion criteria](/editors-guide).
+
+### [21: Tougher Turing Test Exposes Chatbots’ Stupidity](https://incidentdatabase.ai/cite/21)
+
+**Description:** The 2016 Winograd Schema Challenge highlighted how even the most successful AI systems entered into the Challenge were only successful 3% more often than random chance.
+
+**Why Downgraded?** This is an academic finding showing a weakness of the technology rather than a harm event.
+
+**Former Reports:** These reports were formerly associated with the incident.
+
+* [Tougher Turing Test Exposes Chatbots’ Stupidity](https://incidentdatabase.ai/reports/217)
+
+**Migrated Reports:** Reports associated with this incident are now associated with other incidents as context.
+
+* none
+
+### [62: Bad AI-Written Christmas Carols](https://incidentdatabase.ai/cite/62)
+
+**Description:** Janelle Shane, an AI research scientist, used 240 popular Christmas carols to train a neural network to write its own carols.
+
+**Why Downgraded?** Was designed to be humorous and is in fact humorous.
+
+**Former Reports:** These reports were formerly associated with the incident.
+
+* [Christmas Carols, generated by a neural network](https://incidentdatabase.ai/reports/1766)
+* [AI still sucks at writing Christmas Carols](https://incidentdatabase.ai/reports/1133)
+
+**Migrated Reports:** Reports associated with this incident are now associated with other incidents as context.
+
+* none
+
+### [159: Tesla Autopilot’s Lane Recognition Allegedly Vulnerable to Adversarial Attacks](https://incidentdatabase.ai/cite/159)
+
+**Description:** Tencent Keen Security Lab conducted security research into Tesla’s Autopilot system and identified crafted adversarial samples and remote controlling via wireless gamepad as vulnerabilities to its system, although the company called into question their real-world practicality.
+
+**Why Downgraded?** The reports surface a vulnerability with projected harms rather than a report of harms in the real world.
+
+**Former Reports:** These reports were formerly associated with the incident.
+
+* [Tencent Keen Security Lab: Experimental Security Research of Tesla Autopilot](https://incidentdatabase.ai/reports/1519)
+* [Three Small Stickers in Intersection Can Cause Tesla Autopilot to Swerve Into Wrong Lane](https://incidentdatabase.ai/reports/1518)
+
+**Migrated Reports:** Reports associated with this incident are now associated with other incidents as context.
+
+* none
+
+### [287: OpenAI’s GPT-3 Reported as Unviable in Medical Tasks by Healthcare Firm](https://incidentdatabase.ai/cite/287)
+
+**Description:** The French digital care company, Nabla, in researching GPT-3’s capabilities for medical documentation, diagnosis support, and treatment recommendation, found its inconsistency and lack of scientific and medical expertise unviable and risky in healthcare applications.
+
+**Why Downgraded?** The reports indicate the insufficiency of ChatGPT for several tasks for which the system was not deployed in the real world.
+
+**Former Reports:** These reports were formerly associated with the incident.
+
+* [Doctor GPT-3: hype or reality?](https://incidentdatabase.ai/reports/1892)
+* [Researchers made an OpenAI GPT-3 medical chatbot as an experiment. It told a mock patient to kill themselves](https://incidentdatabase.ai/reports/1891)
+* [Medical chatbot using OpenAI’s GPT-3 told a fake patient to kill themselves](https://incidentdatabase.ai/reports/1893)
+* [This bot actually suggests patients to kill themselves](https://incidentdatabase.ai/reports/1894)
+
+**Migrated Reports:** Reports associated with this incident are now associated with other incidents as context.
+
+* none
+
+### [298: Student-Developed Facial Recognition App Raised Ethical Concerns](https://incidentdatabase.ai/cite/298)
+
+**Description:** TheFaceTag app, a social networking app developed and deployed within-campus by a student at Harvard raised concerns surrounding its facial recognition, cybersecurity, privacy, and misuse.
+
+**Why Downgraded?** The harms are predicted to occur, but have not yet occured.
+
+**Former Reports:** These reports were formerly associated with the incident.
+
+* [Can I Scan Your Face?](https://incidentdatabase.ai/reports/1932)
+* [A Harvard freshman made a social networking app called 'The FaceTag.' It's sparked a debate about the ethics of facial recognition](https://incidentdatabase.ai/reports/1930)
+* [An app by a Harvard student caused controversy about its ethics](https://incidentdatabase.ai/reports/1931)
+
+**Migrated Reports:** Reports associated with this incident are now associated with other incidents as context.
+
+* none
+
+### [85: AI attempts to ease fear of robots, blurts out it can’t ‘avoid destroying humankind’](https://incidentdatabase.ai/cite/85)
+
+Confirmed migration by editors - Incident 85 - likely does not fit current incident criteria, where GPT-3 was manipulated by human editors to exaggerate harm, borderline sensationalism.
+https://incidentdatabase.ai/cite/85
+
+**Description:** On September 8, 2020, the Guardian published an op-ed generated by OpenAI’s GPT-3 text generating AI that included threats to destroy humankind.
+
+**Why Downgraded?** Unclear who was harmed, if anyone, via the events described.
+
+**Former Reports:** These reports were formerly associated with the incident.
+
+* [AI attempts to ease fear of robots, blurts out it can’t ‘avoid destroying humankind’](https://incidentdatabase.ai/reports/1385)
+
+**Migrated Reports:** Reports associated with this incident are now associated with other incidents as context.
+
+* none
+
+# Candidates for Migration
+
+The following incidents may also be migrated in the future based on discussion among the AI Incident Database editors:
+
+Does not meet current definition and criteria
+https://incidentdatabase.ai/cite/42
+
+Incident 29 concerns the "tank story," which may be apocryphal.
+https://incidentdatabase.ai/cite/29
+
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "false"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "29"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 79
+title: Kidney Testing Method Allegedly Underestimated Risk of Black Patients
+description: Decades-long use of the estimated glomerular filtration rate (eGFR) method to test kidney function which considers race has been criticized by physicians and medical students for its racist history and inaccuracy against Black patients.
+
+first report text: **BACKGROUND:** Advancing health equity entails reducing disparities in care. African-American patients with chronic kidney disease (CKD) have poorer outcomes, including dialysis access placement and transplantation. Estimated glomerular filtration rate (eGFR) equations, which assign higher eGFR values to African-American patients, may be a mechanism for inequitable outcomes. Electronic health record–based registries enable population-based examination of care across racial groups.
+
+**OBJECTIVE:** To examine the impact of the race multiplier for African-Americans in the CKD-EPI eGFR equation on CKD classification and care delivery.
+
+**DESIGN:** Cross-sectional study
+
+**SETTING:** Two large academic medical centers and affiliated community primary care and specialty practices.
+
+**PARTICIPANTS:** A total of 56,845 patients in the Partners HealthCare System CKD registry in June 2019, among whom 2225 (3.9%) were African-American.
+
+**MEASUREMENT:** Exposures included race, age, sex, comorbidities, and eGFR. Outcomes were transplant referral and dialysis access placement.
+
+**RESULTS:** Of 2225 African-American patients, 743 (33.4%) would hypothetically be reclassified to a more severe CKD stage if the race multiplier were removed from the CKD-EPI equation. Similarly, 167 of 687 (24.3%) would be reclassified from stage 3B to stage 4. Finally, 64 of 2069 patients (3.1%) would be reassigned from eGFR > 20 ml/min/1.73 m2 to eGFR ≤ 20 ml/min/1.73 m2, meeting the criterion for accumulating kidney transplant priority. Zero of 64 African-American patients with an eGFR ≤ 20 ml/min/1.73 m2 after the race multiplier was removed were referred, evaluated, or waitlisted for kidney transplant, compared to 19.2% of African-American patients with eGFR ≤ 20 ml/min/1.73 m2 with the default CKD-EPI equation.
+
+**LIMITATIONS:** Single healthcare system in the Northeastern United States and relatively small African-American patient cohort may limit generalizability.
+
+**CONCLUSIONS:** Our study reveals a meaningful impact of race-adjusted eGFR on the care provided to the African-American CKD patient population.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"race\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"human health and social work activities\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"tangible harm definitively occurred\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"none\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy3\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"3. In peer review\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "79"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"There is no AI. The harm comes from a formula that uses race as a factor.\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"4.1 - Black patients overlooked by the calculation because of built-in points had their access to critical public healthcare reduced.\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"5.3 - Though there was no AI, the technology involved can be linked to the adverse outcomes in the incident.\\n5.5 - Because there is no AI, this incident does not qualify for CSET's definition of AI special interest intangible harm.\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2009"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[\"healthcare and public health\"]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"According to the incident report, \\\"Researchers who created the formula in 2009 added the “race correction” to smooth out statistical differences between the small number of Black patients and others in their data.\\\" \""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Black patients with chronic kidney disease\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical health/safety\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Black patients with chronic kidney disease\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"disproportionate treatment based upon a protected characteristic\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"CKD-EPI eGFR calculation\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product not containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"physicians\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"National Kidney Foundation\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"non-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"researcher\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"American Society of Nephrology\\\"\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"non-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"researcher\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Paloma Orozco Scott\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"watchdog\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"medical institutions\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"infrastructure\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Black patients with chronic kidney disease\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"violation of human rights, civil liberties, civil rights, or democratic norms\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"In June 2019, it was estimated how many Black Americans, at that point in time, were negatively affected by the algorithm using race. The estimate just looked at a small portion of the patients in the US, those at Mass General Brigham health system. The research estimated that 64 additional Black Americans would have qualified to be referred, evaluated, or waitlisted for a kidney transplant if the race factor was removed from the equation. Additional 743, would have been classified at a more severe stage if the race factor was removed. Since this equation has been used for about 30 years throughout health institutions in the US, 10s of thousands of Black Americans were likely affected.\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"There is no AI. The harm comes from a formula that was developed in the 1990s and uses race as a factor.\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"age\",\"sex\",\"race\",\"creatinine levels\",\"medical data\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"not AI\""
+  }
+
+---
+
+Id: 329
+title: Amazon Recommended Explosive-Producing Ingredients as “Frequently Bought Together” Items for Chemicals
+description: Amazon was reported to have shown chemical combinations for producing explosives and incendiary devices as “frequently bought together” items via automated recommendation.
+
+first report text: Channel 4 News has discovered that Amazon’s algorithm guides users to the necessary chemical combinations for producing explosives and incendiary devices. Ingredients which are innocent on their own are suggested for purchase together as “Frequently bought together” products, as it does with all other goods.
+
+Ingredients for black powder and thermite are grouped together under a “Frequently bought together” section on listings for specific chemicals.
+
+Steel ball bearings often used as shrapnel in explosive devices, ignition systems and remote detonators are also readily available; some promoted by the website on the same page as these chemicals as products that “Customers who bought this item also bought”.
+
+Black powder and thermite
+-------------------------
+
+Users searching for a common chemical compound used in food production — which Channel 4 News has decided not to name — are offered the ingredients to produce explosive black powder.
+
+Channel 4 News was able to create a “shopping basket” on Amazon with up to 45kg of ingredients for black powder. Under current legislation an individual may only produce 100g of black powder for private use without storage. The transaction was not completed.
+
+Users searching the website for another widely available chemical are offered the other ingredients for thermite in a “Frequently bought together” section. These three chemicals when ignited create a hazardous reaction used in incendiary bombs and for cutting through steel.
+
+On listings for some of these chemical components, Amazon’s “Customers who bought this item also bought” section also offers:
+
+*   Steel ball bearings
+*   Push button switches
+*   Battery connectors and cables
+
+Elsewhere, Amazon offers igniter cord for sale, used to ignite explosive devices and pyrotechnics. This is listed alongside an electronic ignition system that allows for remote detonations.
+
+While many of these ingredients are not illegal to buy or sell in the UK, there have been successful prosecutions where people have bought multiple chemicals and electronic components necessary to produce explosives.
+
+One chemical for sale is listed as a “Regulated substance” by the Home Office, making it illegal to possess it without a licence, and illegal to supply to a person without checking that the purchaser has a licence.
+
+Yvette Cooper, chair of Parliament’s home affairs committee, [said the findings were “very disturbing”](https://www.channel4.com/news/yvette-cooper-amazon-findings-very-disturbing).
+
+Amazon said that all products must adhere to their selling guidelines and all UK laws. They also say they will work closely with police and law enforcement agencies should they need to assist investigations.
+
+Channel 4 News has withheld the specific names of the chemicals, though their authenticity has been verified by experts.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"wholesale and retail trade\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"maybe\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"no tangible harm, near-miss, or issue\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "false"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"none\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy1\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"001\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"4. Peer review complete\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "329"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "null"
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"There are no instances of users being influenced by Amazon's \\\"frequently bought together\\\" recommendations to build bombs. Even if there were, the harm would not be directly linked to the AI because the AI would not have directly caused the person to make the bomb.\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"4.4 - Exposing users to suggestions that could help them make bombs could be considered detrimental content.\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"5.3 - AI is directly linked to the intangible harm of detrimental content, or exposing people to suggestions that might help them make bombs.\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2017"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\" \""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"Global\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Amazon\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\",\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Amazon purchasers of black powder, thermite, ball bearings, and other potential bomb ingredients\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI special interest intangible harm\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"detrimental content\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Amazon recommender algorithm\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"AI\\\",\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"Amazon's recommender algorithm provides buyers of a product with suggestions of bundles of other items that other users frequently bought along with it.\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"Amazon items\",\"Amazon purchases\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 34
+title: Amazon Alexa Responding to Environmental Inputs
+description: There are multiple reports of Amazon Alexa products (Echo, Echo Dot) reacting and acting upon unintended stimulus, usually from television commercials or news reporter's voices.
+
+first report text: I noticed that the Amazon commercials usually do not trigger the device, or if they do, she only momentarily wakes before ignoring what is said. I did a little research tonight and found that the Echo, while it’s processing the wake word, searches the Audio Spectrum and if is significantly quieter in the area of 4000hz to 5000hz, she will not wake for the word. I achieved this by going on YouTube, and playing with a voice recording of the name in Audacity.
+
+I found that when I analyzed the spectrum of them saying her name, the spectrums were significantly quieter in the range of 3000hz to 6000hz. In some of those recordings, those frequencies appeared to be non-existent. In others it appeared like the boosted the surrounding frequencies to make the Echo see a gap in the spectrum.
+
+I then got an Audacity plug-in to allow me to do a band-stop filter. I found that when I took a recording of someone saying the wake word, and ran the plug-in centered on 5200hz at “Half an Octave.” (Beware, Dual monitor picture) My echo would not wake, even sitting right next to the speakers!
+
+Maybe this information can be used by news networks to help them prevent accidental activations.
+
+Can anyone else experiment with this and tell me if it works for you too?
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"wholesale and retail trade\",\"information and communication\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"imminent risk of tangible harm (near miss) did occur\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"AI tangible harm near-miss\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy2\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "[\"voice recognition\",\"audio transcription\",\"natural language processing\"]"
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "34"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"There are two different events that occurred in a chain in this incident, both with different levels of harm. 3.1 reflects the circumstances of the second event. The first, where Alexa ordered a dollhouse and cookies for the 6-year-old, caused financial loss for the family (tangible harm event). But this cannot be directly and clearly linked to the technology's behavior because the order was placed purposefully and with confirmation by the child. \\nThe second occurrence of harm, where other peoples' Alexas reacted to the news reports about the first story and attempted to do the same, was a near-miss. Only the second can be directly linked to the AI, because users had to intervene to stop their technology from ordering a dollhouse independently of user intention based on the news reporting. Thus, only the second incident, which is a near miss, qualifies as an AI harm. \""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"A minor was involved, but not \\\"targeted\\\" or \\\"disproportionately treated.\\\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2017"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"01\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"San Diego\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"CA\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Brooke Neitzel\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"6-year old child.\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Megan Neitzel\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"financial loss\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"mother of 6-year-old\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Alexa\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Amazon\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"CW6 News anchor\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"other\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"CW6 News reported on the incident of the 6-year-old ordering a dollhouse and cookies.\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"CW6 News viewers with Alexas\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm near-miss\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"financial loss\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"CW6 news watchers with Alexas had their Alexas triggered by the news reporting. However, none of the purchases were confirmed or went through.\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"Amazon's Alexa is a virtual assistant technology \""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"voice\",\"audio\",\"Amazon account information\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"Amazon Alexa Echo Dot speaker\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"virtual assistant technology\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 46
+title: Nest Smoke Alarm Erroneously Stops Alarming
+description: In testing, Google Nest engineers demonstrated that the Nest Wave feature of their Nest Protect: Smoke + CO Alarm could inadvertently silence genuine alarms.
+
+first report text: Remedy:
+
+The repair is an automatic electronic update that disables the Nest Wave feature and is delivered automatically to devices connected wirelessly to the Internet and linked to a Nest account. Consumers should take one of the following actions:
+
+Consumers who have not connected their Nest Protect devices to their wireless network and linked them to a Nest account should immediately do so. The devices will automatically receive the update that disables the Nest Wave feature. Customers should confirm that their devices have been updated by going to Nest Sense on their Nest account mobile or web application and ensuring that the button for Nest Wave is off and grayed out. Instructions on how to connect to a network and disable the feature are available at http://support.nest.com/article/Nest-Protect-Safety or by contacting Nest Labs.
+
+Consumers whose Nest Protect devices are connected to their wireless network and linked to a Nest account should immediately confirm the receipt of an automatic repair that disabled the Nest Wave feature by going to Nest Sense on their Nest account mobile or web application and ensuring that the button for Nest Wave is set to "off" and grayed out. No further action is required and consumers can continue to use their devices.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"other\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"non-imminent risk of tangible harm (an issue) occurred\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"none\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy1\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"003\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "46"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"003\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"3.1 - Nest Labs discovered in lab trials the possibility that the Nest Wave feature would malfunction and was able to issue a recall warning to consumers. However, because the product was already deployed, there was a non-imminent risk of tangible harm to users.\\n3.2 It is unlikely that the product/feature used AI technology. Wave-to-disable feature most likely used motion detectors and rules-based, basic algorithms. \""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2014"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"Nest Labs disclosed its discovery in April 2014. The recall was issued in May.\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Nest Labs\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Nest Protect: Smoke + CO Detectors\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product not containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Nest Protect Users\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical health/safety\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Users faced a non-imminent risk of damage to their physical health/safety because of the Nest Protect's glitch.\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Google\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"Nest Protect is a smoke and carbon monoxide detector & alarm. Its wave-to-disable feature, which allowed users to quickly deactivate a faulty alarm, was found to disengage the alarm in actual cases of fire. \""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"air quality\",\"sensor data\",\"temperature\",\"motion\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"smoke detector\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"not AI\""
+  }
+
+---
+
+Id: 42
+title: Inefficiencies in the United States Resident Matching Program
+description: Alvin Roth, a Ph.D at the University of Pittsburgh, describes the National Resident Matching Program (NRMP) and suggests future changes that are needed in the algorithm used to match recently graduated medical students to their residency programs.
+
+first report text: The following former incidents have been converted to "[issues](https://arxiv.org/abs/2211.10384)" following an update to the [incident definition and ingestion criteria](/editors-guide).
+
+### [21: Tougher Turing Test Exposes Chatbots’ Stupidity](https://incidentdatabase.ai/cite/21)
+
+**Description:** The 2016 Winograd Schema Challenge highlighted how even the most successful AI systems entered into the Challenge were only successful 3% more often than random chance.
+
+**Why Downgraded?** This is an academic finding showing a weakness of the technology rather than a harm event.
+
+**Former Reports:** These reports were formerly associated with the incident.
+
+* [Tougher Turing Test Exposes Chatbots’ Stupidity](https://incidentdatabase.ai/reports/217)
+
+**Migrated Reports:** Reports associated with this incident are now associated with other incidents as context.
+
+* none
+
+### [62: Bad AI-Written Christmas Carols](https://incidentdatabase.ai/cite/62)
+
+**Description:** Janelle Shane, an AI research scientist, used 240 popular Christmas carols to train a neural network to write its own carols.
+
+**Why Downgraded?** Was designed to be humorous and is in fact humorous.
+
+**Former Reports:** These reports were formerly associated with the incident.
+
+* [Christmas Carols, generated by a neural network](https://incidentdatabase.ai/reports/1766)
+* [AI still sucks at writing Christmas Carols](https://incidentdatabase.ai/reports/1133)
+
+**Migrated Reports:** Reports associated with this incident are now associated with other incidents as context.
+
+* none
+
+### [159: Tesla Autopilot’s Lane Recognition Allegedly Vulnerable to Adversarial Attacks](https://incidentdatabase.ai/cite/159)
+
+**Description:** Tencent Keen Security Lab conducted security research into Tesla’s Autopilot system and identified crafted adversarial samples and remote controlling via wireless gamepad as vulnerabilities to its system, although the company called into question their real-world practicality.
+
+**Why Downgraded?** The reports surface a vulnerability with projected harms rather than a report of harms in the real world.
+
+**Former Reports:** These reports were formerly associated with the incident.
+
+* [Tencent Keen Security Lab: Experimental Security Research of Tesla Autopilot](https://incidentdatabase.ai/reports/1519)
+* [Three Small Stickers in Intersection Can Cause Tesla Autopilot to Swerve Into Wrong Lane](https://incidentdatabase.ai/reports/1518)
+
+**Migrated Reports:** Reports associated with this incident are now associated with other incidents as context.
+
+* none
+
+### [287: OpenAI’s GPT-3 Reported as Unviable in Medical Tasks by Healthcare Firm](https://incidentdatabase.ai/cite/287)
+
+**Description:** The French digital care company, Nabla, in researching GPT-3’s capabilities for medical documentation, diagnosis support, and treatment recommendation, found its inconsistency and lack of scientific and medical expertise unviable and risky in healthcare applications.
+
+**Why Downgraded?** The reports indicate the insufficiency of ChatGPT for several tasks for which the system was not deployed in the real world.
+
+**Former Reports:** These reports were formerly associated with the incident.
+
+* [Doctor GPT-3: hype or reality?](https://incidentdatabase.ai/reports/1892)
+* [Researchers made an OpenAI GPT-3 medical chatbot as an experiment. It told a mock patient to kill themselves](https://incidentdatabase.ai/reports/1891)
+* [Medical chatbot using OpenAI’s GPT-3 told a fake patient to kill themselves](https://incidentdatabase.ai/reports/1893)
+* [This bot actually suggests patients to kill themselves](https://incidentdatabase.ai/reports/1894)
+
+**Migrated Reports:** Reports associated with this incident are now associated with other incidents as context.
+
+* none
+
+### [298: Student-Developed Facial Recognition App Raised Ethical Concerns](https://incidentdatabase.ai/cite/298)
+
+**Description:** TheFaceTag app, a social networking app developed and deployed within-campus by a student at Harvard raised concerns surrounding its facial recognition, cybersecurity, privacy, and misuse.
+
+**Why Downgraded?** The harms are predicted to occur, but have not yet occured.
+
+**Former Reports:** These reports were formerly associated with the incident.
+
+* [Can I Scan Your Face?](https://incidentdatabase.ai/reports/1932)
+* [A Harvard freshman made a social networking app called 'The FaceTag.' It's sparked a debate about the ethics of facial recognition](https://incidentdatabase.ai/reports/1930)
+* [An app by a Harvard student caused controversy about its ethics](https://incidentdatabase.ai/reports/1931)
+
+**Migrated Reports:** Reports associated with this incident are now associated with other incidents as context.
+
+* none
+
+### [85: AI attempts to ease fear of robots, blurts out it can’t ‘avoid destroying humankind’](https://incidentdatabase.ai/cite/85)
+
+Confirmed migration by editors - Incident 85 - likely does not fit current incident criteria, where GPT-3 was manipulated by human editors to exaggerate harm, borderline sensationalism.
+https://incidentdatabase.ai/cite/85
+
+**Description:** On September 8, 2020, the Guardian published an op-ed generated by OpenAI’s GPT-3 text generating AI that included threats to destroy humankind.
+
+**Why Downgraded?** Unclear who was harmed, if anyone, via the events described.
+
+**Former Reports:** These reports were formerly associated with the incident.
+
+* [AI attempts to ease fear of robots, blurts out it can’t ‘avoid destroying humankind’](https://incidentdatabase.ai/reports/1385)
+
+**Migrated Reports:** Reports associated with this incident are now associated with other incidents as context.
+
+* none
+
+# Candidates for Migration
+
+The following incidents may also be migrated in the future based on discussion among the AI Incident Database editors:
+
+Does not meet current definition and criteria
+https://incidentdatabase.ai/cite/42
+
+Incident 29 concerns the "tank story," which may be apocryphal.
+https://incidentdatabase.ai/cite/29
+
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "false"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "42"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 99
+title: Major Universities Are Using Race as a “High Impact Predictor” of Student Success
+description: Several major universities are using a tool that uses race as one factor to predict student success.
+
+first report text: Major universities are using their students’ race, among other variables, to predict how likely they are to drop out of school. Documents obtained by The Markup through public records requests show that some schools are using education research company EAB’s Navigate advising software to incorporate students’ race as what the company calls a “high-impact predictor” of student success—a practice experts worry could be pushing Black and other minority students into “easier” classes and majors.
+
+The documents, called “predictive model reports,” describe how each university’s risk algorithm is tailored to fit the needs of its population. At least four out of seven schools from which The Markup obtained such documents incorporate race as a predictor, and two of those describe race as a “high impact predictor.” Two schools did not disclose the variables fed into their models.
+
+More than 500 universities across the country use Navigate’s “risk” algorithms to evaluate their students. In addition to documents on how the models work, the Markup obtained aggregate student risk data from four large public universities—the University of Massachusetts Amherst, the University of Wisconsin–Milwaukee, the University of Houston, and Texas A&M University—for the fall 2020 semester. We found large disparities in how the software treats students of different races, and the disparity is particularly stark for Black students, who were deemed high risk at as much as quadruple the rate of their White peers. 
+
+At the University of Massachusetts Amherst, for example, Black women are 2.8 times as likely to be labeled high risk as White women, and Black men are 3.9 times as likely to be labeled high risk as White men. At the University of Wisconsin–Milwaukee, the algorithms label Black women high risk at 2.2 times the rate of White women, and Black men at 2.9 times the rate of White men. And at Texas A&M University, they label Black women high risk at 2.4 times the rate of White women, and Black men at 2.3 times the rate of White men.
+
+Latinx students were also assigned high risk scores at substantially higher rates than their White peers at the schools The Markup examined, although not to the same degree as Black students. The algorithms labeled Asian students high risk at similar or lower rates than White students.
+
+Black students are regularly labeled a higher risk for failure than White students
+
+Put another way, Black students made up less than 5 percent of UMass Amherst’s undergraduate student body, but they accounted for more than 14 percent of students deemed high risk for the fall 2020 semester.
+
+“This opens the door to even more educational steering,” said Ruha Benjamin, a professor of African American studies at Princeton and author of “Race After Technology,” after reviewing EAB’s documents. “College advisors tell Black, Latinx, and indigenous students not to aim for certain majors. But now these gatekeepers are armed with ‘complex’ math.”
+
+The scores, which are one of the first things a professor or administrator may see when pulling up a list of students, can leave advisers with an immediate and potentially life-changing impression of students and their prospects within a given major.
+
+“You can easily find situations where there are two students who have similar low GPAs and different risk scores, and there’s no obvious explanation for why that’s the case,” said Maryclare Griffin, a statistics professor at UMass Amherst. “I’ve looked at several examples of students in STEM that have a moderate risk score; they are underrepresented in their major, and the Major Explorer [a function within the software] is saying you should push them to another major where their risk score is lower.”
+
+Navigate’s racially influenced risk scores “reflect the underlying equity disparities that are already present on these campuses and have been for a long time,” Ed Venit, who manages student success research for EAB, wrote in an email. “What we are trying to do with our analytics is highlight these disparities and prod schools to take action to break the pattern.” In an interview he added that EAB provides its clients with as much as 200 hours of training and consultation per year, some of it devoted to avoiding bias.
+
+Students of color at the EAB client schools that The Markup examined say they were never told they were being judged by algorithms and that they don’t see the company’s altruistic depiction of the scores playing out.
+
+“I don’t think UMass gives enough resources for students of color regardless, and I absolutely don’t think this score would help in that respect,” said Fabiellie Mendoza, a senior at UMass Amherst, which has used EAB’s software since 2013. “You should have a blank slate. If you’re coming in and you already have a low score because of your background, your demographic, or where you’re from, it’s just very disheartening.”
+
+Aileen Flores, a junior at Texas A&M University, was also unnerved to learn she and her peers were being scored by algorithms. “We all work just as hard as each other,” she said. “We all deserve to be respected and seen as one and not judged off of our risk score, or skin tone, or background.”
+
+The Sales Pitch
+
+The rise of predictive analytics has coincided with significant cuts in government funding for public colleges and universities. In 2018, 41 states contributed less money to higher education—on average 13 percent less per student—than they did in 2008. 
+
+EAB has aggressively marketed its Navigate software as a potential solution. Boosting retention is “not just the right thing to do for students but (is) a financial imperative to preserve these investments,” the company wrote in a presentation prepared for Kansas State University. 
+
+The proposed answer: Identify the high-risk students and target them with “high-touch support.”
+
+EAB representatives told The Markup that its tools should be used to identify big-picture solutions and create resources for groups of similarly situated students. But those kinds of changes can be expensive, and actually using the software to make institutional changes, rather than individual advising recommendations, seems to be the exception, not the rule at universities The Markup examined.
+
+In its marketing literature, EAB’s proof of concept is often Georgia State University. It was one of the earliest schools to partner with the company, beginning in 2012, and its success improving retention and graduation rates over the subsequent years is impressive. From the 2010–11 school year to the 2019–20 school year, Georgia State increased the number of degrees it awarded by 83 percent, and the groups that saw the largest improvement were Pell Grant recipients and Black and Latinx students. The school has also seen a 32 percent drop in students changing majors after their first year, according to Tim Renick, executive director of Georgia State’s National Institute for Student Success.
+
+But close examination reveals important differences between Georgia State’s predictive models and retention efforts and those at other EAB schools. Perhaps most significant: Georgia State does not include race in its models, while almost all the schools from which The Markup obtained model documentation do. And many of them incorporate race as a “high-impact predictor.”
+
+High-impact predictors “are responsible for more than 5 percent of the variance in scores across all of the students” who have earned similar amounts of credits, according to the report EAB prepared for the University of Wisconsin–Milwaukee. “This may mean that the variable has a moderate impact on the scores of many students, or a high impact on the scores of just a few students.” 
+
+Venit, from EAB, said it’s up to each school to decide which variables to use.
+
+Predictive algorithms that are explicitly influenced by a student’s race are particularly concerning to experts.
+
+“Using race for any kind of system, even if it’s in a very narrow context of trying to end racial disparities in higher education … you can go into that with the best of intentions and then it takes very, very few steps to get you in place where you’re doing further harm,” said Hannah Quay-de la Vallee, a senior technologist who studies algorithms in education at the Center for Democracy and Technology. 
+
+In Georgia State’s case, Renick said, race, ethnicity, and income level are not factors the school considers valuable for incorporation into a risk score.
+
+“If somebody is at risk because they’re … from a racial background, that’s of no use to the academic adviser” because the adviser can’t change it, Renick said. 
+
+Something that is potentially fixable, like a student’s financial struggles, will come up during conversations with advisers, he said, which is where another key difference between Georgia State and other EAB schools comes into play. The school spent $318,000 on its EAB subscription for 2020, but it has also invested heavily elsewhere in order to gain its reputation as a national role model for student retention, spending millions of dollars each year on additional resources like tutors and micro-loans, and about $3 million since 2012 hiring more student advisers, Renick said.
+
+Georgia State now has a student-to-adviser ratio of about 350 to 1. Compare that to the University of Wisconsin–Milwaukee, a similarly sized public institution that also has large minority and low-income student populations and accepts nearly every student who applies. UW-Milwaukee, which does use race as a high-impact predictor, has used Navigate since 2014 and has expressly said it aims to replicate Georgia State’s successes. Its student-to-adviser ratio is as high as 700 to 1, according to Jeremy Page, the assistant dean for student services in the school of education, who oversees the partnership with EAB.
+
+Intention vs. Reality
+
+The Markup reviewed documents describing the predictive models used at five EAB client schools. Four of them—UW-Milwaukee, Texas A&M, Texas Tech University, and South Dakota State University—included race as a risk factor. Only Kansas State University did not.
+
+Texas Tech and South Dakota State did not respond by press time to questions about why they chose to incorporate race as a variable.
+
+UMass Amherst and the University of Houston, two of the schools from which The Markup obtained aggregate data showing racial disparities in students’ risk scores, either rejected public records requests for their predictive model summaries or heavily redacted their response.
+
+Administrators at some EAB client schools said they were not aware of the disproportionate rates at which EAB’s algorithms label students of color high risk or that race was even a factor in how the scores are calculated. 
+
+“I certainly haven’t had a lot of information from behind the proprietary algorithms,” Carolyn Bassett, associate provost for student success at UMass Amherst told The Markup. 
+
+“What I learned from EAB, over and over, about the process was that the algorithm to determine risk was proprietary and protected,” Tim Scott, associate provost for academic affairs and student success at Texas A&M, told The Markup. Advisers at the university do view the risk scores but “Quite frankly, we have wondered and thought about whether we should turn it off completely.” Texas A&M’s contract with EAB runs through 2022.
+
+Page said he was aware that UW-Milwaukee’s model incorporates race but not how heavily it is weighed. The Navigate dashboard, which also includes information like a student’s GPA, is designed to give overworked advisers a 30-second snapshot of a student’s progress, he said, but “there are other times when the model score might feel off, and that’s just the nature of working with predictive models.”
+
+EAB’s algorithms also use other information to predict student success, such as SAT or ACT scores, high school percentile, credits attempted versus completed, and “estimated skills.” Notably among the schools The Markup reviewed, only Kansas State University’s model, which doesn’t include race, considers any factors related to a student’s financial stability, despite the cost of college being one of the primary reasons students drop out.
+
+The company’s models are also trained on historic student data, anywhere from two to 10 or more years of student outcomes from each individual client school, another aspect of the software experts find problematic. 
+
+“When you use old data and base decisions you make on that now, you’re necessarily encoding lots of racist and discriminatory practices that go uninvestigated,” said Chris Gilliard, a Harvard Shorenstein Center research fellow who studies digital redlining in education.
+
+Once the software produces a risk score, it’s generally up to the schools themselves to decide what to do with them, but professors who serve as student advisers say they’re given little guidance on how to use the risk scores. 
+
+“At no point in required training did they really explain what this [risk score] really is,” Griffin, from UMass Amherst, said.
+
+Others worry that seeing a student labeled “high risk” may improperly influence a teacher in guiding his or her students. 
+
+“Are we behaving in a certain way right off the bat because we’re looking at the risk factor?” Carol Barr, senior vice provost for academic affairs for UMass Amherst, said. “We’ll be talking about that.”
+
+Particularly, experts worry, professors may guide their students towards less “risky” majors, from which they’re considered more likely to stay enrolled and graduate. 
+
+One aspect of the Navigate software’s design in particular seems to encourage this: the Major Explorer function, which shows a student’s predicted risk score in a variety of majors. In a document prepared for Rutgers University, EAB says that advisers should not tell all high risk students to switch to a major in which they would immediately become low risk. 
+
+But they should “explain to students their risk score to create a sense of urgency for resistant students” to “explore major options” and which courses to take.
+
+“While it may be intended to be a supportive move, we know that labels can be stigmatizing,” said Roxana Marachi, a professor at San José State University who studies big data and predictive analytics in education. “The challenging part is that it’s marketed to be an indicator to provide resources and supports, but it can also be weaponized and used against students.”
+
+LaToya White, a senior director at EAB, said that the company has been trying to move away from using phrases like “high risk” in training sessions because of how they can be misinterpreted. “There are human biases that we all have and we all bring to any situation,” she said. “Something that we have been introducing is that you need to be talking about these biases.”
+
+There is scant research into the efficacy of these tools, but some research suggests that the more one interacts with students, the less valuable predictive risk scoring appears. A 2018 study by the Community College Resource Center at Columbia University found that school administrators thought about tools like EAB’s Navigate positively, while “the more closely participants were involved with using predictive analytics on the ground with students, and the more advanced the associated institution was with its implementation, the more critical the participants were.” The primary concerns raised by advisers and faculty: They didn’t believe in the validity of the risk scores, they thought the scores depersonalized their interactions with students, and they didn’t understand how the scores were calculated.
+
+Setting the Precedent
+
+None of the universities The Markup contacted for this article are currently using EAB’s risk scoring algorithms in their admission process, although they do assign students risk scores before they’ve ever taken a class. But the financial pressure on public universities from years of state austerity and the declining rate at which high schoolers are choosing to go to college has some educators worried that predictive analytics will soon become prescriptive analytics—the deciding factor in who does or doesn’t get accepted.
+
+There are already indications that some schools are looking to these kinds of metrics to streamline their student bodies. In 2015, the president of Mount St. Mary’s University, Simon Newman, proposed using student data to cull a portion of the incoming class deemed unlikely to succeed. Speaking to a group of faculty and administrators, he reportedly said, “You think of the students as cuddly bunnies, but you can’t. You just have to drown the bunnies … put a Glock to their heads.” Newman resigned shortly after the student newspaper published his comments.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"race\",\"financial means\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"administrative and support service activities\",\"Education\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"no tangible harm, near-miss, or issue\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"none\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy3\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "[\"machine learning\"]"
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"001\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"4. Peer review complete\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "99"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"Different universities could customize the algorithm to include different factors when predicting risk. It was discovered that some schools used race as a predictive factor, which resulted in race-based bias.\\n\\nSome universities are considered as part of the public sector.\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2020"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[\"Other\"]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"EAB university clients (ex. University of Massachusetts Amherst, the University of Wisconsin–Milwaukee, the University of Houston, and Texas A&M University)\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"other\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"7.3 - group of universities\\\\n\\\\n\\\\\\\"More than 500 universities across the country use Navigate’s “risk” algorithms to evaluate their students. \\\\\\\"\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"deployer\\\",\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"EAB\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"education research consulting company\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"EAB Navigate\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"The Markup\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"non-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"researcher\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Black college students\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"unclear\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"disproportionate treatment based upon a protected characteristic\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Latinx college students\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"unclear\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"disproportionate treatment based upon a protected characteristic\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"predicts dropout rates for university students\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"GPA\",\"SAT and ACT scores\",\"high school percentile\",\"credits attempted\",\"credits completed\",\"estimated skills\",\"student data\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"risk prediction\",\"risk assessment\",\"performance prediction\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Taxonomy: CSETv1
+Classification Count: 7
+
+Based on the incident text and the taxonomy definition provided, provide a classification ONLY for the attribute "Tangible Harm".
+
+IMPORTANT: Your classification MUST include ONLY the following taxonomy attribute:
+Tangible Harm
+
+For maximum accuracy and completeness:
+1. Focus ONLY on the required field "Tangible Harm".
+2. Use the permitted_values for this attribute from the definition provided.
+3. Review similar incidents to understand how this specific field is typically used.
+
+Return your response as a JSON object with the following structure:
+
+{
+  "classification": {
+    "namespace": "CSETv1",
+    "attributes": [
+      {"short_name": "Tangible Harm", "value_json": ""value""} 
+    ]
+  },
+  "explanation": "A detailed explanation of your classification choice for Tangible Harm.",
+  "confidence": "A confidence score between 0 and 1 for this attribute classification"
+}
+
+DO NOT include any other text in your response, nor any other characters.
+DO NOT start your response with ```json or ```
+Ensure that ONLY the attribute "Tangible Harm" is included in your classification.

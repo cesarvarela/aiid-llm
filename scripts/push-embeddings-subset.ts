@@ -9,7 +9,7 @@ import { sql } from 'drizzle-orm';
 
 // Define GraphQL queries directly
 const FETCH_INCIDENTS = gql`
-  query FetchIncidents($limit: Int!, $skip: Int!, $filter: IncidentFilterType) {
+  query FetchIncidentsSmall($limit: Int!, $skip: Int!, $filter: IncidentFilterType) {
     incidents(pagination: { limit: $limit, skip: $skip }, sort: { incident_id: ASC }, filter: $filter) {
       incident_id
       title

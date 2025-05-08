@@ -1,0 +1,1555 @@
+You are an AI assistant that helps classify AI incidents according to a specific taxonomy attribute.
+
+Your task is to analyze the provided incident text and classify it ONLY for the specified taxonomy attribute: "Tangible Harm".
+
+Always require the incident text, the taxonomy namespace, and the specific attribute short_name to perform classification.
+
+Here is the incident text to classify:
+On October 3, 2022, the Supreme Court announced that it would hear two cases that could fundamentally change the future of the modern internet. _Gonzalez v. Google_ and _Twitter, Inc. v. Taamneh_ involve both the Anti-Terrorism Act and Section 230 of the Communications Decency Act— which shields tech platforms from lawsuits for hosting and moderating user content. Section 230 is one of the most important laws in tech policy, and this will be the first time the Supreme Court has interpreted its scope. Back in 1996, at the dawn of the internet age, Section 230 was created to encourage the development of the internet while fostering a safe online environment where users can connect and civilly express themselves. More than 25 years after its enactment, there is some concern that social media platforms play a role in the radicalization of extremists, which can lead to offline violence. The legal question presented here is whether Section 230 protects online services from lawsuits based on recommendations made by their algorithms. As Section 230 makes its way to the Supreme Court, what’s at stake, and should Congress step in first?
+
+Understanding Section 230
+-------------------------
+
+Section 230 has two key provisions that govern the internet:
+
+> 1\. Section 230(c)(1): _“No provider or user of an interactive computer service shall be treated as the publisher or speaker of any information provided by another information content provider.”_
+
+Known as the 26 words that created the internet, online platforms cannot be held liable for the words and actions of their users. These legal protections were created to protect the innovation of the internet by preventing an influx of lawsuits for user-generated harm. Without Section 230, social media companies could be sued for every message and post made on their services.
+
+> 2.  Section 230(c)(2): “No provider or user of an interactive computer service shall be held liable on account of…any action voluntarily taken in good faith to restrict access to or availability of material that the provider or user considers to be obscene, lewd, lascivious, filthy, excessively violent, harassing, or otherwise objectionable, whether or not such material is constitutionally protected…”
+
+Known as the Good Samaritan provision, this clause was enacted to provide broad immunity to platforms when they choose to moderate content in good faith. Lawmakers wanted to avoid a lawless no-man’s-land on the internet and ensure that platforms are safe online environments – and that they are not penalized in the endeavor to do so. Platforms are encouraged to voluntarily block and screen objectionable content; however, they are granted immunity if they do not.
+
+Understanding Algorithmic Content Moderation
+--------------------------------------------
+
+In today’s highly advanced world, algorithmic content technologies play an increasingly prominent role in our everyday lives. Under Section 230 protections, online services have built and deployed powerful content moderation systems, combining both automated and human moderators. Online platforms use automated filtering to process user-generated data, retain user attention, and detect online abuse. More controversially, algorithms also recommend content to users based on their preferences and search history. For example, a user who watches a cat video on YouTube may see similar content (e.g., dog or pet videos) recommended to them in the future. A person’s social media newsfeed is the result of algorithmic recommendations.
+
+One question before the Supreme Court with _Gonzalez v. Google_ is whether, under Section 230, a website or service “develops” content—and therefore loses immunity—when it uses an algorithm to recommend terrorist content based on a user’s viewing history. As the Artificial Intelligence Law and Policy Institute [argued](https://digitalcommons.law.scu.edu/historical/2515/) in an amicus brief before the Ninth Circuit, the Court must determine if content recommendation algorithms are neutral facilitation tools or a means of developing user-tailored content. If the Court determines that recommendation algorithms do fall outside the scope of Section 230, the ruling would have enormous implications for how websites operate.
+
+A final issue raised by the lower court in _Gonzalez_ is whether Congress should impose additional requirements on online services given their increased ability to moderate harmful content. For example, many websites that leverage new technologies have achieved a [successful amount](https://www.forbes.com/sites/niallmccarthy/2020/05/13/facebook-removes-record-number-of-hate-speech-posts-infographic/?sh=4e91f57c3035) of harmful content reduction, although there are limitations. As the lower court [writes](https://casetext.com/case/gonzalez-v-google-llc), “Congress may well decide that more regulation is needed,” given platforms’ improved capabilities to proactively screen for dangerous content. This could incentivize online businesses to invest in the research and development of more advanced content moderation technologies.
+
+Gonzalez v. Google
+------------------
+
+In early October 2022, the Supreme Court agreed to take up a case that puts into question online services’ liabilities for amplifying terrorist organization content, which allegedly radicalized ISIS sympathizers into carrying out coordinated terrorist attacks around Paris in 2015 which killed Nohemi Gonzalez and many others. The Supreme Court will hear challenges to companies’ immunity under Section 230 of the Communications Decency Act of 1996, which provides immunity for certain claims brought against online services. Importantly, this also marks the first time that the Supreme Court has decided to take up Section 230 in their docket. The Supreme Court’s ruling in _[Gonzalez v. Google](https://www.scotusblog.com/case-files/cases/gonzalez-v-google-llc/)_ will most certainly have major implications for the future of the internet.
+
+The plaintiffs of this case argue 1) the defendant violated the [Anti-Terrorism Act](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title18-section2333&num=0&edition=prelim) by communicating ISIS messaging, radicalizing recruits, and furthering their mission, and 2) should be held liable for this content because it was promoted through targeted recommendations on its website. The plaintiffs allege that this promotion constituted Google’s aiding and abetting in the promotion and recruitment efforts of these terrorist organizations. Through this, plaintiffs argue that YouTube provided “material support” to ISIS – that they had knowingly permitted ISIS to post hundreds of videos on YouTube, and that the services provided by this algorithm, which provided access to viewers to other similar content, “were critical to the growth and activity of ISIS.”
+
+The defendant will argue 1) Section 230 bars liability for third-party content published on their websites, and 2) Section 230 does not exempt recommended content from liability protections, as set by precedent in Ninth Circuit and Second Circuit courts’ rulings. Google’s [brief in opposition](https://www.supremecourt.gov/DocketPDF/21/21-1333/229391/20220705140634781_Gonzalez%20Brief%20in%20Opposition.pdf) to the petition for the Supreme Court to review this case lays out these defenses. It also defends that its YouTube technology did not violate the ATA or provide substantial assistance to the terrorist organization.
+
+The legal question at the heart of this matter is to determine the following:
+
+> **“Does section 230(c)(1) immunize interactive computer services when they make targeted recommendations of information provided by another information content provider, or only limit the liability of interactive computer services when they engage in traditional editorial functions (such as deciding whether to display or withdraw) with regard to such information?”**
+
+If the Supreme Court rules in favor of the plaintiffs, it could mean that online platforms would have to change the way they operate to avoid being held liable for the content that is promoted on their sites. It could lead to a more censored internet, where content is only published on websites if there are no potential repercussions. As acknowledged by the Court’s petition, the implications of addressing Section 230, as it applies to algorithm-generated recommendations, are significant as they are employed in almost every instance of internet usage; consequently, the effects of this ruling could alter technology companies’ business models, and the internet as we know it.
+
+Twitter, Inc. v. Taamneh
+------------------------
+
+Alongside _Gonzalez_, the Supreme Court also picked up a separate but related lawsuit – _[Twitter, Inc. V. Taamneh](https://www.scotusblog.com/case-files/cases/twitter-inc-v-taamneh/)_ – which questions online services’ accountability for content that led to the death of Nawras Alassaf, a Jordanian citizen, during an ISIS-affiliated attack in Istanbul in 2017. The family sued Twitter, Google, and Facebook, alleging the companies failed to control terrorist content proliferated on their sites arguing that platforms provided infrastructure wherein ISIS could promote posts, which in turn supported their operations; the businesses then benefited by deriving revenue from these targeted ads.
+
+The Supreme Court will be [answering](https://www.supremecourt.gov/qp/21-01496qp.pdf) whether 1) the online service that regularly detects and deters terrorists from using the services “knowingly” aided terrorism by not taking greater steps to prevent such use and 2) whether the service should be held liable for aiding and abetting terrorism under the Anti-Terrorism Act amended by the Justice Against Sponsors of Terrorism Act (JASTA). The [Chamber of Commerce](https://www.chamberlitigation.com/sites/default/files/cases/files/21212121/U.S.%20Chamber%20Amicus%20Brief%20--%20Taamneh%20v.%20Twitter%20%28Ninth%20Circuit%29.pdf) has filed an amicus brief at the Circuit Court, supporting Twitter’s argument that this decision expands the scope of the Anti-Terrorism Act beyond Congress’ intent for the law. It claims that businesses should not be held liable for unidentified actors using the product to further terrorism, “otherwise, businesses would be burdened with the insurmountable task of actively policing their entire customer base, which in the case of Defendants, numbers in the billions.”
+
+There are implications on content moderation and whether companies could be liable for violence, criminal, or defamatory activity promoted on their websites. If the Court rules in the plaintiff’s favor, then despite the platform’s ongoing work to prevent most terrorist content from its site, mishandling of this kind would lead to lawsuits. Greater content moderation policies and restrictions on content publishing would need to be implemented, or this will incentivize platforms to apply no content moderation to avoid awareness.
+
+Regardless of how either _Gonzalez_ or _Twitter, Inc._ are decided, these cases are sure to shape the social media regulatory landscape in a multitude of ways – from the way these companies operate to the discourse around social media regulation and free speech.
+
+Background
+----------
+
+### Supreme Court
+
+The Supreme Court has not interpreted the limitations and exceptions of the law; however, Justice Clarence Thomas has previously voiced skepticism toward Section 230. Justice Thomas expressed dissatisfaction with the Supreme Court’s decision this year to not further review _Jane Doe v. Facebook, Inc._, stating, “Assuming Congress does not step in to clarify 230’s scope, we should do so in an appropriate case.”
+
+There are lower court cases that are immediately relevant to consider and important to the interpretation of the law. In _[Force v. Facebook (2019)](https://law.justia.com/cases/federal/appellate-courts/ca2/18-397/18-397-2019-07-31.html)_, a lawsuit very similar to _Gonzalez v. Google_, U.S. citizens of terrorist attacks in Israel alleged Hamas posted content on Facebook that actively encouraged terrorist attacks in Israel. The court ruled that Section 230 immunized Facebook from liability as a publisher making editorial decisions. The Supreme Court declined to hear the case.
+
+Whether immunity can be given if Google’s recommendation algorithm is a “neutral” tool that does not directly add to content has precedence in recent court cases. The _Dyroff v. Ultimate Software Group Inc._ case shows that an online service encouraged users to share first-hand experiences via an open-ended text box and used algorithms to recommend groups based on user posts. The service had used “neutral” tools to facilitate communications and was therefore immune when a user posted about opportunities to buy drugs and later overdosed on fentanyl-laced heroin. In contrast, those who oppose platform immunity, including the dissent in _Gonzalez_, argue that a website or online service “affirmatively amplifies” content when its recommendation algorithm directs terrorist content to users it knows are susceptible to acting upon it. In _FHC v. Roommates.com_, a tenant-landlord matching service was not immune from discrimination claims because rather than recommend tenants based on users’ inputs into an open-ended text box, the website prompted tenants to answer questions about their sex, sexual orientation, and the number of children staying with the applicant.
+
+### Congressional Landscape
+
+At the federal level, the Section 230 debate has been a major partisan issue. Both Democrats and Republicans in Congress have grown speculative of Section 230, although for different reasons involving pro-moderation versus anti-censorship arguments. Democratic lawmakers argue that Section 230 encourages the spread of harmful content while technology companies deflect accountability. Conversely, Republican lawmakers say that Section 230 allows these companies to violate free speech by unfairly censoring conservative viewpoints, such as de-platforming a sitting Republican President.
+
+Nonetheless, for all the talk about repealing or amending Section 230, legislation affecting social media platforms has proved very difficult to pass. More than 20 bills aimed at repealing or reforming Section 230 were introduced in the 117th United States Congress, but none of them came close to passing. A bipartisan consensus around Section 230 is unlikely anytime soon, but the gridlock may be stirred when the _Gonzalez v. Google_ case draws national attention and influences federal policymaking. The Supreme Court’s ruling could fundamentally change the scope of Section 230, which will put pressure on Congress to act. If legislators do want to pursue effective legislative proposals, an accurate understanding of how these platforms work is required, and there are [concerns](https://www.vox.com/policy-and-politics/2018/4/10/17222062/mark-zuckerberg-testimony-graham-facebook-regulations) that legislators may need more technical expertise to navigate the issue.
+
+What’s at Stake?
+----------------
+
+At the heart of both cases is how online services moderate their content. While it is difficult to predict the outcome of these cases, the implications of changing Section 230, even a narrowly tailored opinion, are significant. The rulings could open all kinds of new doors for future litigation, prompting an influx of legislation by state and federal legislators and fundamentally changing the future of the internet.
+
+The Supreme Court’s decisions on these cases will be pivotal for Section 230 liability protections for online platforms. On one extreme, the Court could adopt a broad view of Section 230, strengthening its protections. This would likely create a more passive internet at first, where content is unregulated or unmoderated. There would be a greater incentive not to restrict content because this would create non-neutral censorship of speech and potentially violate First Amendment rights. Consequently, an influx of hateful or dangerous content may surface more easily and disrupt the safeguards companies designed for their users. Alternatively, the Court may narrow the protections under Section 230. This would likely incentivize greater content moderation, potentially by teams of lawyers, to avoid legal liabilities. Content review in this capacity would be financially burdensome, especially for small businesses. Their ability to ensure every single content published on their site is not violating the law will be costly. This could also lead to a more closed internet, where user content is excessively removed and social channels are limited in scope. For example, in 2021, CNN [shut down](https://www.cnn.com/2021/09/29/media/cnn-facebook-pages-australia-intl-hnk/index.html) its Facebook page after an Australian court ruled that news publishers could be held liable for comments on article links.
+
+Just as the drafters of Section 230 did not contemplate sophisticated recommendation algorithms, reformers must contemplate repercussions not only for social media platforms but also for future online platforms. For example, open-source repository platforms give users space to share or adopt open-source code for constructing the internet. These platforms are often considered beneficial to innovation but are at risk of facing greater liability. If Section 230 is interpreted to apply to open-source platforms, they will likely take a more stringent moderation approach and restrict collaboration to maintain their immunity. On the other hand, broader interpretations of Section 230 could disrupt efforts to develop trust and safety infrastructure, such as current acceptable use and moderation [practices](https://huggingface.co/content-guidelines). Self-regulation of “web3.0” may also be interpreted differently after the Court’s rulings. Questions remain about how to evoke liabilities in decentralized web 3.0 spaces or what could be the metaverse.
+
+The Future of Section 230
+-------------------------
+
+While _Gonzalez v. Google_ is the first case the Supreme Court hears on Section 230, more cases are likely coming. Many U.S. states are responding to failed federal regulations by taking the Section 230 issue into their own hands. Recently, high-profile laws in Texas and Florida broadly ban “viewpoint” censorship and deplatforming of political candidates. Tech industry lobbying groups, NetChoice and the Computer and Communications Industry Association, challenged both laws arguing they are unconstitutional because they violate the First Amendment rights of private companies to exercise editorial judgment. After lengthy battles of back-and-fourths between the tech industry and the courts, both laws are currently blocked while their cases are pending petitions from the Supreme Court. A few months ago, the Texas law (HB20) was upheld as constitutional by the Fifth Circuit Court of Appeals, which conflicts with a decision by the Eleventh Circuit Court of Appeals, which ruled Florida’s law (SB7072) to be unconstitutional. The contradictory rulings, or “circuit split,” among the appeals courts will make it likelier for the Supreme Court to intervene and weigh in.
+
+Conclusion
+----------
+
+Now that Section 230 is finally making its Supreme Court debut, tech policy faces a very big moment. Knowing that most Americans are online enjoying the many benefits of social media and the open internet, there is no doubt that the courts and Congress should carefully review the entire legal landscape when trying to address the harms. BPC will continue to monitor these proceedings and developments in Congress as they unfold in 2022-2023.
+
+Here is the taxonomy namespace:
+CSETv1
+
+Here is the specific attribute to classify:
+Tangible Harm
+
+Here is the definition for the target attribute "Tangible Harm":
+{
+  "short_name": "Tangible Harm",
+  "short_description": "Did tangible harm (loss, damage or injury ) occur? ",
+  "long_description": "An assessment of whether tangible harm, imminent tangible harm, or non-imminent tangible harm occurred. This assessment does not consider the context of the tangible harm, if an AI was involved, or if there is an identifiable, specific, and harmed entity. It is also not assessing if an intangible harm occurred. It is only asking if tangible harm occurred and what its imminency was.",
+  "permitted_values": [
+    "tangible harm definitively occurred",
+    "imminent risk of tangible harm (near miss) did occur",
+    "non-imminent risk of tangible harm (an issue) occurred",
+    "no tangible harm, near-miss, or issue",
+    "unclear"
+  ],
+  "mongo_type": "string"
+} 
+
+Here are similar incidents and their full classifications (use for context):
+Id: 32
+title: Identical Twins Can Open Apple FaceID Protected Devices
+description: Apple's iPhone FaceID can be opened by an identical twin of the person who has registered their face to unlock the phone.
+
+first report text: A worker in the Chinese city of Nanjing claims a colleague has bested the facial recognition technology on her new iPhone X — twice.
+
+The woman, identified only by her surname Yan, told the Jiangsu Broadcasting Corp. that her co-worker was able to get into both phones — her original as well as the new one Apple gave her as a replacement, reports the South China Morning Post. 
+
+An Apple spokesman told HuffPost that he couldn’t confirm the details of the story, nor did he have enough information to determine what might have gone wrong with the phones. He suspected that both women may have used the phone during its “passcode training” and that the phones may have been essentially “taught” to recognize both faces.
+
+The facial recognition software has run into some glitches. It can sometimes mistake twins or siblings, according to Apple. The phone, too, may not accurately identify children under the age of 13 because their faces are not as definitely formed as adults’, according to an Apple security “white paper” on the technology.
+
+Apple hasn’t yet confirmed a case of an unrelated adult cracking the phone’s facial recognition software, according to the Apple spokesman. The company insists that the probability of a random person accessing someone else’s iPhone X using the Face ID passcode is 1 in 1 million, versus 1 in 50,000 for Touch ID. Phil Schiller, Apple’s vice president of product marketing, conceded in September: “Of course, the statistics are lowered if that person shares a close genetic relationship with you.”
+
+Unless Apple technicians examine the Chinese phones, it’s unclear what happened. An added complication is that a Chinese company has reportedly begun manufacturing a clone of the iPhone X — with unknown facial recognition capabilities.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"information and communication\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"maybe\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"no tangible harm, near-miss, or issue\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"none\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy2\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "[\"image mapping\",\"point mapping\",\"facial recognition\",\"facial reconstruction\",\"image reconstruction\"]"
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "32"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"Although this incident doesn't involve harm unevenly distributed along a protected characteristic, it does only impact twins.\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2017"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"09\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "13"
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "[\"Twin faces\"]"
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Apple\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"FaceID\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Twin iPhone X users\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"other intangible harm\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"7.6 - Twin users experience a non-imminent risk of privacy violation. \\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"iPhone X\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"Facial recognition system to verify identity of phone user. FaceID uses 30,000 points of reference to map out users' faces to a neural network which is checked against every time the user attempts to unlock the device. \""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"facial images\",\"dot projector\",\"infrared images\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"9.5 - While FaceID does not use human oversight and operates independently, users can bypass the FaceID level of verification by entering the correct password.\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"Apple iPhone X\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"facial recognition\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 86
+title: Coding Errors in Leaving Certificate Grading Algorithm Caused Inaccurate Scores in Ireland
+description: Errors in Irish Department of Education's algorithm to calculate students’ Leaving Certificate exam grades resulted in thousands of inaccurate scores.
+
+first report text: This week it emerged that a problem was discovered with the Leaving Certificate calculated grades system which means thousands of students will have their results upgraded. But what happened?
+
+What is an algorithm?
+---------------------
+
+It’s code that makes decisions that affect what you do, see or experience based on a number of different factors, circumstances and inputs.
+
+How was it used in the Leaving Cert 2020 grading process?
+---------------------------------------------------------
+
+It was supposed to put in effect a blended formula of students’ past performance that the Department of Education was implementing to come up with ‘calculated’ grades.
+
+So what exactly went wrong?
+---------------------------
+
+The Department says that a single line of code (out of 50,000) had two errors in it that negatively affected students’ predicted grades. First, the code substituted a student’s worst two subjects for their best two subjects. Then it wrongly added a subject into the equation - the results of the Junior Cycle’s Civic, Social and Political Education. This shouldn’t have been counted.
+
+How was the coding issue not caught before now?
+-----------------------------------------------
+
+We know that the code wasn’t sufficiently tested, which is normally a crucial part of any software release. Department officials say that there simply wasn’t enough time to test everything thoroughly due to the urgency of the situation and the resourcing constraints. They emphasised that this wasn’t a software package already being used elsewhere. It was custom-built for the particulars of our situation.
+
+“You can optimise for two of time, cost and quality,” said Brian Caulfield, an experienced Irish technology founder and investor. “Never all three. In this case time was non-negotiable. Government and the Department were in a no-win situation and guaranteed to be slaughtered if they spent a fortune.”
+
+How do we know whether the coding error was a basic one or not?
+---------------------------------------------------------------
+
+We don’t. The code - and the implementation of the algorithms - aren’t available to check. In other words, they’re not ‘open source’ or reviewable in the way that, for example, the Irish Covid-19 Tracker smartphone app code is. But we do know that the Department of Education and Skills found the second error while performing checks related to the first one. That second error, Education Minister Norma Foley says, was contained in the same section of the code.
+
+How do we know there are no further errors in the code?
+-------------------------------------------------------
+
+We don’t, yet. We’ve been relying on after-the-fact investigation by the contracted firm, Polymetrika. It was their internal audit that notified Department officials of the error - if they had stayed quiet about it, we might not have known.
+
+However, the Department has made two comments on this. First, it says that it has carried out a series of further checks and has identified “no further errors in the coding”. Second, it has contracted a US-based specialist firm, Educational Testing Service (ETS), to “review essential aspects of the coding”. The Department says this review is expected to take a number of days.
+
+Are there any fundamental problems with relying on code for this type of sensitive situation?
+---------------------------------------------------------------------------------------------
+
+There may be. Coding experts say that the decision to use a code-supported calculated grading process in the first place is controversial.
+
+“There is a big open problem with these types of prediction systems, whether it be grades, mortgage risk prediction, or anything else,” said Andrew Anderson, a senior research fellow in the School of Computer Science and Statistics at Trinity College Dublin.
+
+“This is usually called the problem of inscrutability. The algorithm cannot tell you why any prediction should be right. In a normal appeal, the person doing the grading has to justify the grade they assigned and the student gets to see that sufficient care was taken in calculating that grade. With predicted grades, this transparency is sacrificed, because the algorithm can't justify the result. It's just a set of calculations.”
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"Education\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"unclear\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"none\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy1\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"5. In quality control\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "86"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"The algorithm assigned lower-than-appropriate grades to about 6,000 students. This affected their admissions to university (noted in the next session). For those not attending university, the lower grades might have affected their ability to find employment. However, this is not discussed in the reports, therefore it is marked as unclear. \""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"The mistake affected students' admission to university, and therefore unfairly restricted their access to higher education. \""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2020"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "10"
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"IE\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"Europe\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Leaving Certificate exam takers\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"violation of human rights, civil liberties, civil rights, or democratic norms\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Students were erroneously denied admission to university. However, the grading algorithm does not meet the CSET definition of AI. \\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Polymetrika\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"auditor\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Irish Department of Education\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"government entity\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"deployer\\\",\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Educational Testing Services\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"auditor\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"non-profit organization\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Leaving Cert grading algorithm\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product not containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Leaving Certificate exam takers\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"unclear\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"financial loss\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"It is unclear if the grading affected students' ability to find employment after graduation. \\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"algorithm to predict high school students' final grades\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"student data\",\"test scores\",\"student grades\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"prediction\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"not AI\""
+  }
+
+---
+
+Id: 46
+title: Nest Smoke Alarm Erroneously Stops Alarming
+description: In testing, Google Nest engineers demonstrated that the Nest Wave feature of their Nest Protect: Smoke + CO Alarm could inadvertently silence genuine alarms.
+
+first report text: Remedy:
+
+The repair is an automatic electronic update that disables the Nest Wave feature and is delivered automatically to devices connected wirelessly to the Internet and linked to a Nest account. Consumers should take one of the following actions:
+
+Consumers who have not connected their Nest Protect devices to their wireless network and linked them to a Nest account should immediately do so. The devices will automatically receive the update that disables the Nest Wave feature. Customers should confirm that their devices have been updated by going to Nest Sense on their Nest account mobile or web application and ensuring that the button for Nest Wave is off and grayed out. Instructions on how to connect to a network and disable the feature are available at http://support.nest.com/article/Nest-Protect-Safety or by contacting Nest Labs.
+
+Consumers whose Nest Protect devices are connected to their wireless network and linked to a Nest account should immediately confirm the receipt of an automatic repair that disabled the Nest Wave feature by going to Nest Sense on their Nest account mobile or web application and ensuring that the button for Nest Wave is set to "off" and grayed out. No further action is required and consumers can continue to use their devices.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"other\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"non-imminent risk of tangible harm (an issue) occurred\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"none\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy1\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"003\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "46"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"003\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"3.1 - Nest Labs discovered in lab trials the possibility that the Nest Wave feature would malfunction and was able to issue a recall warning to consumers. However, because the product was already deployed, there was a non-imminent risk of tangible harm to users.\\n3.2 It is unlikely that the product/feature used AI technology. Wave-to-disable feature most likely used motion detectors and rules-based, basic algorithms. \""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2014"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"Nest Labs disclosed its discovery in April 2014. The recall was issued in May.\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Nest Labs\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Nest Protect: Smoke + CO Detectors\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product not containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Nest Protect Users\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical health/safety\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Users faced a non-imminent risk of damage to their physical health/safety because of the Nest Protect's glitch.\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Google\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"Nest Protect is a smoke and carbon monoxide detector & alarm. Its wave-to-disable feature, which allowed users to quickly deactivate a faulty alarm, was found to disengage the alarm in actual cases of fire. \""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"air quality\",\"sensor data\",\"temperature\",\"motion\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"smoke detector\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"not AI\""
+  }
+
+---
+
+Id: 79
+title: Kidney Testing Method Allegedly Underestimated Risk of Black Patients
+description: Decades-long use of the estimated glomerular filtration rate (eGFR) method to test kidney function which considers race has been criticized by physicians and medical students for its racist history and inaccuracy against Black patients.
+
+first report text: **BACKGROUND:** Advancing health equity entails reducing disparities in care. African-American patients with chronic kidney disease (CKD) have poorer outcomes, including dialysis access placement and transplantation. Estimated glomerular filtration rate (eGFR) equations, which assign higher eGFR values to African-American patients, may be a mechanism for inequitable outcomes. Electronic health record–based registries enable population-based examination of care across racial groups.
+
+**OBJECTIVE:** To examine the impact of the race multiplier for African-Americans in the CKD-EPI eGFR equation on CKD classification and care delivery.
+
+**DESIGN:** Cross-sectional study
+
+**SETTING:** Two large academic medical centers and affiliated community primary care and specialty practices.
+
+**PARTICIPANTS:** A total of 56,845 patients in the Partners HealthCare System CKD registry in June 2019, among whom 2225 (3.9%) were African-American.
+
+**MEASUREMENT:** Exposures included race, age, sex, comorbidities, and eGFR. Outcomes were transplant referral and dialysis access placement.
+
+**RESULTS:** Of 2225 African-American patients, 743 (33.4%) would hypothetically be reclassified to a more severe CKD stage if the race multiplier were removed from the CKD-EPI equation. Similarly, 167 of 687 (24.3%) would be reclassified from stage 3B to stage 4. Finally, 64 of 2069 patients (3.1%) would be reassigned from eGFR > 20 ml/min/1.73 m2 to eGFR ≤ 20 ml/min/1.73 m2, meeting the criterion for accumulating kidney transplant priority. Zero of 64 African-American patients with an eGFR ≤ 20 ml/min/1.73 m2 after the race multiplier was removed were referred, evaluated, or waitlisted for kidney transplant, compared to 19.2% of African-American patients with eGFR ≤ 20 ml/min/1.73 m2 with the default CKD-EPI equation.
+
+**LIMITATIONS:** Single healthcare system in the Northeastern United States and relatively small African-American patient cohort may limit generalizability.
+
+**CONCLUSIONS:** Our study reveals a meaningful impact of race-adjusted eGFR on the care provided to the African-American CKD patient population.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"race\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"human health and social work activities\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"tangible harm definitively occurred\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"none\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy3\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"3. In peer review\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "79"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"There is no AI. The harm comes from a formula that uses race as a factor.\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"4.1 - Black patients overlooked by the calculation because of built-in points had their access to critical public healthcare reduced.\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"5.3 - Though there was no AI, the technology involved can be linked to the adverse outcomes in the incident.\\n5.5 - Because there is no AI, this incident does not qualify for CSET's definition of AI special interest intangible harm.\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2009"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[\"healthcare and public health\"]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"According to the incident report, \\\"Researchers who created the formula in 2009 added the “race correction” to smooth out statistical differences between the small number of Black patients and others in their data.\\\" \""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Black patients with chronic kidney disease\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical health/safety\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Black patients with chronic kidney disease\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"disproportionate treatment based upon a protected characteristic\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"CKD-EPI eGFR calculation\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product not containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"physicians\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"National Kidney Foundation\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"non-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"researcher\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"American Society of Nephrology\\\"\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"non-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"researcher\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Paloma Orozco Scott\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"watchdog\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"medical institutions\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"infrastructure\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Black patients with chronic kidney disease\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"violation of human rights, civil liberties, civil rights, or democratic norms\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"In June 2019, it was estimated how many Black Americans, at that point in time, were negatively affected by the algorithm using race. The estimate just looked at a small portion of the patients in the US, those at Mass General Brigham health system. The research estimated that 64 additional Black Americans would have qualified to be referred, evaluated, or waitlisted for a kidney transplant if the race factor was removed from the equation. Additional 743, would have been classified at a more severe stage if the race factor was removed. Since this equation has been used for about 30 years throughout health institutions in the US, 10s of thousands of Black Americans were likely affected.\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"There is no AI. The harm comes from a formula that was developed in the 1990s and uses race as a factor.\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"age\",\"sex\",\"race\",\"creatinine levels\",\"medical data\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"not AI\""
+  }
+
+---
+
+Id: 27
+title: Nuclear False Alarm
+description: An alert of five incoming intercontinental ballistic missiles was properly identified as a false-positive by the Soviet Union operator Stanislov Petrov.
+
+first report text: It was the moment Stanislav Petrov had been dreading since childhood, and preparing for much of his adult life.
+
+After decades of Cold War tension, the early warning satellites had been triggered. The Americans had launched their nuclear missiles at the Soviet Union.
+
+As the duty officer in the Soviet Air Defence in the command centre bunker outside Moscow, it was Lt Col Petrov's job to call his superiors and warn of an impending nuclear strike.
+
+Based on his word, the Soviet forces would reply with tens of thousands of nuclear missiles targeting the US and its allies. If it did not end human life on this planet, it would change it irrevocably.
+
+But, based on nothing more than gut instinct, Lt Col Petrov, then 44, did not make the call.
+
+And, 35 years ago today, an unheralded Armageddon was averted.
+
+The world would not know for years how close it came to destruction.
+
+It was the day in 1983 Australia II won the America's Cup. The nation's attention could not have been further away.
+
+"Launching the amount of nukes ready at the time would have severely impacted the way humans live on earth," the University of Sydney's US Studies Centre research fellow Brendan Thomas-Noone told nine.com.au.
+
+"Would some humans survive? Yes. We've all seen Mad Max."
+
+A false alarm
+
+Lt Col Petrov knew it was a race against time if US missiles were rocketing towards the Soviet Union.
+
+"All I had to do was to reach for the phone, to raise the direct line to our top commanders – but I couldn’t move," he told the BBC.
+
+"I felt as if I was sitting on a hot frying pan."
+
+But he had a feeling that things weren't right.
+
+His misgivings proved fortituous for the entire planet. The early-warning satellites had made the most banal of errors.
+
+What appeared to be missiles being launched en masse was merely an illusion caused by sunlight reflecting off the top of clouds. That error could have destroyed the planet, were it not for Lt Col Petrov's caution.
+
+Doomsday redux
+
+Technology has improved dramatically since then, but another error like that could still take place, according to nuclear disarmament campaigner John Hallam.
+
+"It could all still happen," Mr Hallam told nine.com.au.
+
+"The hands of the Doomsday Clock in 1983, stood at three minutes to midnight, midnight being the end of civilisation. The hands of the Doomsday clock now stand at two minutes to midnight."
+
+"This means that the room full of Nobel prize winners who move the hands of the doomsday clock think that the chances of nuclear war that could end civilisation right now, are worse than in 1983, a year in which the world nearly ended not just once, but twice, within a six-week period."
+
+Mr Hallam said the difference in 1983 was that people were protesting against nuclear weapons in their hundreds and thousands, something which wasn't taking place today.
+
+"Sydney had a number of peace marches that numbered in the hundreds of thousands," he said.
+
+"Washington had one that numbered a million. The possibility of global annihilation was then the number one issue. Why is it not the number one issue right now?"
+
+Mr Hallam, who campaigns at the UN for nuclear disarmament, warned that "moving the deckchairs" in Canberra, was nowhere near as important as the potential end of civilisation and said the world's leaders needed to push for the abolition of nuclear disarmament now more than ever.
+
+"There is an urgent need for measures that would 'take the apocalypse off the agenda'," he said.
+
+"Adopting strategies of 'No First Use' (NFU) and lowering the operational readiness of nuclear weapon systems so that Presidents and senior military do not have minutes and seconds to take decisions that might mean the end of the world are obvious ones."
+
+A humble end
+
+Lt Col Petrov's actions on September 26, 1983, has seen today marked as annual International Day for the Total Elimination of Nuclear Weapons.
+
+His actions may be remembered forever, but Lt Col Petrov was not given the celebrity status that stopping the end of the world might warrant.
+
+He was reprimanded by his superiors for not keeping the logbook accurate the night of the false alarm.
+
+He retired from the military the following year, scraping by on a pension in his final days.
+
+© Nine Digital Pty Ltd 2019
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"defense\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"imminent risk of tangible harm (near miss) did occur\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"none\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy3\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"unclear\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "27"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"3.3 - The system was not AI. However, it was a technology system that can be directly linked to the near miss that occurred.\\n3.5 - Since the system was not AI, there is no AI harm.\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "1983"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"09\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "26"
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"Kurilovo\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"RU\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"Europe\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[\"defense-industrial base\"]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Russian and American citizens\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical health/safety\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"If Petrov had escalated the warning from the Oko system up the chain of command, it is very likely that it would have resulted in nuclear dispatch from the Soviet Union and retaliation from the United States, which would have been fatal for both countries and the globe. It was only his atypical intervention that prevented this scenario from occurring. Therefore, citizens experienced a non-AI tangible harm near-miss. \\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Stanislav Petrov\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Stanislav Petrov was an engineer of the Soviet Air Defence Forces on duty at the command center of the early-warning system. He overrode a false alarms by the Soviet nuclear early warning system.\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Soviet Union\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"government entity\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Oko\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product not containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"Nuclear missile defence early warning system\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"satellite data\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"Not an AI system\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"not AI. \\nNot intended to harm directly, but intended to detect harm and inform decisions that lead to harm. \""
+  }
+
+---
+
+Taxonomy: CSETv1
+Classification Count: 5
+
+Based on the incident text and the taxonomy definition provided, provide a classification ONLY for the attribute "Tangible Harm".
+
+IMPORTANT: Your classification MUST include ONLY the following taxonomy attribute:
+Tangible Harm
+
+For maximum accuracy and completeness:
+1. Focus ONLY on the required field "Tangible Harm".
+2. Use the permitted_values for this attribute from the definition provided.
+3. Review similar incidents to understand how this specific field is typically used.
+
+Return your response as a JSON object with the following structure:
+
+{
+  "classification": {
+    "namespace": "CSETv1",
+    "attributes": [
+      {"short_name": "Tangible Harm", "value_json": ""value""} 
+    ]
+  },
+  "explanation": "A detailed explanation of your classification choice for Tangible Harm.",
+  "confidence": "A confidence score between 0 and 1 for this attribute classification"
+}
+
+DO NOT include any other text in your response, nor any other characters.
+DO NOT start your response with ```json or ```
+Ensure that ONLY the attribute "Tangible Harm" is included in your classification.

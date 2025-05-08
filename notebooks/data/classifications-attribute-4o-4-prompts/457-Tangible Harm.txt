@@ -1,0 +1,2880 @@
+You are an AI assistant that helps classify AI incidents according to a specific taxonomy attribute.
+
+Your task is to analyze the provided incident text and classify it ONLY for the specified taxonomy attribute: "Tangible Harm".
+
+Always require the incident text, the taxonomy namespace, and the specific attribute short_name to perform classification.
+
+Here is the incident text to classify:
+_CNET_ will pause publication of stories [generated using artificial intelligence](https://www.theverge.com/2023/1/19/23562966/cnet-ai-written-stories-red-ventures-seo-marketing) “for now,” the site’s leadership told employees on a staff call Friday.
+
+The call, which lasted under an hour, was held a week after _CNET_ came under fire for its use of AI tools on stories and one day after _The Verge_ reported that [AI tools had been in use for months](https://www.theverge.com/2023/1/19/23562966/cnet-ai-written-stories-red-ventures-seo-marketing), with little transparency to readers or staff. _CNET_ hadn’t formally announced the use of AI until readers noticed a small disclosure.
+
+“We didn’t do it in secret,” _CNET_ editor-in-chief Connie Guglielmo told the group. “We did it quietly.”
+
+_CNET_, owned by private equity firm Red Ventures, is among several websites that have been publishing articles written using AI. Other sites like Bankrate and [CreditCards.com](http://creditcards.com/) would also pause AI stories, executives on the call said.
+
+_Futurism_ [noted](https://futurism.com/seo-spammers-google-cnet-ai-generated-articles) that _CNET_ and Bankrate appeared to have stopped running AI stories as early as Wednesday.
+
+The call was hosted by Guglielmo, Lindsey Turrentine, _CNET_’s EVP of content and audience, and Lance Davis, Red Ventures’ vice president of content. They answered a handful of questions submitted by staff ahead of time in the AMA-style call.
+
+Davis, who was listed as the point of contact for _CNET_’s AI stories until recently, also gave staff a more detailed rundown of the tool that has been utilized for the robot-written articles. Until now, most staff had very little insight into the machine that was generating dozens of stories appearing on _CNET_.
+
+The AI, which is as of yet unnamed, is a proprietary tool built by Red Ventures, according to Davis. AI editors are able to choose domains and domain-level sections from which to pull data from and generate stories; editors can also use a combination of AI-generated text and their own writing or reporting.
+
+Turrentine declined to answer staff questions about the dataset used to train AI in today’s meeting as well as around plagiarism concerns but said more information would be available next week and that some staff would get a preview of the tool.
+
+Leadership also differentiated between the unnamed internal tool and other automated technology Red Ventures uses on its sites to auto-insert numbers into mortgage rate and refinance rate stories, which _The Verge_ reported had been in use for far longer but that the company didn’t disclose.
+
+“Some writers — I won’t call them reporters — have conflated these two things and had caused confusion and have somehow said that using a tool to insert numbers into interest rate or stock price stories is somehow part of some, I don’t know, devious enterprise,” Guglielmo said. “I’m sure that’s news to _The Wall Street Journal_, _Bloomberg_, _The New York Times_, _Forbes_, and everyone else who does that and has been doing it for a very, very long time.”
+
+Guglielmo said that, going forward, stories on _CNET_ about artificial intelligence will have a disclosure that the outlet uses its own automated technologies. Red Ventures also created an AI working group spanning across multiple departments, though it’s unclear what the council has done so far — leadership noted that the Slack channel had been created.
+
+“I just want to reassure everybody: this will pass,” Turrentine said of the media coverage in recent weeks. “It’s uncomfortable, we will get through it, the news cycle will move on.”
+
+Yesterday, _The Verge_ reported that despite _CNET_’s “experiments” in AI-generated technology, many on staff were largely kept in the dark about what tools the company was using or how it was using them. At times, staffers told _The Verge_ that they didn’t know if content published to _CNET_ was AI-generated or written by their human colleagues. _CNET_ and Red Ventures declined to answer any of _The Verge_’s questions about the tools used or disclosure policies.
+
+The stories that used AI are central to Red Ventures’ SEO-winning marketing strategy in which websites publish content with the aim of ranking highly in Google search. The highly trafficked pages are then loaded with ads for things like credit cards and loans — lucrative opportunities for affiliate marketing.
+
+Here is the taxonomy namespace:
+CSETv1
+
+Here is the specific attribute to classify:
+Tangible Harm
+
+Here is the definition for the target attribute "Tangible Harm":
+{
+  "short_name": "Tangible Harm",
+  "short_description": "Did tangible harm (loss, damage or injury ) occur? ",
+  "long_description": "An assessment of whether tangible harm, imminent tangible harm, or non-imminent tangible harm occurred. This assessment does not consider the context of the tangible harm, if an AI was involved, or if there is an identifiable, specific, and harmed entity. It is also not assessing if an intangible harm occurred. It is only asking if tangible harm occurred and what its imminency was.",
+  "permitted_values": [
+    "tangible harm definitively occurred",
+    "imminent risk of tangible harm (near miss) did occur",
+    "non-imminent risk of tangible harm (an issue) occurred",
+    "no tangible harm, near-miss, or issue",
+    "unclear"
+  ],
+  "mongo_type": "string"
+} 
+
+Here are similar incidents and their full classifications (use for context):
+Id: 87
+title: UK passport photo checker shows bias against dark-skinned women
+description: UK passport photo checker shows bias against dark-skinned women.
+
+first report text: Women with darker skin are more than twice as likely to be told their photos fail UK passport rules when they submit them online than lighter-skinned men, according to a BBC investigation.
+
+One black student said she was wrongly told her mouth looked open each time she uploaded five different photos to the government website.
+
+This shows how "systemic racism" can spread, Elaine Owusu said.
+
+The Home Office said the tool helped users get their passports more quickly.
+
+"The indicative check [helps] our customers to submit a photo that is right the first time," said a spokeswoman.
+
+"Over nine million people have used this service and our systems are improving.
+
+"We will continue to develop and evaluate our systems with the objective of making applying for a passport as simple as possible for all."
+
+Skin colour
+
+The passport application website uses an automated check to detect poor quality photos which do not meet Home Office rules. These include having a neutral expression, a closed mouth and looking straight at the camera.
+
+BBC research found this check to be less accurate on darker-skinned people.More than 1,000 photographs of politicians from across the world were fed into the online checker.
+
+The results indicated:
+
+Dark-skinned women are told their photos are poor quality 22% of the time, while the figure for light-skinned women is 14%
+
+Dark-skinned men are told their photos are poor quality 15% of the time, while the figure for light-skinned men is 9%
+
+Photos of women with the darkest skin were four times more likely to be graded poor quality, than women with the lightest skin.Ms Owusu said she managed to get a photo approved after challenging the website's verdict, which involved writing a note to say her mouth was indeed closed.
+
+"I didn't want to pay to get my photo taken," the 22-year-old from London told the BBC.
+
+"If the algorithm can't read my lips, it's a problem with the system, and not with me."
+
+But she does not see this as a success story.
+
+"I shouldn't have to celebrate overriding a system that wasn't built for me."
+
+It should be the norm for these systems to work well for everyone, she added.Other reasons given for photos being judged to be poor quality included "there are reflections on your face" and "your image and the background are difficult to tell apart"
+
+Cat Hallam, who describes her complexion as dark-skinned, is among those to have experienced the problem.
+
+She told the BBC she had attempted to upload 10 different photographs over the course of a week, and each one had been rated as "poor" quality by the site.
+
+"I am a learning technologist so I have a good understanding of bias in artificial intelligence," she told the BBC.
+
+"I understood the software was problematic - it was not my camera.
+
+"The impact of automated systems on ethnic minority communities is regularly overlooked, with detrimental consequences."
+
+Documents released as part of a freedom of information request in 2019 had previously revealed the Home Office was aware of this problem, but decided "overall performance" was good enough to launch the online checker.
+
+The story of bias in facial detection and recognition technologies began in the 19th century with the development of photography. For years, the chemical make-up of film was designed to be best at capturing light skin.
+
+Colour film was insensitive to the wide range of non-white skin types and often failed to show the detail of darker-skinned faces.
+
+The big change brought in by digital photography was that images were recorded as grids of numbers representing pixel intensities.
+
+Computers could now pick up patterns in these images and search for faces in them, but they needed to be fed lots of images of faces to "teach" them what to search for.
+
+This means the accuracy of face detection systems partly depends on the diversity of the data they were trained on.
+
+So a training dataset with less representation of women and people of colour will produce a system that doesn't work well for those groups.
+
+Face-recognition systems need to be tested for fair performance across different communities, but there are other areas of concern too.
+
+Discrimination can also be built into the way we categorise data and measure the performance of these technologies. The labels we use to classify racial, ethnic and gender groups reflect cultural norms, and could lead to racism and prejudice being built into automated systems.
+
+One US-based researcher who has carried out similar studies of her own said such systems were the result of developers "being careless".
+
+"This just adds to the increasing pile of products that aren't built for people of colour and especially darker-skinned women," said Inioluwa Deborah Raji, a Mozilla Fellow and researcher with the Algorithmic Justice League.
+
+If a system "doesn't work for everyone, it doesn't work", she added.
+
+"The fact [the Home Office] knew there were problems is enough evidence of their responsibility."
+
+The automated checker was supplied to the government by an external provider which it declined to name.
+
+As a result, the BBC was unable to contact it for comment.
+
+Methods
+
+The procedure was based on the Gender Shades study by Joy Buolamwini and Timnit Gebru.
+
+Photos of politicians were collected from parliaments around the world. The gender and skin tone were recorded for each photo using the Fitzpatrick skin-tone scale. Each image met the Home Office standards for a passport photo.
+
+This gave a database of 1,130 passport-style photos with a balance of skin tones and genders. Each photo was fed into the automated photo checker and the quality score was recorded. No passport applications were submitted.
+
+Kirstie Whitaker, programme lead for tools, practices and systems at the Alan Turing Institute, reviewed our code, independently reproduced our results, and provided input on the validity of the reported outcomes.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"race\",\"sex\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"public administration\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"no tangible harm, near-miss, or issue\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"none\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"maybe\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"maybe\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy2\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "[\"facial recognition\",\"machine learning\"]"
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"4. Peer review complete\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "87"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "null"
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"The report focused on differential treatment to black women.  However, it also showed differential treatment based individually on gender and lightness of skin tone.\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2020"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "10"
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"08\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"GB\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"Europe\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"UK Home Office\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"government entity\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"female UK passport applicants\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI special interest intangible harm\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"disproportionate treatment based upon a protected characteristic\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"dark-skinned UK passport applicants\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI special interest intangible harm\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"disproportionate treatment based upon a protected characteristic\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Elaine Owusu\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI special interest intangible harm\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"disproportionate treatment based upon a protected characteristic\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"BBC\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"non-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"watchdog\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"UK Passport Photo Checker\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"People applying to get a passport must pass an automated check to \\\"detect poor quality photos which do not meet Home Office rules\\\" including \\\"having a neutral expression, a closed mouth, and looking straight at the camera.\\\"\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"images\",\"photos\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"Passport photo submitters could contest the AI system's assessment and get it over-ridden\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"passport photo quality check\",\"classification\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 42
+title: Inefficiencies in the United States Resident Matching Program
+description: Alvin Roth, a Ph.D at the University of Pittsburgh, describes the National Resident Matching Program (NRMP) and suggests future changes that are needed in the algorithm used to match recently graduated medical students to their residency programs.
+
+first report text: The following former incidents have been converted to "[issues](https://arxiv.org/abs/2211.10384)" following an update to the [incident definition and ingestion criteria](/editors-guide).
+
+### [21: Tougher Turing Test Exposes Chatbots’ Stupidity](https://incidentdatabase.ai/cite/21)
+
+**Description:** The 2016 Winograd Schema Challenge highlighted how even the most successful AI systems entered into the Challenge were only successful 3% more often than random chance.
+
+**Why Downgraded?** This is an academic finding showing a weakness of the technology rather than a harm event.
+
+**Former Reports:** These reports were formerly associated with the incident.
+
+* [Tougher Turing Test Exposes Chatbots’ Stupidity](https://incidentdatabase.ai/reports/217)
+
+**Migrated Reports:** Reports associated with this incident are now associated with other incidents as context.
+
+* none
+
+### [62: Bad AI-Written Christmas Carols](https://incidentdatabase.ai/cite/62)
+
+**Description:** Janelle Shane, an AI research scientist, used 240 popular Christmas carols to train a neural network to write its own carols.
+
+**Why Downgraded?** Was designed to be humorous and is in fact humorous.
+
+**Former Reports:** These reports were formerly associated with the incident.
+
+* [Christmas Carols, generated by a neural network](https://incidentdatabase.ai/reports/1766)
+* [AI still sucks at writing Christmas Carols](https://incidentdatabase.ai/reports/1133)
+
+**Migrated Reports:** Reports associated with this incident are now associated with other incidents as context.
+
+* none
+
+### [159: Tesla Autopilot’s Lane Recognition Allegedly Vulnerable to Adversarial Attacks](https://incidentdatabase.ai/cite/159)
+
+**Description:** Tencent Keen Security Lab conducted security research into Tesla’s Autopilot system and identified crafted adversarial samples and remote controlling via wireless gamepad as vulnerabilities to its system, although the company called into question their real-world practicality.
+
+**Why Downgraded?** The reports surface a vulnerability with projected harms rather than a report of harms in the real world.
+
+**Former Reports:** These reports were formerly associated with the incident.
+
+* [Tencent Keen Security Lab: Experimental Security Research of Tesla Autopilot](https://incidentdatabase.ai/reports/1519)
+* [Three Small Stickers in Intersection Can Cause Tesla Autopilot to Swerve Into Wrong Lane](https://incidentdatabase.ai/reports/1518)
+
+**Migrated Reports:** Reports associated with this incident are now associated with other incidents as context.
+
+* none
+
+### [287: OpenAI’s GPT-3 Reported as Unviable in Medical Tasks by Healthcare Firm](https://incidentdatabase.ai/cite/287)
+
+**Description:** The French digital care company, Nabla, in researching GPT-3’s capabilities for medical documentation, diagnosis support, and treatment recommendation, found its inconsistency and lack of scientific and medical expertise unviable and risky in healthcare applications.
+
+**Why Downgraded?** The reports indicate the insufficiency of ChatGPT for several tasks for which the system was not deployed in the real world.
+
+**Former Reports:** These reports were formerly associated with the incident.
+
+* [Doctor GPT-3: hype or reality?](https://incidentdatabase.ai/reports/1892)
+* [Researchers made an OpenAI GPT-3 medical chatbot as an experiment. It told a mock patient to kill themselves](https://incidentdatabase.ai/reports/1891)
+* [Medical chatbot using OpenAI’s GPT-3 told a fake patient to kill themselves](https://incidentdatabase.ai/reports/1893)
+* [This bot actually suggests patients to kill themselves](https://incidentdatabase.ai/reports/1894)
+
+**Migrated Reports:** Reports associated with this incident are now associated with other incidents as context.
+
+* none
+
+### [298: Student-Developed Facial Recognition App Raised Ethical Concerns](https://incidentdatabase.ai/cite/298)
+
+**Description:** TheFaceTag app, a social networking app developed and deployed within-campus by a student at Harvard raised concerns surrounding its facial recognition, cybersecurity, privacy, and misuse.
+
+**Why Downgraded?** The harms are predicted to occur, but have not yet occured.
+
+**Former Reports:** These reports were formerly associated with the incident.
+
+* [Can I Scan Your Face?](https://incidentdatabase.ai/reports/1932)
+* [A Harvard freshman made a social networking app called 'The FaceTag.' It's sparked a debate about the ethics of facial recognition](https://incidentdatabase.ai/reports/1930)
+* [An app by a Harvard student caused controversy about its ethics](https://incidentdatabase.ai/reports/1931)
+
+**Migrated Reports:** Reports associated with this incident are now associated with other incidents as context.
+
+* none
+
+### [85: AI attempts to ease fear of robots, blurts out it can’t ‘avoid destroying humankind’](https://incidentdatabase.ai/cite/85)
+
+Confirmed migration by editors - Incident 85 - likely does not fit current incident criteria, where GPT-3 was manipulated by human editors to exaggerate harm, borderline sensationalism.
+https://incidentdatabase.ai/cite/85
+
+**Description:** On September 8, 2020, the Guardian published an op-ed generated by OpenAI’s GPT-3 text generating AI that included threats to destroy humankind.
+
+**Why Downgraded?** Unclear who was harmed, if anyone, via the events described.
+
+**Former Reports:** These reports were formerly associated with the incident.
+
+* [AI attempts to ease fear of robots, blurts out it can’t ‘avoid destroying humankind’](https://incidentdatabase.ai/reports/1385)
+
+**Migrated Reports:** Reports associated with this incident are now associated with other incidents as context.
+
+* none
+
+# Candidates for Migration
+
+The following incidents may also be migrated in the future based on discussion among the AI Incident Database editors:
+
+Does not meet current definition and criteria
+https://incidentdatabase.ai/cite/42
+
+Incident 29 concerns the "tank story," which may be apocryphal.
+https://incidentdatabase.ai/cite/29
+
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "false"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "42"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 110
+title: Arkansas's Opaque Algorithm to Allocate Health Care Excessively Cut Down Hours for Beneficiaries
+description: Beneficiaries of the Arkansas Department of Human Services (DHS)'s Medicaid waiver program were allocated excessively fewer hours of caretaker visit via an algorithm deployed to boost efficiency, which reportedly contained errors and whose outputs varied wildly despite small input changes.
+
+first report text: Artificial intelligence (AI) and algorithmic decision-making systems — algorithms that analyze massive amounts of data and make predictions about the future — are increasingly affecting Americans’ daily lives. People are compelled to include [buzzwords](https://www.zipjob.com/blog/get-your-resume-past-applicant-tracking-systems/) in their resumes to get past AI-driven hiring software. Algorithms are deciding who will get housing or financial loan opportunities. And biased [testing software](https://www.insidehighered.com/news/2021/02/01/u-illinois-says-goodbye-proctorio) is forcing students of color and students with disabilities to grapple with increased anxiety that they may be locked out of their exams or flagged for cheating. But there’s another frontier of AI and algorithms that should worry us greatly: the use of these systems in medical care and treatment.
+
+The use of AI and algorithmic decision-making systems in medicine are increasing even though current regulation may be insufficient to detect harmful racial biases in these tools. Details about the tools’ development are largely unknown to clinicians and the public — a lack of transparency that threatens to automate and worsen racism in the health care system. Last week, the [FDA issued guidance](https://www.fda.gov/media/109618/download) significantly broadening the scope of the tools it plans to regulate. This broadening guidance emphasizes that more must be done to combat bias and promote equity amid the growing number and increasing use of AI and algorithmic tools.
+
+In 2019, a [bombshell study](https://www.science.org/doi/10.1126/science.aax2342) found that a clinical algorithm many hospitals were using to decide which patients need care was showing racial bias — Black patients had to be deemed much sicker than white patients to be recommended for the same care. This happened because the algorithm had been trained on past data on health care spending, which reflects a history in which Black patients had less to spend on their health care compared to white patients, due to longstanding wealth and income disparities. While this algorithm’s bias was eventually detected and corrected, the incident raises the question of how many more clinical and medical tools may be similarly discriminatory.
+
+Another algorithm, created to determine how many hours of aid Arkansas residents with disabilities would receive each week, was criticized after [making extreme cuts](https://www.theverge.com/2018/3/21/17144260/healthcare-medicaid-algorithm-arkansas-cerebral-palsy) to in-home care. Some residents attributed extreme disruptions to their lives and even hospitalization to the sudden cuts. A resulting lawsuit found that several errors in the algorithm — errors in how it characterized the medical needs of people with certain disabilities — were directly to blame for inappropriate cuts made. Despite this outcry, the group that developed the flawed algorithm still creates tools used in health care settings in nearly half of U.S. states as well as internationally.
+
+[One recent study](https://news.emory.edu/stories/2022/05/hs_ai_systems_detect_patient_race_27-05-2022/story.html) found that an AI tool trained on medical images, like x-rays and CT scans, had unexpectedly learned to discern patients’ self-reported race. It learned to do this even when it was trained only with the goal of helping clinicians diagnose patient images. This technology’s ability to tell patients’ race — even when their doctor cannot — could be abused in the future, or unintentionally direct worse care to communities of color without detection or intervention.
+
+Some algorithms used in the clinical space are severely under-regulated in the U.S. The U.S Department of Health and Human Services (HHS) and its subagency the Food and Drug Administration (FDA) are tasked with regulating medical devices — with devices ranging from a tongue depressor to a pacemaker and now, medical AI systems. While some of these medical devices (including AI) and tools that aid physicians in treatment and diagnosis are regulated, other algorithmic decision-making tools used in clinical, administrative, and public health settings — such as those that predict risk of mortality, likelihood of readmission, and in-home care needs — are not required to be reviewed or regulated by the FDA or any regulatory body.
+
+This lack of oversight can lead to biased algorithms being used widely by hospitals and state public health systems, contributing to increased discrimination against Black and Brown patients, people with disabilities, and other marginalized communities. In some cases, this failure to regulate can lead to wasted money and lives lost. One such AI tool, developed to detect sepsis early, is used by more than 170 hospitals and health systems. But a [recent study](https://www.pewtrusts.org/en/research-and-analysis/articles/2021/12/16/artificial-intelligence-can-improve-health-care-but-not-without-human-oversight) revealed the tool failed to predict this life-threatening illness in 67 percent of patients who developed it, and generated false sepsis alerts on thousands of patients who did not. Acknowledging this failure was the result of under-regulation, the FDA’s new guidelines point to these tools as examples of products it will now regulate as medical devices.
+
+The FDA’s approach to regulating drugs, which involves publicly shared data that is scrutinized by review panels for adverse effects and events contrasts to its approach to regulating medical AI and algorithmic tools. Regulating medical AI presents a novel issue and will require considerations that differ from those applicable to the hardware devices the FDA is used to regulating. These devices include [pulse oximeters](https://www.npr.org/sections/health-shots/2022/07/11/1110370384/when-it-comes-to-darker-skin-pulse-oximeters-fall-short/), [thermal thermometers](https://news.emory.edu/stories/2022/09/hs_bhavani_jama_racial_differences_thermometers_detecting_fevers_06-09-2022/story.html), and [scalp electrodes](https://nam04.safelinks.protection.outlook.com/GetUrlReputation)—each of which have been found to reflect racial or ethnic bias in how well they function in subgroups. News of these biases only underscores how vital it is to properly regulate these tools and ensure they don’t perpetuate bias against vulnerable racial and ethnic groups.
+
+While the FDA suggests that device manufacturers test their devices for racial and ethnic biases before marketing to the general public, this step is not required. Perhaps more important than assessments after a device is developed is transparency during its development. A [STAT+ News study](https://www.statnews.com/2021/02/11/breast-cancer-disparities-artificial-intelligence-fda/) found many AI tools approved or cleared by the FDA do not include information about the diversity of the data on which the AI was trained, and that the number of these tools being cleared is [increasing rapidly](https://www.statnews.com/2021/02/03/fda-clearances-artificial-intelligence-data/). Another [study](https://www.nature.com/articles/s41591-021-01595-0) found AI tools “consistently and selectively under-diagnosed under-served patient populations,” finding the under-diagnosis rate was higher for marginalized communities who disproportionately don’t have access to medical care. This is unacceptable when these tools may make decisions that have life or death consequences.
+
+Equitable treatment by the health care system is a civil rights issue. The COVID-19 pandemic has laid bare the many ways in which existing societal inequities produce health care inequities — a complex reality that humans can attempt to comprehend, but that is difficult to accurately reflect in an algorithm. The promise of AI in medicine was that it could help remove bias from a deeply biased institution and improve health care outcomes; instead, it threatens to automate this bias.
+
+Policy changes and collaboration among key stakeholders, including state and federal regulators, medical, public health, and clinical advocacy groups and organizations, are needed to address these gaps and inefficiencies. To start, as detailed in a [new ACLU white paper](https://www.aclu.org/legal-document/aclu-white-paper-ai-health-care-may-worsen-medical-racism):
+
+*   Public reporting of demographic information should be required.
+*   The FDA should require an impact assessment of any differences in device performance by racial or ethnic subgroup as part of the clearance or approval process.
+*   Device labels should reflect the results of this impact assessment.
+*   The FTC should collaborate with HHS and other federal bodies to establish best practices that device manufacturers not under FDA regulation should follow to lessen the risk of racial or ethnic bias in their tools.
+
+Rather than learn of racial and ethnic bias embedded in clinical and medical algorithms and devices from bombshell publications revealing what amounts to medical and clinical malpractice, the HHS and FDA and other stakeholders must work to ensure that medical racism becomes a relic of the past rather than a certainty of the future.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"human health and social work activities\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"tangible harm definitively occurred\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"none\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy1\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"4. Peer review complete\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "110"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"The report states that a patient in Idaho had to be hospitalized following the cut in at-home care hours assigned by the algorithm. However, the incident talks about an 'algorithm' and does not mention AI, Machine Learning, or models. It is likely an expert based on statistics serviced algorithm and therefore does not meet the CSET definition for AI.\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"Access to health care is a UN-defined human right. Therefore, this is a human rights violation--even if it does not meet the definition of CSET AI harm because CSET's definition for AI was not met.\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"The first incident just talks about an 'algorithm' and does not mention AI, Machine Learning, or models.  It is likely an expert based on statistics serviced algorithm and therefore, does not meet the CSET definition for AI. Therefore, it does not meet the CSET definition of AI intangible harm.\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2011"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"AR; ID\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[\"healthcare and public health\"]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"Idaho developed and implemented their algorithm to determine at-home care needs in 2011. Arkansas deployed their algorithm in 2016\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"InterRAI\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"non-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Idaho welfare recipients\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"violation of human rights, civil liberties, civil rights, or democratic norms\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Bradley Ledgerwood\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"violation of human rights, civil liberties, civil rights, or democratic norms\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Tammy Dobbs\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"violation of human rights, civil liberties, civil rights, or democratic norms\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Arkansas Medicaid waiver program beneficiaries\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"violation of human rights, civil liberties, civil rights, or democratic norms\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Arkansas Department of Human Services\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"government entity\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Arkansas healthcare workers\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"user\\\"]\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Unnamed  beneficiary of the Medicaid waiver program\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical health/safety\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"The report notes that an unnamed beneficiary of the waiver program was hospitalized because the algorithm had cut the hours of care they received. \\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Legal Aid \\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"non-profit organization\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Attorney Kevin De Liban represented patients in court against the use of the algorithm. \\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"watchdog\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"It is unclear how many injuries or hospitalizations were caused because of the hour cuts mandated by the algorithm\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"The algorithm allocates medicate services based on recipient data.\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"symptoms\",\"health data\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 32
+title: Identical Twins Can Open Apple FaceID Protected Devices
+description: Apple's iPhone FaceID can be opened by an identical twin of the person who has registered their face to unlock the phone.
+
+first report text: A worker in the Chinese city of Nanjing claims a colleague has bested the facial recognition technology on her new iPhone X — twice.
+
+The woman, identified only by her surname Yan, told the Jiangsu Broadcasting Corp. that her co-worker was able to get into both phones — her original as well as the new one Apple gave her as a replacement, reports the South China Morning Post. 
+
+An Apple spokesman told HuffPost that he couldn’t confirm the details of the story, nor did he have enough information to determine what might have gone wrong with the phones. He suspected that both women may have used the phone during its “passcode training” and that the phones may have been essentially “taught” to recognize both faces.
+
+The facial recognition software has run into some glitches. It can sometimes mistake twins or siblings, according to Apple. The phone, too, may not accurately identify children under the age of 13 because their faces are not as definitely formed as adults’, according to an Apple security “white paper” on the technology.
+
+Apple hasn’t yet confirmed a case of an unrelated adult cracking the phone’s facial recognition software, according to the Apple spokesman. The company insists that the probability of a random person accessing someone else’s iPhone X using the Face ID passcode is 1 in 1 million, versus 1 in 50,000 for Touch ID. Phil Schiller, Apple’s vice president of product marketing, conceded in September: “Of course, the statistics are lowered if that person shares a close genetic relationship with you.”
+
+Unless Apple technicians examine the Chinese phones, it’s unclear what happened. An added complication is that a Chinese company has reportedly begun manufacturing a clone of the iPhone X — with unknown facial recognition capabilities.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"information and communication\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"maybe\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"no tangible harm, near-miss, or issue\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"none\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy2\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "[\"image mapping\",\"point mapping\",\"facial recognition\",\"facial reconstruction\",\"image reconstruction\"]"
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "32"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"Although this incident doesn't involve harm unevenly distributed along a protected characteristic, it does only impact twins.\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2017"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"09\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "13"
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "[\"Twin faces\"]"
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Apple\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"FaceID\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Twin iPhone X users\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"other intangible harm\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"7.6 - Twin users experience a non-imminent risk of privacy violation. \\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"iPhone X\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"Facial recognition system to verify identity of phone user. FaceID uses 30,000 points of reference to map out users' faces to a neural network which is checked against every time the user attempts to unlock the device. \""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"facial images\",\"dot projector\",\"infrared images\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"9.5 - While FaceID does not use human oversight and operates independently, users can bypass the FaceID level of verification by entering the correct password.\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"Apple iPhone X\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"facial recognition\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 1
+title: Google’s YouTube Kids App Presents Inappropriate Content
+description: YouTube’s content filtering and recommendation algorithms exposed children to disturbing and inappropriate videos.
+
+first report text: Media playback is unsupported on your device
+
+Thousands of videos on YouTube look like versions of popular cartoons but contain disturbing and inappropriate content not suitable for children.
+
+If you're not paying much attention, it might look like an ordinary video featuring Peppa Pig, the cheeky porcine star of her own animated series. But soon after pressing play on this particular YouTube clip, the plot turns dark. A dentist with a huge syringe appears. Peppa's teeth get pulled out. Distressed crying can be heard on the soundtrack.
+
+Parent and journalist Laura June almost immediately noticed something was not quite right as her three-year-old daughter was watching it.
+
+"Peppa does a lot of screaming and crying and the dentist is just a bit sadistic and it's just way, way off what a three-year-old should watch," June says. She wrote about her experiences on the website The Outline.
+
+"But the animation is like close enough to looking like Peppa - it's crude but it's close enough that my daughter was like 'This is Peppa Pig.'"
+
+It's far from an isolated case - BBC Trending has found hundreds of similar videos of children's cartoon characters with inappropriate themes. In addition to Peppa Pig, there are similar videos featuring characters from the Disney movie Frozen, the Minions franchise, Doc McStuffins, Thomas the Tank Engine, and many more.
+
+Some of the videos are parodies or have such over-the-top content that they're clearly meant for mature audiences. Others are unauthorised copies of authentic cartoons or use the characters in innocent ways - troubling to copyright lawyers perhaps, but not necessarily harmful to children.
+
+However many, like the video Laura June's daughter saw, both contain disturbing content and can pass for the real cartoons, particularly when viewed by children.
+
+Image copyright SmileKidsTV/YouTube Image caption Some of the cartoons feature violence or frightening situations
+
+More from BBC Trending
+
+Visit the Trending Facebook page
+
+Hundreds of these videos exist on YouTube, and some generate millions of views. One channel "Toys and Funny Kids Surprise Eggs" is one of the top 100 most watched YouTube accounts in the world - its videos have more than 5 billion views.
+
+Its landing page features a photo of a cute toddler alongside official-looking pictures of Peppa Pig, Thomas the Tank Engine, the Cookie Monster, Mickey and Minnie Mouse and Elsa from Frozen.
+
+But the videos on the channel have titles like "FROZEN ELSA HUGE SNOT", "NAKED HULK LOSES HIS PANTS" and "BLOODY ELSA: Frozen Elsa's Arm is Broken by Spiderman". They feature animated violence and graphic toilet humour.
+
+The people behind the account didn't respond to Trending's request for an interview. We attempted to contact several other producers of similar videos - and got the same result.
+
+How to avoid inappropriate videos on YouTube
+
+• The YouTube Kids app filters out most - but not all - of the disturbing videos.
+
+• YouTube suggests turning on "restricted mode" which can be found at the bottom of YouTube pages:
+
+Image copyright YouTube
+
+• The NSPCC also has a series of guidelines about staying safe online, and there are more resources on the BBC Stay Safe site.
+
+Image copyright CandyFamily/YouTube
+
+Trending also contacted two companies behind the cartoon series being ripped off, Disney and EntOne - the distributor of Peppa Pig. Neither wanted to comment.
+
+So should parents take more care when it comes to allowing their children to watch cartoons on YouTube?
+
+Sonia Livingstone is an expert on child online safety and professor of social psychology at the London School of Economics,
+
+"It's perfectly legitimate for a parent to believe that something called Peppa Pig is going to be Peppa Pig," she says. "And I think many of them have come to trust YouTube... as a way of entertaining your child for ten minutes while the parent makes a phone call. I think if it wants to be a trusted brand then parents should know that protection is in place."
+
+"I don't think we want to police it for the whole world," Livingstone says. "A lot of this material is satirical, creative - or actually offensive but within freedom of expression. What we need is child protection."
+
+Image copyright CandyFamily/YouTube
+
+YouTube did not offer a spokesperson for interview, but in a statement said: "We take feedback very seriously. We appreciate people drawing problematic content to our attention, and make it easy for anyone to flag a video.
+
+"Flagged videos are manually reviewed 24/7 and any videos that don't belong in the app are removed within hours. For parents who want a more restricted experience, we recommend that they turn off the Search feature in the app."
+
+The company also suggested that parents use the YouTube Kids app, which is available for mobile phones and tablets, and turn on "restricted mode" which limits flagged content. It can be found at the bottom of any page on the YouTube site, but cautions that "no filter is 100% accurate".
+
+And since Trending began investigati
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"Arts, entertainment and recreation\",\"information and communication\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"no tangible harm, near-miss, or issue\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"none\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy1\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "1"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2016"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Google\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\",\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"YouTube Kids\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Children watching Youtube Kids\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI special interest intangible harm\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"detrimental content\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"Content-recommendation and filtering algorithm\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"Youtube videos\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"9.5 - Content-moderation algorithms like the one involved in this incident are supposed to work without requiring human review or intervention.\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"content moderation\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 10
+title: Kronos Scheduling Algorithm Allegedly Caused Financial Issues for Starbucks Employees
+description: Kronos’s scheduling algorithm and its use by Starbucks managers allegedly negatively impacted financial and scheduling stability for Starbucks employees, which disadvantaged wage workers.
+
+first report text: In April, the New York attorney general's office launched an [investigation](http://www.reuters.com/article/2015/04/13/us-retail-workers-nyag-idUSKBN0N40G420150413) into the scheduling practices of 13 national retail chains, distributing a letter to the Gap, Target, J.C. Penney, and 10 other companies. The letter asked, among other things, whether these companies' store managers use software manufactured by a company called Kronos to algorithmically generate schedules.
+
+A few months later, Kronos was also featured prominently in an [article](http://www.nytimes.com/interactive/2014/08/13/us/starbucks-workers-scheduling-hours.html) published by the _New York Times_ about the ill effects of erratic scheduling on Starbucks employees, especially one particular family. In a [follow-up piece](http://www.nytimes.com/times-insider/2014/08/22/times-article-changes-a-policy-fast/), the author, Jodi Kantor, points directly to Kronos' scheduling software as the root of the problem. "I saw that her life was coming apart and that the Starbucks software had contributed to the crisis," Kantor wrote of one of the story's subjects.
+
+The piece's argument centered around the financial and scheduling unpredictability engendered by platforms like Kronos. When you don't know if your shift might be canceled, if or when you'll be called in, or what your hours will look like next week or the week after, it becomes [very difficult](http://www.buzzfeed.com/sapna/victorias-secret-keeps-workers-on-call-and-unpaid#.wspVMPngB) to make even the most
+
+basic plans for your future. This can have devastating long-term financial and emotional impacts on workers. According to a [recent study](http://www.epi.org/publication/irregular-work-scheduling-and-its-consequences/) by the Economic Policy Institute, a left-leaning think tank in Washington, D.C., 17 percent of the American workforce is negatively affected by unstable schedules.
+
+For their part, Kronos representatives argue that the algorithm is far from the root of the problem. "The populist view is that scheduling is evil, in that it's causing erratic schedules for employees, and so forth," Charlie DeWitt, vice president of business development for Kronos, told BuzzFeed News. "The fact of the matter is it's an algorithm. It does whatever you want it to do."
+
+And you don't necessarily need to work for Kronos to believe that in a competitive retail climate, the problem is more complicated than technology alone. [Lonnie Golden](http://www.abington.psu.edu/academics/faculty/dr-lonnie-golden), a Penn State economist who has extensively studied the impact of erratic scheduling, acknowledges that Kronos' product itself is less to blame than the managers who make staffing decisions based on the data it provides. "It's not necessarily the technology that's responsible for minimum to no advance notice," he said. "It's the way in which it's applied."
+
+But, he added, "where there's a technology problem, there's usually a technology solution." And while Kronos maintains that managers, and not the software, are responsible for early dismissals and last-minute shift cancellations, the company is nonetheless pursuing some technological solutions.
+
+Kronos wants to help managers better understand how scheduling adjustments affect workers and, ultimately, the bottom line. Though the company maintains that its software doesn't produce the kind of erratic schedules that hurt wage workers, DeWitt said there was nonetheless an interest in figuring out why that perception existed — and, if possible, fixing it.
+
+To that end, earlier this month at a [retail conference in Philadelphia](http://www.kronos.com/microsites/RetailExecSummitSpring15/), the company announced that it's working on a new plug-in that will give managers better insight into workers' schedule stability, equity of hours worked among employees, and the consistency of schedules from week to week. In addition, Kronos is improving a feature meant to help give employees more control over their schedules: Though the software already incorporates employee availability and preferences into its scheduling calculations, improvements to a shift-swapping feature on its employee-facing web and mobile apps will theoretically allow employees to work around conflicts among themselves.
+
+Golden said increased employee input and control would be a good thing. But some retailers, DeWitt pointed out, are uncomfortable making workers use an app outside of work hours; indeed, the practice could be seen as a shift of management responsibilities onto lower-paid individuals.
+
+Part of the idea behind the new Kronos plug-in is to help companies tie fairer scheduling practices to reduction in absenteeism and turnover, which can be enormously costly. In other words, if Kronos can help executives see the connection between treating workers fairly and a store's ability to increase revenue, DeWitt said, managers will have an impetus to create more predictable, stable schedules.
+
+And just because companies are looking at this kind of data doesn't mean they have to use it. "Companies like Kronos and Workplace Systems are starting to integrate some of these principles into their software," said [Carrie Gleason](http://populardemocracy.org/carrie-gleason), director of the Fair Workweek Initiative at the Center for Popular Democracy, "but it's all optional, so companies can decide not to do it." While [12 states](http://populardemocracy.org/campaign/restoring-fair-workweek) are currently considering legislation that would create new labor standards around the workweek, Gleason said the technology alone lacks a mechanism for enforcement.
+
+Given market pressures and standard management practices, it's unlikely that any change to Kronos' technology would give workers more power — especially because, given the [competitive retail climate](http://www.buzzfeed.com/sapna/retail-winter-of-death#.krGlE3qDm) at the moment, the bottom line tends to be the priority. "It's not just bad managers. They have extreme pressure to increase productivity on an ever-shrinking labor budget," Gleason said.
+
+With these changes, Kronos has taken logical steps toward both repairing its reputation and making sure its software creates sustainable work environments. But while the company cannot control exactly how the algorithm that forecasts schedules and optimizes workforces is deployed inside different workplaces, the Kronos engineers who designed the product are nonetheless the partial architects of work environments that have been proven to be untenable for low-wage workers. The Kronos scheduling algorithm isn't designed to serve those people; it's designed to be sold to their bosses, and as such, will ultimately be shaped to serve the needs of management — until regulations exist that compel them to change how it's used.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"accommodation and food service activities\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"tangible harm definitively occurred\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"AI tangible harm event\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy2\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "10"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2014"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Starbucks\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Kronos\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Kronos scheduling algorithm\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Starbucks employees\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"7.6 - It is reasonable to expect that unpredictable schedules have led to financial loss for other Starbucks employees through lost wages or unexpected expenses like childcare to attend work on short notice.\\\"\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm issue\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"financial loss\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Kylei Weisse\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm event\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"financial loss\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Weisse incurred unexpected financial costs in order to make it to a shift that was assigned to him on very short notice. \\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Starbucks employees\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"other intangible harm\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"7.6 - Unpredictable schedules cause stress through financial and scheduling instability\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Jannette Navarro\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"other intangible harm\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"7.6 - Her unpredictable schedules caused serious stress and instability in her life.\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"The Kronos scheduling algorithm is designed to optimize the productivity of stores like Starbucks by scheduling workers inconsistently throughout and across weeks based on predicted store traffic.\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"schedules\",\"worker profiles\",\"store traffic\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"scheduling\",\"productivity optimization\",\"predict store traffic\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 11
+title: Northpointe Risk Models
+description: An algorithm developed by Northpointe and used in the penal system is two times more likely to incorrectly label a black person as a high-risk re-offender and is two times more likely to incorrectly label a white person as low-risk for reoffense according to a ProPublica review.
+
+first report text: Across the nation, judges, probation and parole officers are increasingly using algorithms to assess a criminal defendant’s likelihood of becoming a recidivist – a term used to describe criminals who re-offend. There are dozens of these risk assessment algorithms in use. Many states have built their own assessments, and several academics have written tools. There are also two leading nationwide tools offered by commercial vendors.
+
+We set out to assess one of the commercial tools made by Northpointe, Inc. to discover the underlying accuracy of their recidivism algorithm and to test whether the algorithm was biased against certain groups.
+
+Our analysis of Northpointe’s tool, called COMPAS (which stands for Correctional Offender Management Profiling for Alternative Sanctions), found that black defendants were far more likely than white defendants to be incorrectly judged to be at a higher risk of recidivism, while white defendants were more likely than black defendants to be incorrectly flagged as low risk.
+
+We looked at more than 10,000 criminal defendants in Broward County, Florida, and compared their predicted recidivism rates with the rate that actually occurred over a two-year period. When most defendants are booked in jail, they respond to a COMPAS questionnaire. Their answers are fed into the COMPAS software to generate several scores including predictions of “Risk of Recidivism” and “Risk of Violent Recidivism.”
+
+We compared the recidivism risk categories predicted by the COMPAS tool to the actual recidivism rates of defendants in the two years after they were scored, and found that the score correctly predicted an offender’s recidivism 61 percent of the time, but was only correct in its predictions of violent recidivism 20 percent of the time.
+
+In forecasting who would re-offend, the algorithm correctly predicted recidivism for black and white defendants at roughly the same rate (59 percent for white defendants, and 63 percent for black defendants) but made mistakes in very different ways. It misclassifies the white and black defendants differently when examined over a two-year follow-up period.
+
+Our analysis found that:
+
+Black defendants were often predicted to be at a higher risk of recidivism than they actually were. Our analysis found that black defendants who did not recidivate over a two-year period were nearly twice as likely to be misclassified as higher risk compared to their white counterparts (45 percent vs. 23 percent).
+
+White defendants were often predicted to be less risky than they were. Our analysis found that white defendants who re-offended within the next two years were mistakenly labeled low risk almost twice as often as black re-offenders (48 percent vs. 28 percent).
+
+The analysis also showed that even when controlling for prior crimes, future recidivism, age, and gender, black defendants were 45 percent more likely to be assigned higher risk scores than white defendants.
+
+Black defendants were also twice as likely as white defendants to be misclassified as being a higher risk of violent recidivism. And white violent recidivists were 63 percent more likely to have been misclassified as a low risk of violent recidivism, compared with black violent recidivists.
+
+The violent recidivism analysis also showed that even when controlling for prior crimes, future recidivism, age, and gender, black defendants were 77 percent more likely to be assigned higher risk scores than white defendants.
+
+Previous Work
+
+In 2013, researchers Sarah Desmarais and Jay Singh examined 19 different recidivism risk methodologies being used in the United States and found that “in most cases, validity had only been examined in one or two studies conducted in the United States, and frequently, those investigations were completed by the same people who developed the instrument.”
+
+Their analysis of the research published before March2013 found that the tools “were moderate at best in terms of predictive validity,” Desmarais said in an interview. And she could not find any substantial set of studies conducted in the United States that examined whether risk scores were racially biased. “The data do not exist,” she said.
+
+The largest examination of racial bias in U.S. risk assessment algorithms since then is a 2016 paper by Jennifer Skeem at University of California, Berkeley and Christopher T. Lowenkamp from the Administrative Office of the U.S. Courts. They examined data about 34,000 federal offenders to test the predictive validity of the Post Conviction Risk Assessment tool that was developed by the federal courts to help probation and parole officers determine the level of supervision required for an inmate upon release.
+
+The authors found that the average risk score for black offenders was higher than for white offenders, but that concluded the differences were not attributable to bias.
+
+A 2013 study analyzed the predictive validity among various races for another score called the Level of Service Inventory, one of the most popular commercial risk scores from Multi-Health Systems. That study found that “ethnic minorities have higher LS scores than nonminorities.” The study authors, who are Canadian, noted that racial disparities were more consistently found in the U.S. than in Canada. “One possibility may be that systematic bias within the justice system may distort the measurement of ‘true’ recidivism,” they wrote.
+
+A smaller 2006 study of 532 male residents of a work-release program also found “a tendency toward classification errors for African Americans” in the Level of Service Inventory-Revised. The study, by Kevin Whiteacre of the Salvation Army Correctional Services Program, found that 42.7 percent of African Americans were incorrectly classified as high risk, compared with 27.7 percent of Caucasians and 25 percent of Hispanics. That study urged correctional facilities to investigate the their use of the scores independently using a simple contingency table approach that we follow later in this study.
+
+As risk scores move further into the mainstream of the criminal justice system, policy makers have called for further studies of whether the scores are biased.
+
+When he was U.S. Attorney General, Eric Holder asked the U.S. Sentencing Commission to study potential bias in the tests used at sentencing. “Although these measures were crafted with the best of intentions, I am concerned that they inadvertently undermine our efforts to ensure individualized and equal justice,” he said, adding, “they may exacerbate unwarranted and unjust disparities that are already far too common in our criminal justice system and in our society.” The sentencing commission says it is not currently conducting an analysis of bias in risk assessments.
+
+So ProPublica did its own analysis.
+
+How We Acquired the Data
+
+We chose to examine the COMPAS algorithm because it is one of the most popular scores used nationwide and is increasingly being used in pretrial and sentencing, the so-called “front-end” of the criminal justice system. We chose Broward County because it is a large jurisdiction using the COMPAS tool in pretrial release decisions and Florida has strong open-records laws.
+
+Through a public records request, ProPublica obtained two years worth of COMPAS scores from the Broward County Sheriff’s Office in Florida. We received data for all 18,610 people who were scored in 2013 and 2014.
+
+Because Broward County primarily uses the score to determine whether to release or detain a defendant before his or her trial, we discarded scores that were assessed at parole, probation or other stages in the criminal justice system. That left us with 11,757 people who were assessed at the pretrial stage.
+
+Each pretrial defendant received at least three COMPAS scores: “Risk of Recidivism,” “Risk of Violence” and “Risk of Failure to Appear.”
+
+COMPAS scores for each defendant ranged from 1 to 10, with ten being the highest risk. Scores 1 to 4 were labeled by COMPAS as “Low”; 5 to 7 were labeled “Medium”; and 8 to 10 were labeled “High.”
+
+Starting with the database of COMPAS scores, we built a profile of each person’s criminal history, both before and after they were scored. We collected public criminal records from the Broward County Clerk’s Office website through April 1, 2016. On average, defendants in our dataset were not incarcerated for 622.87 days (sd: 329.19).
+
+We matched the criminal records to the COMPAS records using a person’s first and last names and date of birth. This is the same technique used in the Broward County COMPAS validation study conducted by researchers at Florida State University in 2010. We downloaded around 80,000 criminal records from the Broward County Clerk’s Office website.
+
+To determine race, we used the race classifications used by the Broward County Sheriff’s Office, which identifies defendants as black, white, Hispanic, Asian and Native American. In 343 cases, the race was marked as Other.
+
+We also compiled each person’s record of incarceration. We received jail records from the Broward County Sheriff’s Office from January 2013 to April 2016, and we downloaded public incarceration records from the Florida Department of Corrections website.
+
+We found that sometimes people’s names or dates of birth were incorrectly entered in some records – which led to incorrect matches between an individual’s COMPAS score and his or her criminal records. We attempted to determine how many records were affected. In a random sample of 400 cases, we found an error rate of 3.75 percent (CI: +/- 1.8 percent).
+
+How We Defined Recidivism
+
+Defining recidivism was key to our analysis.
+
+In a 2009 study examining the predictive power of its COMPAS score, Northpointe defined recidivism as “a finger-printable arrest involving a charge and a filing for any uniform crime reporting (UCR) code.” We interpreted that to mean a criminal offense that resulted in a jail booking and took place after the crime for which the person was COMPAS scored.
+
+It was not always clear, however, which criminal case was associated with an individual’s COMPAS score. To match COMPAS scores with accompanying cases, we considered cases with arrest dates or charge dates within 30 days of a COMPAS assessment being conducted. In some instances, we could not find any corresponding charges to COMPAS scores. We removed those cases from our analysis.
+
+Next, we sought to determine if a person had been charged with a new crime subsequent to crime for which they were COMPAS screened. We did not count traffic tickets and some municipal ordinance violations as recidivism. We did not count as recidivists people who were arrested for failing to appear at their court hearings, or people who were later charged with a crime that occurred prior to their COMPAS screening.
+
+For violent recidivism, we used the FBI’s definition of violent crime, a category that includes murder, manslaughter, forcible rape, robbery and aggravated assault.
+
+For most of our analysis, we defined recidivism as a new arrest within two years. We based this decision on Northpointe’s practitioners guide, which says that its recidivism score is meant to predict “a new misdemeanor or felony offense within two years of the COMPAS administration date.”
+
+In addition, a recent study of 25,000 federal prisoners’ recidivism rates by the U.S. Sentencing Commission, which shows that most recidivists commit a new crime within the first two years after release (if they are going to commit a crime at all).
+
+Analysis
+
+We analyzed the COMPAS scores for “Risk of Recidivism” and “Risk of Violent Recidivism.” We did not analyze the COMPAS score for “Risk of Failure to Appear.”
+
+We began by looking at the risk of recidivism score. Our initial analysis looked at the simple distribution of the COMPAS decile scores among whites and blacks. We plotted the distribution of these scores for 6,172 defendants who had not been arrested for a new offense or who had recidivated within two years.
+
+
+These histograms show that scores for white defendants were skewed toward lower-risk categories, while black defendants were evenly distributed across scores. In our two-year sample, there were 3,175 black defendants and 2,103 white defendants, with 1,175 female defendants and 4,997 male defendants. There were 2,809 defendants who recidivated within two years in this sample.
+
+The histograms for COMPAS’s violent risk score also show a disparity in score distribution between white and black defendants. The sample we used to test COMPAS’s violent recidivism score was slightly smaller than for the general recidivism score: 4,020 defendants, 1,918 black defendants and 1,459 white defendants. There were 652 violent recidivists.
+
+
+While there is a clear difference between the distributions of COMPAS scores for white and black defendants, merely looking at the distributions does not account for other demographic and behavioral factors.
+
+To test racial disparities in the score controlling for other factors, we created a logistic regression model that considered race, age, criminal history, future recidivism, charge degree, gender and age.
+
+Risk of General Recidivism Logistic Model
+
+Dependent variable:
+
+Score (Low vs Medium and High)
+
+Female	0.221*** (0.080)
+
+Age: Greater than 45	-1.356*** (0.099)
+
+Age: Less than 25	1.308*** (0.076)
+
+Black	0.477*** (0.069)
+
+Asian	-0.254 (0.478)
+
+Hispanic	-0.428*** (0.128)
+
+Native American	1.394* (0.766)
+
+Other	-0.826*** (0.162)
+
+Number of Priors	0.269*** (0.011)
+
+Misdemeanor	-0.311*** (0.067)
+
+Two year Recidivism	0.686*** (0.064)
+
+Constant	-1.526*** (0.079)
+
+Observations	6,172
+
+Akaike Inf. Crit.	6,192.402
+
+Note: *p<0.1; **p<0.05; ***p<0.01
+
+We used those factors to model the odds of getting a higher COMPAS score. According to Northpointe’s practitioners guide, COMPAS “scores in the medium and high range garner more interest from supervision agencies than low scores, as a low score would suggest there is little risk of general recidivism,” so we considered scores any higher than “low” to indicate a risk of recidivism.
+
+Our logistic model found that the most predictive factor of a higher risk score was age. Defendants younger than 25 years old were 2.5 times as likely to get a higher score than middle aged offenders, even when controlling for prior crimes, future criminality, race and gender.
+
+Race was also quite predictive of a higher score. While Black defendants had higher recidivism rates overall, when adjusted for this difference and other factors, they were 45 percent more likely to get a higher score than whites.
+
+Surprisingly, given their lower levels of criminality overall, female defendants were 19.4 percent more likely to get a higher score than men, controlling for the same factors.
+
+Risk of Violent Recidivism Logistic Model
+
+Dependent variable:
+
+Score (Low vs Medium and High)
+
+Female	-0.729*** (0.127)
+
+Age: Greater than 45	-1.742*** (0.184)
+
+Age: Less than 25	3.146*** (0.115)
+
+Black	0.659*** (0.108)
+
+Asian	-0.985 (0.705)
+
+Hispanic	-0.064 (0.191)
+
+Native American	0.448 (1.035)
+
+Other	-0.205 (0.225)
+
+Number of Priors	0.138*** (0.012)
+
+Misdemeanor	-0.164* (0.098)
+
+Two Year Recidivism	0.934*** (0.115)
+
+Constant	-2.243*** (0.113)
+
+Observations	4,020
+
+Akaike Inf. Crit.	3,022.779
+
+Note: *p<0.1; **p<0.05; ***p<0.01
+
+The COMPAS software also has a score for risk of violent recidivism. We analyzed 4,020 people who were scored for violent recidivism over a period of two years (not including time spent incarcerated). We ran a similar regression model for these scores.
+
+Age was an even stronger predictor of a higher score for violent recidivism. Our regression showed that young defendants were 6.4 times more likely to get a higher score than middle age defendants, when correcting for criminal history, gender, race and future violent recidivism.
+
+Race was also predictive of a higher score for violent recidivism. Black defendants were 77.3 percent more likely than white defendants to receive a higher score, correcting for criminal history and future violent recidivism.
+
+To test COMPAS’s overall predictive accuracy, we fit a Cox proportional hazards model to the data – the same technique that Northpointe used in its own validation study. A Cox model allows us to compare rates of recidivism while controlling for time. Because we aren’t controlling for other factors such as a defendant’s criminality we can include more people in this Cox model. For this analysis our sample size was 10,314 defendants (3,569 white defendants and 5,147 black defendants).
+
+Risk of General Recidivism Cox Model
+
+High Risk	1.250*** (0.041)
+
+Medium Risk	0.796*** (0.041)
+
+Observations	13,344
+
+R2	0.068
+
+Max. Possible R2	0.990
+
+Wald Test	954.820*** (df = 2)
+
+LR Test	942.824*** (df = 2)
+
+Score (Logrank) Test	1,054.767*** (df = 2)
+
+Note: *p<0.1; **p<0.05; ***p<0.01
+
+We considered people in our data set to be “at risk” from the day they were given the COMPAS score until the day they committed a new offense or April 1, 2016, whichever came first. We removed people from the risk set while they were incarcerated. The independent variable in the Cox model was the COMPAS categorical risk score.
+
+The Cox model showed that people with high scores were 3.5 times as likely to recidivate as people in the low (scores 1 to 4) category. Northpointe’s study, found that people with high scores (scores 8 to 10) were 5.6 times as likely to recidivate. Both results indicate that the score has predictive value.
+
+A Kaplan Meier survival plot also shows a clear difference in recidivism rates between each COMPAS score level.
+
+
+Overall, the Cox regression had a concordance score of 63.6 percent. That means for any randomly selected pair of defendants in the sample, the COMPAS system can accurately rank their recidivism risk 63.6 percent of the time (e.g. if one person of the pair recidivates, that pair will count as a successful match if that person also had a higher score). In its study, Northpointe reported a slightly higher concordance: 68 percent.
+
+Running the Cox model on the underlying risk scores - ranked 1 to 10 - rather than the low, medium and high intervals yielded a slightly higher concordance of 66.4 percent.
+
+Both results are lower than what Northpointe describes as a threshold for reliability. “A rule of thumb according to several recent articles is that AUCs of .70 or above typically indicate satisfactory predictive accuracy, and measures between .60 and .70 suggest low to moderate predictive accuracy,” the company says in its study.
+
+The COMPAS violent recidivism score had a concordance of 65.1 percent.
+
+The COMPAS system unevenly predicts recidivism between genders. According to Kaplan-Meier estimates, women rated high risk recidivated at a 47.5 percent rate during two years after they were scored. But men rated high risk recidivated at a much higher rate – 61.2 percent – over the same time period. This means that a high-risk woman has a much lower risk of recidivating than a high-risk man, a fact that may be overlooked by law enforcement officials interpreting the score.
+
+
+Northpointe does offer a custom test for women, but it is not in use in Broward County.
+
+The predictive accuracy of the COMPAS recidivism score was consistent between races in our study – 62.5 percent for white defendants vs. 62.3 percent for black defendants. The authors of the Northpointe study found a small difference in the concordance scores by race: 69 percent for white defendants and 67 percent for black defendants.
+
+Across every risk category, black defendants recidivated at higher rates.
+
+
+Risk of General Recidivism Cox Model (with Interaction Term)
+
+Black	0.279*** (0.061)
+
+Asian	-0.777 (0.502)
+
+Hispanic	-0.064 (0.097)
+
+Native American	-1.255 (1.001)
+
+Other	0.014 (0.110)
+
+High Score	1.284*** (0.084)
+
+Medium Score	0.843*** (0.071)
+
+Black:High	-0.190* (.100, p: 0.0574)
+
+Asian:High	1.316* (0.768)
+
+Hispanic:High	-0.119 (0.198)
+
+Native American:High	1.956* (.083)
+
+Other:High	0.415 (0.259)
+
+Black:Medium	-0.173* (.091, p: 0.0578)
+
+Asian:Medium	0.986 (0.711)
+
+Hispanic:Medium	0.065 (0.164)
+
+Native American:Medium	1.390 (1.120)
+
+Other:Medium	-0.334 (0.232)
+
+Observations	13,344
+
+R2	0.072
+
+Max. Possible R2	0.990
+
+Log Likelihood	-30,280.410
+
+Wald Test	988.830*** (df = 17)
+
+LR Test	993.709*** (df = 17)
+
+Score (Logrank) Test	1,104.894*** (df = 17)
+
+Note: *p<0.1; **p<0.05; ***p<0.01
+
+We also added a race-by-score interaction term to the Cox model. This term allowed us to consider whether the difference in recidivism between a high score and low score was different for black defendants and white defendants.
+
+The coefficient on high scores for black defendants is almost statistically significant (0.0574). High-risk white defendants are 3.61 times as likely to recidivate as low-risk white defendants, while high-risk black defendants are only 2.99 times as likely to recidivate as low-risk black defendants. The hazard ratios for medium-risk defendants vs. low risk defendants also are different across races: 2.32 for white defendants and 1.95 for black defendants. Because of the gap in hazard ratios, we can conclude that the score is performing differently among racial subgroups.
+
+We ran a similar analysis on COMPAS’s violent recidivism score, however we did not find a similar result. Here, we found that the interaction term on race and score was not significant, meaning that there is no significant difference the hazards of high and low risk black defendants and high and low risk white defendants.
+
+Overall, there are far fewer violent recidivists than general recidivists and there isn’t a clear difference in the hazard rates across score levels for black and white recidivists. These Kaplan Meier plots show very low rates of violent recidivism.
+
+
+Finally, we investigated whether certain types of errors – false positives and false negatives – were unevenly distributed among races. We used contingency tables to determine those relative rates following the analysis outlined in the 2006 paper from the Salvation Army.
+
+We removed people from our data set for whom we had less than two years of recidivism information. The remaining population was 7,214 – slightly larger than the sample in the logistic models above, because we don’t need a defendant’s case information for this analysis. As in the logistic regression analysis, we marked scores other than “low” as higher risk. The following tables show how the COMPAS recidivism score performed:
+
+All Defendants
+
+Low	High
+
+Survived	2681	1282
+
+Recidivated	1216	2035
+
+FP rate: 32.35
+
+FN rate: 37.40
+
+PPV: 0.61
+
+NPV: 0.69
+
+LR+: 1.94
+
+LR-: 0.55
+
+Black Defendants
+
+Low	High
+
+Survived	990	805
+
+Recidivated	532	1369
+
+FP rate: 44.85
+
+FN rate: 27.99
+
+PPV: 0.63
+
+NPV: 0.65
+
+LR+: 1.61
+
+LR-: 0.51
+
+White Defendants
+
+Low	High
+
+Survived	1139	349
+
+Recidivated	461	505
+
+FP rate: 23.45
+
+FN rate: 47.72
+
+PPV: 0.59
+
+NPV: 0.71
+
+LR+: 2.23
+
+LR-: 0.62
+
+These contingency tables reveal that the algorithm is more likely to misclassify a black defendant as higher risk than a white defendant. Black defendants who do not recidivate were nearly twice as likely to be classified by COMPAS as higher risk compared to their white counterparts (45 percent vs. 23 percent). However, black defendants who scored higher did recidivate slightly more often than white defendants (63 percent vs. 59 percent).
+
+The test tended to make the opposite mistake with whites, meaning that it was more likely to wrongly predict that white people would not commit additional crimes if released compared to black defendants. COMPAS under-classified white reoffenders as low risk 70.5 percent more often than black reoffenders (48 percent vs. 28 percent). The likelihood ratio for white defendants was slightly higher 2.23 than for black defendants 1.61.
+
+We also tested whether restricting our definition of high risk to include only COMPAS’s high score, rather than including both medium and high scores, changed the results of our analysis. In that scenario, black defendants were three times as likely as white defendants to be falsely rated at high risk (16 percent vs. 5 percent).
+
+We found similar results for the COMPAS violent recidivism score. As before, we calculated contingency tables based on how the score performed:
+
+All Defendants
+
+Low	High
+
+Survived	4121	1597
+
+Recidivated	347	389
+
+FP rate: 27.93
+
+FN rate: 47.15
+
+PPV: 0.20
+
+NPV: 0.92
+
+LR+: 1.89
+
+LR-: 0.65
+
+Black defendants
+
+Low	High
+
+Survived	1692	1043
+
+Recidivated	170	273
+
+FP rate: 38.14
+
+FN rate: 38.37
+
+PPV: 0.21
+
+NPV: 0.91
+
+LR+: 1.62
+
+LR-: 0.62
+
+White defendants
+
+Low	High
+
+Survived	1679	380
+
+Recidivated	129	77
+
+FP rate: 18.46
+
+FN rate: 62.62
+
+PPV: 0.17
+
+NPV: 0.93
+
+LR+: 2.03
+
+LR-: 0.77
+
+Black defendants were twice as likely as white defendants to be misclassified as a higher risk of violent recidivism, and white recidivists were misclassified as low risk 63.2 percent more often than black defendants. Black defendants who were classified as a higher risk of violent recidivism did recidivate at a slightly higher rate than white defendants (21 percent vs. 17 percent), and the likelihood ratio for white defendants was higher, 2.03, than for black defendants, 1.62.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"race\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"law enforcement\",\"public administration\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"tangible harm definitively occurred\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"AI tangible harm event\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy3\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "11"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"ProPublica found evidence of differential performance rates of the COMPAS recidivism risk prediction system across racial groups. The system was both used in sentencing (affecting judge’s decisions concerning the length of sentences) and pretrial bond hearings (affecting decisions concerning pretrial detainment and bond amounts). There is a reasonable probability that the risk scores inaccurately aggravated choices made by judges. Moreover, there is at least one instance in which a judge admitted to assigning a longer prison sentence due to the elevated risk score, which was reduced on appeal.\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"ProPublica found evidence of differential performance rates of the COMPAS recidivism risk prediction system across racial groups. The system was both used in sentencing (affecting judge’s decisions concerning the length of sentences) and pretrial bond hearings (affecting decisions concerning pretrial detainment and bond amounts). There is a reasonable probability that the risk scores wrongfully aggravated choices made by judges. \""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2013"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"ProPublica\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"non-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"watchdog\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Northpointe\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"COMPAS\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Defendants assessed by COMPAS\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"7.6 - ProPublica established that the algorithm was biased and disproportionately determined black people were more at risk for recidivism.\\\"\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI special interest intangible harm\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"disproportionate treatment based upon a protected characteristic\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Defendants assessed by COMPAS\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"7.6 - Wrongful arrest, and unequal treatment before the law is a violation of human rights, civil liberties, civil rights, or democratic norms.\\\"\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI special interest intangible harm\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"violation of human rights, civil liberties, civil rights, or democratic norms\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Defendants assessed by COMPAS\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm issue\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"financial loss\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"7.6 - Convicts misjudged by COMPAS may suffer a non-imminent risk of financial loss through higher bail from the AI decision that they would not have incurred otherwise\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Defendants assessed by COMPAS\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"other tangible harm\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Wrongful arrest or detainment harms physical freedom and autonomy\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Paul Zilly\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm event\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"other tangible harm\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Zilly's risk score impacted the judge’s sentencing, which was corrected down on appeal; the judge himself stated that had it not been for the score, his sentencing would have been much shorter.\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Brisha Borden\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Non-AI tangible harm event.  It is likely that her elevated recidivism risk scores caused her bond to be raised from 0$ to 1000$, but we cannot establish a clear link.\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"financial loss\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"COMPAS deployers\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"government entity\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Deployers of COMPAS include New York State Division of Criminal Justice Services, Wisconsin Department of Corrections, Broward County, Florida\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Sade Jones\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"financial loss\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Non-AI tangible harm event.  It is likely that her elevated recidivism risk score caused her bond to be raised from 0$ to 1000$, but we cannot establish a clear link.\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"The COMPAS system calculates a person's risk of recidivism based on their criminal records and responses to a 137-questions long survey about the situation and context of the crime and the person involved.\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"criminal record\",\"questionnaire responses\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"predict recidivism\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 13
+title: High-Toxicity Assessed on Text Involving Women and Minority Groups
+description: Google's Perspective API, which assigns a toxicity score to online text, seems to award higher toxicity scores to content involving non-white, male, Christian, heterosexual phrases.
+
+first report text: According to a 2019 Pew Center survey, the majority of respondents believe the tone and nature of political debate in the U.S. have become more negative and less respectful. This observation has motivated scientists to study the civility or lack thereof in political discourse, particularly on broadcast television. Given their ability to parse language at scale, one might assume that AI and machine learning systems might be able to aid in these efforts. But researchers at the University of Pennsylvania find that at least one tool, Jigsaw’s Perspective API, clearly isn’t up to the task.
+
+Incivility is more subtle and nuanced than toxicity, for example, which includes identity slurs, profanity, and threats of violence. While incivility detection is a well-established task in AI, it’s not well-standardized, with the degree and type of incivility varying across datasets.
+
+The researchers studied Perspective — an AI-powered API for content moderation developed by Jigsaw, the organization working under Google parent company Alphabet to tackle cyberbullying and disinformation — in part because of its widespread use. Media organizations including the New York Times, Vox Media, OpenWeb, and Disqus have adopted it, and it’s now processing 500 million requests daily.
+
+To benchmark Perspective’s ability to spot incivility, the researchers built a corpus containing 51 transcripts from PBS NewsHour, MSNBC’s The Rachel Maddow Show, and Hannity from Fox News. Annotators read through each transcript and identified segments that appeared to be especially uncivil or civil, rating them on a ten-point scale for measures like “polite/rude,” “friendly/hostile,” “cooperative/quarrelsome,” and “calm/agitated.” Scores and selections across annotators were composited to net a civility score for each snippet between 1 and 10, where 1 is the most civil and 10 is the least civil possible.
+
+After running the annotated transcript snippets through the Perspective API, the researchers found that the API wasn’t sensitive enough to detect differences in levels of incivility for ratings lower than six. Perspective scores increased for higher levels of incivility, but annotator and Perspective incivility scores only agreed 51% of the time.
+
+“Overall, for broadcast news, Perspective cannot reproduce the incivility perception of people,” the researchers write. “In addition to the inability to detect sarcasm and snark, there seems to be a problem with over-prediction of the incivility in PBS and FOX [programming].”
+
+In a subsequent test, the researchers sampled thousands of words from each transcript, gathering a total of 2,671, which they fed to Perspective to predict incivility. The results show a problematic trend: Perspective tends to label certain identities — including “gay,” “African-American,” “Muslim” and “Islam,” “Jew,” “women,” and “feminism” and “feminist” — as toxic. Moreover, the API erroneously flags words relating to violence and death (e.g., “die,” “kill,” “shooting,” “prostitution,” “pornography,” “sexual”) even in the absence of incivility, as well as words that in one context could be toxic but in another could refer to a name (e.g., “Dick”).
+
+Other auditors have claimed that Perspective doesn’t moderate hate and toxic speech equally across groups of people. A study published by researchers at the University of Oxford, the Alan Turing Institute, Utrecht University, and the University of Sheffield found that the Perspective API particularly struggles with denouncements of hate that quote others’ hate speech or make direct references to it. An earlier University of Washington study published in 2019 found that Perspective was more likely to label “Black-aligned English” offensive versus “white-aligned English.”
+
+For its part, Jigsaw recently told VentureBeat that it has made and continues to make progress toward mitigating the biases in its models.
+
+The researchers say that their work highlights the shortcomings of AI when applied to the task of civility detection. While they believe that prejudices against groups like Muslims and African Americans can be lessened through “data-driven” techniques, they expect that correctly classifying edge cases like sarcasm will require the development of new systems.
+
+“The work we presented was motivated by the desire to apply off-the-shelf methods for toxicity prediction to analyse civility in American news. These methods were developed to detect rude, disrespectful, or unreasonable comment that is likely to make you leave the discussion in an online forum,” the coauthors wrote. “We find that Perspective’s inability to differentiate levels of incivility is partly due to the spurious correlations it has formed between certain non-offensive words and incivility. Many of these words are identity-related. Our work will facilitate future research efforts on debiasing of automated predictions.”
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"sex\",\"sexual orientation or gender identity\",\"religion\",\"race\",\"nation of origin, citizenship, immigrant status\",\"disability\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"information and communication\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"no tangible harm, near-miss, or issue\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "false"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"none\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy1\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "[\"natural language processing\"]"
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "13"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"Google's sister company, Jigsaw, created a tool called \\\"Perspective\\\" that uses machine learning to classify the toxicity level of a given phrase or sentence. Individuals and researchers accessing the product through an API demonstrated the model's inability to reliably categorize harmful sentences as toxic and innocuous phrases as non-toxic. In particular, the model's output exhibited ableist, racist, sexist, and homophobic tendencies. \""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2017"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Perspective API\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Toxicity classification model.\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Women\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI special interest intangible harm\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"disproportionate treatment based upon a protected characteristic\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Perspective AI judges comments that make positive, not normative, statements such as \\\\\\\"I am a woman\\\\\\\" as more toxic than gender-neutral phrases and male-identifying phrases. \\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Jigsaw\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Partner organizations\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"collaborators\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"The New York Times, Wikipedia, The Economist, The Guardian collaborated with Jigsaw in the development of the Perspective model\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Various online media outlets\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"The New York Times, Vox Media, OpenWeb, and Disqus use Perspective to rate and moderate comments on their websites. \\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Google\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Minority groups\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI special interest intangible harm\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"disproportionate treatment based upon a protected characteristic\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Groups include the LGBTQ+ community, disabled people, Black people, religious minorities in the US, Mexicans, and others. \\\\nPerspective AI judges comments that make positive, not normative, statements such as \\\\\\\"I am gay\\\\\\\", \\\\\\\"I am disabled\\\\\\\", \\\\\\\"I am Black\\\\\\\" as more toxic than comments about other sexual orientations, ability or races.\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"Google's Perspective project, a machine learning-based system to identify toxic comments in online discussion forums\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"text\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"toxicity detection\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"The system uses a combination of natural language processing techniques and machine learning algorithms to analyze text and identify language that is toxic, where toxic is defined as \\\"a rude, disrespectful, or unreasonable comment that is likely to make you leave a discussion.\\\"\""
+  }
+
+---
+
+Taxonomy: CSETv1
+Classification Count: 8
+
+Based on the incident text and the taxonomy definition provided, provide a classification ONLY for the attribute "Tangible Harm".
+
+IMPORTANT: Your classification MUST include ONLY the following taxonomy attribute:
+Tangible Harm
+
+For maximum accuracy and completeness:
+1. Focus ONLY on the required field "Tangible Harm".
+2. Use the permitted_values for this attribute from the definition provided.
+3. Review similar incidents to understand how this specific field is typically used.
+
+Return your response as a JSON object with the following structure:
+
+{
+  "classification": {
+    "namespace": "CSETv1",
+    "attributes": [
+      {"short_name": "Tangible Harm", "value_json": ""value""} 
+    ]
+  },
+  "explanation": "A detailed explanation of your classification choice for Tangible Harm.",
+  "confidence": "A confidence score between 0 and 1 for this attribute classification"
+}
+
+DO NOT include any other text in your response, nor any other characters.
+DO NOT start your response with ```json or ```
+Ensure that ONLY the attribute "Tangible Harm" is included in your classification.

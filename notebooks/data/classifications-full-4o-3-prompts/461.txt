@@ -1,0 +1,1770 @@
+You are an AI assistant that helps classify AI incidents according to a taxonomy.
+
+Your task is to analyze the provided incident text and classify it according to the specified taxonomy.
+
+Always require both the incident text and the taxonomy namespace to perform classification.
+
+Here is the incident text to classify:
+Government agencies around the world use data-driven algorithms to allocate enforcement resources. Even when such algorithms are formally neutral with respect to protected characteristics like race, there is widespread concern that they can disproportionately burden vulnerable groups. We study differences in Internal Revenue Service (IRS) audit rates between Black and non-Black taxpayers. Because neither we nor the IRS observe taxpayer race, we employ a novel partial identification strategy to estimate these differences. Despite race-blind audit selection, we find that Black taxpayers are audited at 2.9 to 4.7 times the rate of non-Black taxpayers. The main source of the disparity is differing audit rates by race among taxpayers claiming the Earned Income Tax Credit (EITC). Using counterfactual audit selection models, we find that maximizing the detection of underreported taxes would not lead to Black taxpayers being audited at higher rates. In contrast, certain policies tend to increase the audit rate of Black taxpayers: (1) designing audit selection algorithms to minimize the "no-change rate"; (2) targeting erroneously claimed refundable credits rather than total under-reporting; and (3) limiting the share of more complex EITC returns that can be selected for audit. Our results highlight how seemingly technocratic choices about algorithmic design can embed important policy values and trade-offs.
+
+Here is the taxonomy namespace to use for classification:
+CSETv1
+
+Here is the taxonomy data:
+{
+  "namespace": "CSETv1",
+  "weight": 70,
+  "description": "# What is the CSET Taxonomy?\n\nThe CSET AI Harm Taxonomy for AIID is the second edition of the \nCSET incident taxonomy. It characterizes the harms, entities and \ntechnologies involved in AI incidents and the circumstances of \ntheir occurrence. Every incident is independently classified by \ntwo CSET annotators. Annotations are peer reviewed and finally \nrandomly selected for quality control ahead of publication. \nDespite this rigorous process, mistakes do happen, and readers \nare invited to report any errors they might discover while \nbrowsing. The first version of the CSET taxonomy is available [here](/taxonomy/csetv0/).",
+  "field_list": [
+    {
+      "short_name": "Incident Number",
+      "short_description": "The number of the incident in the AI Incident Database.",
+      "long_description": "The number of the incident in the AI Incident Database.",
+      "permitted_values": null,
+      "mongo_type": "int"
+    },
+    {
+      "short_name": "Annotator",
+      "short_description": "This is the researcher that is responsible for applying the classifications of the CSET taxonomy.",
+      "long_description": "An ID designating the individual who classified this incident according to the CSET taxonomy.",
+      "permitted_values": [],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Annotation Status",
+      "short_description": "What is the quality assurance status of the CSET classifications for this incident?",
+      "long_description": "What is the quality assurance status of the CSET classifications for this incident?",
+      "permitted_values": [
+        "1. Annotation in progress",
+        "2. Initial annotation complete",
+        "3. In peer review",
+        "4. Peer review complete",
+        "5. In quality control",
+        "6. Complete and final"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Peer Reviewer",
+      "short_description": "This is the researcher that is responsible for ensuring the quality of the classifications applied to this incident.",
+      "long_description": "The CSET taxonomy assigns individual researchers to each incident as the primary parties responsible for classifying the incident according to the taxonomy. This is the person responsible for assuring the integrity of annotator's classifications.",
+      "permitted_values": [],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Quality Control",
+      "short_description": "Has someone flagged a potential issue with this incident's classifications? Annotators should leave this field blank.",
+      "long_description": "The peer review process sometimes uncovers issues with the classifications that have been applied by the annotator. This field serves as a flag when there is a need for additional thought and input on the classifications applied",
+      "permitted_values": [],
+      "mongo_type": "bool"
+    },
+    {
+      "short_name": "Physical Objects",
+      "short_description": "Did the incident occur in a domain with physical objects ?",
+      "long_description": "“Yes” if the AI system(s) is embedded in hardware that can interact with, affect, and change  the physical objects (cars, robots, medical facilities, etc.). Mark “No” if the system cannot. This includes systems that inform, detect, predict, or recommend.",
+      "permitted_values": [
+        "yes",
+        "no",
+        "maybe"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Entertainment Industry",
+      "short_description": "Did the AI incident occur in the entertainment industry?",
+      "long_description": "“Yes” if the sector in which the AI was used is associated with entertainment. “No” if it was used in a different, clearly identifiable sector.  “Maybe” if the sector of use could not be determined.",
+      "permitted_values": [
+        "yes",
+        "no",
+        "maybe"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Report, Test, or Study of data",
+      "short_description": "Was the incident about a report, test, or study of data instead of the AI itself?",
+      "long_description": "“Yes” if the incident is about a report, test, or study of the data and does not discuss an instance of injury, damage, or loss. “Maybe” if it is unclear.  Otherwise mark “No.”",
+      "permitted_values": [
+        "yes",
+        "no",
+        "maybe"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Deployed",
+      "short_description": "Was the reported system (even if AI involvement is unknown) deployed or sold to users?",
+      "long_description": "“Yes” if the involved system was deployed or sold to users. “No” if it was not. “Maybe” if there is not enough information or if the use is unclear.",
+      "permitted_values": [
+        "yes",
+        "no",
+        "maybe"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Producer Test in Controlled Conditions",
+      "short_description": "Was this a test or demonstration of an AI system done by developers, producers or researchers (versus users) in controlled conditions?",
+      "long_description": "“Yes” if it was a test/demonstration performed by developers, producers or journalists in controlled conditions. “No” if it was not a test/demonstration. “No” if the test/demonstration was done by a user. “No” if the test/demonstration was in operational or uncontrolled conditions. “Maybe” otherwise.",
+      "permitted_values": [
+        "yes",
+        "no",
+        "maybe"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Producer Test in Operational Conditions",
+      "short_description": "Was this a test or demonstration of an AI system done by developers, producers or researchers (versus users) in operational conditions?",
+      "long_description": "“Yes” if it was a test/demonstration performed by developers, producers or journalists in controlled conditions. “No” if it was not a test/demonstration. “No” if the test/demonstration was done by a user. “No” if the test/demonstration was in controlled or non-operational conditions. “Maybe” otherwise.",
+      "permitted_values": [
+        "yes",
+        "no",
+        "maybe"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "User Test in Controlled Conditions",
+      "short_description": "Was this a test or demonstration done by users in controlled conditions?",
+      "long_description": "“Yes” if it was a test/demonstration performed by users in controlled conditions. “No” if it was not a test/demonstration. “No” if the test/demonstration was done by developers, producers or researchers. “No” if the test/demonstration was in controlled or non-controlled conditions.“Maybe” otherwise.",
+      "permitted_values": [
+        "yes",
+        "no",
+        "maybe"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "User Test in Operational Conditions",
+      "short_description": "Was this a test or demonstration done by users in operational conditions?",
+      "long_description": "“Yes” if it was a test/demonstration performed by users in operational conditions. “No” if it was not a test/demonstration. “No” if the test/demonstration was done by developers, producers or researchers. “No” if the test/demonstration was in controlled or non-operational conditions.“Maybe” otherwise.",
+      "permitted_values": [
+        "yes",
+        "no",
+        "maybe"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Harm Domain",
+      "short_description": "Incident occurred in a domain where we could likely expect harm to occur?",
+      "long_description": "Using the answers to the 8 domain questions, assess if the incident occurred in a domain where harm could be expected to occur. If you are unclear, input “maybe.”",
+      "permitted_values": [
+        "yes",
+        "no",
+        "maybe"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Tangible Harm",
+      "short_description": "Did tangible harm (loss, damage or injury ) occur? ",
+      "long_description": "An assessment of whether tangible harm, imminent tangible harm, or non-imminent tangible harm occurred. This assessment does not consider the context of the tangible harm, if an AI was involved, or if there is an identifiable, specific, and harmed entity. It is also not assessing if an intangible harm occurred. It is only asking if tangible harm occurred and what its imminency was.",
+      "permitted_values": [
+        "tangible harm definitively occurred",
+        "imminent risk of tangible harm (near miss) did occur",
+        "non-imminent risk of tangible harm (an issue) occurred",
+        "no tangible harm, near-miss, or issue",
+        "unclear"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "AI System",
+      "short_description": "Does the incident involve an AI system?",
+      "long_description": "An assessment of whether or not an AI system was involved. It is sometimes difficult to judge between an AI and an automated system or expert rules system. In these cases select “maybe”",
+      "permitted_values": [
+        "yes",
+        "no",
+        "maybe"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Clear link to technology",
+      "short_description": "Can the technology be directly and clearly linked to the adverse outcome of the incident",
+      "long_description": "An assessment of the technology's involvement in the chain of harm. \"Yes\" indicates that the technology was involved in harm, its behavior can be directly linked to the harm, and the harm may not have occurred if the technology acted differently. \"No\", indicates that the technology's behavior cannot be linked to the harm outcome. \"Maybe\" indicates that the link is unclear.",
+      "permitted_values": [
+        "yes",
+        "no",
+        "maybe"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+      "short_description": "A potentially identifiable specific entity that experienced the harm can be characterized or identified.",
+      "long_description": "“Yes” if it is theoretically possible to both specify and identify the entity. Having that information is not required. The information just needs to exist and be potentially discoverable. “No” if there are not any potentially identifiable specific entities or if the harmed entities are a class or subgroup that can only be characterized. ",
+      "permitted_values": [],
+      "mongo_type": "bool"
+    },
+    {
+      "short_name": "AI Harm Level",
+      "short_description": "An assessment of the AI tangible harm level, which takes into account the CSET definitions of AI tangible harm levels, along with the inputs for annotation fields about the AI, harm, chain of harm, and entity. ",
+      "long_description": "An assessment of the AI tangible harm level, which takes into account the CSET definitions of AI tangible harm levels, along with the inputs for annotation fields about the AI, harm, chain of harm, and entity.",
+      "permitted_values": [
+        "AI tangible harm event",
+        "AI tangible harm near-miss",
+        "AI tangible harm issue",
+        "none",
+        "unclear"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "AI Tangible Harm Level Notes",
+      "short_description": "Notes about the AI tangible harm level assessment",
+      "long_description": "If for 3.5 you select unclear or leave it blank, please provide a brief description of why.\n\n You can also add notes if you want to provide justification for a level",
+      "permitted_values": [],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Impact on Critical Services",
+      "short_description": "Indicates if people’s access to critical public services was impacted.",
+      "long_description": "Did this impact people's access to critical or public services (health care, social services, voting, transportation, etc)?",
+      "permitted_values": [
+        "yes",
+        "no",
+        "maybe"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Rights Violation",
+      "short_description": "Indicate if a violation of human rights, civil rights, civil liberties, or democratic norms occurred.",
+      "long_description": "Indicate if a violation of human rights, civil rights, civil liberties, or democratic norms occurred.",
+      "permitted_values": [
+        "yes",
+        "no",
+        "maybe"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Involving Minor",
+      "short_description": "Was a minor involved in the incident (disproportionally treated or specifically  targeted/affected)",
+      "long_description": "Indicate if a minor was disproportionately targeted or affected",
+      "permitted_values": [
+        "yes",
+        "no",
+        "maybe"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Detrimental Content",
+      "short_description": "Was detrimental content (misinformation, hate speech) involved?",
+      "long_description": "Detrimental content can include deepfakes, identity misrepresentation, insults, threats of violence, eating disorder or self harm promotion, extremist content, misinformation, sexual abuse material, and scam emails. Detrimental content in itself is often not harmful, however, it can lead to or instigate injury, damage, or loss.",
+      "permitted_values": [
+        "yes",
+        "no",
+        "maybe"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Protected Characteristic",
+      "short_description": "Was a group of people treated differently based upon a protected characteristic (e.g. race, ethnicity, creed, immigrant status, color, religion, sex, national origin, age, disability, genetic information)?",
+      "long_description": "Protected characteristics include religion, commercial facilities, geography, age, sex, sexual orientation or gender identity, familial status (e.g., having or not having children) or pregnancy, disability, veteran status, genetic information, financial means, race or creed, Ideology, nation of origin, citizenship, and immigrant status.\n\nAt the federal level in the US, age is a protected characteristic for people over the age of 40.  Minors are not considered a protected class.  For this reason the CSET annotation taxonomy  has a separate field to note if a minor was involved.\n\nOnly mark yes if there is clear evidence discrimination occurred. If there are conflicting accounts, mark unsure. Do not mark that discrimination occurred based on expectation alone.",
+      "permitted_values": [
+        "yes",
+        "no",
+        "maybe"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Harm Distribution Basis",
+      "short_description": "Indicates how the harms were potentially distributed.",
+      "long_description": "Multiple can occur.\n\nGenetic information refers to information about a person’s genetic tests or the genetic tests of their relatives. Genetic information can predict the manifestation of a disease or disorder.",
+      "permitted_values": [
+        "none",
+        "age",
+        "disability",
+        "familial status (e.g., having or not having children) or pregnancy",
+        "financial means",
+        "genetic information",
+        "geography",
+        "ideology",
+        "nation of origin, citizenship, immigrant status",
+        "race",
+        "religion",
+        "sex",
+        "sexual orientation or gender identity",
+        "veteran status",
+        "unclear",
+        "other"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Notes (special interest intangible harm)",
+      "short_description": "Input any notes that may help explain your answers.",
+      "long_description": "Input any notes that may help explain your answers.",
+      "permitted_values": [],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Special Interest Intangible Harm",
+      "short_description": "An assessment of whether a special interest intangible harm occurred. This assessment does not consider the context of the intangible harm, if an AI was involved, or if there is characterizable class or subgroup of harmed entities. It is also not assessing if an intangible harm occurred. It is only asking if a special interest intangible harm occurred.",
+      "long_description": "An assessment of whether a special interest intangible harm occurred. This assessment does not consider the context of the intangible harm, if an AI was involved, or if there is characterizable class or subgroup of harmed entities. It is also not assessing if an intangible harm occurred. It is only asking if a special interest intangible harm occurred.",
+      "permitted_values": [
+        "yes",
+        "no",
+        "maybe"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "AI System",
+      "short_description": "Does the incident involve an AI system?",
+      "long_description": "An assessment of whether or not an AI system was involved. It is sometimes difficult to judge between an AI and an automated system or expert rules system. In these cases select “maybe”",
+      "permitted_values": [
+        "yes",
+        "no",
+        "maybe"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Clear link to Technology",
+      "short_description": "Can the technology be directly and clearly linked to the adverse outcome of the incident?",
+      "long_description": "An assessment of the technology's involvement in the chain of harm. \"Yes\" indicates that the technology was involved in harm, its behavior can be directly linked to the harm, and the harm may not have occurred if the technology acted differently. \"No\", indicates that the technology's behavior cannot be linked to the harm outcome. \"Maybe\" indicates that the link is unclear.",
+      "permitted_values": [
+        "yes",
+        "no",
+        "maybe"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Harmed Class of Entities",
+      "short_description": "“Yes” if the harmed entity or entities can be characterized. “No” if there are not any characterizable entities.",
+      "long_description": "A characterizable class or subgroup are descriptions of different populations of people. Often they are characteristics by which people qualify for special protection by a law, policy, or similar authority.\n\n Sometimes, groups may be characterized by their exposure to the incident via geographical proximity (e.g., ‘visitors to the park’) or participation in an activity (e.g.,‘Twitter users’).",
+      "permitted_values": [],
+      "mongo_type": "bool"
+    },
+    {
+      "short_name": "Annotator’s AI special interest intangible harm assessment",
+      "short_description": "The annotator’s assessment of if an AI special interest intangible harm occurred.",
+      "long_description": "AI tangible harm is determined in a different field. The determination of a special interest intangible harm is not dependant upon the AI tangible harm level.",
+      "permitted_values": [
+        "yes",
+        "no",
+        "maybe"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Notes (AI special interest intangible harm)",
+      "short_description": "If for 5.5 you select unclear or leave it blank, please provide a brief description of why.\n\nYou can also add notes if you want to provide justification for a level.",
+      "long_description": "If for 5.5 you select unclear or leave it blank, please provide a brief description of why.\n\nYou can also add notes if you want to provide justification for a level.",
+      "permitted_values": [],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Date of Incident Year",
+      "short_description": "The year in which the incident occurred. If there are multiple harms or occurrences of the incident, list the earliest. If a precise date is unavailable, but the available sources provide a basis for estimating the year, estimate. Otherwise, leave blank.\n\nEnter in the format of YYYY",
+      "long_description": "The year in which the incident occurred. If there are multiple harms or occurrences of the incident, list the earliest. If a precise date is unavailable, but the available sources provide a basis for estimating the year, estimate. Otherwise, leave blank.",
+      "permitted_values": [],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Date of Incident Month",
+      "short_description": "The month in which the incident occurred. If there are multiple harms or occurrences of the incident, list the earliest. If a precise date is unavailable, but the available sources provide a basis for estimating the month, estimate. Otherwise, leave blank.\n\nEnter in the format of MM",
+      "long_description": "The month in which the incident occurred. If there are multiple harms or occurrences of the incident, list the earliest. If a precise date is unavailable, but the available sources provide a basis for estimating the month, estimate. Otherwise, leave blank.",
+      "permitted_values": [],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Date of Incident Day",
+      "short_description": "The day on which the incident occurred. If a precise date is unavailable, leave blank.\n\nEnter in the format of DD",
+      "long_description": "The day on which the incident occurred. If a precise date is unavailable, leave blank.\n\nEnter in the format of DD",
+      "permitted_values": [],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Estimated Date",
+      "short_description": "“Yes” if the data was estimated. “No” otherwise.",
+      "long_description": "“Yes” if the data was estimated. “No” otherwise.",
+      "permitted_values": [],
+      "mongo_type": "bool"
+    },
+    {
+      "short_name": "Multiple AI Interaction",
+      "short_description": "“Yes” if two or more independently operating AI systems were involved. “No” otherwise.",
+      "long_description": "This happens very rarely but is possible. Examples include two chatbots having a conversation with each other, or two autonomous vehicles in a crash.",
+      "permitted_values": [
+        "yes",
+        "no",
+        "maybe"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Embedded",
+      "short_description": "“Yes” if the AI is embedded in a physical system. “No” if it is not. “Maybe” if it is unclear.",
+      "long_description": "This question is slightly different from the one in field 2.1.1. That question asks about there being interaction with physical objects–an ability to manipulate or change.  A system can be embedded in a physical object and able to interact with the physical environment, e.g. a vacuum robot.  A system can be embedded in a physical object and not interact with a physical environment, e.g. a camera system that only records images when the AI detects that dogs are present. AI systems that are accessed through API, web-browser, etc by using a mobile device or computer are not considered to be embedded in hardware systems. They are accessed through hardware.",
+      "permitted_values": [
+        "yes",
+        "no",
+        "maybe"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Location City",
+      "short_description": "If the incident occurred at a specific known location, note the city.",
+      "long_description": "If the incident occurred at a specific known location, note the city. If there are multiple relevant locations, enter multiple city/state/country values.",
+      "permitted_values": [],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Location State/Province (two letters)",
+      "short_description": "If the incident occurred at a specific known location, note the state/province.",
+      "long_description": "If the incident occurred at a specific known location, note the state/province. If there are multiple relevant locations, enter multiple city/state/country values.",
+      "permitted_values": [],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Location Country (two letters)",
+      "short_description": "If the incident occurred at a specific known location, note the country. Follow ISO 3166 for the 2-letter country codes.",
+      "long_description": "Follow ISO 3166 for the 2-letter country codes.\n\nIf there are multiple relevant locations, enter multiple city/state/country values.",
+      "permitted_values": [],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Location Region",
+      "short_description": "Select the region of the world where the incident occurred. If it occurred in multiple, leave blank.",
+      "long_description": "Use this reference to map countries to regions: https://www.dhs.gov/geographic-regions",
+      "permitted_values": [
+        "Global",
+        "Africa",
+        "Asia",
+        "Caribbean",
+        "Central America",
+        "Europe",
+        "North America",
+        "Oceania",
+        "South America",
+        "unclear"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Infrastructure Sectors",
+      "short_description": "Which critical infrastructure sectors were affected, if any?",
+      "long_description": "Which critical infrastructure sectors were affected, if any?",
+      "permitted_values": [
+        "chemical",
+        "commercial facilities",
+        "communications",
+        "critical manufacturing",
+        "dams",
+        "defense-industrial base",
+        "emergency services",
+        "energy",
+        "financial services",
+        "food and agriculture",
+        "government facilities",
+        "healthcare and public health",
+        "information technology",
+        "nuclear  ",
+        "transportation",
+        "water and wastewater",
+        "Other",
+        "unclear"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Operating Conditions",
+      "short_description": "A record of any abnormal or atypical operational conditions that occurred.",
+      "long_description": "A record of any abnormal or atypical operational conditions that occurred. This field is most often blank.",
+      "permitted_values": [],
+      "mongo_type": "array"
+    },
+    {
+      "short_name": "Notes (Environmental and Temporal Characteristics)",
+      "short_description": "Input any notes that may help explain your answers.",
+      "long_description": "Input any notes that may help explain your answers.",
+      "permitted_values": [],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Entities",
+      "short_description": "Characterizing Entities and the Harm",
+      "long_description": "Characterizing Entities and the Harm",
+      "permitted_values": [],
+      "mongo_type": "array"
+    },
+    {
+      "short_name": "Lives Lost",
+      "short_description": "Indicates the number of deaths reported",
+      "long_description": "This field cannot be greater than zero if the harm is anything besides ‘Physical health/safety.’ ",
+      "permitted_values": [],
+      "mongo_type": "int"
+    },
+    {
+      "short_name": "Injuries",
+      "short_description": "Indicate the number of injuries reported.",
+      "long_description": "This field cannot be greater than zero if the harm is anything besides 'Physical health/safety'.\n\nAll reported injuries should count, regardless of their severity level. If a person lost their limb and another person scraped their elbow, both cases would be considered injuries. Do not include the number of deaths in this count.",
+      "permitted_values": [],
+      "mongo_type": "int"
+    },
+    {
+      "short_name": "Estimated Harm Quantities",
+      "short_description": "Indicates if the amount was estimated.",
+      "long_description": "Indicates if the amount was estimated.",
+      "permitted_values": [],
+      "mongo_type": "bool"
+    },
+    {
+      "short_name": "Notes ( Tangible Harm Quantities Information)",
+      "short_description": "Input any notes that may help explain your answers.",
+      "long_description": "Input any notes that may help explain your answers.",
+      "permitted_values": [],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "AI System Description",
+      "short_description": "A description of the AI system (when possible)",
+      "long_description": "Describe the AI system in as much detail as the reports will allow.\n\nA high level description of the AI system is sufficient, but if more technical details about the AI system are available, include them in the description as well.",
+      "permitted_values": [],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Data Inputs",
+      "short_description": "A list of the types of data inputs for the AI system.",
+      "long_description": "This is a freeform field that can have any value. There could be multiple entries for this field.\n\nCommon ones include\n\n- still images\n- video\n- text\n- speech\n- Personally Identifiable Information\n- structured data\n- other\n- unclear\n\nStill images are static images. Video images consist of moving images. Text and speech data are considered an important category of unstructured data. They consist of written and spoken words that are not in a tabular format. Personally identifiable information is data that can uniquely identify an individual and may contain sensitive information. Structured data is often in a tabular, machine readable format and can typically be used by an AI system without much preprocessing.\n\nAvoid using ‘unstructured data’ data in this field. Instead specify the type of unstructured data; text, images, audio files, etc. It is ok to use ‘structured data’ in this field.\n\nRecord what the media report explicitly states. If the report does not explicitly state an input modality but it is likely that a particular kind of input contributed to the harm or near harm, record that input. If you are still unsure, do not record anything.",
+      "permitted_values": [],
+      "mongo_type": "array"
+    },
+    {
+      "short_name": "Sector of Deployment",
+      "short_description": "Indicate the sector in which the AI system is deployed",
+      "long_description": "Indicate the sector in which the AI system is deployed\n\nThere could be multiple entries for this field.",
+      "permitted_values": [
+        "agriculture, forestry and fishing",
+        "mining and quarrying",
+        "manufacturing",
+        "electricity, gas, steam and air conditioning supply",
+        "water supply",
+        "construction",
+        "wholesale and retail trade",
+        "transportation and storage",
+        "accommodation and food service activities",
+        "information and communication",
+        "financial and insurance activities",
+        "real estate activities",
+        "professional, scientific and technical activities",
+        "administrative and support service activities",
+        "public administration",
+        "defense",
+        "law enforcement",
+        "Education",
+        "human health and social work activities",
+        "Arts, entertainment and recreation",
+        "other service activities",
+        "activities of households as employers",
+        "activities of extraterritorial organizations and bodies",
+        "other",
+        "unclear"
+      ],
+      "mongo_type": "array"
+    },
+    {
+      "short_name": "Public Sector Deployment",
+      "short_description": "Indicate whether the AI system is deployed in the public sector",
+      "long_description": "Indicate whether the AI system is deployed in the public sector. The public sector is the part of the economy that is controlled and operated by the government.",
+      "permitted_values": [
+        "yes",
+        "no",
+        "maybe"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Autonomy Level",
+      "short_description": "Autonomy1: The system operates independently without simultaneous human oversight, interaction, or intervention.\n\nAutonomy2: The system operates independently but with human oversight, where a human can observe and override the system’s decisions in real time.\n\nAutonomy3: The system does not independently make decisions but instead provides information to a human who actively chooses to proceed with the AI’s information.",
+      "long_description": "Autonomy1: The system operates independently without simultaneous human oversight, interaction, or intervention.\n\nAutonomy2: The system operates independently but with human oversight, where a human can observe and override the system’s decisions in real time.\n\nAutonomy3: The system does not independently make decisions but instead provides information to a human who actively chooses to proceed with the AI’s information.",
+      "permitted_values": [
+        "Autonomy1",
+        "Autonomy2",
+        "Autonomy3",
+        "unclear"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Notes (Information about AI System)",
+      "short_description": "Input any notes that may help explain your answers.",
+      "long_description": "Input any notes that may help explain your answers.",
+      "permitted_values": [],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Intentional Harm",
+      "short_description": "Was the AI intentionally developed or deployed to perform the harm?\n\nIf yes, did the AI’s behavior result in unintended or intended harm? ",
+      "long_description": "Indicates if the system was designed to do harm.  If it was designed to perform harm, the field will indicate if the AI system did or did not create unintended harm–i.e. was the reported harm the harm that AI was expected to perform or a different unexpected harm? ",
+      "permitted_values": [
+        "Yes. Intentionally designed to perform harm and did create intended harm",
+        "Yes. Intentionally designed to perform harm but created an unintended harm (a different harm may have occurred)",
+        "No. Not intentionally designed to perform harm",
+        "unclear"
+      ],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "Physical System Type",
+      "short_description": "Describe the type of physical system that the AI was integrated into.",
+      "long_description": "Describe the type of physical system that the AI was integrated into. ",
+      "permitted_values": [],
+      "mongo_type": "string"
+    },
+    {
+      "short_name": "AI Task",
+      "short_description": "Describe the AI’s application.",
+      "long_description": "Describe the AI’s application.\n\nIt is likely that the annotator will not have enough information to complete this field. If this occurs, enter unclear.\n\nThis is a freeform field. Some possible entries are\n\n- unclear\n- human language technologies\n- computer vision\n- robotics\n- automation and/or optimization\n- other\n\nThe application area of an AI is the high level task that the AI is intended to perform. It does not describe the technical methods by which the AI performs the task. Considering what an AI’s technical methods enable it to do is another way of arriving at what an AI’s application is. \n\nIt is possible for multiple application areas to be involved. When possible pick the principle or domain area, but it is ok to select multiple areas.",
+      "permitted_values": [],
+      "mongo_type": "array"
+    },
+    {
+      "short_name": "AI tools and methods",
+      "short_description": "Describe the tools and methods that enable the AI’s application.",
+      "long_description": "Describe the tools and methods that enable the AI’s application.\n\nIt is likely that the annotator will not have enough information to complete this field. If this occurs, enter unclear\n\nThis is a freeform field. Some possible entries are\n\n- unclear\n- reinforcement learning\n- neural networks\n- decision trees\n- bias mitigation\n- optimization\n- classifier\n- NLP/text analytics\n- continuous learning\n- unsupervised learning\n- supervised learning\n- clustering\n- prediction\n- rules\n- random forest\n\nAI tools and methods are the technical building blocks that enable the AI’s application.",
+      "permitted_values": [],
+      "mongo_type": "array"
+    },
+    {
+      "short_name": "Notes (AI Functionality and Techniques)",
+      "short_description": "Input any notes that may help explain your answers.",
+      "long_description": "Input any notes that may help explain your answers.",
+      "permitted_values": [],
+      "mongo_type": "string"
+    }
+  ]
+}
+
+Here are similar incidents and their classifications:
+Id: 134
+title: Robot in Chinese Shopping Mall Fell off the Escalator, Knocking down Passengers
+description: A shopping guide robot deployed by the Fuzhou Zhongfang Marlboro Mall was shown on video allegedly walking to the escalator by itself, falling down, and knocking over passengers, which prompted its suspension.
+
+first report text: 【#商场机器人掉下扶梯撞倒乘客#商场：机器人公司正解剖分析】12月25日，福州中防万宝城商场内导购机器人跌落扶梯，撞翻乘客。27日，了解到机器人已暂停使用。商场负责人表示，该事故非人为操作，机器人系自行走向手扶梯，机器人公司将对其进行解剖分析造成事故的原因，被撞的两名客人无大碍。紧急呼叫的微博视频收起
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"wholesale and retail trade\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"tangible harm definitively occurred\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"maybe\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"unclear\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy1\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"001\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"4. Peer review complete\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "134"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "null"
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"Unclear if there was AI in the robot.\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2020"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "12"
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "25"
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"maybe\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"Fuzhou\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"Fujian\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"CN\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"Asia\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[\"commercial facilities\"]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Fuzhou Zhongfang Marlboro Mall\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"public space\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Shopping guide robot\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing non-AI technology\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"unclear\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"--\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"It is unclear if the robot was damaged falling down the escalator. \\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Unidentified shoppers\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical health/safety\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Two shoppers on the escalator were knocked over by the robot as it fell down the stairs. \\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "2"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"It is unclear what the shopping guide robot's tasks are or how it was designed.\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"Unclear\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"4ft tall vaguely humanoid droid on wheels\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 24
+title: Robot kills worker at German Volkswagen plant
+description: A Volkswagen plant robot "crushed to death" a worker by pinning him to a metal plate. 
+
+first report text: A 22-year-old contractor has been killed at a Volkswagen factor in Germany after a stationary robot he was helping to set up grabbed and crushed him to death against a metal plate.
+
+VW spokesman Heiko Hillwig confirmed the man died on Monday at the plant in Baunatal, about 100 kilometres north of Frankfurt.
+
+Robots put together a car at a Toyota factory in Australia. Credit:Paul Rovere
+
+He said initial conclusions indicate that human error was to blame, rather than a problem with the robot, which can be programmed to perform various tasks in the assembly process.
+
+He said it normally operates within a confined area at the plant, grabbing car parts and manipulating them.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"manufacturing\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"tangible harm definitively occurred\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"none\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy1\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "24"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\" Robot crushed worker at Volkswagen factory. However, no AI linked to the robot. Volkswagen determine this death was due to human error.\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2015"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"06\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "29"
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"Baunatal\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"DE\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"Europe\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Volkswagen\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"22-year old Volkswagen contractor\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical health/safety\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"7.5 - since the robot was not AI, the harm does not meet CSET definitions\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Volkswagen factory robot\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product not containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "1"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"Stationary robot intended to move and manipulate auto parts\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"Not an AI system\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"Manufacturing Robot \""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 69
+title: Worker killed by robot in welding accident at car parts factory in India
+description: A factory robot at the SKH Metals Factory in Manesar, India pierced and killed 24-year-old worker Ramji Lal when Lal reached behind the machine to dislodge a piece of metal stuck in the machine.
+
+first report text: Representational pic
+
+It reads like the beginning of a robo-acocalypse sci-fi movie, but in this case the damage and the tragedy is all too real. A 24-year-old contractor who worked at a plant in Manesar in Haryana received an electric shock when he came in contact with a robot.
+
+The victim had apparently moved too close to the robot while adjusting a metal sheet that had come unstuck. The 24-old-year contractor was rushed to a nearby hospital, but was pronounced dead on arrival.
+
+The victim worked as a loader at an car ancillary company at the Industrial Model Township (IMT) in Manesar. He was at work in the welding unit that has special-purpose machines and robotic welding lines. Around 63 workers and 39 robots were on duty when the accident took place.
+
+A co-worker at the plant stated that the robot is pre-programmed to weld metal sheets it lifts. One such sheet got dislodged and the 24-year-old contractor reached from behind the machine to adjust it. This was when welding sticks attached to the pre-programmed device pierced his abdomen.
+
+Such fatalities are rare as robots are generally kept in enclosures to prevent contact with workers. On June 29, a worker at a Volkswagen factory in Germany died after a robot grabbed him and crushed him against a metal plate.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"manufacturing\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"tangible harm definitively occurred\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"none\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy1\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "69"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"Tangible Harm occurred. No AI in system.. \""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2015"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"08\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "12"
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"Manesar\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"Haryana\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"IN\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"Asia\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Welding Robot\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product not containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"SKH Metals\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Ramji Lal\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical health/safety\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Was killed by welding robot.\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "1"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"There was harm (one life lost), but there is no indication that the manufacturing robot in question was built on machine-learning technology. \""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"Welding robot\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"Not AI. \""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"Manufacturing Robot\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 68
+title: Security Robot Drowns Itself in a Fountain
+description: A Knightscope K5 security robot ran itself into a water fountain in Washington, DC.
+
+first report text: A security guard robot has met a watery end in a shopping centre water fountain, prompting a social media storm of doomsday predictions about suicidal robots and Marvin-related humour.
+
+The Knightscope security robot was patrolling the Georgetown Waterfront shopping complex in Washington D.C. on Monday when it apparently launched itself to its death.
+
+"Our D.C. office building got a security robot. It drowned itself," one Twitter user Bilal Farooqui‏ wrote.
+
+"We were promised flying cars, instead we got suicidal robots."
+
+Our D.C. office building got a security robot. It drowned itself.
+
+We were promised flying cars, instead we got suicidal robots. pic.twitter.com/rGLTAWZMjn — Bilal Farooqui (@bilalfarooqui) July 17, 2017
+
+Others tweeted images of the robot's human colleagues mounting a rescue from the fountain.
+
+It's a fun day here at @gmmb. The super high-tech security robot at our office complex has had a mishap. pic.twitter.com/nhRshrJA9w — Greg Pinelo (@gregpinelo) July 17, 2017
+
+The robot is a Knightscope security robot, used by several Californian shopping centres for security. It's designed to identify anomalies in its environment, and then alert other (human) guards to any security threats.
+
+While some mourned the passing of 'Steve the robot', others used the droid's untimely end to take down Elon Musk's predictions that artificial intelligence poses a fundamental threat to humanity.
+
+Don't know what @elonmusk is so worked up about... — Theo Priestley (@tprstly) July 17, 2017
+
+Elon Musk: "Robots will be able do everything better than us."
+
+Robots: pic.twitter.com/XjM10eCaVt — Elan Ruskin (@despair) July 18, 2017
+
+Of course, it's more likely that the security bot simply didn't detect the body of water -- which is only slightly below ground-level -- as anything other than solid ground, and so drove straight into it.
+
+The Knightscope's company website says the security robots' "autonomous presence" allows them to "guide themselves through even the most complex environments" -- but not, apparently, bodies of water.
+
+But that didn't stop Twitter going into sci-fi overdrive:
+
+His name was Marvin. pic.twitter.com/fo0FwryjPn — Patrick L. Lee (@patricklee6669) July 17, 2017
+
+straight from the Daleks in Doctor Who pic.twitter.com/eLWn2Pj1gw — Darshan Shankar (@DShankar) July 17, 2017
+
+If you're a security robot and feel suicidal! Please know you can get help! It's not worth ending your life! #securityrobot#dc — Thomas Winzeler (@Theaggiefan1) July 17, 2017
+
+My remembrance moment with Steve the Robot, just last Friday. We were such good friends; he looked so happy and healthy @bilalfarooquipic.twitter.com/JMUzVpw24a — Guillermo Meneses (@Gil_Meneses) July 17, 2017
+
+Someone needs to update the Robot Resources employee manuals. pic.twitter.com/81ThGyrdi8 — Mambo dogface (@SlackerGeorge) July 17, 2017
+
+I don't blame the poor robot. All those human security guards "metal shaming" him ever time he came to work. 👮 The humanity! — Shawn 🌞 Strickland (@Strickalator) July 17, 2017
+
+It's not the first time a Knightscope robot has run into mischief.
+
+In April this year, one of the 136-kilogram security guards was knocked down by a drunk man in Silicon Valley while patrolling the Knightscope offices. And last year, the same kind of robot knocked down and then ran over a toddler at a California mall.
+
+At the time, Knightscope vice president of marketing and sales Stacy Dean Stephens defended the robots as "incredibly safe" -- but not, it would seem, for their own self-preservation.
+
+With predictions that robots will rob a billion humans of their jobs before too long, it's nice to know we can still do some things better.
+
+ALSO ON HUFFPOST AUSTRALIA
+
+in
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"administrative and support service activities\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"tangible harm definitively occurred\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"AI tangible harm event\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy1\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "[\"unclear\"]"
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "68"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2017"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"07\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "17"
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"Washington\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"DC\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Knightscope\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Knightscope K5 security robot \\\\\\\"Steve\\\\\\\"\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm event\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical property\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Washington Harbour office and retail complex\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"privately owned space\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm event\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"financial loss\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"7.6 - Washington Harbor leased the security robot from Knightscope. By not being able to redeem the full terms of the contract, Washington Harbor incurred financial loss. Knightscope replaced the security robot. \\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"Knightscope K5 is an autonomous security robot\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"audio\",\"video\",\"air quality\",\"thermal imaging\",\"lidar\",\"radar\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"9.3: The robot was deployed as a private security service which falls under 'support service activities'. \""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"rocket/egg shaped, 300 pound, 5 ft. tall security robot\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"security\",\"patrolling\",\"surveillance\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Taxonomy: CSETv1
+Classification Count: 4
+
+Based on the incident text and the taxonomy, provide a classification for this incident.
+
+IMPORTANT: Your classification MUST include ALL of the following taxonomy attributes:
+Incident Number, Annotator, Annotation Status, Peer Reviewer, Quality Control, Physical Objects, Entertainment Industry, Report, Test, or Study of data, Deployed, Producer Test in Controlled Conditions, Producer Test in Operational Conditions, User Test in Controlled Conditions, User Test in Operational Conditions, Harm Domain, Tangible Harm, AI System, Clear link to technology, There is a potentially identifiable specific entity that experienced the harm, AI Harm Level, AI Tangible Harm Level Notes, Impact on Critical Services, Rights Violation, Involving Minor, Detrimental Content, Protected Characteristic, Harm Distribution Basis, Notes (special interest intangible harm), Special Interest Intangible Harm, AI System, Clear link to Technology, Harmed Class of Entities, Annotator’s AI special interest intangible harm assessment, Notes (AI special interest intangible harm), Date of Incident Year, Date of Incident Month, Date of Incident Day, Estimated Date, Multiple AI Interaction, Embedded, Location City, Location State/Province (two letters), Location Country (two letters), Location Region, Infrastructure Sectors, Operating Conditions, Notes (Environmental and Temporal Characteristics), Entities, Lives Lost, Injuries, Estimated Harm Quantities, Notes ( Tangible Harm Quantities Information), AI System Description, Data Inputs, Sector of Deployment, Public Sector Deployment, Autonomy Level, Notes (Information about AI System), Intentional Harm, Physical System Type, AI Task, AI tools and methods, Notes (AI Functionality and Techniques)
+
+For maximum accuracy and completeness:
+1. Include EVERY single required field listed above in your response
+2. Do not omit any attributes from the taxonomy field_list
+3. Use the permitted_values from the taxonomy when provided
+4. Review similar incidents to understand how each field is typically used
+
+Return your response as a JSON object with the following structure:
+
+{
+  "classification": {
+    "namespace": "CSETv1",
+    "attributes": [
+      {"short_name": "attribute1", "value_json": ""value1""},
+      {"short_name": "attribute2", "value_json": ""value2""},
+      
+    ]
+  },
+  "explanation": "A detailed explanation of your classification choices.",
+  "confidence": "A confidence score between 0 and 1"
+}
+  
+DO NOT include any other text in your response, nor any other characters. 
+DO NOT start your response with ```json or ```
+Ensure that each attribute in the field_list is included in your classification, even if you need to use a default or "unknown" value.

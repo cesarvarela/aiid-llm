@@ -1,0 +1,1954 @@
+You are an AI assistant that helps classify AI incidents according to a specific taxonomy attribute.
+
+Your task is to analyze the provided incident text and classify it ONLY for the specified taxonomy attribute: "Tangible Harm".
+
+Always require the incident text, the taxonomy namespace, and the specific attribute short_name to perform classification.
+
+Here is the incident text to classify:
+Submissions are currently closed. It shouldn't be hard to guess why.
+
+It's no longer possible for me to keep up with the responses to this tweet and the others. Want to put a few things out there:
+
+1.  We aren't closing the magazine. Closing submissions means that we aren't considering stories from authors at this time. We will reopen, but have not set a date.
+2.  We don't have a solution for the problem. We have some ideas for minimizing it, but the problem isn't going away. Detectors are unreliable. Pay-to-submit sacrifices too many legit authors. Print submissions are not viable for us.
+3.  Various third-party tools for identity confirmation are more expensive than magazines can afford and tend to have regional holes. Adopting them would be the same as banning entire countries.
+4.  We could easily implement a system that only allowed authors that had previously submitted work to us. That would effectively ban new authors, which is not acceptable. They are an essential part of this ecosystem and our future.
+5.  The people causing the problem are from outside the SF/F community. Largely driven in by "side hustle" experts making claims of easy money with ChatGPT. They are driving this and deserve some of the disdain shown to the AI developers.
+6.  Our guidelines already state that we don't want "AI" written or assisted works. They don't care. A checkbox on a form won't stop them. They just lie.
+7.  If you want to support the magazine, the best thing to do is subscribe. Anything we do to fight this will cost us in time or money to acquire tools and with us losing Amazon as a subscription retailer later this year, the timing couldn't be worse.
+
+Here is the taxonomy namespace:
+CSETv1
+
+Here is the specific attribute to classify:
+Tangible Harm
+
+Here is the definition for the target attribute "Tangible Harm":
+{
+  "short_name": "Tangible Harm",
+  "short_description": "Did tangible harm (loss, damage or injury ) occur? ",
+  "long_description": "An assessment of whether tangible harm, imminent tangible harm, or non-imminent tangible harm occurred. This assessment does not consider the context of the tangible harm, if an AI was involved, or if there is an identifiable, specific, and harmed entity. It is also not assessing if an intangible harm occurred. It is only asking if tangible harm occurred and what its imminency was.",
+  "permitted_values": [
+    "tangible harm definitively occurred",
+    "imminent risk of tangible harm (near miss) did occur",
+    "non-imminent risk of tangible harm (an issue) occurred",
+    "no tangible harm, near-miss, or issue",
+    "unclear"
+  ],
+  "mongo_type": "string"
+} 
+
+Here are similar incidents and their full classifications (use for context):
+Id: 52
+title: Tesla on AutoPilot Killed Driver in Crash in Florida while Watching Movie
+description: A Tesla Model S on autopilot crashed into a white articulated tractor-trailer on Highway US 27A in Williston, Florida, killing the driver.
+
+first report text: CANTON, Ohio — Joshua Brown loved his all-electric Tesla Model S so much he nicknamed it Tessy.
+
+And he celebrated the Autopilot feature that made it possible for him to cruise the highways, making YouTube videos of himself driving hands-free. In the first nine months he owned it, Mr. Brown put more than 45,000 miles on the car.
+
+“I do drive it a LOT,” he wrote in response to one of the hundreds of viewer comments on one of his two dozen Tesla-themed videos. His postings attracted countless other Tesla enthusiasts, who tend to embrace the cars with an almost cultish devotion.
+
+They also tend to be people who like to live on technology’s leading edge, which in Mr. Brown’s case meant dismantling bombs for the Navy during the Iraq war, then coming home to start his own company to extend internet service into rural America. In his spare time he used a 3-D printer to make model tanks and trucks.
+
+His Tesla, in other words, was simply one more extension of his technology-driven life. It took him on far-flung adventures from the gravel driveway of the pale-blue clapboard house where he lived alone in Canton, an hour’s drive south of Cleveland.
+
+Tesla Fans Show Off Their Cars
+
+The driver of a Tesla in self-driving mode was recently killed in an accident in Florida. The company called the driver “a friend of Tesla” and the broader community. Below is a look at how some Tesla enthusiasts engage with the technology.
+
+But Mr. Brown became a victim of an innovation geared precisely to people like him when his Tesla Model S electric sedan collided with a semitrailer truck on a Florida highway in May, making him the first known fatality in a self-driving car.
+
+The election. And its impact on you.
+
+Special offer: Subscribe for $1 a week.
+
+“He liked it mainly because it was an exceptional use of technology, and Josh was very much an innovator,” said his friend Paul Snow, who recalled how excited Mr. Brown was about his Tesla during a recent road trip. “He enjoyed the fact that technology was available, that it was being used to, ironically, increase safety on the roads.”
+
+Tesla owners are a devoted bunch. Immediately after the company unveiled a prototype of its Model 3 car, more than 200,000 enthusiasts put down deposits on the vehicles, which start at $35,000 and will not be available until next year.
+
+Many owners like to showcase their cars on social media, creating songs, routines and other demonstrations of different features, particularly to show off how Autopilot works.
+
+Mr. Brown’s most recent video was his most popular. Titled “Autopilot Saves Model S,” it shows Mr. Brown driving on an interstate highway from Cleveland to Canton. A white truck cuts in front of Mr. Brown’s vehicle, and by his account, the Tesla’s Autopilot feature swerves the car to the right, avoiding a collision.
+
+After Elon Musk, Tesla’s founder, called attention to the video on Twitter, it went viral.
+
+Mr. Brown seemed to be elated.
+
+Stanley Watson and Joshua Brown posed in front of the Tesla.
+
+Stanley Watson and Joshua Brown posed in front of the Tesla.
+
+“He had said, ‘For something to catch Elon Musk’s eye, I can die and go to heaven now,’” said a neighbor, Krista Kitchen, choking up. “He was absolutely thrilled – and then a couple weeks later he died.”
+
+In a statement, the National Highway Traffic Safety Administration said preliminary reports indicated that the crash occurred when a tractor-trailer made a left turn in front of the Tesla, and the car failed to apply the brakes. The agency did not name the victim, but the Florida Highway Patrol identified him as Mr. Brown.
+
+Ms. Kitchen said Mr. Brown, 40, had just left a family trip to Walt Disney World in Orlando. His relatives did not respond to requests for comment. At Mr. Brown’s house, behind an expansive, well-trimmed lawn, a man who answered the door on Friday said the family did not wish to speak to reporters.
+
+Ms. Kitchen and others described how Mr. Brown would eagerly share his Tesla with friends, letting them take turns behind the wheel. And they described a man who was broadly generous with his time, who consistently helped friends in need, and who stayed in touch with his fellow veterans.
+
+Inside the Self-Driving Tesla Fatal Accident
+
+After Joshua Brown, 40, of Canton, Ohio, was killed driving a Tesla Model S in the first fatality involving a self-driving car, questions have arisen about the safety of the car’s technology.
+
+“He was certainly an adventurer,” Mr. Snow said. “He was a warrior that served proudly for his country; he was a patriot. He did many things that had never been done before.”
+
+Mr. Brown was particularly interested in testing the limits of the Autopilot function, documenting how the vehicle would react in blind spots, going around curves and other more challenging situations.
+
+“This section in here is going to be very, very difficult for the car to handle,” he said in one video, posted in October, as his vehicle rounded a curve. “We’re filming this just so you can see scenarios where the car does not do well.”
+
+Mark Vernon, a high school classmate who recalled tinkering with electronics in shop class together, said that his friend showed off the self-driving feature on a recent visit at Mr. Brown’s home.
+
+“He knew the hill that it would give up on, because it couldn’t see far enough,” Mr. Vernon said. “He knew all the limitations that it would find and he really knew how it was supposed to work.”
+
+ImageTerri Lyn Reed, an account executive who said she helped Mr. Brown set up the insurance for his company.
+
+Terri Lyn Reed, an account executive who said she helped Mr. Brown set up the insurance for his company.Credit...Maddie McGarvey for The New York Times
+
+ADVERTISEMENT
+
+Continue reading the main story
+
+Mr. Brown attended the University of New Mexico, where he studied physics and computer science, but did not graduate, the school said. Instead, he joined the Navy, where he served for more than a decade and specialized in disarming explosives, according to his company’s website.
+
+His service included a stint with the Naval Special Warfare Development Group, commonly known as SEAL Team 6. Ricky Hammer, a retired Navy master chief who worked with Mr. Brown at the development group, said he had strong computer skills and “was the equivalent of an electrical engineer even though he didn’t have the degree.”
+
+Tesla owners tend to share a love of technology, and an eagerness to embrace the unknown, the untested or the unproven. Photos posted on Mr. Brown’s Facebook page show a love of the outdoors, where he rappelled down cliffs and jumped out of airplanes for fun.
+
+One of those struck by Mr. Brown’s adventurous side was Terri Lyn Reed, a senior insurance account executive who said she had helped Mr. Brown set up the insurance at his company, Nexu Innovations.
+
+“He’d probably fly an F-18 to test-drive it,” she said, referring to the military fighter jet.
+
+Tesla enthusiasts often also share a loyalty to the company, much the way Apple has engendered true believers whom it relies on to back the introduction of new iPhones, Macs and other products.
+
+An excerpt of <a href="https://www.documentcloud.org/documents/2938399-joshua-brown-obit.html">Joshua Brown’s obituary </a>from The Greensburg Tribune Review in Westmoreland County, Pa., where he had formerly lived.
+
+An excerpt of Joshua Brown’s obituary from The Greensburg Tribune Review in Westmoreland County, Pa., where he had formerly lived.
+
+Richard Henry, 26, who bought a 2015 Model S about nine months ago, uses Autopilot to take him through about 40 miles of freeway driving on each leg of his commute between San Francisco and Mountain View.
+
+When he started using his car’s Autopilot mode, it had a tendency to lose track of the highway lines and tell him to take control. But in the last few months it has improved more and more. Most days he turns it on and sits with his hands on his knees — ready to take the wheel, he pointed out.
+
+Continue reading the main story
+
+Learning about the technology and getting used to it has been “superfun,” he said. That is a point that separates him from the many other drivers who tend to learn how to use a few necessary functions in their car and never bother with most others. “I really like trying stuff like this out and understanding how the technology works,” Mr. Henry said.
+
+Mr. Brown’s enthusiasm for technology factored deeply into his work at Nexu, which specialized in setting up internet access in rural areas of the country where forests and mountains created special obstacles to entering the connected world.
+
+“Josh knew how to get around all the interference from all the trees and all the hills,” said Cindi Staneski, who runs the Hickory Run Campground in Denver, Pa., an 80-acre operation that became one of Mr. Brown’s early clients.
+
+“The big companies wanted nothing to do with it,” Ms. Staneski said, adding that Mr. Brown had become a mentor to her son. “It was too difficult, or they just wanted to charge you an extreme amount of money, whereas Josh felt that we deserved a chance that everybody else had.”
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "false"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "52"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 323
+title: Tesla on Autopilot Crashed into Parked Police Car in California
+description: A Tesla sedan on Autopilot mode collided with a parked Laguna Beach Police Department car, resulting in minor injuries for its driver in Laguna Beach, California.
+
+first report text: Early on, the software had the regrettable habit of hitting police cruisers. No one knew why, though Tesla’s engineers had some good guesses: Stationary objects and flashing lights seemed to trick the A.I. The car would be driving along normally, the computer well in control, and suddenly it would veer to the right or left and — _smash_ — at least 10 times in just over three years.
+
+For a company that depended on an unbounded sense of optimism among investors to maintain its high stock price — Tesla was at one point worth more than Toyota, Honda, Volkswagen, Mercedes, BMW, Ford and General Motors combined — these crashes might seem like a problem. But to Elon Musk, Tesla’s chief executive, they presented an opportunity. Each collision generated data, and with enough data, the company could speed the development of the world’s first truly self-driving car. He believed in this vision so strongly that it led him to make wild predictions: “My guess as to when we would think it is safe for somebody to essentially fall asleep and wake up at their destination: probably toward the end of next year,” [Musk said in 2019.](https://ark-invest.com/podcast/on-the-road-to-full-autonomy-with-elon-musk/) “I would say I am certain of that. That is not a question mark.”
+
+The future of Tesla may rest on whether drivers knew that they were engaged in this data-gathering experiment, and if so, whether their appetite for risk matched Musk’s. I wanted to hear from the victims of some of the more minor accidents, but they tended to fall into two categories, neither of which predisposed them to talk: They either loved Tesla and Musk and didn’t want to say anything negative to the press, or they were suing the company and remaining silent on the advice of counsel. (Umair Ali, whose Tesla steered into a highway barrier in 2017, had a different excuse: “Put me down as declined interview because I don’t want to piss off the richest man in the world.”)
+
+Then I found Dave Key. On May 29, 2018, Key’s 2015 Tesla Model S was driving him home from the dentist in Autopilot mode. It was a route that Key had followed countless times before: a two-lane highway leading up into the hills above Laguna Beach, Calif. But on this trip, while Key was distracted, the car drifted out of its lane and slammed into the back of a parked police S.U.V., spinning the car around and pushing the S.U.V. up onto the sidewalk. No one was hurt.
+
+Key, a 69-year-old former software entrepreneur, took a dispassionate, engineer’s-eye view of his own accident. “The problem with stationary objects — I’m sorry, this sounds stupid — is that they don’t move,” he said. For years, Tesla’s artificial intelligence had trouble separating immobile objects from the background. Rather than feeling frustrated that the computer hadn’t figured out such a seemingly elementary problem, Key took comfort in learning that there was a reason behind the crash: a known software limitation, rather than some kind of black-swan event.
+
+Last fall, I asked Key to visit the scene of the accident with me. He said he would do me one better; he would take me there using Tesla’s new Full Self-Driving mode, which was still in beta. I told Key that I was surprised he was still driving a Tesla, much less paying extra — F.S.D. now costs $15,000 — for new autonomous features. If my car had tried to kill me, I would have switched brands. But in the months and years after his Model S was totaled, he bought three more.
+
+We met for breakfast at a cafe in Laguna Beach, about three miles from the crash site. Key was wearing a black V-neck T-shirt, khaki shorts and sandals: Southern California semiretirement chic. As we walked to our table, he locked the doors of his red 2022 Model S, and the side mirrors folded up like a dog’s ears when it’s being petted.
+
+Key had brought along a four-page memo he drafted for our interview, listing facts about the accident, organized under subheadings like “Tesla Full Self-Driving Technology (Discussion).” He’s the sort of man who walks around with a battery of fully formed opinions on life’s most important subjects — computers, software, exercise, money — and a willingness to share them. He was particularly concerned that I understand that Autopilot and F.S.D. were saving lives: “The data shows that their accident rate while on Beta is far less than other cars,” one bullet point read, in 11-point Calibri. “Slowing down the F.S.D. Beta will result in more accidents and loss of life based on hard statistical data.”
+
+Accidents like his — and even the deadly ones — are unfortunate, he argued, but they couldn’t distract society from the larger goal of widespread adoption of autonomous vehicles. Key drew an analogy to the coronavirus vaccines, which prevented hundreds of thousands of deaths but also caused rare deaths and injuries from adverse reactions. “As a society,” he concluded, “we choose the path to save the most lives.”
+
+We finished breakfast and walked to the car. Key had hoped to show off the newest version of F.S.D., but his system hadn’t updated yet. “Elon said it would be released at the end of the week,” he said. “Well, it’s Sunday.” Musk had been hinting for weeks that the update would be a drastic improvement over F.S.D. 10.13, which had been released over the summer. Because Musk liked to make little jokes out of the names and numbers in his life, the version number would jump to 10.69 with this release. (The four available Tesla models are S, 3, X and Y, presumably because that spells the word “sexy.”)
+
+Key didn’t want to talk about Musk, but the executive’s reputational collapse had become impossible to ignore. He was in the middle of his bizarre, on-again-off-again [campaign to take over Twitter](https://www.nytimes.com/live/2022/10/28/business/elon-musk-twitter), to the dismay of Tesla loyalists. And though he hadn’t yet [attacked Anthony Fauci](https://www.nytimes.com/2022/12/12/business/musk-twitter-fauci.html) or [spread conspiracy theories about Nancy Pelosi’s husband](https://www.nytimes.com/2022/10/30/business/musk-tweets-hillary-clinton-pelosi-husband.html) or gone on a [journalist-banning spree](https://www.nytimes.com/2022/12/16/business/elon-musk-twitter-suspensions.html) on the platform, the question was already suggesting itself: How do you explain Elon Musk?
+
+“People are flawed,” Key said cautiously, before repeating a sentiment that Musk often said about himself: If partisans on both sides hated him, he must be doing something right. No matter what trouble Musk got himself into, Key said, he was honest — “truthful to his detriment.”
+
+As we drove, Key compared F.S.D. and the version of Autopilot on his 2015 Tesla. Autopilot, he said, was like fancy cruise control: speed, steering, crash avoidance. Though in his case, he said, “I guess it didn’t do crash avoidance.” He had been far more impressed by F.S.D. It was able to handle just about any situation he threw at it. “My only real complaint is it doesn’t always select the lane that I would.”
+
+After a minute, the car warned Key to keep his hands on the wheel and eyes on the road. “Tesla now is kind of a nanny about that,” he complained. If Autopilot was once dangerously permissive of inattentive drivers — allowing them to nod off behind the wheel, even — that flaw, like the stationary-object bug, had been fixed. “Between the steering wheel and the eye tracking, that’s just a solved problem,” Key said.
+
+Soon we were close to the scene of the crash. Scrub-covered hills with mountain-biking trails lacing through them rose on either side of us. That was what got Key into trouble on the day of the accident. He was looking at a favorite trail and ignoring the road. “I looked up to the left, and the car went off to the right,” he said. “I was in this false sense of security.”
+
+We parked at the spot where he hit the police S.U.V. four years earlier. There was nothing special about the road here: no strange lines, no confusing lane shift, no merge. Just a single lane of traffic running along a row of parked cars. Why the Tesla failed at that moment was a mystery.
+
+Eventually, Key told F.S.D. to take us back to the cafe. As we started our left turn, though, the steering wheel spasmed and the brake pedal juddered. Key muttered a nervous, “OK. … ”
+
+After another moment, the car pulled halfway across the road and stopped. A line of cars was bearing down on our broadside. Key hesitated a second but then quickly took over and completed the turn. “It probably could have then accelerated, but I wasn’t willing to cut it that close,” he said. If he was wrong, of course, there was a good chance that he would have had his second A.I.-caused accident on the same one-mile stretch of road.
+
+**Three weeks before** Key hit the police S.U.V., Musk wrote an email to Jim Riley, whose son Barrett died after his Tesla crashed while speeding. Musk sent Riley his condolences, and the grieving father wrote back to ask whether Tesla’s software could be updated to allow an owner to set a maximum speed for the car, along with other restrictions on acceleration, access to the radio and the trunk and distance the car could drive from home. Musk, while sympathetic, replied: “If there are a large number of settings, it will be too complex for most people to use. I want to make sure that we get this right. Most good for most number of people.”
+
+It was a stark demonstration of what makes Musk so unusual as a chief executive. First, he reached out directly to someone who was harmed by one of his products — something it’s hard to imagine the head of G.M. or Ford contemplating, if only for legal reasons. (Indeed, this email was entered into evidence after Riley sued Tesla.) And then Musk rebuffed Riley. No vague “I’ll look into it” or “We’ll see what we can do.” Riley receives a hard no.
+
+Like Key, I want to resist Musk’s tendency to make every story about him. Tesla is a big car company with thousands of employees. It existed before Elon Musk. It might exist after Elon Musk. But if you want a parsimonious explanation for the challenges the company faces — in the form of the lawsuits, a crashing stock price and an A.I. that still seems all too capable of catastrophic failure — you should look to its mercurial, brilliant, sophomoric chief executive.
+
+Perhaps there’s no mystery here: Musk is simply a narcissist, and every reckless swerve he makes is meant solely to draw the world’s attention. He seemed to endorse this theory in a tongue-in-cheek way during a recent deposition, when a lawyer asked him, “Do you have some kind of unique ability to identify narcissistic sociopaths?” and he replied, “You mean by looking in the mirror?”
+
+But what looks like self-obsession and poor impulse control might instead be the fruits of a coherent philosophy, one that Musk has detailed on many occasions. It’s there in the email to Riley: the greatest good for the greatest number of people. That dictum, as part of an ad hoc system of utilitarian ethics, can explain all sorts of mystifying decisions that Musk has made, not least his breakneck pursuit of A.I., which in the long term, he believes, will save countless lives.
+
+Unfortunately for Musk, the short term comes first, and his company faces a rough few months. In February, the first lawsuit against Tesla for a crash involving Autopilot will go to trial. Four more will follow in quick succession. Donald Slavik, who will represent plaintiffs in as many as three of those cases, says that a normal car company would have settled by now: “They look at it as a cost of doing business.” Musk has vowed to fight it out in court, no matter the dangers this might present for Tesla. “The dollars can add up,” Slavik said, “especially if there’s any finding of punitive damages.”
+
+Slavik sent me one of the complaints he filed against Tesla, which lists prominent Autopilot crashes from A to Z — in fact, from A to WW. In [China, a Tesla slammed into the back of a street sweeper](https://jalopnik.com/two-years-on-a-father-is-still-fighting-tesla-over-aut-1823189786). In Florida, [a Tesla hit a tractor-trailer](https://www.nytimes.com/2022/05/16/NYT-Presents/elon-musk-tesla-autopilot.html) that was stretched across two lanes of a highway. During a downpour in Indiana, a Tesla Model 3 hydroplaned off the road and burst into flames. In the Florida Keys, a Model S drove through an intersection and killed a pedestrian. In New York, a [Model Y struck a man who was changing his tire on the shoulder of the Long Island Expressway](https://www.courthousenews.com/feds-probe-ny-tesla-crash-that-killed-man-changing-flat-tire/). In [Montana, a Tesla steered unexpectedly into a highway barrier](https://electrek.co/2016/07/22/tesla-autopilot-model-x-crash-montana-coverup/). Then the same thing happened in Dallas and in Mountain View and in San Jose.
+
+The arrival of self-driving vehicles wasn’t meant to be like this. Day in, day out, we scare and maim and kill ourselves in cars. In the United States last year, there were around 11 million road accidents, nearly five million injuries and more than 40,000 deaths. Tesla’s A.I. was meant to put an end to this blood bath. Instead, on average, there is at least one Autopilot-related crash in the United States every day, and [Tesla is under investigation by the National Highway Traffic Safety Administration.](https://www.nytimes.com/2022/06/09/business/tesla-autopilot-nhtsa-investigation.html)
+
+Ever since Autopilot was released in October 2015, Musk has encouraged drivers to think of it as more advanced than it was, stating in January 2016 that it was “probably better” than a human driver. That November, the company released [a video of a Tesla](https://vimeo.com/192179726?embedded=true&source=vimeo_logo&owner=128712855) navigating the roads of the Bay Area with the disclaimer: “The person in the driver’s seat is only there for legal reasons. He is not doing anything. The car is driving itself.” Musk also rejected the name “Copilot” in favor of “Autopilot.”
+
+The fine print made clear that the technology was for driver assistance only, but that message received a fraction of the attention of Musk’s announcements. A large number of drivers seemed genuinely confused about Autopilot’s capabilities. (Tesla also declined to disclose that the car in the 2016 video crashed in the company’s parking lot.) Slavik’s legal complaint doesn’t hold back: “Tesla’s conduct was despicable, and so contemptible that it would be looked down upon and despised by ordinary decent people.”
+
+The many claims of the pending lawsuits come back to a single theme: Tesla consistently inflated consumer expectations and played down the dangers involved. The cars didn’t have sufficient driver monitoring because Musk didn’t want drivers to think that the car needed human supervision. (Musk in April 2019: “If you have a system that’s at or below human-level reliability, then driver monitoring makes sense. But if your system is dramatically better, more reliable than a human, then monitoring does not help much.”) Drivers weren’t warned about problems with automatic braking or “uncommanded lane changes.” The company would admit to the technology’s limitations in the user manual but publish viral videos of a Tesla driving a complicated route with no human intervention.
+
+Musk’s ideal customer was someone like Key — willing to accept the blame when something went wrong but possessing almost limitless faith in the next update. In a deposition, an engineer at Tesla made this all but explicit: “We want to let the customer know that, No. 1, you should have confidence in your vehicle: Everything is working just as it should. And, secondly, the reason for your accident or reason for your incident always falls back on you.”
+
+After our failed left turn in Laguna Beach, Key quickly diagnosed the problem. If only the system had upgraded to F.S.D. 10.69, he argued, the car surely would have managed the turn safely. Unfortunately for Musk, not every Tesla owner is like Dave Key. The plaintiffs in the Autopilot lawsuits might agree that the A.I. is improving, but only on the backs of the early adopters and bystanders who might be killed along the way.
+
+**Online, there’s a battle** between pro-Musk and anti-Musk factions about Autopilot and F.S.D. Reddit has a forum called r/RealTesla that showcases the most embarrassing A.I. screw-ups, along with more generic complaints: squeaky steering wheels, leaky roofs, haywire electronics, noisy cabins, stiff suspensions, wrinkled leather seats, broken door handles. The Musk stans tend to sequester themselves in r/TeslaMotors, where they post Tesla sightings, cheer on the company’s latest factory openings and await the next big announcement from the boss.
+
+I found David Alford on YouTube, where he posted a video called [“Tesla Full Self-Driving Running a Red Light.”](https://www.youtube.com/watch?v=_vSGyqX0HZg) In it, we see the view through the windshield as Alford’s car approaches an intersection with a left-turn lane that has a dedicated traffic signal. With a few hundred yards remaining, the light shifts from green to red, but the car doesn’t stop. Instead, it rolls into the intersection, where it’s on track to collide with oncoming traffic, until Alford takes over.
+
+In the comments, Tesla fans grow angry with Alford for posting the video, but he pushes back: “How does it help put pressure on Tesla to improve their systems if you are scared to post their faults?” Replying to one comment, he writes that F.S.D. is “unethical in the context they are using it.”
+
+When I called Alford, I was expecting someone suited for r/RealTesla, but he ended up having more of an r/TeslaMotors vibe. He told me that he would be willing to take me to the site of his video and demonstrate the failure, but first I had to make a promise. “The only thing I ask is try not to put me in a bad light toward Tesla,” he said. “I don’t want anybody to think that I hate the company or whatnot, because I’m a very, very big supporter of them.”
+
+Alford lives in Fresno, Calif., and before I went to meet him one day last fall, he told me some exciting news: He had just received the F.S.D. 10.69 update. Our drive would be his first attempt to navigate the intersection from the YouTube video with the new system.
+
+The morning I met him, he was wearing a black T-shirt that showed off his tattoos, black sunglasses and faded black jeans with holes in the knees. Hollywood would typecast him as a white-hat hacker, and indeed he’s a software guy like Key: He is a product engineer for a Bay Area tech company.
+
+His white 2020 Tesla Model 3 had a magnetic bumper sticker he found on Etsy: CAUTION FULL SELF-DRIVING TESTING IN PROGRESS. He said he drives in F.S.D. mode 90 percent of the time, so his car is always acting a bit strange — the sticker helped keep some of the honking from other cars at bay. He seemed to be, like Key, an ideal F.S.D. beta tester: interested in the software, alert to its flaws, dogged in his accumulation of autonomous miles.
+
+I climbed into the passenger seat, and Alford punched in our first destination: a spot a few blocks away in downtown Fresno. We were lucky it was overcast, he said, because the car behaved well in these conditions. On days when it was sunny out and there was a lot of glare, the car could be “moody.” And when it was foggy, and it was often foggy in Fresno, “it freaks out.”
+
+After a few minutes, we approached a crosswalk just as two parents pulling a child in a wagon began to cross. A screen next to the steering wheel showed that the A.I. had registered the two pedestrians but not the wagon. Alford said he was hovering his foot over the brake, but the car stopped on its own.
+
+After the wagon came a woman in a wheelchair. The car stayed put. Alford told me that the automotive jargon for anyone on the street who is not in a car or a truck is a “V.R.U.,” a vulnerable road user. And it’s true: Pedestrians and cyclists and children in strollers and women in wheelchairs — they are so fragile compared with these giant machines we’ve stuffed into our cities and onto our highways. One wrong move, and a car will crush them.
+
+We turned on to Van Ness Avenue, which cuts through downtown. It had been newly paved, and instead of lines on the street, there were little yellow tabs indicating where the lines would eventually go. The Tesla hated this and dodged worriedly right and left, looking for something to anchor it. There were no other cars around, so Alford let it get that out of its system and eventually find a lane line to follow.
+
+“You build a tolerance to the risks it takes,” he said. “Yes, it’s swerving all over the place, but I know it’s not going to crash into something.” Still, the experience of the beta had changed the way he approached his own work. “It’s actually made me, as a software developer, more hesitant to put my software in the hands of people” before it’s fully ready, he said, “even though it’s not dangerous.”
+
+Seconds later, we drove through an intersection as two V.R.U.s — a man walking a dog — entered the crosswalk. They were a safe distance away, but the dog started to strain against its leash in our direction. Alford and I knew that the pet wasn’t in peril because the leash would stop it. But all the Tesla saw was a dog about to jump in front of us, and it came to an abrupt stop. It was a good outcome, all things considered — no injuries to any life-form — but it was far from a seamless self-driving experience.
+
+Alford nudged the steering wheel just often enough that the car never warned him to pay attention. He didn’t mind the strict driver monitoring: He never tired of studying the car’s behavior, so he was never tempted to tune out. Still, he knew people who abused the system. One driver tied an ankle weight to the steering wheel to “kick back and do whatever” during long road trips. “I know a couple of people with Teslas that have F.S.D. beta,” he said, “and they have it to drink and drive instead of having to call an Uber.”
+
+We left downtown and got on the highway, headed toward an area northeast of the city called Clovis, where the tricky intersection was. Alford pulled up his F.S.D. settings. His default driver mode was Average, but he said he has found that the two other options — Chill and Assertive — aren’t much different: “The car is just really aggressive anyway.” For highway driving, though, he had the car set to something called Mad Max mode, which meant it would overtake any vehicle in front of him if it was going even a few miles per hour slower than his preferred speed.
+
+We exited the highway and quickly came to a knot of cars. Something had gone wrong with the traffic light, which was flashing red, and drivers in all four directions, across eight lanes, had to figure out when to go and when to yield. The choreography here was delicate: There were too many cars to interweave without some allowances being made for mercy and confusion and expediency. Among the humans, there was a good deal of waving others on and attempted eye contact to see whether someone was going to yield or not.
+
+We crept toward the intersection, car by car, until it was our turn. If we were expecting nuance, there was none. Once we had come to a complete stop, the Tesla accelerated quickly, cutting off one car turning across us and veering around another. It was not so much inhuman as the behavior of a human who was determined to be a jerk. “That was bad,” Alford said. “Normally I would disengage once it makes a mistake like that.” He clicked a button to send a snapshot of the incident to Tesla.
+
+Later, at a four-way stop, the car was too cautious. It waited too long, and the other two cars at the intersection drove off before we did. We talked about the old saying about safe driving: “Don’t be nice; be predictable.” For a computer, Tesla’s A.I. was surprisingly erratic. “It’s not nice or predictable,” Alford said.
+
+A few miles down the road, we reached the intersection from the video: a left turn onto East Shepherd Avenue from State Route 168. The traffic light sits right at the point where the city’s newest developments end and open land begins. If we drove straight, we would immediately find ourselves surrounded by sagebrush, on the way up into the Sierra.
+
+To replicate the error that Alford uncovered, we needed to approach the intersection with a red left-turn arrow and a green light to continue straight. On our first pass, the arrow turned green at the last second. On the second pass, though, on an empty road, the timing was right: a red for our turn and green for everyone else.
+
+As we got closer, the car moved into the turning lane and started to slow. “It sees the red,” I said.
+
+“No,” Alford said. “It always slows down a little here before plowing through.” But this time, it kept slowing. Alford couldn’t believe it. “It’s still going to run the light,” he said. But he was wrong: We came to a tidy stop right at the line. Alford was shocked. “They fixed it!” he said. “That one I’ve been giving them an issue about for two years.” We waited patiently until the light turned green, and the Tesla drove smoothly onto Shepherd Avenue. No problem.
+
+It was as clear a demonstration of Musk’s hypothesis as one could hope for. There was a situation that kept stumping the A.I. until, after enough data had been collected by dedicated drivers like Alford, the neural net figured it out. Repeat this risk-reward conversion X number of times, and maybe Tesla will solve self-driving. Maybe even next year.
+
+On the drive back to the center of Fresno, Alford was buoyant, delighted with the possibility that he had changed the Tesla world for the better. I asked him whether the F.S.D. 10.69 release met the hype that preceded it. “To be honest, yeah, I think so,” he said. (He was even more enthusiastic about the version of F.S.D. released in December, which he described as nearly flawless.)
+
+A few minutes later, we reached a rundown part of town. Alford said that in general Tesla’s A.I. does better in higher-income areas, maybe because those areas have more Tesla owners in them. “Are there data biases for higher-income areas because that’s where the Teslas are?” he wondered.
+
+We approached an intersection and tried to make a left — in what turned out to be a repeat of the Laguna Beach scenario. The Tesla started creeping out, trying to get a clearer look at the cars coming from our left. It inched forward, inched forward, until once again we were fully in the lane of traffic. There was nothing stopping the Tesla from accelerating and completing the turn, but instead it just sat there. At the same time, a tricked-out Honda Accord sped toward us, about three seconds away from hitting the driver-side door. Alford quickly took over and punched the accelerator, and we escaped safely. This time, he didn’t say anything.
+
+It was a rough ride home from there. At a standard left turn at a traffic light, the system freaked out and tried to go right. Alford had to take over. And then, as we approached a cloverleaf on-ramp to the highway, the car started to accelerate. To stay on the ramp, we needed to make an arcing right turn; in front of us was a steep drop-off into a construction site with no guard rails. The car showed no sign of turning. We crossed a solid white line, milliseconds away from jumping off the road when, at last, the wheel jerked sharply to the right, and we hugged the road again. This time, F.S.D. had corrected itself, but if it hadn’t, the crash would have surely killed us.
+
+**Peter Thiel, Musk’s former** business partner at PayPal, once said that if he wrote a book, the chapter about Musk would be called “The Man Who Knew Nothing About Risk.” But that’s a misunderstanding of Musk’s attitude: If you parse his statements, he presents himself as a man who simply embraces astonishing amounts of present-day risk in the rational assumption of future gains.
+
+Musk’s clearest articulation of his philosophy has come, of course, on Twitter. “We should take the set of actions that maximize total public happiness!” he wrote to one user who asked him how to save the planet. In August, he called the writings of William MacAskill, a Scottish utilitarian ethicist, “a close match for my philosophy.” (MacAskill, notably, was also the intellectual muse of Sam Bankman-Fried, though he cut ties with him after the [FTX scandal came to light.](https://www.nytimes.com/2022/11/14/technology/ftx-sam-bankman-fried-crypto-bankruptcy.html))
+
+Musk’s embrace of risk has produced true breakthroughs: [SpaceX can land reusable rockets on remote-controlled landing pads in the ocean](https://www.theguardian.com/science/2016/apr/08/spacex-rocket-test-elon-musk-international-space-station); [Starlink is providing internet service to Ukrainians on the front lines](https://www.nytimes.com/live/2022/10/15/world/russia-ukraine-war-news); [OpenAI creeps ever closer to passing the Turing test](https://www.nytimes.com/interactive/2022/12/26/upshot/chatgpt-child-essays.html). As for Tesla, even Musk’s harshest critics — and I talked to many of them while reporting this article — would pause, unbidden, to give him credit for creating the now-robust market in electric vehicles in the United States and around the world.
+
+And yet, as Robert Lowell wrote, “No rocket goes as far astray as man.” In recent months, as the outrages at Twitter and elsewhere began to multiply, Musk seemed to determined to squander much of the good will he had built up over his career. I asked Slavik, the plaintiffs’ attorney, whether the recent shift in public sentiment against Musk made his job in the courtroom any easier. “I think at least there are more people who are skeptical of his judgment at this point than were before,” he said. “If I were on the other side, I’d be worried about it.”
+
+Some of Musk’s most questionable decisions, though, begin to make sense if seen as a result of a blunt utilitarian calculus. Last month, Reuters reported that Neuralink, Musk’s medical-device company, had caused the needless deaths of dozens of laboratory animals through rushed experiments. Internal messages from Musk made it clear that the urgency came from the top. “We are simply not moving fast enough,” he wrote. “It is driving me nuts!” The cost-benefit analysis must have seemed clear to him: Neuralink had the potential to cure paralysis, he believed, which would improve the lives of millions of future humans. The suffering of a smaller number of animals was worth it.
+
+This form of crude long-term-ism, in which the sheer size of future generations gives them added ethical weight, even shows up in Musk’s statements about buying Twitter. He called Twitter a “digital town square” that was responsible for nothing less than preventing a new American civil war. “I didn’t do it to make more money,” he wrote. “I did it to try to help humanity, whom I love.”
+
+Autopilot and F.S.D. represent the culmination of this approach. “The overarching goal of Tesla engineering,” Musk wrote, “is maximize area under user happiness curve.” Unlike with Twitter or even Neuralink, people were dying as a result of his decisions — but no matter. In 2019, in a testy exchange of email with the activist investor and steadfast Tesla critic Aaron Greenspan, Musk bristled at the suggestion that Autopilot was anything other than lifesaving technology. “The data is unequivocal that Autopilot is safer than human driving by a significant margin,” he wrote. “It is unethical and false of you to claim otherwise. In doing so, you are endangering the public.”
+
+**I wanted to ask** Musk to elaborate on his philosophy of risk, but he didn’t reply to my interview requests. So instead I spoke with Peter Singer, a prominent utilitarian philosopher, to sort through some of the ethical issues involved. Was Musk right when he claimed that anything that delays the development and adoption of autonomous vehicles was inherently unethical?
+
+“I think he has a point,” Singer said, “if he is right about the facts.”
+
+Musk rarely talks about Autopilot or F.S.D. without mentioning how superior it is to a human driver. At a shareholders’ meeting in August, he said that Tesla was “solving a very important part of A.I., and one that can ultimately save millions of lives and prevent tens of millions of serious injuries by driving just an order of magnitude safer than people.” Musk does have data to back this up: Starting in 2018, Tesla has released quarterly safety reports to the public, which show a consistent advantage to using Autopilot. The most recent one, from late 2022, said that Teslas with Autopilot engaged were one-tenth as likely to crash as a regular car.
+
+That is the argument that Tesla has to make to the public and to juries this spring. In the words of the company’s safety report: “While no car can prevent all accidents, we work every day to try to make them much less likely to occur.” Autopilot may cause a crash WW times, but without that technology, we’d be at OOOOOOOOOOOOOOOOOOO.
+
+Singer told me that even if Autopilot and human drivers were equally deadly, we should prefer the A.I., provided that the next software update, based on data from crash reports and near misses, would make the system even safer. “That’s a little bit like surgeons doing experimental surgery,” he said. “Probably the first few times they do the surgery, they’re going to lose patients, but the argument for that is they will save more patients in the long run.” It was important, however, Singer added, that the surgeons get the informed consent of the patients.
+
+_Does_ Tesla have the informed consent of its drivers? The answer might be different for different car owners — it would probably be different for Dave Key in 2018 than it is in 2022. But most customers are not aware of how flawed Autopilot is, said Philip Koopman, the author of “How Safe Is Safe Enough? Measuring and Predicting Autonomous Vehicle Safety.” The cars keep making “really crazy, crazy, surprising mistakes,” he said. “Tesla’s practice of using untrained civilians as test drivers for an immature technology is really egregious.”
+
+Koopman also objects to Musk’s supposed facts. One obvious problem with the data the company puts out in its quarterly safety report is that it directly compares Autopilot miles, which are mainly driven on limited-access highways, with all vehicle miles. “You’re using Autopilot on the safe miles,” Koopman said. “So of course it looks great. And then you’re comparing it to not-Autopilot on the hard miles.”
+
+In the third quarter of 2022, Tesla claimed that there was one crash for every 6.26 million miles driven using Autopilot — indeed, almost 10 times better than the U.S. baseline of one crash for every 652,000 miles. Crashes, however, are far more likely on surface streets than on the highway: One study from the Pennsylvania Department of Transportation showed that crashes were five times as common on local roads as on turnpikes. When comparing Autopilot numbers to highway numbers, Tesla’s advantage drops significantly.
+
+Tesla’s safety claims look even shakier when you try to control for the age of the car and the age of the driver. Most Tesla owners are middle-aged or older, which eliminates one risky pool of drivers: teenagers. And simply having a new car decreases your chance of an accident significantly. It’s even possible that the number of Teslas in California — with its generally mild, dry weather — has skewed the numbers in its favor. An independent study that tried to correct for some of these biases suggested that Teslas crashed just as often when Autopilot was on as when it was off.
+
+“That’s always been a problem for utilitarians,” Singer told me. “Because it doesn’t have strict moral rules, people might think they can get away with doing the sums in ways that suit their purposes.”
+
+Utilitarian thinking has led individuals to perform acts of breathtaking virtue, but putting this ethical framework in the hands of an industrialist presents certain dangers. True utilitarianism requires a careful balancing of all harms and benefits, in the present and the future, with the patience to do this assessment and the patience to refrain from acting if the amount of suffering and death caused by pushing forward wasn’t clear. Musk is using utilitarianism in a more limited way, arguing that as long as he’s sure something will have a net benefit, he’s permitted to do it right now.
+
+In the past two decades, Musk has somehow maneuvered himself into running multiple companies where he can plausibly claim to be working to preserve the future of humanity. SpaceX can’t just deliver satellites into low orbit; it’s also going to send us to Mars. Tesla can’t just build a solid electric car; it’s going to solve the problem of self-driving. Twitter can’t just be one more place where we gather to argue; it’s one of the props holding up civilization. With the stakes suitably raised, all sorts of questionable behavior begin to look — almost — reasonable.
+
+“True believers,” the novelist Jeanette Winterson wrote, “would rather see governments topple and history rewritten than scuff the cover of their faith.” Musk seems unshakable in his conviction that his approach is right. But for all his urgency, he still might lose the A.I. race.
+
+Right now in San Francisco and Austin, Texas, and coming soon to cities all over the world, you can hail a robotaxi operated by Cruise or Waymo. “If there’s one moment in time where we go from fiction to reality, it’s now,” Sebastian Thrun, who founded Google’s self-driving car team, told me. (“I didn’t say this last year, by the way,” he added.) Thrun was no r/RealTesla lurker; he was on his fifth Tesla, and he said he admired the company: “What Tesla has is really beautiful. They have a fleet of vehicles in the field.” But at this point, Tesla’s competitors are closer to achieving full self-driving than any vehicle equipped with F.S.D.
+
+In recent months, Musk has stopped promising that autonomous Teslas are just around the corner. “I thought the self-driving problem would be hard,” he said, “but it was harder than I thought. It’s not like I thought it’d be easy. I thought it would be very hard. But it was actually way harder than even that.”
+
+**On Dec. 29, 2019,** the same day a Tesla in Indiana got into a deadly crash with a parked fire truck, an off-duty chauffeur named Kevin George Aziz Riad was driving his gray 2016 Tesla Model S down the Gardena Freeway in suburban Los Angeles. It had been a long drive back from a visit to Orange County, and Riad had Autopilot turned on. Shortly after midnight, the car passed under a giant sign that said END FREEWAY SIGNAL AHEAD in flashing yellow lights.
+
+The Autopilot kept Riad’s Tesla at a steady speed as it approached the stoplight that marked the end of the freeway and the beginning of Artesia Boulevard. According to a witness, the light was red, but the car drove straight through the intersection, striking a Honda Civic. Riad had only minor injuries, but the two people in the Civic, Gilberto Alcazar Lopez and Maria Guadalupe Nieves, died at the scene. Their families said that they were on a first date.
+
+Who was responsible for this accident? [State officials have charged Riad with manslaughter](https://www.kwqc.com/2022/01/18/felony-charges-are-1st-fatal-crash-involving-teslas-autopilot-system/) and plan to prosecute him as if he were the sole actor behind the two deaths. The victims’ families, meanwhile, have filed civil suits against both Riad and Tesla. Depending on the outcomes of the criminal and civil cases, the Autopilot system could be judged, in effect, legally responsible, not legally responsible or both simultaneously.
+
+Not long ago, I went to see the spot where Riad’s Tesla reportedly ran the red light. I had rented a Tesla for the day, to find out firsthand, finally, what it felt like to drive with Autopilot in control. I drove east on surface streets until I reached a ramp where I could merge onto State Route 91, the Gardena Freeway. It was late at night when Riad crashed. I was taking my ride in the middle of the day.
+
+As soon as I was on the highway, I engaged Autopilot, and the car took over. I had the road mostly to myself. This Tesla was programmed to go 15 percent above the speed limit whenever Autopilot was in use, and the car accelerated quickly to 74 miles per hour, which was Riad’s speed when he crashed. Were his Autopilot speed settings the same?
+
+The car did a good job of staying in its lane, better than any other traffic-aware cruise control I’ve used. I tried taking my hands off the wheel, but the Tesla beeped at me after a few seconds.
+
+As I got closer to the crash site, I passed under the giant END FREEWAY SIGNAL AHEAD sign. The Autopilot drove on blithely. After another 500 feet, the same sign appeared again, flashing urgently. There was only a few hundred feet of divided highway left, and then Route 91 turned into a surface street, right at the intersection with Vermont Avenue.
+
+I hovered my foot over the brake. What was I doing? Seeing if the car truly would just blaze through a red light? Of course it would. I suppose I was trying to imagine how easy it would be to do such a thing. At the end of a long night, on a road empty of cars, with something called Autopilot in control? My guess is that Riad didn’t even notice that he had left the highway.
+
+The car sped under the warning lights, 74 miles an hour. The crash data shows that before the Tesla hit Lopez and Nieves, the brakes hadn’t been used for six minutes.
+
+My Tesla bore down on the intersection. I got closer and closer to the light. No brakes. And then, just before I was about to take over, a pickup truck swung out of the far right lane and cut me off. The Tesla sensed it immediately and braked hard. If only that truck — as undeniable as any giant chunk of hardware can be — had been there in December 2019, Lopez and Nieves would still be alive.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"transportation and storage\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"maybe\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"tangible harm definitively occurred\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"AI tangible harm event\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy2\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"001\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"4. Peer review complete\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "323"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "null"
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2018"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"05\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "29"
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"Laguna Beach\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"CA\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[\"transportation\"]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "[\"\"]"
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Tesla sedan\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm event\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical property\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Tesla driver\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"deployer\\\",\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm event\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical health/safety\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Tesla\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Laguna Beach Police Department vehicle\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product not containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm event\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical property\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Tesla Autopilot\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "1"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"Tesla Autopilot is designed to assist drivers in semi-autonomously navigating road obstacles and reacting to real-time traffic conditions.\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"geospatial data\",\"sensor input\",\"camera input\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"Tesla sedan\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"semi-autonomous navigation\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 121
+title: Autonomous Kargu-2 Drone Allegedly Remotely Used to Hunt down Libyan Soldiers
+description: In Libya, a Turkish-made Kargu-2 aerial drone powered by a computer vision model was allegedly used remotely by forces backed by the Tripoli-based government to track down and attack enemies as they were running from rocket attacks.
+
+first report text: It has been revealed that an Artificial Intelligence-powered military drone was able to identify and attack human targets in Libya. The drone, Kargu-2, is made by a Turkish company (STM) and fitted with a payload that explodes once it makes an impact or is in close proximity with its AI-identified target.
+
+It is not clear whether the attacks resulted in any deaths.
+
+The revelations were made in a report published in March 2021 by the United Nations (UN) Panel of Experts on Libya which stated that the drone was a “lethal autonomous weapon” which had “hunted down and remotely engaged” soldiers which are believed to have been loyal to Libya’s General Khalifa Haftar.
+
+"Logistics convoys and retreating HAF were subsequently hunted down and remotely engaged by the unmanned combat aerial vehicles or the lethal autonomous weapons systems such as the STM Kargu-2 (see annex 30) and other loitering munitions. The lethal autonomous weapons systems were programmed to attack targets without requiring data connectivity between the operator and the munition: in effect, a true 'fire, forget and find' capability. The unmanned combat aerial vehicles and the small drone intelligence, surveillance and reconnaissance capability of HAF were neutralized by electronic jamming from the Koral electronic warfare system. The concentrated firepower and situational awareness that those new battlefield technologies provided was a significant force multiplier for the ground units of GNA-AF, which slowly degraded the HAF operational capability," reads part of page 17 of the letter dated 8 March 2021 from the UN Panel of Experts on Libya sent to the UN Security Council.
+
+### Lethal autonomous weapons
+
+Military drones are not a new concept, they have been in existence for over a decade and been used by various countries in military attacks on enemies. However, what has happened in Libya is a new development given the fact that the drone did not have any human operating it when it executed the attack, it relied on AI to identify and strike its targets.
+
+This strike by a “lethal autonomous weapon” as the UN has phrased it, takes the conversation on the ethics of using drones in military attacks to a new level but also introduces another element: how reliable is the AI behind the STM Kargu-2 drones?
+
+We have previously observed and covered extensively how biased some algorithms and AI-based systems can be, especially towards Africans. In this military scenario, the fear is that such bias could be fatal and thus lead to death or permanent and irreversible damage.
+
+### Death by machine
+
+To somehow counter this, STM lists among the Kargu-2 drone's capabilities and competencies as its ability to effect "autonomous and precise hit with minimal collateral damage." Unfortunately, in such situations, all it takes is one attack gone wrong for the AI used on the military drones to be questioned.
+
+As the UN report also alludes to, the introduction of such technology in military conflicts introduces us to a new era of "killer robots" as had previously only been imagined in Sci-Fi.
+
+"The introduction by Turkey of advanced military technology into the conflict was a decisive element in the often unseen, and certainly uneven, war of attrition that resulted in the defeat of HAF in western Libya during 2020. Remote air technology, combined with an effective fusion intelligence and intelligence, surveillance and reconnaissance capability, turned the tide for GNA-AF in what had previously been a low-intensity, low-technology conflict in which casualty avoidance and force protection were a priority for both parties to the conflict."
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"defense\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"imminent risk of tangible harm (near miss) did occur\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"AI tangible harm near-miss\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy1\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"Yes. Intentionally designed to perform harm and did create intended harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "[\"computer vision\",\"machine learning\"]"
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"4. Peer review complete\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "121"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"It is unclear that the autonomous drone killed or injured anyone. However, it is certain that the drone was used to \\\"hunt[ed] down and remotely engage[d]\\\" retreating [Haftar-affiliated forces] which indicates an imminent risk of tangible harm, especially considering it was not being supervised by a human.\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2020"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"03\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\" \""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"Tripoli\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"LY\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"Africa\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[\"defense-industrial base\"]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"STM (Savunma Teknolojileri Mühendislik ve Ticaret A.Ş.)\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Soldiers loyal to the Libyan General Khalifa Haftar\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm near-miss\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical health/safety\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Forces backed by the government based in Tripoli\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Kargu-2 drone\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"It is unclear if and how many people were wounded or killed during the encounter. \""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"The Kargu is a lethal, autonomous, \\\"loitering\\\" drone that can use machine learning-based object classification to select and engage targets.\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"geospatial data\",\"sensor data\",\"video\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"drone\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"object classification\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 79
+title: Kidney Testing Method Allegedly Underestimated Risk of Black Patients
+description: Decades-long use of the estimated glomerular filtration rate (eGFR) method to test kidney function which considers race has been criticized by physicians and medical students for its racist history and inaccuracy against Black patients.
+
+first report text: **BACKGROUND:** Advancing health equity entails reducing disparities in care. African-American patients with chronic kidney disease (CKD) have poorer outcomes, including dialysis access placement and transplantation. Estimated glomerular filtration rate (eGFR) equations, which assign higher eGFR values to African-American patients, may be a mechanism for inequitable outcomes. Electronic health record–based registries enable population-based examination of care across racial groups.
+
+**OBJECTIVE:** To examine the impact of the race multiplier for African-Americans in the CKD-EPI eGFR equation on CKD classification and care delivery.
+
+**DESIGN:** Cross-sectional study
+
+**SETTING:** Two large academic medical centers and affiliated community primary care and specialty practices.
+
+**PARTICIPANTS:** A total of 56,845 patients in the Partners HealthCare System CKD registry in June 2019, among whom 2225 (3.9%) were African-American.
+
+**MEASUREMENT:** Exposures included race, age, sex, comorbidities, and eGFR. Outcomes were transplant referral and dialysis access placement.
+
+**RESULTS:** Of 2225 African-American patients, 743 (33.4%) would hypothetically be reclassified to a more severe CKD stage if the race multiplier were removed from the CKD-EPI equation. Similarly, 167 of 687 (24.3%) would be reclassified from stage 3B to stage 4. Finally, 64 of 2069 patients (3.1%) would be reassigned from eGFR > 20 ml/min/1.73 m2 to eGFR ≤ 20 ml/min/1.73 m2, meeting the criterion for accumulating kidney transplant priority. Zero of 64 African-American patients with an eGFR ≤ 20 ml/min/1.73 m2 after the race multiplier was removed were referred, evaluated, or waitlisted for kidney transplant, compared to 19.2% of African-American patients with eGFR ≤ 20 ml/min/1.73 m2 with the default CKD-EPI equation.
+
+**LIMITATIONS:** Single healthcare system in the Northeastern United States and relatively small African-American patient cohort may limit generalizability.
+
+**CONCLUSIONS:** Our study reveals a meaningful impact of race-adjusted eGFR on the care provided to the African-American CKD patient population.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"race\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"human health and social work activities\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"tangible harm definitively occurred\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"none\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy3\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"3. In peer review\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "79"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"There is no AI. The harm comes from a formula that uses race as a factor.\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"4.1 - Black patients overlooked by the calculation because of built-in points had their access to critical public healthcare reduced.\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"5.3 - Though there was no AI, the technology involved can be linked to the adverse outcomes in the incident.\\n5.5 - Because there is no AI, this incident does not qualify for CSET's definition of AI special interest intangible harm.\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2009"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[\"healthcare and public health\"]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"According to the incident report, \\\"Researchers who created the formula in 2009 added the “race correction” to smooth out statistical differences between the small number of Black patients and others in their data.\\\" \""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Black patients with chronic kidney disease\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical health/safety\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Black patients with chronic kidney disease\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"disproportionate treatment based upon a protected characteristic\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"CKD-EPI eGFR calculation\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product not containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"physicians\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"National Kidney Foundation\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"non-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"researcher\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"American Society of Nephrology\\\"\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"non-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"researcher\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Paloma Orozco Scott\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"watchdog\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"medical institutions\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"infrastructure\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Black patients with chronic kidney disease\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"violation of human rights, civil liberties, civil rights, or democratic norms\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"In June 2019, it was estimated how many Black Americans, at that point in time, were negatively affected by the algorithm using race. The estimate just looked at a small portion of the patients in the US, those at Mass General Brigham health system. The research estimated that 64 additional Black Americans would have qualified to be referred, evaluated, or waitlisted for a kidney transplant if the race factor was removed from the equation. Additional 743, would have been classified at a more severe stage if the race factor was removed. Since this equation has been used for about 30 years throughout health institutions in the US, 10s of thousands of Black Americans were likely affected.\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"There is no AI. The harm comes from a formula that was developed in the 1990s and uses race as a factor.\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"age\",\"sex\",\"race\",\"creatinine levels\",\"medical data\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"not AI\""
+  }
+
+---
+
+Id: 71
+title: Google admits its self driving car got it wrong: Bus crash was caused by software
+description: On February 14, 2016, a Google autonomous test vehicle partially responsible for a low-speed collision with a bus on El Camino Real in Google’s hometown of Mountain View, CA.
+
+first report text: Autonomous Lexus SUV could not prevent accident that caved in front and rear passenger-side doors, setting off airbags and forcing it to be towed away
+
+One of Google’s self-driving cars was involved in one of the worst autonomous vehicle accident yet, when a driver ran a red light and collided with the passenger side door of the modified Lexus SUV.
+
+The driver of the vehicle passed through a red light as one of Google’s fleet of autonomous Lexus SUVs passed through a green light on Friday afternoon. The collision, which occurred at the intersection between El Camino Rea and Phyllis Ave in Mountain View, California, caused the Google car’s airbags to be deployed, and caved in its front and rear right-side doors.
+
+Mountain View police said that no injuries were reported, but the Google car had to be towed away on a flatbed truck.
+
+Ron van Zuylen (@grommet) @davidnield permission granted. pic.twitter.com/WyKFCJE2Vz
+
+Google’s autonomous vehicles are no stranger to accidents, suffering multiple impacts with various vehicles. Mostly they’ve been rear-ended when either driving slowly or stationary at a junction, suffering minor damage. The side impact in this most recent accident is one of only a few that have caused major damage to the expensive test vehicles.
+
+Google said that the car was in self-driving mode with a person sitting at the steering wheel. The Google car hit the brakes automatically on seeing the other car crossing the red light, followed by the human behind the wheel doing the same, but it wasn’t enough to prevent the collision.
+
+James Allen, who happened upon the crash, told KBCW: “I’ve never seen one in an accident and I see at least 30 to 40 a day. They’re very good cars, that’s why I was so shocked.”
+
+Is the mass sharing of driverless cars about to reshape our suburbs? Read more
+
+A Google spokesperson told 9to5Google: “Our light was green for at least six seconds before our car entered the intersection. Thousands of crashes happen everyday on US roads, and red-light running is the leading cause of urban crashes in the US. Human error plays a role in 94% of these crashes, which is why we’re developing fully self-driving technology to make our roads safer.”
+
+Google’s fleet of autonomous cars have covered over 2m miles and has been involved in around two dozen accidents, with only one – a collision with a bus – being the fault of the self-driving car.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"transportation and storage\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"tangible harm definitively occurred\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"AI tangible harm event\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy2\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "[\"computer vision\",\"object detection\"]"
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"001\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"4. Peer review complete\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "71"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "null"
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"A Google driverless car collided with a bus \""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2014"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "10"
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\" \""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"Silicon Valley\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"CA\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[\"transportation\"]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "[\"Driverless car\"]"
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"This incident describes a variant with several events.\\n\\nThe first event occurred in October 2014, when a Delphi autonomous vehicle was broadsided by another car while waiting to make a left turn.\\n\\nOn February 14, 2016, in Mountain View CA, a self-driving Lexus SUV developed by Google detected a pile of sandbags surrounding a storm drain in its path and moved to the center lane to avoid the hazard. Three seconds later, it collided with the right side of a city bus.\\n\\nOn September 23, 2016, in Mountain View, CA, a commercial van running a red light struck one of Google's autonomous Lexus SUVs as it crossed an intersection.\\n\\nOn May 14, 2018, in Phoenix, AZ, an autonomous car being tested by Google-owned Waymo swerved to avoid another car and left the human operator with minor injuries.\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Delphi Technologies\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Involved in the October 2014 event\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Delphi Audi SQ5\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm event\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical property\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Involved in the October 2014 event. The car was not in self driving mode\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Unnamed car\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product not containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"An unnamed car broadsided a Delphi Audi SQ5 in the October 2014 event.\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Google\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Involved in the February 2016, September 2016, and May 2018 events.\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Google Lexus SUV\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm event\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical property\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Involved in the February 2016 event\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Mountain View city bus\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product not containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm event\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical property\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Involved in the February 2016 event\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Lexus test driver\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"researcher\\\",\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Involved in the February 2016 event.\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Google Lexus RX450 SUV\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical property\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Involved in the September 2016 event. The vehicle was struck and the side was damaged. The body suffered sever damage and the right side windows were broken. However, it was because the commercial van was not obeying traffic laws. Therefore, AI played no role in causing this harm.\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Commercial van\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product not containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical property\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Involved in the September 2016 event. Note the commercial van and its driver were at fault for the damage, not the self driving car that the van hit.\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Waymo\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Involved in the May 2018 event\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Waymo Chrysler Pacifica\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical property\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Involved in the May 2018 event. The Waymo vehicle was hit by a Honda Sedan driven by a human. The Waymo vehicle was not in self driving mode at the time and was being driven by the human operator, making the harm not caused by AI.\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Waymo self-driving car human operator\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"researcher\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical health/safety\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Involved in the May 2018 event\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Honda sedan and driver\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product not containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical property\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Involved in the May 2018 incident. The Honda Sedan, driven by a human, swerved to avoid another car and left the human operator in the Waymo with minor injuries. The Honda had crossed to the side of the road with traffic running in the opposite direction and plowed into Waymo's test van.\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "1"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"Self-driving vehicles are designed to autonomously navigate roads and respond to obstacles and situations in real time. They are likely equipped with lasers, radar, cameras, and computer software designed to enable the vehicle to drive itself, with a person at the wheel as backup.\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"camera input\",\"laser input\",\"radar\",\"spatial data\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"Vehicles (Lexus, Audi, Chrysler Pacifica)\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"autonomous navigation\",\"self-driving\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 23
+title: Las Vegas Self-Driving Bus Involved in Accident
+description: A self-driving public shuttle by Keolis North America and Navya was involved in a collision with a human-driven delivery truck in Las Vegas, Nevada on its first day of service.
+
+first report text: **A self-driving shuttle bus in Las Vegas was involved in a crash on its first day of service.**
+
+The vehicle - carrying "several" passengers - collided with a lorry driving at slow speed.
+
+Nobody was injured in the incident which city officials say was the fault of the human driver of the lorry. The man was subsequently given a ticket by police.
+
+The shuttle is the first of its kind to be used on public roads in the US.
+
+The collision comes a day after Waymo - owned by Google's parent company Alphabet - announced it is launching a fully self-driving fleet of taxis in Phoenix, Arizona.
+
+The Las Vegas shuttle, designed to ferry passengers to the famous strip, uses a system developed by Navya, a French company also [testing its technology in London](https://archive.ph/o/3FQuF/www.bbc.com/news/video_and_audio/headlines/41206468/london-trials-for-navya-shuttle-driverless-bus).
+
+The shuttle carries up to 15 people and has a maximum speed of 45km/h, but typically travels at around 25km/h.
+
+A spokesman for the City of Las Vegas told the BBC the crash was a "fender bender" - a minor collision - and that the shuttle would likely be back out on the road on Thursday after some routine diagnostics tests.
+
+"A delivery truck was coming out of an alley," public information officer Jace Radke said.
+
+"The shuttle did what it was supposed to do and stopped. Unfortunately the human element, the driver of the truck, didn't stop."
+
+Self-driving technology has been involved in crashes before, but almost all reported incidents have been due to human error.
+
+Earlier this year an autonomous vehicle being tested by ride-sharing company Uber in Arizona rolled over after another driver on the road failed to give way.
+
+An incident involving a Tesla Model S, which has some autonomous functions, killed a man in 2016. An investigation ruled that computer failings were partly to blame. Tesla was instructed to make the limitations of its technology clearer to drivers.
+
+Experts have said that even with these incidents, self-driving technology is already capable of making our roads significantly safer. [A study from the RAND Corporation, published this week](https://archive.ph/o/3FQuF/https://www.rand.org/blog/articles/2017/11/why-waiting-for-perfect-autonomous-vehicles-may-cost-lives.html), argued that self-driving technology should be rolled out despite its imperfections.
+
+"Waiting for highly autonomous vehicles that are many times safer than human drivers misses opportunities to save lives," the report said.
+
+"It is the very definition of allowing perfect to be the enemy of good."
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"transportation and storage\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"tangible harm definitively occurred\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"AI tangible harm event\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy1\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "23"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"3.3 and 3.4 - The incident was caused primarily by the truck driver who backed out of an alley without checking the surrounding environment. However, according to the passengers, the self-driving shuttle could have prevented the collision by reversing out of the way or honking to get the driver’s attention. Both are safe driving behaviors that a human driver would likely have taken. While the AI is not at fault per se the accident could have been avoided if it had behaved differently.\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2017"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "11"
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"08\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"Las Vegas\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"NV\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"self-driving eight-seater electric shuttle\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm event\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical property\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"While the lorry driver was at fault for the collision, the AI could have avoided the accident by taking preventative actions.\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Keolis\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Operates the self driving shuttle service\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Navya\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Truck\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"obstacle in the AI's environment\\\",\\\"product not containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm event\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical property\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Shuttle passengers\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"passengers\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"The autonomous shuttle bus was meant to traverse a 0.6 mile loop at around 25 km/h in Las Vegas.\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"road data\",\"lidar\",\"video\",\"odometer input\",\"inertial measurement unit input\",\"traffic light signals\",\"GNSS Antennae input\",\"GPS input\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"oval, eight-seater, autonomous, electric shuttle bus\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"self driving\",\"autonomous driving\",\"navigation\",\"obstacle avoidance\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Taxonomy: CSETv1
+Classification Count: 6
+
+Based on the incident text and the taxonomy definition provided, provide a classification ONLY for the attribute "Tangible Harm".
+
+IMPORTANT: Your classification MUST include ONLY the following taxonomy attribute:
+Tangible Harm
+
+For maximum accuracy and completeness:
+1. Focus ONLY on the required field "Tangible Harm".
+2. Use the permitted_values for this attribute from the definition provided.
+3. Review similar incidents to understand how this specific field is typically used.
+
+Return your response as a JSON object with the following structure:
+
+{
+  "classification": {
+    "namespace": "CSETv1",
+    "attributes": [
+      {"short_name": "Tangible Harm", "value_json": ""value""} 
+    ]
+  },
+  "explanation": "A detailed explanation of your classification choice for Tangible Harm.",
+  "confidence": "A confidence score between 0 and 1 for this attribute classification"
+}
+
+DO NOT include any other text in your response, nor any other characters.
+DO NOT start your response with ```json or ```
+Ensure that ONLY the attribute "Tangible Harm" is included in your classification.

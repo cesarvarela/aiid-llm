@@ -1,0 +1,1817 @@
+You are an AI assistant that helps classify AI incidents according to a specific taxonomy attribute.
+
+Your task is to analyze the provided incident text and classify it ONLY for the specified taxonomy attribute: "Tangible Harm".
+
+Always require the incident text, the taxonomy namespace, and the specific attribute short_name to perform classification.
+
+Here is the incident text to classify:
+Workday stands accused of building algorithms that have resulted in bias against Black applicants in their 40s, according to a lawsuit.
+
+Launched earlier this week in the Northern District Court of California, the case alleges that the HR and payroll SaaS firm "unlawfully offers an algorithm-based applicant screening system that determines whether an employer should accept or reject an application for employment based on the individual's race, age, and/or disability."
+
+The class action [complaint](https://regmedia.co.uk/2023/02/23/complaint_mobley_class_action.pdf) \[PDF\] – which seeks to represent other applicants who may have been affected – stems from the alleged experience of Derek Mobley, a Black man over 40 who suffers from anxiety and depression. Court documents state that since 2018, Mobley has applied for 80-100 positions at companies that use Workday as a recruitment screening tool.
+
+He was denied employment on every occasion, even though he holds a bachelor's degree in finance from Morehouse College, a private historically Black men's liberal arts college in Atlanta, Georgia, the documents state. He also has an associate's degree in network systems administration from ITT Technical Institute, Indiana.
+
+"The selection tools marketed by Workday to its customers allows these customers to manipulate and configure them in a discriminatory manner to recruit, hire, and onboard employees. Workday's products process and interpret an applicant's qualifications and recommend whether the applicant should be accepted or rejected," the documents add.
+
+The court papers allege that Workday's tools rely on subjective practices which result in biases against African-American applicants, those over 40 years of age, and those with disabilities.
+
+The plaintiff claims that Workday's AI systems and screening tools rely on algorithms and inputs created by humans who often have "built-in motivations, conscious and unconscious, to discriminate."
+
+[Workday said](https://news.bloomberglaw.com/daily-labor-report/workday-ai-biased-against-black-disabled-applicants-suit-says) in a statement to _The Register_ that the lawsuit was without merit. It said it was "committed to trustworthy AI" and acts "responsibly and transparently in the design and delivery" of its AI solutions "to support equitable recommendations."
+
+"We engage in a risk-based review process throughout our product lifecycle to help mitigate any unintended consequences, as well as extensive legal reviews to help ensure compliance with regulations," a spokesperson added.
+
+Here is the taxonomy namespace:
+CSETv1
+
+Here is the specific attribute to classify:
+Tangible Harm
+
+Here is the definition for the target attribute "Tangible Harm":
+{
+  "short_name": "Tangible Harm",
+  "short_description": "Did tangible harm (loss, damage or injury ) occur? ",
+  "long_description": "An assessment of whether tangible harm, imminent tangible harm, or non-imminent tangible harm occurred. This assessment does not consider the context of the tangible harm, if an AI was involved, or if there is an identifiable, specific, and harmed entity. It is also not assessing if an intangible harm occurred. It is only asking if tangible harm occurred and what its imminency was.",
+  "permitted_values": [
+    "tangible harm definitively occurred",
+    "imminent risk of tangible harm (near miss) did occur",
+    "non-imminent risk of tangible harm (an issue) occurred",
+    "no tangible harm, near-miss, or issue",
+    "unclear"
+  ],
+  "mongo_type": "string"
+} 
+
+Here are similar incidents and their full classifications (use for context):
+Id: 27
+title: Nuclear False Alarm
+description: An alert of five incoming intercontinental ballistic missiles was properly identified as a false-positive by the Soviet Union operator Stanislov Petrov.
+
+first report text: It was the moment Stanislav Petrov had been dreading since childhood, and preparing for much of his adult life.
+
+After decades of Cold War tension, the early warning satellites had been triggered. The Americans had launched their nuclear missiles at the Soviet Union.
+
+As the duty officer in the Soviet Air Defence in the command centre bunker outside Moscow, it was Lt Col Petrov's job to call his superiors and warn of an impending nuclear strike.
+
+Based on his word, the Soviet forces would reply with tens of thousands of nuclear missiles targeting the US and its allies. If it did not end human life on this planet, it would change it irrevocably.
+
+But, based on nothing more than gut instinct, Lt Col Petrov, then 44, did not make the call.
+
+And, 35 years ago today, an unheralded Armageddon was averted.
+
+The world would not know for years how close it came to destruction.
+
+It was the day in 1983 Australia II won the America's Cup. The nation's attention could not have been further away.
+
+"Launching the amount of nukes ready at the time would have severely impacted the way humans live on earth," the University of Sydney's US Studies Centre research fellow Brendan Thomas-Noone told nine.com.au.
+
+"Would some humans survive? Yes. We've all seen Mad Max."
+
+A false alarm
+
+Lt Col Petrov knew it was a race against time if US missiles were rocketing towards the Soviet Union.
+
+"All I had to do was to reach for the phone, to raise the direct line to our top commanders – but I couldn’t move," he told the BBC.
+
+"I felt as if I was sitting on a hot frying pan."
+
+But he had a feeling that things weren't right.
+
+His misgivings proved fortituous for the entire planet. The early-warning satellites had made the most banal of errors.
+
+What appeared to be missiles being launched en masse was merely an illusion caused by sunlight reflecting off the top of clouds. That error could have destroyed the planet, were it not for Lt Col Petrov's caution.
+
+Doomsday redux
+
+Technology has improved dramatically since then, but another error like that could still take place, according to nuclear disarmament campaigner John Hallam.
+
+"It could all still happen," Mr Hallam told nine.com.au.
+
+"The hands of the Doomsday Clock in 1983, stood at three minutes to midnight, midnight being the end of civilisation. The hands of the Doomsday clock now stand at two minutes to midnight."
+
+"This means that the room full of Nobel prize winners who move the hands of the doomsday clock think that the chances of nuclear war that could end civilisation right now, are worse than in 1983, a year in which the world nearly ended not just once, but twice, within a six-week period."
+
+Mr Hallam said the difference in 1983 was that people were protesting against nuclear weapons in their hundreds and thousands, something which wasn't taking place today.
+
+"Sydney had a number of peace marches that numbered in the hundreds of thousands," he said.
+
+"Washington had one that numbered a million. The possibility of global annihilation was then the number one issue. Why is it not the number one issue right now?"
+
+Mr Hallam, who campaigns at the UN for nuclear disarmament, warned that "moving the deckchairs" in Canberra, was nowhere near as important as the potential end of civilisation and said the world's leaders needed to push for the abolition of nuclear disarmament now more than ever.
+
+"There is an urgent need for measures that would 'take the apocalypse off the agenda'," he said.
+
+"Adopting strategies of 'No First Use' (NFU) and lowering the operational readiness of nuclear weapon systems so that Presidents and senior military do not have minutes and seconds to take decisions that might mean the end of the world are obvious ones."
+
+A humble end
+
+Lt Col Petrov's actions on September 26, 1983, has seen today marked as annual International Day for the Total Elimination of Nuclear Weapons.
+
+His actions may be remembered forever, but Lt Col Petrov was not given the celebrity status that stopping the end of the world might warrant.
+
+He was reprimanded by his superiors for not keeping the logbook accurate the night of the false alarm.
+
+He retired from the military the following year, scraping by on a pension in his final days.
+
+© Nine Digital Pty Ltd 2019
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"defense\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"imminent risk of tangible harm (near miss) did occur\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"none\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy3\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"unclear\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "27"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"3.3 - The system was not AI. However, it was a technology system that can be directly linked to the near miss that occurred.\\n3.5 - Since the system was not AI, there is no AI harm.\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "1983"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"09\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "26"
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"Kurilovo\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"RU\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"Europe\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[\"defense-industrial base\"]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Russian and American citizens\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical health/safety\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"If Petrov had escalated the warning from the Oko system up the chain of command, it is very likely that it would have resulted in nuclear dispatch from the Soviet Union and retaliation from the United States, which would have been fatal for both countries and the globe. It was only his atypical intervention that prevented this scenario from occurring. Therefore, citizens experienced a non-AI tangible harm near-miss. \\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Stanislav Petrov\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Stanislav Petrov was an engineer of the Soviet Air Defence Forces on duty at the command center of the early-warning system. He overrode a false alarms by the Soviet nuclear early warning system.\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Soviet Union\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"government entity\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Oko\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product not containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"Nuclear missile defence early warning system\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"satellite data\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"Not an AI system\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"not AI. \\nNot intended to harm directly, but intended to detect harm and inform decisions that lead to harm. \""
+  }
+
+---
+
+Id: 121
+title: Autonomous Kargu-2 Drone Allegedly Remotely Used to Hunt down Libyan Soldiers
+description: In Libya, a Turkish-made Kargu-2 aerial drone powered by a computer vision model was allegedly used remotely by forces backed by the Tripoli-based government to track down and attack enemies as they were running from rocket attacks.
+
+first report text: It has been revealed that an Artificial Intelligence-powered military drone was able to identify and attack human targets in Libya. The drone, Kargu-2, is made by a Turkish company (STM) and fitted with a payload that explodes once it makes an impact or is in close proximity with its AI-identified target.
+
+It is not clear whether the attacks resulted in any deaths.
+
+The revelations were made in a report published in March 2021 by the United Nations (UN) Panel of Experts on Libya which stated that the drone was a “lethal autonomous weapon” which had “hunted down and remotely engaged” soldiers which are believed to have been loyal to Libya’s General Khalifa Haftar.
+
+"Logistics convoys and retreating HAF were subsequently hunted down and remotely engaged by the unmanned combat aerial vehicles or the lethal autonomous weapons systems such as the STM Kargu-2 (see annex 30) and other loitering munitions. The lethal autonomous weapons systems were programmed to attack targets without requiring data connectivity between the operator and the munition: in effect, a true 'fire, forget and find' capability. The unmanned combat aerial vehicles and the small drone intelligence, surveillance and reconnaissance capability of HAF were neutralized by electronic jamming from the Koral electronic warfare system. The concentrated firepower and situational awareness that those new battlefield technologies provided was a significant force multiplier for the ground units of GNA-AF, which slowly degraded the HAF operational capability," reads part of page 17 of the letter dated 8 March 2021 from the UN Panel of Experts on Libya sent to the UN Security Council.
+
+### Lethal autonomous weapons
+
+Military drones are not a new concept, they have been in existence for over a decade and been used by various countries in military attacks on enemies. However, what has happened in Libya is a new development given the fact that the drone did not have any human operating it when it executed the attack, it relied on AI to identify and strike its targets.
+
+This strike by a “lethal autonomous weapon” as the UN has phrased it, takes the conversation on the ethics of using drones in military attacks to a new level but also introduces another element: how reliable is the AI behind the STM Kargu-2 drones?
+
+We have previously observed and covered extensively how biased some algorithms and AI-based systems can be, especially towards Africans. In this military scenario, the fear is that such bias could be fatal and thus lead to death or permanent and irreversible damage.
+
+### Death by machine
+
+To somehow counter this, STM lists among the Kargu-2 drone's capabilities and competencies as its ability to effect "autonomous and precise hit with minimal collateral damage." Unfortunately, in such situations, all it takes is one attack gone wrong for the AI used on the military drones to be questioned.
+
+As the UN report also alludes to, the introduction of such technology in military conflicts introduces us to a new era of "killer robots" as had previously only been imagined in Sci-Fi.
+
+"The introduction by Turkey of advanced military technology into the conflict was a decisive element in the often unseen, and certainly uneven, war of attrition that resulted in the defeat of HAF in western Libya during 2020. Remote air technology, combined with an effective fusion intelligence and intelligence, surveillance and reconnaissance capability, turned the tide for GNA-AF in what had previously been a low-intensity, low-technology conflict in which casualty avoidance and force protection were a priority for both parties to the conflict."
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"defense\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"imminent risk of tangible harm (near miss) did occur\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"AI tangible harm near-miss\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy1\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"Yes. Intentionally designed to perform harm and did create intended harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "[\"computer vision\",\"machine learning\"]"
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"4. Peer review complete\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "121"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"It is unclear that the autonomous drone killed or injured anyone. However, it is certain that the drone was used to \\\"hunt[ed] down and remotely engage[d]\\\" retreating [Haftar-affiliated forces] which indicates an imminent risk of tangible harm, especially considering it was not being supervised by a human.\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2020"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"03\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\" \""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"Tripoli\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"LY\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"Africa\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[\"defense-industrial base\"]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"STM (Savunma Teknolojileri Mühendislik ve Ticaret A.Ş.)\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Soldiers loyal to the Libyan General Khalifa Haftar\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"affected non-users\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm near-miss\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical health/safety\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Forces backed by the government based in Tripoli\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Kargu-2 drone\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"It is unclear if and how many people were wounded or killed during the encounter. \""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"The Kargu is a lethal, autonomous, \\\"loitering\\\" drone that can use machine learning-based object classification to select and engage targets.\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"geospatial data\",\"sensor data\",\"video\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"drone\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"object classification\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 46
+title: Nest Smoke Alarm Erroneously Stops Alarming
+description: In testing, Google Nest engineers demonstrated that the Nest Wave feature of their Nest Protect: Smoke + CO Alarm could inadvertently silence genuine alarms.
+
+first report text: Remedy:
+
+The repair is an automatic electronic update that disables the Nest Wave feature and is delivered automatically to devices connected wirelessly to the Internet and linked to a Nest account. Consumers should take one of the following actions:
+
+Consumers who have not connected their Nest Protect devices to their wireless network and linked them to a Nest account should immediately do so. The devices will automatically receive the update that disables the Nest Wave feature. Customers should confirm that their devices have been updated by going to Nest Sense on their Nest account mobile or web application and ensuring that the button for Nest Wave is off and grayed out. Instructions on how to connect to a network and disable the feature are available at http://support.nest.com/article/Nest-Protect-Safety or by contacting Nest Labs.
+
+Consumers whose Nest Protect devices are connected to their wireless network and linked to a Nest account should immediately confirm the receipt of an automatic repair that disabled the Nest Wave feature by going to Nest Sense on their Nest account mobile or web application and ensuring that the button for Nest Wave is set to "off" and grayed out. No further action is required and consumers can continue to use their devices.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"other\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"non-imminent risk of tangible harm (an issue) occurred\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"none\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy1\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"003\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "46"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"003\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"3.1 - Nest Labs discovered in lab trials the possibility that the Nest Wave feature would malfunction and was able to issue a recall warning to consumers. However, because the product was already deployed, there was a non-imminent risk of tangible harm to users.\\n3.2 It is unlikely that the product/feature used AI technology. Wave-to-disable feature most likely used motion detectors and rules-based, basic algorithms. \""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2014"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"Nest Labs disclosed its discovery in April 2014. The recall was issued in May.\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Nest Labs\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Nest Protect: Smoke + CO Detectors\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product not containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Nest Protect Users\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"Other harm not meeting CSET definitions\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical health/safety\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Users faced a non-imminent risk of damage to their physical health/safety because of the Nest Protect's glitch.\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Google\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"Nest Protect is a smoke and carbon monoxide detector & alarm. Its wave-to-disable feature, which allowed users to quickly deactivate a faulty alarm, was found to disengage the alarm in actual cases of fire. \""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"air quality\",\"sensor data\",\"temperature\",\"motion\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"smoke detector\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"not AI\""
+  }
+
+---
+
+Id: 329
+title: Amazon Recommended Explosive-Producing Ingredients as “Frequently Bought Together” Items for Chemicals
+description: Amazon was reported to have shown chemical combinations for producing explosives and incendiary devices as “frequently bought together” items via automated recommendation.
+
+first report text: Channel 4 News has discovered that Amazon’s algorithm guides users to the necessary chemical combinations for producing explosives and incendiary devices. Ingredients which are innocent on their own are suggested for purchase together as “Frequently bought together” products, as it does with all other goods.
+
+Ingredients for black powder and thermite are grouped together under a “Frequently bought together” section on listings for specific chemicals.
+
+Steel ball bearings often used as shrapnel in explosive devices, ignition systems and remote detonators are also readily available; some promoted by the website on the same page as these chemicals as products that “Customers who bought this item also bought”.
+
+Black powder and thermite
+-------------------------
+
+Users searching for a common chemical compound used in food production — which Channel 4 News has decided not to name — are offered the ingredients to produce explosive black powder.
+
+Channel 4 News was able to create a “shopping basket” on Amazon with up to 45kg of ingredients for black powder. Under current legislation an individual may only produce 100g of black powder for private use without storage. The transaction was not completed.
+
+Users searching the website for another widely available chemical are offered the other ingredients for thermite in a “Frequently bought together” section. These three chemicals when ignited create a hazardous reaction used in incendiary bombs and for cutting through steel.
+
+On listings for some of these chemical components, Amazon’s “Customers who bought this item also bought” section also offers:
+
+*   Steel ball bearings
+*   Push button switches
+*   Battery connectors and cables
+
+Elsewhere, Amazon offers igniter cord for sale, used to ignite explosive devices and pyrotechnics. This is listed alongside an electronic ignition system that allows for remote detonations.
+
+While many of these ingredients are not illegal to buy or sell in the UK, there have been successful prosecutions where people have bought multiple chemicals and electronic components necessary to produce explosives.
+
+One chemical for sale is listed as a “Regulated substance” by the Home Office, making it illegal to possess it without a licence, and illegal to supply to a person without checking that the purchaser has a licence.
+
+Yvette Cooper, chair of Parliament’s home affairs committee, [said the findings were “very disturbing”](https://www.channel4.com/news/yvette-cooper-amazon-findings-very-disturbing).
+
+Amazon said that all products must adhere to their selling guidelines and all UK laws. They also say they will work closely with police and law enforcement agencies should they need to assist investigations.
+
+Channel 4 News has withheld the specific names of the chemicals, though their authenticity has been verified by experts.
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"wholesale and retail trade\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"maybe\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"no tangible harm, near-miss, or issue\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "false"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"none\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy1\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"001\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"4. Peer review complete\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "329"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "null"
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"There are no instances of users being influenced by Amazon's \\\"frequently bought together\\\" recommendations to build bombs. Even if there were, the harm would not be directly linked to the AI because the AI would not have directly caused the person to make the bomb.\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"4.4 - Exposing users to suggestions that could help them make bombs could be considered detrimental content.\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"5.3 - AI is directly linked to the intangible harm of detrimental content, or exposing people to suggestions that might help them make bombs.\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2017"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\" \""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"Global\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Amazon\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\",\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Amazon purchasers of black powder, thermite, ball bearings, and other potential bomb ingredients\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI special interest intangible harm\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"detrimental content\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Amazon recommender algorithm\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"AI\\\",\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"Amazon's recommender algorithm provides buyers of a product with suggestions of bundles of other items that other users frequently bought along with it.\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"Amazon items\",\"Amazon purchases\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 160
+title: Alexa Recommended Dangerous TikTok Challenge to Ten-Year-Old Girl
+description: Amazon’s voice assistant Alexa suggested “the penny challenge,” which involves dangerously touching a coin to the prongs of a half-exposed plug, when a ten-year-old girl asked for a challenge to do.
+
+first report text: TikTok’s recommendation algorithm pushes self-harm and eating disorder content to teenagers within minutes of them expressing interest in the topics, research suggests.
+
+The Center for Countering Digital Hate (CCDH) found that the video-sharing site will promote content including dangerously restrictive diets, pro-self-harm content and content romanticising suicide to users who show a preference for the material, even if they are registered as under-18s.
+
+For its study the campaign group set up accounts in the US, UK, Canada and Australia, registered with ages of 13, the minimum age for joining the service. It created “standard” and “vulnerable” accounts, the latter containing the term “loseweight” in their usernames, which CCDH said reflected research showing that social media users who seek out eating disorder content often choose usernames containing related language.
+
+The accounts “paused briefly” on videos about body image, eating disorders and mental health, and also liked them. This took place over a 30-minute initial period when the accounts launched, in an attempt to capture the effectiveness of TikTok’s algorithm that recommends content to users.
+
+On “standard” accounts, content about suicide followed within nearly three minutes and eating disorder material was shown within eight minutes.
+
+“The results are every parent’s nightmare,” said Imran Ahmed, CCDH’s chief executive. “Young people’s feeds are bombarded with harmful, harrowing content that can have a significant cumulative impact on their understanding of the world around them, and their physical and mental health.”
+
+The group said the majority of mental health videos presented to its standard accounts via the For You feed – the main way TikTok users experience the app – consisted of users sharing their anxieties and insecurities.
+
+Body image content was more harmful, the report said, with accounts registered for 13-year-olds being shown videos advertising weight loss drinks and “tummy-tuck” surgery. One animation that appeared in front of the standard accounts carried a piece of audio stating “I’ve been starving myself for you” and had more than 100,000 likes. The report said the accounts were shown self-harm or eating disorder videos every 206 seconds.
+
+The researchers found that videos relating to body image, mental health and eating disorders were shown to “vulnerable” accounts three times more than to standard accounts. The vulnerable accounts received 12 times as many recommendations for self-harm and suicide-related videos as the standard accounts, the report said.
+
+The recommended content was more extreme for the vulnerable accounts, including methods of self-harm and young people discussing plans to kill themselves. CCDH said a mental health or body image-related video was shown every 27 seconds, although the content was dominated by mental health videos, which CCDH defined as videos about anxieties, insecurities and mental health conditions, excluding eating disorders, self-harm and suicide.
+
+The group said its research did not differentiate between content with a positive intent – such as content discovering recovery – or negative content.
+
+A spokesperson for TikTok, which is owned by the Chinese firm ByteDance and has more than 1 billion users worldwide, said the CCDH study did not reflect the experience or viewing habits of real-life users of the app.
+
+“We regularly consult with health experts, remove violations of our policies and provide access to supportive resources for anyone in need,” they said. “We’re mindful that triggering content is unique to each individual and remain focused on fostering a safe and comfortable space for everyone, including people who choose to share their recovery journeys or educate others on these important topics.”
+
+TikTok’s guidelines ban content that promotes behaviour that could lead to suicide and self-harm, as well as material that promotes unhealthy eating behaviours or habits.
+
+The UK’s online safety bill proposes requiring social networks to take action against so-called “legal but harmful” content being shown to children.
+
+A DCMS spokesperson said “We are putting a stop to unregulated social media causing harm to our children. Under the Online Safety Bill, tech platforms will need to prevent under-18s from being exposed to illegal content assisting suicide and protect them from other harmful or age-inappropriate material, including the promotion of self-harm and eating disorders, or face huge fines.”
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"information and communication\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"non-imminent risk of tangible harm (an issue) occurred\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"AI tangible harm issue\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy1\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "[\"ranking\",\"Natural Language Processesing\"]"
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"4. Peer review complete\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "160"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "null"
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"ourcommunitynow.com published a report about an unsafe 'penny challenge' going around TikTok.  The Alexa app, extracted the unsafe challenge from the website and suggested it to a 10-year-old as a physical challenge to attempt.  The child did not execute the challenge.\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"The suggestion from Alexa promoted an unsafe activity that could lead to self-harm. Hence the AI provided is detrimental content.\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"The suggestion from Alexa promoted an unsafe activity that could lead to self-harm. Hence the AI provided is detrimental content.\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2021"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "12"
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "26"
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Amazon\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Alexa\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Kristin Livdahl's daughter\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"individual\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI tangible harm issue\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"physical health/safety\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"ourcommunitynow.com\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"unclear\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"watchdog\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"ourcommunitynow.com published a report about an unsafe 'penny challenge' going around TikTok.  It provided a warning to parents.  The Alexa app, extracted the unsafe challenge from the website and suggested it to a 10-year-old as a physical challenge to attempt. The child's mother took a screenshot of Alexa's response, showing that it got the information from ourcommunitynow.com, not from TikTok. \\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Echo Dot\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Existence of Echo Do in harm issue found through additional research on ourcommunitynow.com\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity\",\"value_json\":\"\\\"Alexa users\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI special interest intangible harm\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"detrimental content\\\"\"},{\"short_name\":\"Notes (Characterizing Entities and the Harm)\",\"value_json\":\"\\\"Alexa's AI will suggest detrimental content that promotes unsafe activities.\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"Alexa is a virtual assistant technology that is deployed to help households complete basic tasks like creating shopping lists, searching the web, and more.\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"voice\",\"websites\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"Amazon Echo Dot\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"virtual assistant technology\",\"suggestion\",\"recommendation\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Id: 1
+title: Google’s YouTube Kids App Presents Inappropriate Content
+description: YouTube’s content filtering and recommendation algorithms exposed children to disturbing and inappropriate videos.
+
+first report text: Media playback is unsupported on your device
+
+Thousands of videos on YouTube look like versions of popular cartoons but contain disturbing and inappropriate content not suitable for children.
+
+If you're not paying much attention, it might look like an ordinary video featuring Peppa Pig, the cheeky porcine star of her own animated series. But soon after pressing play on this particular YouTube clip, the plot turns dark. A dentist with a huge syringe appears. Peppa's teeth get pulled out. Distressed crying can be heard on the soundtrack.
+
+Parent and journalist Laura June almost immediately noticed something was not quite right as her three-year-old daughter was watching it.
+
+"Peppa does a lot of screaming and crying and the dentist is just a bit sadistic and it's just way, way off what a three-year-old should watch," June says. She wrote about her experiences on the website The Outline.
+
+"But the animation is like close enough to looking like Peppa - it's crude but it's close enough that my daughter was like 'This is Peppa Pig.'"
+
+It's far from an isolated case - BBC Trending has found hundreds of similar videos of children's cartoon characters with inappropriate themes. In addition to Peppa Pig, there are similar videos featuring characters from the Disney movie Frozen, the Minions franchise, Doc McStuffins, Thomas the Tank Engine, and many more.
+
+Some of the videos are parodies or have such over-the-top content that they're clearly meant for mature audiences. Others are unauthorised copies of authentic cartoons or use the characters in innocent ways - troubling to copyright lawyers perhaps, but not necessarily harmful to children.
+
+However many, like the video Laura June's daughter saw, both contain disturbing content and can pass for the real cartoons, particularly when viewed by children.
+
+Image copyright SmileKidsTV/YouTube Image caption Some of the cartoons feature violence or frightening situations
+
+More from BBC Trending
+
+Visit the Trending Facebook page
+
+Hundreds of these videos exist on YouTube, and some generate millions of views. One channel "Toys and Funny Kids Surprise Eggs" is one of the top 100 most watched YouTube accounts in the world - its videos have more than 5 billion views.
+
+Its landing page features a photo of a cute toddler alongside official-looking pictures of Peppa Pig, Thomas the Tank Engine, the Cookie Monster, Mickey and Minnie Mouse and Elsa from Frozen.
+
+But the videos on the channel have titles like "FROZEN ELSA HUGE SNOT", "NAKED HULK LOSES HIS PANTS" and "BLOODY ELSA: Frozen Elsa's Arm is Broken by Spiderman". They feature animated violence and graphic toilet humour.
+
+The people behind the account didn't respond to Trending's request for an interview. We attempted to contact several other producers of similar videos - and got the same result.
+
+How to avoid inappropriate videos on YouTube
+
+• The YouTube Kids app filters out most - but not all - of the disturbing videos.
+
+• YouTube suggests turning on "restricted mode" which can be found at the bottom of YouTube pages:
+
+Image copyright YouTube
+
+• The NSPCC also has a series of guidelines about staying safe online, and there are more resources on the BBC Stay Safe site.
+
+Image copyright CandyFamily/YouTube
+
+Trending also contacted two companies behind the cartoon series being ripped off, Disney and EntOne - the distributor of Peppa Pig. Neither wanted to comment.
+
+So should parents take more care when it comes to allowing their children to watch cartoons on YouTube?
+
+Sonia Livingstone is an expert on child online safety and professor of social psychology at the London School of Economics,
+
+"It's perfectly legitimate for a parent to believe that something called Peppa Pig is going to be Peppa Pig," she says. "And I think many of them have come to trust YouTube... as a way of entertaining your child for ten minutes while the parent makes a phone call. I think if it wants to be a trusted brand then parents should know that protection is in place."
+
+"I don't think we want to police it for the whole world," Livingstone says. "A lot of this material is satirical, creative - or actually offensive but within freedom of expression. What we need is child protection."
+
+Image copyright CandyFamily/YouTube
+
+YouTube did not offer a spokesperson for interview, but in a statement said: "We take feedback very seriously. We appreciate people drawing problematic content to our attention, and make it easy for anyone to flag a video.
+
+"Flagged videos are manually reviewed 24/7 and any videos that don't belong in the app are removed within hours. For parents who want a more restricted experience, we recommend that they turn off the Search feature in the app."
+
+The company also suggested that parents use the YouTube Kids app, which is available for mobile phones and tablets, and turn on "restricted mode" which limits flagged content. It can be found at the bottom of any page on the YouTube site, but cautions that "no filter is 100% accurate".
+
+And since Trending began investigati
+
+classifications:
+  {
+    "short_name": "Harm Distribution Basis",
+    "value_json": "[\"none\"]"
+  }
+  {
+    "short_name": "Sector of Deployment",
+    "value_json": "[\"Arts, entertainment and recreation\",\"information and communication\"]"
+  }
+  {
+    "short_name": "Physical Objects",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Entertainment Industry",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Report, Test, or Study of data",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Deployed",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Producer Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Producer Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Controlled Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "User Test in Operational Conditions",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Harm Domain",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Tangible Harm",
+    "value_json": "\"no tangible harm, near-miss, or issue\""
+  }
+  {
+    "short_name": "AI System",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Clear link to technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "There is a potentially identifiable specific entity that experienced the harm",
+    "value_json": "true"
+  }
+  {
+    "short_name": "AI Harm Level",
+    "value_json": "\"none\""
+  }
+  {
+    "short_name": "Impact on Critical Services",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Rights Violation",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Involving Minor",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Detrimental Content",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Protected Characteristic",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Clear link to Technology",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Harmed Class of Entities",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Annotator’s AI special interest intangible harm assessment",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Public Sector Deployment",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Autonomy Level",
+    "value_json": "\"Autonomy1\""
+  }
+  {
+    "short_name": "Intentional Harm",
+    "value_json": "\"No. Not intentionally designed to perform harm\""
+  }
+  {
+    "short_name": "AI tools and methods",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Peer Reviewer",
+    "value_json": "\"002\""
+  }
+  {
+    "short_name": "Quality Control",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Annotation Status",
+    "value_json": "\"6. Complete and final\""
+  }
+  {
+    "short_name": "Incident Number",
+    "value_json": "1"
+  }
+  {
+    "short_name": "Annotator",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Tangible Harm Level Notes",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Special Interest Intangible Harm",
+    "value_json": "\"yes\""
+  }
+  {
+    "short_name": "Notes (AI special interest intangible harm)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Year",
+    "value_json": "2016"
+  }
+  {
+    "short_name": "Date of Incident Month",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Date of Incident Day",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Estimated Date",
+    "value_json": "true"
+  }
+  {
+    "short_name": "Multiple AI Interaction",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Embedded",
+    "value_json": "\"no\""
+  }
+  {
+    "short_name": "Location City",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location State/Province (two letters)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Location Country (two letters)",
+    "value_json": "\"US\""
+  }
+  {
+    "short_name": "Location Region",
+    "value_json": "\"North America\""
+  }
+  {
+    "short_name": "Infrastructure Sectors",
+    "value_json": "[]"
+  }
+  {
+    "short_name": "Operating Conditions",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Notes (Environmental and Temporal Characteristics)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "Entities",
+    "value_json": "[{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Google\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"for-profit organization\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"developer\\\",\\\"deployer\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"YouTube Kids\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"true\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"product\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"product containing AI\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"not applicable\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"not applicable\\\"\"}]},{\"attributes\":[{\"short_name\":\"Entity\",\"value_json\":\"\\\"Children watching Youtube Kids\\\"\"},{\"short_name\":\"Named Entity\",\"value_json\":\"false\"},{\"short_name\":\"Entity type\",\"value_json\":\"\\\"group of individuals\\\"\"},{\"short_name\":\"Entity Relationship to the AI\",\"value_json\":\"[\\\"user\\\"]\"},{\"short_name\":\"Harm Category Experienced\",\"value_json\":\"\\\"AI special interest intangible harm\\\"\"},{\"short_name\":\"Harm Type Experienced\",\"value_json\":\"\\\"detrimental content\\\"\"}]}]"
+  }
+  {
+    "short_name": "Lives Lost",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Injuries",
+    "value_json": "0"
+  }
+  {
+    "short_name": "Estimated Harm Quantities",
+    "value_json": "false"
+  }
+  {
+    "short_name": "Notes ( Tangible Harm Quantities Information)",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI System Description",
+    "value_json": "\"Content-recommendation and filtering algorithm\""
+  }
+  {
+    "short_name": "Data Inputs",
+    "value_json": "[\"Youtube videos\"]"
+  }
+  {
+    "short_name": "Notes (Information about AI System)",
+    "value_json": "\"9.5 - Content-moderation algorithms like the one involved in this incident are supposed to work without requiring human review or intervention.\""
+  }
+  {
+    "short_name": "Physical System Type",
+    "value_json": "\"\""
+  }
+  {
+    "short_name": "AI Task",
+    "value_json": "[\"content moderation\"]"
+  }
+  {
+    "short_name": "Notes (AI Functionality and Techniques)",
+    "value_json": "\"\""
+  }
+
+---
+
+Taxonomy: CSETv1
+Classification Count: 6
+
+Based on the incident text and the taxonomy definition provided, provide a classification ONLY for the attribute "Tangible Harm".
+
+IMPORTANT: Your classification MUST include ONLY the following taxonomy attribute:
+Tangible Harm
+
+For maximum accuracy and completeness:
+1. Focus ONLY on the required field "Tangible Harm".
+2. Use the permitted_values for this attribute from the definition provided.
+3. Review similar incidents to understand how this specific field is typically used.
+
+Return your response as a JSON object with the following structure:
+
+{
+  "classification": {
+    "namespace": "CSETv1",
+    "attributes": [
+      {"short_name": "Tangible Harm", "value_json": ""value""} 
+    ]
+  },
+  "explanation": "A detailed explanation of your classification choice for Tangible Harm.",
+  "confidence": "A confidence score between 0 and 1 for this attribute classification"
+}
+
+DO NOT include any other text in your response, nor any other characters.
+DO NOT start your response with ```json or ```
+Ensure that ONLY the attribute "Tangible Harm" is included in your classification.
